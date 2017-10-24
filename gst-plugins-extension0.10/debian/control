@@ -1,0 +1,78 @@
+Source: gst-plugins-extension0.10
+Section: libs
+Priority: extra
+Maintainer: JongHyuk Choi <jhchoi.choi@samsung.com>, Seungbae Shin <seungbae.shin@samsung.com>, Wonhyung Cho <wh01.cho@samsung.com>, Yejin Cho <cho.yejin@samsung.com>, Younghwan Ahn <younghwan_.an@samsung.com>, Jeongmo Yang <jm80.yang@samsung.com>, Harish Jenny K N <harish.jenny@samsung.com>, KwangHui Cho <kwanghui.cho@samsung.com>, Naveen Ch <naveen.ch@samsung.com>, Sangchul Lee <sc11.lee@samsung.com>
+Build-Depends: debhelper (>= 5), libgstreamer0.10-dev, libgstreamer-plugins-base0.10-dev, libmobilebae-dev ,libslp-vtstack-dev [!i386], libslp-setting-dev, execstack, libsecrtp-dev, libsecrtsp-dev, libcamsrcjpegenc-dev, libmm-ta-dev, linux-libc-dev, libmm-ta-dev, linux-libc-dev, libdri2-dev, libdrm-dev, libxext-dev, x11proto-dri2-dev, libmm-wfd-dev
+Standards-Version: 3.7.2
+
+Package: gstreamer0.10-plugins-extension
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0
+Description: GStreamer extra plugins (common)
+
+Package: gstreamer0.10-plugins-extension-avsysvideosrc
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: GStreamer extra plugins (avsysvideosrc)
+
+Package: gstreamer0.10-plugins-extension-dnse
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0
+Description: GStreamer extra plugins (dnse)
+
+Package: gstreamer0.10-plugins-extension-soundalive
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0
+Description: GStreamer extra plugins (soundalive)
+
+Package: gstreamer0.10-plugins-extension-audiovsp
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0
+Description: GStreamer extra plugins (audiovsp)
+
+Package: gstreamer0.10-plugins-extension-audiodha
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0
+Description: GStreamer extra plugins (audiodha)
+
+Package: gstreamer0.10-plugins-extension-secrtspsrc
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0, libsecrtp, libsecrtsp
+Description: GStreamer extra plugins (secrtspsrc, sechttpsrc)
+
+Package: gstreamer0.10-plugins-extension-midi
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0, libmobilebae-0
+Description: GStreamer extra plugins (midi)
+
+Package: gstreamer0.10-plugins-extension-vt
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0, libslp-vtstack-0
+Description: GStreamer extra plugins (vt)
+
+Package: gstreamer0.10-plugins-extension-voicecalldata
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0
+Description: GStreamer Voice call recording Elements
+
+Package: gstreamer0.10-plugins-extension-fimcconvert
+Section: libs
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0, libmm-ta
+Description: GStreamer FIMC convert
+
+Package: gstreamer0.10-plugins-extension-dbg
+Section: debug
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer0.10-plugins-extension (= ${Source-Version})
+Description: GStreamer extra plugins (all) (unstripped)

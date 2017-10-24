@@ -1,0 +1,9 @@
+README.Debian for usbutils
+--------------------------
+
+The USB ID's database (/var/lib/usbutils/usb.ids) comes from
+http://linux-usb.sourceforge.net/usb.ids.  In case one of your USB devices
+does not appear in the database you can submit the USB ID's and the 
+corresponding description to Stephen J. Gowdy <sgowdy+usb.ids@gmail.com>.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed, 13 Aug 2008 01:02:52 +0200

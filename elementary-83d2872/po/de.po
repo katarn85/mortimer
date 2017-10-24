@@ -1,0 +1,360 @@
+# German translations for elementary package
+# German messages for elementary.
+# Copyright (C) 2011 Enlightenment development team
+# This file is distributed under the same license as the elementary package.
+# Fabian Nowak <timystery@arcor.de>, 2011.
+#
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary 0.7.0.57309\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2013-08-08 14:31+0000\n"
+"PO-Revision-Date: 2011-02-25 20:22+0100\n"
+"Last-Translator: Shilpa Singh <shilpa.singh@samsung.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menü-Pop-up"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Zweimal tippen, um das Menü zu schließen."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr "Aufwärts"
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr "Persönlicher Ordner"
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1254
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr "OK"
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:266 src/lib/elm_check.c:200 src/lib/elm_gengrid.c:618
+#: src/lib/elm_genlist.c:1281 src/lib/elm_list.c:1353 src/lib/elm_radio.c:241
+#: src/lib/elm_spinner.c:503 src/lib/elm_toolbar.c:1513
+msgid "Disabled"
+msgstr "Deaktiviert."
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Taste"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr ""
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Ausgewählt"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Nicht ausgewählt"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Kontrollkästchen"
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Kopieren"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Ausschneiden"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Auswählen"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Einfügen"
+
+#: src/lib/elm_entry.c:2921
+msgid "Entry"
+msgstr ""
+
+#: src/lib/elm_gengrid.c:650
+msgid "Gengrid Item"
+msgstr ""
+
+#: src/lib/elm_genlist.c:1315
+msgid "Genlist Item"
+msgstr ""
+
+#: src/lib/elm_index.c:99
+msgid "Index Item"
+msgstr ""
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Schnelle Bildlaufleiste"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_list.c:1393
+msgid "List Item"
+msgstr ""
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Optionsfeld"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Nach oben und unten streichen, um die Position zu verschieben."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Slider"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Auswählen"
+
+#: src/lib/elm_toolbar.c:1149
+#, fuzzy
+msgid "Selected"
+msgstr "Ausgewählt"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Ausgewählt"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Tool Item"
+msgstr ""
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Einstellen"
+
+#: src/modules/ctxpopup_CopypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Übersetzen"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Datum einstellen"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Uhrzeit einstellen"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Hochformatmodus"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Querformatmodus"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Tippen Sie zweimal, um das Blättern zu beschleunigen."
+
+#: src/lib/elm_entry.c
+msgid "double tap to edit"
+msgstr "Zweimal tippen, um zu bearbeiten."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Bearbeite..."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Nach oben und unten streichen, um die Position zu verschieben."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d Zeichen."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Kontext-Pop-up"
+
+#: src/lib/elc_popup.c src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Zweimal tippen, um das Pop-up zu schließen."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Pop-up in der Mitte"
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Ein Schubfach ist geöffnet."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Zweimal tippen, um das Schubfach-Menü zu schließen."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Cursor am Textanfang"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Cursor am Textende"
+
+msgid "tap to change"
+msgstr "Tippen Sie hier, um den Modus zu ändern."
+
+msgid "date"
+msgstr "Datum"
+
+msgid "hour"
+msgstr "Stunde"
+
+msgid "minute"
+msgstr "Minute"
+
+msgid "month"
+msgstr "Monat"
+
+msgid "year"
+msgstr "Jahr"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d von %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Tag vermindern"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Stunde vermindern"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Minute vermindern"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Monat vermindern"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Jahr vermindern"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Tag erhöhen"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Stunde erhöhen"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Minute erhöhen"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Monat erhöhen"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Jahr erhöhen"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Zum Ändern tippen"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Alle auswählen"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopieren"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Auswählen"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Ausschneiden"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Einfügen"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Zwischenablage"
+

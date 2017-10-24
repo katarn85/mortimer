@@ -1,0 +1,317 @@
+diff -Naur ath6kl.ori/core.h ath6kl/core.h
+--- ath6kl.ori/core.h	2013-05-02 17:01:52.000000000 +0800
++++ ath6kl/core.h	2013-05-02 18:18:24.000000000 +0800
+@@ -401,6 +401,11 @@
+ 	u8 data[0];
+ };
+ 
++struct ath6kl_selftest {
++	u8 dram_test;
++	u8 otp_test;
++};
++
+ /* Android privacy command */
+ #define ATH6KL_IOCTL_STANDARD01		(SIOCDEVPRIVATE+1)
+ 
+@@ -410,6 +415,9 @@
+ /* BTC command */
+ #define ATH6KL_IOCTL_STANDARD03		(SIOCDEVPRIVATE+3)
+ 
++/* IEEE80211_IOCTL_VENDOR */
++#define ATH6KL_IOCTL_STANDARD10		(SIOCDEVPRIVATE+10)
++
+ /* hole, please reserved */
+ #define ATH6KL_IOCTL_STANDARD12		(SIOCDEVPRIVATE+12)
+ 
+@@ -559,6 +567,7 @@
+ #define AR6004_HW_1_3_SOFTMAC_FILE            "ath6k/AR6004/hw1.3/softmac.bin"
+ #define AR6004_HW_1_3_SOFTMAC_2_FILE            \
+ 	"ath6k/AR6004/hw1.3/softmac_2.bin"
++#define AR6004_HW_1_3_SELFTEST_FILE           "ath6k/AR6004/hw1.3/selftest.bin"
+ 
+ /* AR6004 2.0 definitions */
+ #define AR6004_HW_2_0_VERSION                 0x31c80958
+@@ -1647,6 +1656,12 @@
+ 			u8 short_GI;
+ 			u8 intolerance_40MHz;
+ 		} ht_cap_param[IEEE80211_NUM_BANDS];
++		
++		struct selftest_param {
++			u8	self_test_dram;
++			u8  self_test_otp;
++		} selftest_params;
++
+ 	} debug;
+ #endif /* CONFIG_ATH6KL_DEBUG */
+ 
+diff -Naur ath6kl.ori/debug.c ath6kl/debug.c
+--- ath6kl.ori/debug.c	2013-05-02 17:01:52.000000000 +0800
++++ ath6kl/debug.c	2013-05-02 17:03:06.000000000 +0800
+@@ -5134,6 +5134,40 @@
+ 	.llseek = default_llseek,
+ };
+ 
++static ssize_t ath6kl_selftest_read(struct file *file,
++				char __user *user_buf,
++				size_t count, loff_t *ppos)
++{
++	struct ath6kl *ar = file->private_data;
++	char *buf;
++	unsigned int len = 0, buf_len = 1500;
++	ssize_t ret_cnt;
++
++	buf = kzalloc(buf_len, GFP_KERNEL);
++	if (!buf)
++		return -ENOMEM;
++
++	len += scnprintf(buf + len, buf_len - len, "%s : %s\n",
++			 "Self DRAM Test",ar->debug.selftest_params.self_test_dram==1?"PASS":"FAIL");
++	len += scnprintf(buf + len, buf_len - len, "%s  : %s\n",
++			 "Self OTP Test",ar->debug.selftest_params.self_test_otp==1?"PASS":"FAIL");
++			 
++	if (WARN_ON(len > buf_len))
++		len = buf_len;
++
++	ret_cnt = simple_read_from_buffer(user_buf, count, ppos, buf, len);
++
++	kfree(buf);
++	return ret_cnt;
++}
++
++static const struct file_operations fops_selftest = {
++	.read = ath6kl_selftest_read,
++	.open = ath6kl_debugfs_open,
++	.owner = THIS_MODULE,
++	.llseek = default_llseek,
++};
++
+ int ath6kl_debug_init(struct ath6kl *ar)
+ {
+ 	skb_queue_head_init(&ar->debug.fwlog_queue);
+@@ -5311,6 +5345,8 @@
+ 
+ 	debugfs_create_file("p2p_frame_retry", S_IWUSR,
+ 			    ar->debugfs_phy, ar, &fops_p2p_frame_retry);
++	debugfs_create_file("self_test", S_IRUSR,
++			    ar->debugfs_phy, ar, &fops_selftest);
+ 
+ 	debugfs_create_file("p2p_frame_cond_reject", S_IWUSR,
+ 			    ar->debugfs_phy, ar, &p2p_frame_cond_reject);
+diff -Naur ath6kl.ori/debug.h ath6kl/debug.h
+--- ath6kl.ori/debug.h	2013-05-02 10:35:40.000000000 +0800
++++ ath6kl/debug.h	2013-05-02 18:19:50.000000000 +0800
+@@ -96,7 +96,8 @@
+ 	/* Config AP keep-alive from supplicant */
+ 	ATH6KL_MODULE_KEEPALIVE_CONFIG_BY_SUPP	= BIT(25),
+ 
+-	/* hole */
++	/* enable self test */
++	ATH6KL_MODULE_ENABLE_SELFTEST = BIT(26),
+ 
+ 	/* config AP-ACL from NL80211 */
+ 	ATH6KL_MODULE_AP_ACL_BY_NL80211  = BIT(27),
+diff -Naur ath6kl.ori/init.c ath6kl/init.c
+--- ath6kl.ori/init.c	2013-05-02 17:01:52.000000000 +0800
++++ ath6kl/init.c	2013-05-02 18:23:08.000000000 +0800
+@@ -1634,6 +1634,19 @@
+ 		goto get_fw;
+ 	}
+ 
++	if (ath6kl_mod_debug_quirks(ar, ATH6KL_MODULE_ENABLE_SELFTEST)) {
++		if (ar->hw.fw_epping == NULL) {
++			ath6kl_warn("testmode-epping not supported\n");
++			return -EOPNOTSUPP;
++		}
++
++		snprintf(filename, sizeof(filename), "%s",
++			AR6004_HW_1_3_SELFTEST_FILE);
++
++		set_bit(TESTMODE_EPPING, &ar->flag);
++		goto get_fw;
++	}
++
+ 	/* FIXME: remove WARN_ON() as we won't support FW API 1 for long */
+ 	if (WARN_ON(ar->hw.fw.fw == NULL))
+ 		return -EINVAL;
+@@ -2929,6 +2942,89 @@
+ 	return 0;
+ }
+ 
++//check target data ram
++int ath6kl_dram_test(struct ath6kl *ar)
++{
++#define MAX_RW_LEN 32
++#define DRAM_END 0x430000
++#define MCK_1_3_ROM_DRAM_END 0x40a5e8
++
++	u32 test_addr;
++	u8* write_buf = NULL;
++	u8* read_buf = NULL;
++	u32 rom_dram_end;
++	int status =0;
++	if (ar->bmi.done_sent) {
++		ath6kl_err("bmi done sent already, disallowed\n");
++		return -1;
++	}
++	switch (ar->hw.id)
++	{
++		case AR6004_HW_1_3_VERSION:
++			rom_dram_end = MCK_1_3_ROM_DRAM_END;
++			break;
++		default:
++			ath6kl_err("Not Support dram test\n");
++			return -1;
++			break;
++	}
++	write_buf = kmalloc(MAX_RW_LEN, GFP_KERNEL);
++	
++	if(write_buf == NULL) {
++		ath6kl_err("bmi done sent already, write_buf is NULL\n");
++		return -1;
++	}
++	read_buf = kmalloc(MAX_RW_LEN, GFP_KERNEL);
++	if(read_buf == NULL) {
++		kfree(write_buf);
++		ath6kl_err("bmi done sent already, read_buf is NULL\n");
++		return -1;
++	}
++
++	memset(write_buf,0x5A,MAX_RW_LEN);
++	memset(read_buf,0x00,MAX_RW_LEN);
++
++	for(test_addr = rom_dram_end;test_addr<DRAM_END;test_addr=test_addr+MAX_RW_LEN) {
++		if(ath6kl_bmi_write(ar, test_addr, write_buf, MAX_RW_LEN) != 0) {
++			ath6kl_err("write fail\n\r");
++			break;
++		}
++		if(ath6kl_bmi_read(ar, test_addr, read_buf, MAX_RW_LEN)!=0) {
++			ath6kl_err("read fail\n\r");
++			break;
++		}
++		if(memcmp(write_buf,read_buf,MAX_RW_LEN) != 0) {
++			ath6kl_err("test fail,address=0x%x\n\r",test_addr);		
++			status = -1;
++			break;			
++		}
++		memset(read_buf,0x00,MAX_RW_LEN);
++	}
++	//test remaining data ram
++	for(test_addr = (DRAM_END-MAX_RW_LEN);test_addr<DRAM_END;test_addr=test_addr+MAX_RW_LEN) {
++		if(ath6kl_bmi_write(ar, test_addr, write_buf, MAX_RW_LEN) != 0) {
++			ath6kl_err("1 write fail\n\r");
++			break;
++		}
++		if(ath6kl_bmi_read(ar, test_addr, read_buf, MAX_RW_LEN)!=0) {
++			ath6kl_err("1 read fail\n\r");
++			break;
++		}
++		if(memcmp(write_buf,read_buf,MAX_RW_LEN) != 0) {
++			ath6kl_err("1 test fail,address=0x%x\n\r",test_addr);
++			status = -1;
++			break;
++		}
++		memset(read_buf,0x00,MAX_RW_LEN);
++	}
++	kfree(write_buf);
++	kfree(read_buf);
++	return status;
++#undef MAX_RW_LEN
++#undef DRAM_END
++#undef MCK_1_3_ROM_DRAM_END
++}
++
+ int ath6kl_core_init(struct ath6kl *ar)
+ {
+ 	struct ath6kl_bmi_target_info targ_info;
+@@ -2983,6 +3079,13 @@
+ 		goto err_power_off;
+ 	}
+ 
++	/* DRAM read write test */
++	if (ath6kl_mod_debug_quirks(ar, ATH6KL_MODULE_ENABLE_SELFTEST)) {
++		ar->debug.selftest_params.self_test_dram = 0;
++		if(ath6kl_dram_test(ar) == 0)
++			ar->debug.selftest_params.self_test_dram = 1;
++	}
++
+ #ifdef ATH6KL_SUPPORT_WIFI_KTK
+ 	ar->ktk_active = false;
+ #endif
+@@ -3171,9 +3274,11 @@
+ #endif
+ 
+ #if  defined(CONFIG_ANDROID) || defined(USB_AUTO_SUSPEND)
+-	ret = ath6kl_android_enable_wow_default(ar);
+-	if (ret != 0)
+-		goto err_rxbuf_cleanup;
++	if (!ath6kl_mod_debug_quirks(ar, ATH6KL_MODULE_ENABLE_SELFTEST)) {
++		ret = ath6kl_android_enable_wow_default(ar);
++		if (ret != 0)
++			goto err_rxbuf_cleanup;
++	}
+ #endif
+ 
+ #ifndef CONFIG_ANDROID
+@@ -3208,6 +3313,24 @@
+ 		ar->fw_crash_notify = ath6kl_fw_crash_notify;
+ 	}
+ 
++	/* Target OTP Read Test Result Check */
++	if (ath6kl_mod_debug_quirks(ar, ATH6KL_MODULE_ENABLE_SELFTEST)) {
++#define OTP_STATUS_ADDR 0x428000
++#define OTP_PASS_STATUS 0xd0d0d0d0 /*Fail would be 0xFAFAFAFA*/
++		u32 OTP_status_buf = 0;
++		ar->debug.selftest_params.self_test_otp = 0;
++		if (ath6kl_diag_read32(ar, OTP_STATUS_ADDR, &OTP_status_buf)!=0) {
++			ath6kl_err("OTP result read fail\n");
++		} else {
++			if (OTP_status_buf == OTP_PASS_STATUS)
++				ar->debug.selftest_params.self_test_otp = 1;
++			else
++				ath6kl_err("Fail OTP Check result 0x%08x \n", OTP_status_buf);
++		}
++#undef OTP_STATUS_ADDR
++#undef OTP_PASS_STATUS
++	}
++
+ 	return ret;
+ 
+ err_rxbuf_cleanup:
+diff -Naur ath6kl.ori/main.c ath6kl/main.c
+--- ath6kl.ori/main.c	2013-05-02 17:01:52.000000000 +0800
++++ ath6kl/main.c	2013-05-02 17:03:06.000000000 +0800
+@@ -2288,6 +2288,24 @@
+ 			req->u.data.length + 1)	? -EFAULT : 0;
+ }
+ 
++static int ath6kl_ioctl_selftest(struct net_device *dev,
++				struct ifreq *rq)
++{ 
++   	struct ath6kl *ar = ath6kl_priv(dev);
++	struct iwreq *req = (struct iwreq *)(rq);
++	struct ath6kl_selftest result_data;
++
++	memset(&result_data, 0, sizeof(struct ath6kl_selftest));
++	result_data.dram_test = ar->debug.selftest_params.self_test_dram;
++	result_data.otp_test = ar->debug.selftest_params.self_test_otp;
++
++	req->u.data.length = sizeof(struct ath6kl_selftest);
++
++	return copy_to_user(req->u.data.pointer,
++			&result_data,
++			req->u.data.length)	? -EFAULT : 0;
++}
++
+ int ath6kl_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)
+ {
+ 	struct ath6kl *ar = ath6kl_priv(dev);
+@@ -2358,6 +2376,9 @@
+ 	case ATH6KL_IOCTL_WEXT_PRIV31:	/* QCSAP */
+ 		ret = ath6kl_ioctl_linkspeed(dev, rq, cmd);
+ 		break;
++	case ATH6KL_IOCTL_STANDARD10:
++	       ret = ath6kl_ioctl_selftest(dev, rq);
++	       break;
+ 	default:
+ 		ret = -EOPNOTSUPP;
+ 		goto ioctl_done;

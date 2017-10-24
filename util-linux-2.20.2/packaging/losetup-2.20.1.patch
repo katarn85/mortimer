@@ -1,0 +1,237 @@
+diff -Naur util-linux/mount/lomount.c util-linux-new/mount/lomount.c
+--- util-linux/mount/lomount.c	2012-11-19 14:27:18.000000000 +0530
++++ util-linux-new/mount/lomount.c	2012-11-20 15:29:38.000000000 +0530
+@@ -779,6 +779,156 @@
+	return 1;
+ }
+
++int
++set_loop1(const char *device, const char *file, unsigned long long offset,
++        unsigned long long sizelimit, const char *encryption, const char *pass, int *options) {
++       struct loop_info64 loopinfo64;
++       int fd, ffd, mode, i;
++       char *filename;
++
++       if (verbose) {
++               char *xdev = loopfile_used(file, offset);
++
++               if (xdev) {
++                       printf(_("warning: %s is already associated with %s\n"),
++                                       file, xdev);
++                       free(xdev);
++               }
++       }
++       mode = (*options & SETLOOP_RDONLY) ? O_RDONLY : O_RDWR;
++       if ((ffd = open(file, mode)) < 0) {
++               if (!(*options & SETLOOP_RDONLY) &&
++                   (errno == EROFS || errno == EACCES))
++                       ffd = open(file, mode = O_RDONLY);
++               if (ffd < 0) {
++                       perror(file);
++                       return 1;
++               }
++               if (verbose)
++                       printf(_("warning: %s: is write-protected, using read-only.\n"),
++                                       file);
++               *options |= SETLOOP_RDONLY;
++       }
++       if ((fd = open(device, mode)) < 0) {
++               perror (device);
++               close(ffd);
++               return 1;
++       }
++       memset(&loopinfo64, 0, sizeof(loopinfo64));
++
++       if (!(filename = canonicalize(file)))
++               filename = (char *) file;
++       xstrncpy((char *)loopinfo64.lo_file_name, filename, LO_NAME_SIZE);
++
++       if (encryption && *encryption) {
++               if (digits_only(encryption)) {
++                       loopinfo64.lo_encrypt_type = atoi(encryption);
++               } else {
++                       loopinfo64.lo_encrypt_type = LO_CRYPT_CRYPTOAPI;
++                       snprintf((char *)loopinfo64.lo_crypt_name, LO_NAME_SIZE,
++                                "%s", encryption);
++               }
++       }
++       loopinfo64.lo_offset = offset;
++       loopinfo64.lo_sizelimit = sizelimit;
++
++#ifdef MCL_FUTURE
++       /*
++        * Oh-oh, sensitive data coming up. Better lock into memory to prevent
++        * passwd etc being swapped out and left somewhere on disk.
++        */
++       if (loopinfo64.lo_encrypt_type != LO_CRYPT_NONE) {
++               if(mlockall(MCL_CURRENT | MCL_FUTURE)) {
++                       perror("memlock");
++                       fprintf(stderr, _("Couldn't lock into memory, exiting.\n"));
++                       exit(1);
++               }
++       }
++#endif
++
++       switch (loopinfo64.lo_encrypt_type) {
++       case LO_CRYPT_NONE:
++               loopinfo64.lo_encrypt_key_size = 0;
++               break;
++       case LO_CRYPT_XOR:
++               goto gotpass;
++       default:
++       gotpass:
++               memset(loopinfo64.lo_encrypt_key, 0, LO_KEY_SIZE);
++               xstrncpy((char *)loopinfo64.lo_encrypt_key, pass, LO_KEY_SIZE);
++               loopinfo64.lo_encrypt_key_size = LO_KEY_SIZE;
++       }
++
++       if (ioctl(fd, LOOP_SET_FD, ffd) < 0) {
++               int rc = 1;
++
++               if (errno == EBUSY) {
++                       if (verbose)
++                               printf(_("ioctl LOOP_SET_FD failed: %s\n"),
++                                                       strerror(errno));
++                       rc = 2;
++               } else
++                       perror("ioctl: LOOP_SET_FD");
++
++               close(fd);
++               close(ffd);
++               if (file != filename)
++                       free(filename);
++               return rc;
++       }
++       close (ffd);
++
++       if (*options & SETLOOP_AUTOCLEAR)
++               loopinfo64.lo_flags = LO_FLAGS_AUTOCLEAR;
++
++       i = ioctl(fd, LOOP_SET_STATUS64, &loopinfo64);
++       if (i) {
++               struct loop_info loopinfo;
++               int errsv = errno;
++
++               i = loop_info64_to_old(&loopinfo64, &loopinfo);
++               if (i) {
++                       errno = errsv;
++                       *options &= ~SETLOOP_AUTOCLEAR;
++                       perror("ioctl: LOOP_SET_STATUS64");
++               } else {
++                       i = ioctl(fd, LOOP_SET_STATUS, &loopinfo);
++                       if (i)
++                               perror("ioctl: LOOP_SET_STATUS");
++               }
++               memset(&loopinfo, 0, sizeof(loopinfo));
++       }
++
++       if ((*options & SETLOOP_AUTOCLEAR) && !is_loopfd_autoclear(fd))
++               /* kernel doesn't support loop auto-destruction */
++               *options &= ~SETLOOP_AUTOCLEAR;
++
++       memset(&loopinfo64, 0, sizeof(loopinfo64));
++
++       if (i) {
++               ioctl (fd, LOOP_CLR_FD, 0);
++               close (fd);
++               if (file != filename)
++                       free(filename);
++               return 1;
++       }
++
++       /*
++        * HACK: here we're leeking a file descriptor,
++        * but mount is a short-lived process anyway.
++        */
++       if (!(*options & SETLOOP_AUTOCLEAR))
++               close (fd);
++
++       if (verbose > 1)
++               printf(_("set_loop(%s,%s,%llu,%llu): success\n"),
++                      device, filename, offset, sizelimit);
++       if (file != filename)
++               free(filename);
++       return 0;
++}
++
++
+ /*
+  *  return codes:
+  *	0	- success
+@@ -1029,6 +1179,7 @@
+	  " -o, --offset <num>      start at offset <num> into file\n"
+	  "     --sizelimit <num>   loop limited to only <num> bytes of the file\n"
+	  " -p, --pass-fd <num>     read passphrase from file descriptor <num>\n"
++	  " -k | --passwd <passphrase>  get passphrase\n"
+	  " -r, --read-only         setup read-only loop device\n"
+	  "     --show              print device name (with -f <file>)\n"
+	  " -v, --verbose           verbose mode\n\n"), out);
+@@ -1038,7 +1189,7 @@
+
+ int
+ main(int argc, char **argv) {
+-	char *p, *offset, *sizelimit, *encryption, *passfd, *device, *file, *assoc;
++	char *p, *offset, *sizelimit, *encryption, *passfd, *device, *file, *assoc, *passwd;
+	int delete, find, c, all, capacity;
+	int res = 0;
+	int showdev = 0;
+@@ -1057,6 +1208,7 @@
+		{ "offset", 1, 0, 'o' },
+		{ "sizelimit", 1, 0, 128 },
+		{ "pass-fd", 1, 0, 'p' },
++		{ "passwd", 1, 0, 'k'},
+		{ "read-only", 0, 0, 'r' },
+	        { "show", 0, 0, 's' },
+		{ "verbose", 0, 0, 'v' },
+@@ -1068,13 +1220,13 @@
+	textdomain(PACKAGE);
+
+ 	capacity = delete = find = all = 0;
+-	assoc = offset = sizelimit = encryption = passfd = NULL;
++	assoc = offset = sizelimit = encryption = passfd = passwd = NULL;
+
+	progname = argv[0];
+	if ((p = strrchr(progname, '/')) != NULL)
+		progname = p+1;
+
+-	while ((c = getopt_long(argc, argv, "acde:E:fhj:o:p:rsv",
++	while ((c = getopt_long(argc, argv, "acde:E:fhj:o:p:k:rsv",
+				longopts, NULL)) != -1) {
+		switch (c) {
+		case 'a':
+@@ -1108,6 +1260,9 @@
+		case 'p':
+			passfd = optarg;
+			break;
++                case 'k':
++                        passwd = optarg;
++                        break;
+		case 's':
+			showdev = 1;
+			break;
+@@ -1193,7 +1348,12 @@
+		if (passfd && sscanf(passfd, "%d", &pfd) != 1)
+			usage(stderr);
+		do {
+-			res = set_loop(device, file, off, slimit, encryption, pfd, &ro);
++                        if (passwd) {
++                                res = set_loop1(device, file, off, slimit, encryption, passwd, &ro);
++                        } else {
++                                res = set_loop(device, file, off, slimit, encryption, pfd, &ro);
++                        }
++
+			if (res == 2 && find) {
+				if (verbose)
+					printf(_("stolen loop=%s...trying again\n"),
+diff -Naur util-linux/mount/lomount.h util-linux-new/mount/lomount.h
+--- util-linux/mount/lomount.h	2012-11-19 14:27:18.000000000 +0530
++++ util-linux-new/mount/lomount.h	2012-11-20 15:29:45.000000000 +0530
+@@ -3,6 +3,8 @@
+
+ extern int set_loop(const char *, const char *, unsigned long long, unsigned long long,
+		    const char *, int, int *);
++extern int set_loop1(const char *, const char *, unsigned long long, unsigned long long,
++                   const char *, const char *, int *);
+ extern int del_loop(const char *);
+ extern int is_loop_device(const char *);
+ extern int is_loop_autoclear(const char *device);

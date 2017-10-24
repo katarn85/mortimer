@@ -1,0 +1,12 @@
+diff -Naur ath6kl.org/init.c ath6kl/init.c
+--- ath6kl.org/init.c	2012-12-21 11:35:10.000000000 +0800
++++ ath6kl/init.c	2012-12-21 13:50:39.000000000 +0800
+@@ -42,7 +44,7 @@
+ unsigned int ath6kl_vap = ATH6KL_MODULEVAP_DEF_MODE;
+ unsigned int ath6kl_scan_timeout;
+ unsigned int ath6kl_roam_mode = ATH6KL_MODULEROAM_DEFAULT;
+-static unsigned int recovery_enable_mode = ATH6KL_RECOVERY_MODE_NONE;
++static unsigned int recovery_enable_mode = ATH6KL_RECOVERY_MODE_COLD;
+ unsigned int starving_prevention;
+ unsigned int ath6kl_ath0_name;
+ #ifdef CE_SUPPORT

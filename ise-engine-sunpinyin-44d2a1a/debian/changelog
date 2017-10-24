@@ -1,0 +1,39 @@
+ise-engine-sunpinyin (0.0.1321) unstable; urgency=low
+
+  * Fix out of bounds error.
+  * Git: 165.213.149.219:framework/uifw/ise-engine-sunpinyin
+  * Tag: ise-engine-sunpinyin_0.0.1321-1
+
+ -- Li Zhang <li2012.zhang@samsung.com>  Thu, 21 Feb 2013 16:20:00 +0800
+
+ise-engine-sunpinyin (0.0.1223) unstable; urgency=low
+
+  * Showing candidate in reset.
+  * Git: 165.213.149.219:framework/uifw/ise-engine-sunpinyin
+  * Tag: ise-engine-sunpinyin_0.0.1223-1
+
+ -- Li Zhang <li2012.zhang@samsung.com>  Wed, 23 Jan 2013 14:44:00 +0800
+
+ise-engine-sunpinyin (0.0.1116) unstable; urgency=low
+
+  * [N_SE-12861]Always show candidate.
+  * Git: 165.213.149.219:framework/uifw/ise-engine-sunpinyin
+  * Tag: ise-engine-sunpinyin_0.0.1116-1
+
+ -- Li Zhang <li2012.zhang@samsung.com>  Fri, 16 Nov 2012 18:30:00 +0800
+
+ise-engine-sunpinyin (0.0.1108) unstable; urgency=low
+
+  * [N_SE-12903][N_SE-12802]flush to commit the first candidate.
+  * Git: 165.213.149.219:framework/uifw/ise-engine-sunpinyin
+  * Tag: ise-engine-sunpinyin_0.0.1108-1
+
+ -- Li Zhang <li2012.zhang@samsung.com>  Thu, 08 Nov 2012 14:30:00 +0800
+
+ise-engine-sunpinyin (0.0.0910) unstable; urgency=low
+
+  * Initial Release.
+  * Git: 165.213.149.219:framework/uifw/ise-engine-sunpinyin
+  * Tag: ise-engine-sunpinyin_0.0.0910-2
+
+ -- Li Zhang <li2012.zhang@samsung.com>  Mon, 10 Sep 2012 11:30:44 +0800

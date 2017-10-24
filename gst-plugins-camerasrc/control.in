@@ -1,0 +1,11 @@
+Package: gst-plugins-c110-@MACHINE@
+Priority: optional
+Version: @VERSION@
+Section: middleware
+Architecture: @ARCH@
+Maintainer: Haejeong Kim <backto.kim@samsung.com>
+Source: Samsung Linux Platform
+Depends:
+Description: Gstreamer package for multimedia framework middleware package
+
+:

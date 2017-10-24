@@ -1,0 +1,43 @@
+diff --git a/debug/catchsegv.sh b/debug/catchsegv.sh
+index 58427a3..4fbfa14 100755
+--- a/debug/catchsegv.sh
++++ b/debug/catchsegv.sh
+@@ -51,7 +51,7 @@ Written by Ulrich Drepper.'
+   esac
+ fi
+ 
+-segv_output=`mktemp ${TMPDIR:-/tmp}/segv_output.XXXXXX` || exit
++segv_output=`/bin/mktemp ${TMPDIR:-/tmp}/segv_output.XXXXXX` || exit
+ 
+ # Redirect stderr to avoid termination message from shell.
+ (exec 3>&2 2>/dev/null
+@@ -84,15 +84,15 @@ if test -s "$segv_output"; then
+     IFS=$old_IFS
+     ;;
+   esac
+-  sed '/Backtrace/q' "$segv_output"
+-  sed '1,/Backtrace/d' "$segv_output" |
++  /bin/sed '/Backtrace/q' "$segv_output"
++  /bin/sed '1,/Backtrace/d' "$segv_output" |
+   (while read line; do
+-     line=`echo $line | sed "s@^$prog\\(\\[.*\\)@\1@"`
++     line=`echo $line | /bin/sed "s@^$prog\\(\\[.*\\)@\1@"`
+      case "$line" in
+-       \[*) addr=`echo "$line" | sed 's/^\[\(.*\)\]$/\1/'`
+-	    complete=`addr2line -f -e "$prog" $addr 2>/dev/null`
++       \[*) addr=`echo "$line" | /bin/sed 's/^\[\(.*\)\]$/\1/'`
++	    complete=`/usr/bin/addr2line -f -e "$prog" $addr 2>/dev/null`
+ 	    if test $? -eq 0; then
+-	      echo "`echo "$complete"|sed 'N;s/\(.*\)\n\(.*\)/\2(\1)/;'`$line"
++	      echo "`echo "$complete"| /bin/sed 'N;s/\(.*\)\n\(.*\)/\2(\1)/;'`$line"
+ 	    else
+ 	      echo "$line"
+ 	    fi
+@@ -102,6 +102,6 @@ if test -s "$segv_output"; then
+      esac
+    done)
+ fi
+-rm -f "$segv_output"
++/bin/rm -f "$segv_output"
+ 
+ exit $exval

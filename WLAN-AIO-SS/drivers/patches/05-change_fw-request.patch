@@ -1,0 +1,55 @@
+diff -Naur ath6kl.ori/init.c ath6kl/init.c
+--- ath6kl.ori/init.c	2011-12-12 16:01:20.219679013 +0800
++++ ath6kl/init.c	2011-12-12 16:00:20.099679007 +0800
+@@ -972,9 +972,29 @@
+ 	}
+ }
+ 
++#include "fw_bdata.h"
++#include "fw_ram.h"
++
+ static int ath6kl_get_fw(struct ath6kl *ar, const char *filename,
+ 			 u8 **fw, size_t *fw_len)
+ {
++#if 1 
++	if (strncmp(filename, AR6004_REV2_BOARD_DATA_FILE, strlen(AR6004_REV2_BOARD_DATA_FILE)) == 0) {
++		*fw_len = sizeof(fw_bdata);
++		*fw = fw_bdata;
++	} else if (strncmp(filename, AR6004_REV2_FIRMWARE_FILE, strlen(AR6004_REV2_FIRMWARE_FILE)) == 0) {
++		*fw_len = sizeof(fw_ram);
++		*fw = fw_ram;
++	} else {
++		ath6kl_err("ath6kl: Get firmware %s fail!!\n", filename);
++		
++		return -1;
++	}
++
++	printk("ath6kl: Get firmware %s !!\n", filename);
++
++	return 0;
++#else
+ 	const struct firmware *fw_entry;
+ 	int ret;
+ 
+@@ -991,6 +1011,7 @@
+ 	release_firmware(fw_entry);
+ 
+ 	return ret;
++#endif
+ }
+ 
+ static int ath6kl_fetch_board_file(struct ath6kl *ar)
+@@ -1865,10 +1886,10 @@
+ 	ath6kl_bmi_cleanup(ar);
+ 	ath6kl_cleanup_amsdu_rxbufs(ar);
+ 
+-	kfree(ar->fw_board);
+-	kfree(ar->fw_otp);
+-	kfree(ar->fw);
+-	kfree(ar->fw_patch);
++//	kfree(ar->fw_board);
++//	kfree(ar->fw_otp);
++//	kfree(ar->fw);
++//	kfree(ar->fw_patch);
+ }
+ #endif

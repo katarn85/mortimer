@@ -1,0 +1,12 @@
+diff --git a/Makefile b/Makefile
+index 46352e6..424b947 100644
+--- a/Makefile
++++ b/Makefile
+@@ -32,6 +32,7 @@ DEFINES += -D_GNU_SOURCE
+ CCOPTS = -O2
+ WFLAGS := -g -Wall -Wstrict-prototypes -Werror -Wmissing-prototypes
+ WFLAGS += -Wmissing-declarations -Wold-style-definition
++WFLAGS += -Wno-sizeof-pointer-memaccess
+
+ CFLAGS = $(WFLAGS) $(CCOPTS) -I../include $(DEFINES)
+ YACCFLAGS = -d -t -v

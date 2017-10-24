@@ -1,0 +1,16 @@
+<manifest>
+	<request>
+		<domain name="_" />
+	</request>
+	<assign>
+	    <filesystem path="/usr/bin/alsaloop" label="_" exec_label="none"/>
+	    <filesystem path="/usr/bin/alsaucm" label="_" exec_label="none"/>
+	    <filesystem path="/usr/bin/amixer" label="_" exec_label="none"/>
+	    <filesystem path="/usr/bin/aplay" label="_" exec_label="none"/>
+	    <filesystem path="/usr/bin/iecset" label="_" exec_label="none"/>
+	    <filesystem path="/usr/bin/speaker-test" label="_" exec_label="none"/>
+	    <filesystem path="/usr/sbin/alsaconf" label="_" exec_label="none"/>
+	    <filesystem path="/usr/sbin/alsactl" label="_" exec_label="none"/>
+	</assign>
+</manifest>
+

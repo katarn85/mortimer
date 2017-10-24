@@ -1,0 +1,15 @@
+* Wed Dec 18 2013 Li Zhang <li2012.zhang@samsung.com> REBASE@5785a74
+- Use sqlite3_mprintf() fuction instead of sprintf
+
+* Tue Dec 17 2013 Li Zhang <li2012.zhang@samsung.com> REBASE@0f2a1fb
+- Set maxlength of preedit string to 62
+- Fix out of bounds error
+- Remove vulnerable codes related to system() function
+- Fill in license field in spec file
+
+* Thu Jan 31 2013 Li Zhang <li2012.zhang@samsung.com> accepted/tizen_2.0/20130123.093018@a110cbf
+- Always show candidate
+- [N_SE-12903][N_SE-12802]flush to commit the first candidate.
+- Modifed to install LICENSE information
+- Initial Release
+

@@ -1,0 +1,39 @@
+Source: gst-plugins-bad0.10
+Section: libs
+Priority: extra
+Maintainer: Seungbae Shin <seungbae.shin@samsung.com>, JongHyuk Choi <jhchoi.choi@samsung.com>
+Uploaders: Naveen Ch <naveen.ch@samsung.com>, YoungHwan Ahn <younghwan_.an@samsung.com>, Jeongmo Yang <jm80.yang@samsung.com>, Hyunseok Lee <hs7388.lee@samsung.com>
+Build-Depends: debhelper (>= 5),
+               libglib2.0-dev (>= 2.16),
+               liboil0.3-dev (>= 0.3.8),
+               libgstreamer0.10-dev (>= 0.10.25),
+               libgstreamer-plugins-base0.10-dev (>= 0.10.25),
+               libfaac-dev,
+               libvpx0.9-dev
+Standards-Version: 3.8.1
+
+Package: gstreamer0.10-plugins-bad
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+         libglib2.0-0 (>= 2.16),
+         liboil0.3 (>= 0.3.8),
+         libgstreamer0.10-0 (>= 0.10.25),
+         libgstreamer-plugins-base0.10-0 (>= 0.10.25)
+Description: GStreamer plugins from the "bad" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ GStreamer Bad Plug-ins is a set of plug-ins that aren't up to par compared
+ to the rest. They might be close to being good quality, but they're missing
+ something - be it a good code review, some documentation, a set of tests, a
+ real live maintainer, or some actual wide use.
+
+Package: gstreamer0.10-plugins-bad-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer0.10-plugins-bad (= ${Source-Version})
+Description:  GStreamer plugins from the "bad" set (unstripped)

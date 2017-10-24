@@ -1,0 +1,99 @@
+diff -Naur cfg80211_org/mlme.c cfg80211/mlme.c
+--- cfg80211_org/mlme.c	2014-02-12 14:17:52.000000000 +0800
++++ cfg80211/mlme.c	2014-02-11 15:53:37.000000000 +0800
+@@ -1051,6 +1051,19 @@
+ 
+ 	return result;
+ }
++
++EXPORT_SYMBOL(cfg80211_notify_push_button);
++
++void cfg80211_notify_push_button(struct net_device *dev)
++{
++	struct wireless_dev *wdev = dev->ieee80211_ptr;
++	struct wiphy *wiphy = wdev->wiphy;
++	struct cfg80211_registered_device *rdev = wiphy_to_dev(wiphy);
++
++	/* Indicate Pushbutton pressed */
++	nl80211_notify_push_button(rdev, dev);
++}
++
+ EXPORT_SYMBOL(cfg80211_rx_mgmt);
+ 
+ #ifdef ACL_SUPPORT
+diff -Naur cfg80211_org/nl80211.c cfg80211/nl80211.c
+--- cfg80211_org/nl80211.c	2014-02-12 14:17:52.000000000 +0800
++++ cfg80211/nl80211.c	2014-02-11 15:59:35.000000000 +0800
+@@ -7682,6 +7682,34 @@
+ 	return -ENOBUFS;
+ }
+ 
++void nl80211_notify_push_button(struct cfg80211_registered_device *rdev,
++				 struct net_device *netdev)
++{
++	struct sk_buff *msg;
++	void *hdr;
++
++	msg = nlmsg_new(NLMSG_DEFAULT_SIZE, GFP_KERNEL);
++	if (!msg)
++		return;
++
++	hdr = nl80211hdr_put(msg, 0, 0, 0, NL80211_CMD_PUSH_BUTTON_NOTIFY);
++	if (!hdr) {
++		nlmsg_free(msg);
++		return;
++	}
++
++	NLA_PUT_U32(msg, NL80211_ATTR_WIPHY, rdev->wiphy_idx);
++	NLA_PUT_U32(msg, NL80211_ATTR_IFINDEX, netdev->ifindex);
++	genlmsg_end(msg, hdr);
++
++	genlmsg_multicast(msg, 0, nl80211_mlme_mcgrp.id, GFP_KERNEL);
++	return;
++
++ nla_put_failure:
++	genlmsg_cancel(msg, hdr);
++	nlmsg_free(msg);
++}
++
+ void nl80211_send_mgmt_tx_status(struct cfg80211_registered_device *rdev,
+ 				 struct net_device *netdev, u64 cookie,
+ 				 const u8 *buf, size_t len, bool ack,
+diff -Naur cfg80211_org/nl80211.h cfg80211/nl80211.h
+--- cfg80211_org/nl80211.h	2014-02-12 14:17:52.000000000 +0800
++++ cfg80211/nl80211.h	2014-02-11 15:54:00.000000000 +0800
+@@ -99,6 +99,10 @@
+ int nl80211_send_mgmt(struct cfg80211_registered_device *rdev,
+ 		      struct net_device *netdev, u32 nlpid, int freq,
+ 		      const u8 *buf, size_t len, gfp_t gfp);
++
++void nl80211_notify_push_button(struct cfg80211_registered_device *rdev,
++		 struct net_device *netdev);
++
+ void nl80211_send_mgmt_tx_status(struct cfg80211_registered_device *rdev,
+ 				 struct net_device *netdev, u64 cookie,
+ 				 const u8 *buf, size_t len, bool ack,
+diff -Naur include_local_org/linux/nl80211.h include_local/linux/nl80211.h
+--- include_local_org/linux/nl80211.h	2014-02-12 14:17:52.000000000 +0800
++++ include_local/linux/nl80211.h	2014-02-11 15:37:20.000000000 +0800
+@@ -731,7 +731,7 @@
+ 	NL80211_CMD_BTCOEX_BT_VENDOR,
+ 	NL80211_CMD_BTCOEX,
+ 	NL80211_CMD_CSA_DONE_INFO,
+-
++	NL80211_CMD_PUSH_BUTTON_NOTIFY=253, /* to assign a big enough number to avoid duplicate */
+ 	/* add new commands above here */
+ 
+ 	/* used to define NL80211_CMD_MAX below */
+diff -Naur include_local_org/net/cfg80211.h include_local/net/cfg80211.h
+--- include_local_org/net/cfg80211.h	2014-02-12 14:17:52.000000000 +0800
++++ include_local/net/cfg80211.h	2014-02-11 15:38:11.000000000 +0800
+@@ -3264,6 +3264,8 @@
+  */
+ bool cfg80211_rx_mgmt(struct net_device *dev, int freq, const u8 *buf,
+ 		      size_t len, gfp_t gfp);
++		      
++void cfg80211_notify_push_button(struct net_device *dev);
+ 
+ #ifdef ACL_SUPPORT
+ bool cfg80211_rx_acl_reject_info(struct net_device *dev, const u8 *buf,

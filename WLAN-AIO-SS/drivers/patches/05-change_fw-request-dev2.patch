@@ -1,0 +1,61 @@
+diff -Naur ath6kl.ori/init.c ath6kl/init.c
+--- ath6kl.ori/init.c	2011-12-12 16:01:20.219679013 +0800
++++ ath6kl/init.c	2011-12-12 16:00:20.099679007 +0800
+@@ -784,10 +784,10 @@
+ 
+ 	ath6kl_debug_cleanup(ar);
+ 
+-	kfree(ar->fw_board);
+-	kfree(ar->fw_otp);
+-	kfree(ar->fw);
+-	kfree(ar->fw_patch);
++	//kfree(ar->fw_board);
++	//kfree(ar->fw_otp);
++	//kfree(ar->fw);
++	//kfree(ar->fw_patch);
+ 	kfree(ar->fw_testscript);
+ 	kfree(ar->fw_softmac);
+ 
+@@ -796,10 +796,34 @@
+ 	rttm_free();
+ }
+ 
++#include "fw_bdata.h"
++#include "fw_ram.h"
++
+ /* firmware upload */
+ static int ath6kl_get_fw(struct ath6kl *ar, const char *filename,
+ 			 u8 **fw, size_t *fw_len)
+ {
++#if 1
++      char tmpfilename[100];
++
++	snprintf(tmpfilename, sizeof(tmpfilename), "%s/%s",
++		 ar->hw.fw.dir, ar->hw.fw.fw);
++
++	if (strncmp(filename, AR6004_HW_1_3_BOARD_DATA_FILE, strlen(AR6004_HW_1_3_BOARD_DATA_FILE)) == 0) {
++		*fw_len = sizeof(fw_bdata);
++		*fw = fw_bdata;
++	} else if (strncmp(filename, tmpfilename, strlen(tmpfilename)) == 0) {
++		*fw_len = sizeof(fw_ram);
++		*fw = fw_ram;
++	} else {
++		ath6kl_err("ath6kl: Get firmware %s fail!!\n", filename);
++		
++		return -1;
++	}
++	printk("ath6kl: Get firmware %s !!\n", filename);
++
++	return 0;
++#else
+ 	const struct firmware *fw_entry;
+ 	int ret;
+ 
+@@ -816,6 +840,7 @@
+ 	release_firmware(fw_entry);
+ 
+ 	return ret;
++#endif
+ }
+ 
+ #ifdef CONFIG_OF

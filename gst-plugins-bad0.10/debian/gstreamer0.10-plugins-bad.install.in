@@ -1,0 +1,3 @@
+@PREFIX@/lib/gstreamer-0.10/libgst*.so
+@PREFIX@/lib/libgst*.so
+@PREFIX@/lib/libgst*.so.*

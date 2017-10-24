@@ -1,0 +1,579 @@
+# Elementary translation file for Korean languages.
+# This file is distributed under the same license as the Elementary package.
+# Daniel Juyung Seo <seojuyung2@gmail.com>, 2011.
+#
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2011-02-22 09:09-0800\n"
+"Last-Translator: Shilpa Singh <shilpa.singh@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "아이콘"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "선택 해제하였습니다."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "팝업 메뉴입니다"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "팝업 메뉴가 열렸습니다. 닫으려면 팝업 메뉴를 두번 누르세요."
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "팝업 메뉴"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "메뉴를 닫으려면 두 번 누르세요."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr "위로"
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr "홈"
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "취소"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr "확인"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "그 외 %d개 더"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "수신인을 편집하려면 두 번 누르세요."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "편집하려면 두 번 누르세요."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "제목"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "팝업 제목입니다"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "팝업의 본문입니다"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "화면 가운데에 팝업이 열렸습니다. 닫으려면 팝업을 두번 누르세요."
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "버튼"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr "%Y년 %B"
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "선택됨"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "선택되지 않았습니다"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "체크박스"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "선택"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "선택 해제"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "켜기 및 끄기 버튼입니다."
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "켜짐"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "꺼짐"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d퍼센트"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "적용하려면 누르세요."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "색상 조절 슬라이더입니다"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "채도 조절 슬라이더입니다"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "밝기 조절 슬라이더입니다"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "색상 선택"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "흰색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "노란색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "산호"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "토마토색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "빨간색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "진한 분홍색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "자두색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "파란 보라색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "라임 녹색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "암녹색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "하늘색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "감청색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "진한 파란색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "암회색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "검은색"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "사용자 설정 색상 팔레트"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "복사"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "잘라내기"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "선택"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "붙여넣기"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "편집창"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "빠른 스크롤바"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "컨텐츠로 이동하려면 두 번 누르세요."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "서랍 메뉴가 열려 있습니다. 닫으려면 두 번 누르세요."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "라디오 버튼"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "의"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "위치를 조절하려면 위나 아래로 플릭하세요."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "슬라이더"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "선택"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "선택됨"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "선택됨"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:2096
+msgid "Toolbar Item"
+msgstr "탭"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "오전"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "오후"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "설정"
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "번역"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "위나 아래로 드래그하여 %s을(를) 조절하거나 두 번 눌러 키보드를 여세요."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "변경하려면 두 번 누르세요."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "날짜 설정"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "시간 설정"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d일"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y년"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H시"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I시"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M분"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "세로 보기"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "가로 보기"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "스크롤 가속도를 실행하려면 두 번 누르세요."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "편집 중입니다."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "위치를 조절하려면 위나 아래로 움직이세요."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d자 입력하였습니다."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "상황별 팝업"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "팝업을 닫으려면 두 번 누르세요."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "화면 중앙 팝업"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "닫으려면 두 번 누르세요."
+
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "서랍 메뉴가 열렸습니다."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "서랍 메뉴를 닫으려면 두 번 누르세요."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "텍스트 앞에 커서"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "텍스트 뒤에 커서"
+
+#: src/modules/datetime_input_button/datetime_input_button.c
+msgid "tap to change"
+msgstr "모드를 변경하려면 누르세요."
+
+#: src/modules/datetime_input_button/datetime_input_button.c
+msgid "date"
+msgstr "날짜"
+
+#: src/modules/datetime_input_button/datetime_input_button.c
+msgid "hour"
+msgstr "시간"
+
+#: src/modules/datetime_input_button/datetime_input_button.c
+msgid "minute"
+msgstr "분"
+
+#: src/modules/datetime_input_button/datetime_input_button.c
+msgid "month"
+msgstr "월"
+
+#: src/modules/datetime_input_button/datetime_input_button.c
+msgid "year"
+msgstr "년"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%2$d 중에 %1$d"
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "일 낮추기"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "시간 낮추기"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "분 낮추기"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "월 낮추기"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "연도 낮추기"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "일 높이기"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "시간 높이기"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "분 높이기"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "월 높이기"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "연도 높이기"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "변경하려면 누르세요."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "모두 선택"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "복사"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "선택"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "잘라내기"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "붙여넣기"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "클립보드"
+

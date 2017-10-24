@@ -1,0 +1,45 @@
+Source: gst-plugins-good0.10
+Section: libs
+Priority: optional
+Maintainer: Shin Seung Bae <seungbae.shin@samsung.com>, JongHyuk Choi <jhchoi.choi@samsung.com>
+Uploaders: younghwan ahn <younghwan_.an@samsung.com>, Naveen Ch <naveen.ch@samsung.com>, Hyunseok Lee <hs7388.lee@samsung.com>, Jeongmo Yang <jm80.yang@samsung.com>
+Build-Depends: libglib2.0-dev (>= 2.16),
+               liboil0.3-dev (>= 0.3.8),
+               libgstreamer0.10-dev (>= 0.10.25),
+               libgstreamer-plugins-base0.10-dev (>= 0.10.25),
+               libjpeg8-dev,
+               libpng12-dev,
+               libsoup2.4-dev,
+               libpulse-dev,
+               libbz2-dev
+Standards-Version: 3.8.0
+
+Package: gstreamer0.10-plugins-good
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, 
+         libglib2.0-0 (>= 2.16),
+         liboil0.3 (>= 0.3.8),
+         libgstreamer0.10-0 (>= 0.10.25),
+         libgstreamer-plugins-base0.10-0 (>= 0.10.25),
+         libjpeg8,
+         libpng12-0,
+         libsoup2.4,
+         libpulse0,
+         libbz2-1.0
+Description: GStreamer plugins from the "good" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the GStreamer plugins from the "good" set, a set
+ of good-quality plug-ins under the LGPL license.
+
+Package: gstreamer0.10-plugins-good-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer0.10-plugins-good (= ${Source-Version})
+Description: GStreamer plugins from the "good" set (unstripped)

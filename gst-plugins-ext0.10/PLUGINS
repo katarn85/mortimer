@@ -1,0 +1,15 @@
+# This file is descriptions of the plugins which are included in gstreamer0.10-plugins-ext.
+# If any plugin is added to the gstreamer0.10-plugins-ext, that shoud be described in this file.
+#
+#
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PLUGIN			Registered Elements								Description
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+avsysaudiosrc		avsysaudiosrc							AV system audio source plugin
+avsyssink		avsysaudiosink, avsysmemsink					AV system audio sink plugin
+drmsrc			drmsrc								Plugin to read data from standad/DRM file
+encodebin		encodebin							Extension encoder bin plugin
+evasimagesink		evasimagesink							Evas video sink plugin
+toggle			toggle								Base transform plugin
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

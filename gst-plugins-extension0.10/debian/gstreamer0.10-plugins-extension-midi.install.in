@@ -1,0 +1,2 @@
+@PREFIX@/lib/libmobileBAE_GST.so*
+@PREFIX@/lib/gstreamer-0.10/libgstmidiparse.so

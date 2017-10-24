@@ -1,0 +1,6 @@
+@PREFIX@/lib/gstreamer-0.10/libgstqueuereader.so
+@PREFIX@/lib/gstreamer-0.10/libgstvideomute.so
+@PREFIX@/lib/gstreamer-0.10/libgstqueuewriter.so
+@PREFIX@/lib/gstreamer-0.10/libgstimagereader.so
+@PREFIX@/lib/gstreamer-0.10/libgstimagewriter.so
+@PREFIX@/lib/gstreamer-0.10/libgstmshttpsrc.so

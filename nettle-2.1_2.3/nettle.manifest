@@ -1,0 +1,10 @@
+<manifest>
+	<request>
+		<domain name="_"/>
+	</request>
+	<assign>
+		<filesystem path="/usr/bin/nettle-lfib-stream" exec_label="none" />
+		<filesystem path="/usr/bin/pkcs1-conv" exec_label="none" />
+		<filesystem path="/usr/bin/sexp-conv" exec_label="none" />
+	</assign>
+</manifest>

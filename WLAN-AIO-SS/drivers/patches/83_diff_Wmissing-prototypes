@@ -1,0 +1,106 @@
+diff -U 5 -p -r WLAN-AIO/drivers_old/ath6kl/cfg80211.c WLAN-AIO/drivers_new//ath6kl/cfg80211.c
+--- WLAN-AIO/drivers_old/ath6kl/cfg80211.c	2012-11-28 18:46:56.000000000 +0800
++++ WLAN-AIO/drivers_new//ath6kl/cfg80211.c	2012-11-28 19:41:44.000000000 +0800
+@@ -5357,7 +5357,7 @@
+ }
+ #endif
+ 
+-int	ath6kl_set_gtk_rekey_offload(struct wiphy *wiphy,
++static int	ath6kl_set_gtk_rekey_offload(struct wiphy *wiphy,
+ 		struct net_device *dev, struct cfg80211_gtk_rekey_data *data)
+ {
+ 	int ret = 0;
+diff -U 5 -p -r WLAN-AIO/drivers_old/ath6kl/htc_pipe.c WLAN-AIO/drivers_new//ath6kl/htc_pipe.c
+--- WLAN-AIO/drivers_old/ath6kl/htc_pipe.c	2012-11-28 18:46:56.000000000 +0800
++++ WLAN-AIO/drivers_new//ath6kl/htc_pipe.c	2012-11-28 19:44:31.000000000 +0800
+@@ -1457,7 +1457,7 @@
+ 	do_recv_completion(ep, &container);
+ }
+ 
+-struct sk_buff *rx_sg_to_single_netbuf(struct htc_target *target)
++static struct sk_buff *rx_sg_to_single_netbuf(struct htc_target *target)
+ {
+ 	struct sk_buff *skb;
+ 	u8 *anbdata;
+@@ -2048,7 +2048,7 @@
+ }
+ 
+ /* htc export functions */
+-void *ath6kl_htc_pipe_create(struct ath6kl *ar)
++static void *ath6kl_htc_pipe_create(struct ath6kl *ar)
+ {
+ 	int status = 0;
+ 	struct ath6kl_hif_pipe_callbacks htc_callbacks;
+@@ -2371,7 +2371,7 @@
+ 	return status;
+ }
+ 
+-void ath6kl_htc_pipe_indicate_activity_change(
++static void ath6kl_htc_pipe_indicate_activity_change(
+ 				struct htc_target *handle,
+ 				enum htc_endpoint_id Endpoint,
+ 				bool Active)
+@@ -2403,7 +2403,7 @@
+ 		spin_unlock_bh(&target->rx_lock);
+ 	}
+ }
+-
++#if 0
+ void ath6kl_htc_set_credit_dist(struct htc_target *target,
+ 			 struct ath6kl_htc_credit_info *cred_info,
+ 			 u16 svc_pri_order[], int len)
+@@ -2413,14 +2413,14 @@
+ 	 * based flow control mechanism
+ 	 */
+ }
+-
++#endif
+ static int ath6kl_htc_pipe_credit_setup(struct htc_target *target,
+ 			struct ath6kl_htc_credit_info *cred_info)
+ {
+ 	return 0;
+ }
+ 
+-int ath6kl_htc_pipe_stat(struct htc_target *target,
++static int ath6kl_htc_pipe_stat(struct htc_target *target,
+ 						 u8 *buf, int buf_len)
+ {
+ 	struct htc_endpoint *ep;
+@@ -2529,12 +2529,12 @@
+ 	return len;
+ }
+ 
+-int ath6kl_htc_pipe_stop_netif_queue_full(struct htc_target *target)
++static int ath6kl_htc_pipe_stop_netif_queue_full(struct htc_target *target)
+ {
+ 	return 1;
+ }
+ 
+-int ath6kl_htc_pipe_wmm_schedule_change(struct htc_target *target,
++static int ath6kl_htc_pipe_wmm_schedule_change(struct htc_target *target,
+ 		bool change)
+ {
+ 	struct ath6kl *ar = target->dev->ar;
+@@ -2545,7 +2545,7 @@
+ 		return 0;
+ }
+ 
+-int ath6kl_htc_pipe_change_credit_bypass(struct htc_target *target,
++static int ath6kl_htc_pipe_change_credit_bypass(struct htc_target *target,
+ 		u8 traffic_class)
+ {
+ 	return 0;
+diff -U 5 -p -r WLAN-AIO/drivers_old/cfg80211/core.h WLAN-AIO/drivers_new//cfg80211/core.h
+--- WLAN-AIO/drivers_old/cfg80211/core.h	2012-11-28 18:47:44.000000000 +0800
++++ WLAN-AIO/drivers_new//cfg80211/core.h	2012-11-28 19:45:44.000000000 +0800
+@@ -456,6 +456,10 @@
+ int cfg80211_validate_beacon_int(struct cfg80211_registered_device *rdev,
+ 				 u32 beacon_int);
+ 
++u32 ieee802_11_parse_elems_crc(u8 *start, size_t len,
++                               struct ieee802_11_elems *elems,
++                               u64 filter, u32 crc);
++
+ #ifdef CONFIG_CFG80211_DEVELOPER_WARNINGS
+ #define CFG80211_DEV_WARN_ON(cond)	WARN_ON(cond)
+ #else

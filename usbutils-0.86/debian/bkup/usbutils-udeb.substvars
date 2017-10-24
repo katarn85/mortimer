@@ -1,0 +1,1 @@
+shlibs:Depends=libusb-0.1-udeb (>= 2:0.1.12), zlib1g

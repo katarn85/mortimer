@@ -1,0 +1,568 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2013-09-26 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Ikona"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Onemogočeno."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Priročno pojavno okno"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Priročno pojavno okno je odprto. Dvakrat pritisnite, da ga zaprete."
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Meni v pojavnem oknu"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Dvakrat pritisnite, da zaprete meni."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr ""
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "in še %d"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Dvakrat pritisnite, da uredite prejemnike."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Dvakrat pritisnite za urejanje."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Naslov"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Glava pojavnega okna"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Besedilo v telesu pojavnega okna"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Osrednje pojavno okno je odprto. Dvakrat pritisnite, da ga zaprete."
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Gumb"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr ""
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Izbrano"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Ni izbrano"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Polje za potrditev"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "Potrdi"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "Počisti"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Gumb za vklop/izklop"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Vključeno"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Izključeno"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d odstotkov"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Pritisnite, da uveljavite."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Drsnik za upravljanje barv"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Drsnik za upravljanje nasičenja"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Drsnik za upravljanje svetlosti"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Izbirnik barv"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Bela"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Rumena"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Korala"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Paradižnikova"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Rdeče"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Živo roza"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Temno vijoličasta"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Modrovijolična"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Limetino zelena"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Gozdno zelena"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Nebesno modra"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Kraljevo modra"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Temno modra"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Temno siva"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Črna"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Prilagojena barvna paleta"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Izreži"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Izberi"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Prilepi"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Uredi polje"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Vrstica za hitro drsenje"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "Dvakrat pritisnite, da premaknete vsebino."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Predal je odprt. Dvakrat pritisnite, da ga zaprete."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Gumb za radio"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "od"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Povlecite navzgor ali navzdol, da prilagodite položaj."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Drsnik"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Izberi"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Izbrano"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Izbrano"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Zavihek"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Nastavi"
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Prevedi"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "Povlecite navzgor in navzdol, da prilagodite %s ali dvakrat pritisnite, da odprete tipkovnico."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Dvakrat pritisnite, da spremenite."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Nastavi datum"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Nastavitev časa"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Pokončni način"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Ležeči način"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Dvakrat pritisnite, da omogočite hitro drsenje."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Urejanje."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Povlecite navzgor ali navzdol, da prilagodite položaj."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "Število znakov: %d."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Kontekstno pojavno okno"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Dvakrat pritisnite, da zaprete pojavno okno."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Osrednje pojavno okno"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Dvakrat pritisnite, da ga zaprete."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Predal je odprt."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Dvakrat pritisnite, da zaprete predalni meni."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Kazalec na začetku besedila"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Kazalec na koncu besedila"
+
+msgid "tap to change"
+msgstr "Pritisnite, da spremenite načina."
+
+msgid "date"
+msgstr "Datum"
+
+msgid "hour"
+msgstr "ura"
+
+msgid "minute"
+msgstr "minuta"
+
+msgid "month"
+msgstr "mesec"
+
+msgid "year"
+msgstr "leto"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d od %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Zmanjšaj dan"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Zmanjšaj uro"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Zmanjšaj minute"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Zmanjšaj mesec"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Zmanjšaj leto"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Povečaj dan"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Povečaj uro"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Povečaj minute"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Povečaj mesec"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Povečaj leto"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Pritisnite za spremembo."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Izberi vse"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopiraj"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Izberi"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Izreži"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Prilepi"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Odložišče"
+

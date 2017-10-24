@@ -1,0 +1,13 @@
+--- ath6kl.ori/core.h	2012-11-19 16:03:07.000000000 +0800
++++ ath6kl/core.h	2012-11-19 16:02:02.000000000 +0800
+@@ -17,6 +17,10 @@
+ #ifndef CORE_H
+ #define CORE_H
+ 
++#ifdef CONFIG_ANDROID
++#undef CONFIG_ANDROID
++#endif
++
+ #include <linux/etherdevice.h>
+ #include <linux/rtnetlink.h>
+ #include <linux/firmware.h>

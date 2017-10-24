@@ -1,0 +1,4 @@
+@PREFIX@/lib/libSamsung*.so     
+@PREFIX@/lib/libarkamys_lib_HDSX20_i7800_LIMO.so
+@PREFIX@/lib/gstreamer-0.10/libgstdnse.so
+usr/etc/*.ini

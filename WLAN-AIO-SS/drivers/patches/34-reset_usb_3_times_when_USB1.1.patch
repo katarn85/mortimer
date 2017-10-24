@@ -1,0 +1,51 @@
+diff -Naur ath6kl.orig/usb.c ath6kl/usb.c
+--- ath6kl.orig/usb.c	2013-01-08 15:18:59.000000000 +0800
++++ ath6kl/usb.c	2013-01-20 22:36:08.000000000 +0800
+@@ -1922,7 +1922,8 @@
+ 	struct ath6kl *ar;
+ 	struct ath6kl_usb *ar_usb = NULL;
+ 	int vendor_id, product_id;
+-	int ret = 0;
++	int ret = 0, usb_1_1_host = 0;
++	static int reset_cnt = 0;
+ 
+ 	usb_get_dev(dev);
+ 
+@@ -1937,10 +1938,13 @@
+ 			   interface->cur_altsetting->desc.bInterfaceNumber);
+ 
+ 
+-	if (dev->speed == USB_SPEED_HIGH)
++	if (dev->speed == USB_SPEED_HIGH) {
+ 		ath6kl_dbg(ATH6KL_DBG_USB, "USB 2.0 Host\n");
+-	else
++	} else {
+ 		ath6kl_dbg(ATH6KL_DBG_USB, "USB 1.1 Host\n");
++		ath6kl_err("Mck doesn't support USB 1.1 Host, do USB reset\n");
++		usb_1_1_host = 1;
++	}
+ 
+ 	ar_usb = ath6kl_usb_create(interface);
+ 
+@@ -1966,10 +1970,18 @@
+ 
+ 	ath6kl_htc_pipe_attach(ar);
+ 	ret = ath6kl_core_init(ar);
+-	if (ret) {
+-		ath6kl_err("Failed to init ath6kl core: %d\n", ret);
++	if ((ret) || (usb_1_1_host)) {
++		if (ret)
++			ath6kl_err("Failed to init ath6kl core: %d\n", ret);
++		if (reset_cnt < 3) {
++			reset_cnt++;
++			ath6kl_err("start USB reset: reset_cnt=%d\n", reset_cnt);
++			ath6kl_reset_device(ar, ar->target_type, true, true);
++		}
++		if (ret)	 
+ 		goto err_core_free;
+-	}
++	} else
++		reset_cnt = 0;
+ 
+ 	return ret;
+ 

@@ -1,0 +1,13 @@
+usr/lib/libgstaudio-0.10.so*
+usr/lib/libgstapp-0.10.so*
+usr/lib/libgstpbutils-0.10.so*
+usr/lib/libgstcdda-0.10.so*
+usr/lib/libgstfft-0.10.so*
+usr/lib/libgstinterfaces-0.10.so*
+usr/lib/libgstnetbuffer-0.10.so*
+usr/lib/libgstriff-0.10.so*
+usr/lib/libgstrtp-0.10.so*
+usr/lib/libgstrtsp-0.10.so*
+usr/lib/libgstsdp-0.10.so*
+usr/lib/libgsttag-0.10.so*
+usr/lib/libgstvideo-0.10.so*

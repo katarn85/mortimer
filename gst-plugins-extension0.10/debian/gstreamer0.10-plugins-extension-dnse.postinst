@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ ${USER} = "root" ]
+then
+	/bin/chown root:root /usr/etc/sbinfo.ini
+	/bin/chown root:root /usr/etc/vbinfo.ini
+fi
+
+/bin/chmod 644 /usr/etc/sbinfo.ini
+/bin/chmod 644 /usr/etc/vbinfo.ini

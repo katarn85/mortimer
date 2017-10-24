@@ -1,0 +1,2 @@
+@PREFIX@/lib/gstreamer-0.10/libgstsecrtspsrc.so
+@PREFIX@/lib/gstreamer-0.10/libgstsechttpsrc.so

@@ -1,0 +1,38 @@
+--- cfg80211/reg.c	2012-11-30 10:07:20.000000000 +0800
++++ cfg80211/reg.c_patch	2012-12-10 11:43:09.162729351 +0800
+@@ -119,7 +119,7 @@
+ 		REG_RULE(2412-10, 2462+10, 40, 6, 20, 0),
+ 		/* IEEE 802.11b/g, channels 12..13. No HT40
+ 		 * channel fits here. */
+-		REG_RULE(2467-10, 2472+10, 20, 6, 20,
++		REG_RULE(2467-10, 2477+10, 20, 6, 20,
+ 			NL80211_RRF_PASSIVE_SCAN |
+ 			NL80211_RRF_NO_IBSS),
+ 		/* IEEE 802.11 channel 14 - Only JP enables
+@@ -136,7 +136,7 @@
+ 		/* NB: 5260 MHz - 5700 MHz requies DFS */
+ 
+ 		/* IEEE 802.11a, channel 149..165 */
+-		REG_RULE(5745-10, 5825+10, 40, 6, 20,
++		REG_RULE(5745-10, 5865+10, 40, 6, 20,
+ 			NL80211_RRF_PASSIVE_SCAN |
+ 			NL80211_RRF_NO_IBSS),
+ 	}
+--- ath6kl/init.c	2012-12-10 11:41:42.666732481 +0800
++++ ath6kl/init.c_patch	2012-12-10 11:45:05.942726801 +0800
+@@ -200,12 +200,12 @@
+ 	{
+ 		.id				= AR6004_HW_1_3_VERSION,
+ 		.name				= "ar6004 hw 1.3",
+-		.dataset_patch_addr		= 0x437860,
++		.dataset_patch_addr		= 0x4372d8,
+ 		.app_load_addr			= 0x1234,
+ 		.app_load_ext_addr		= 0x9a7000,
+ 		.board_ext_data_addr		= 0x437000,
+-		.reserved_ram_size		= 7168,
+-		.board_addr			= 0x436400,
++		.reserved_ram_size		= 7680,
++		.board_addr			= 0x436200,
+ 		.testscript_addr		= 0x434c00,
+ 		.flags				= ATH6KL_HW_TGT_ALIGN_PADDING |
+ 						ATH6KL_HW_SINGLE_PIPE_SCHED,

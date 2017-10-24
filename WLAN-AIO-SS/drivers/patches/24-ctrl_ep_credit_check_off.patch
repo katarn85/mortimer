@@ -1,0 +1,12 @@
+diff -Naur ath6kl.orig/htc_pipe.c ath6kl/htc_pipe.c
+--- ath6kl.orig/htc_pipe.c	2013-01-08 15:18:59.000000000 +0800
++++ ath6kl/htc_pipe.c	2013-01-20 23:56:41.000000000 +0800
+@@ -1728,6 +1728,8 @@
+ 		INIT_LIST_HEAD(&ep->rx_bufq);
+ 		ep->target = target;
+ 		ep->tx_credit_flow_enabled = (bool) 1;
++		if (i == ENDPOINT_1)
++			ep->tx_credit_flow_enabled = 0;
+ 	}
+ }
+ 

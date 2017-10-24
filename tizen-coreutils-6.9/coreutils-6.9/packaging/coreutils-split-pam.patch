@@ -1,0 +1,30 @@
+diff -uNrp -x '*~' coreutils-5.97-orig/src/su.c coreutils-5.97/src/su.c
+--- coreutils-5.97-orig/src/su.c	2006-07-13 12:14:40.000000000 +0100
++++ coreutils-5.97/src/su.c	2006-07-13 12:24:33.000000000 +0100
+@@ -131,11 +131,15 @@
+ 
+ #include "error.h"
+ 
+-/* The official name of this program (e.g., no `g' prefix).  */
++/* The official name of this program (e.g., no `g' prefix).
++ * - Add a "-l" to the name passed to PAM if this is a login simulation
++ */
+ #ifndef RUNUSER
+ #define PROGRAM_NAME "su"
++#define PROGRAM_NAME_L "su-l"
+ #else
+ #define PROGRAM_NAME "runuser"
++#define PROGRAM_NAME_L "runuser-l"
+ #endif
+ 
+ #ifndef AUTHORS
+@@ -310,7 +314,8 @@ correct_password (const struct passwd *p
+ #ifdef USE_PAM
+   struct passwd *caller;
+   char *tty_name, *ttyn;
+-  retval = pam_start(PROGRAM_NAME, pw->pw_name, &conv, &pamh);
++  retval = pam_start(simulate_login ? PROGRAM_NAME_L : PROGRAM_NAME,
++		     pw->pw_name, &conv, &pamh);
+   PAM_BAIL_P;
+ 
+ #ifndef RUNUSER

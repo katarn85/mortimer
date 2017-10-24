@@ -1,0 +1,142 @@
+diff -Naur ath6kl.ori//cfg80211.c ath6kl/cfg80211.c
+--- ath6kl.ori//cfg80211.c	2012-11-01 17:27:54.000000000 +0800
++++ ath6kl/cfg80211.c	2012-11-14 18:51:27.000000000 +0800
+@@ -965,6 +965,8 @@
+ 		cfg80211_roamed_bss(vif->ndev, bss, assoc_req_ie, assoc_req_len,
+ 				assoc_resp_ie, assoc_resp_len, GFP_KERNEL);
+ 	}
++
++	//ar->max_tx_pwr = 0;
+ }
+ 
+ static int ath6kl_cfg80211_disconnect(struct wiphy *wiphy,
+diff -Naur ath6kl.ori//core.h ath6kl/core.h
+--- ath6kl.ori//core.h	2012-11-01 17:35:44.000000000 +0800
++++ ath6kl/core.h	2012-11-09 11:47:34.000000000 +0800
+@@ -1014,6 +1014,7 @@
+ 	u32 target_type;
+ 	u32 target_subtype;
+ 	u8 tx_pwr;
++	u8 max_tx_pwr;
+ 	struct ath6kl_node_mapping node_map[MAX_NODE_NUM];
+ 	u8 ibss_ps_enable;
+ 	bool ibss_if_active;
+diff -Naur ath6kl.ori//debug.c ath6kl/debug.c
+--- ath6kl.ori//debug.c	2012-11-14 17:29:15.000000000 +0800
++++ ath6kl/debug.c	2012-11-14 18:54:23.000000000 +0800
+@@ -4233,6 +4233,106 @@
+ 	.llseek = default_llseek,
+ };
+ 
++static ssize_t ath6kl_txpower_read(struct file *file,
++			char __user *user_buf,
++			size_t count, loff_t *ppos)
++{
++	struct ath6kl *ar = file->private_data;
++	struct ath6kl_vif *vif;
++	u8 buf[64];
++	unsigned int len = 0;
++
++	vif = ath6kl_vif_first(ar);
++	if (!vif)
++		return -EIO;
++
++	if (test_bit(CONNECTED, &vif->flags)) {
++		ar->tx_pwr = 0;
++
++		if (ath6kl_wmi_get_tx_pwr_cmd(ar->wmi, vif->fw_vif_idx) != 0) {
++			ath6kl_err("ath6kl_wmi_get_tx_pwr_cmd failed\n");
++			return -EIO;
++		}
++
++		wait_event_interruptible_timeout(ar->event_wq, ar->tx_pwr != 0,
++						 5 * HZ);
++
++		if (signal_pending(current)) {
++			ath6kl_err("target did not respond\n");
++			return -EINTR;
++		}
++        
++		if(ar->tx_pwr > ar->max_tx_pwr)
++			ar->max_tx_pwr = ar->tx_pwr;
++	}
++
++	len = scnprintf(buf, sizeof(buf), "max_tx_pwr is %d dBm, current_tx_pwr is %d dBm\n",
++		ar->max_tx_pwr, ar->tx_pwr);
++
++	return simple_read_from_buffer(user_buf, count, ppos, buf, len);
++}
++
++/* File operation for mcc profile */
++static ssize_t ath6kl_txpower_write(struct file *file,
++				const char __user *user_buf,
++				size_t count, loff_t *ppos)
++{
++#define TXPOWER_RATIO_MAX 100
++	struct ath6kl *ar = file->private_data;
++	struct ath6kl_vif *vif;
++	char buf[8];
++	ssize_t len;
++	u8 txpower_ratio;
++
++	len = min(count, sizeof(buf) - 1);
++	if (copy_from_user(buf, user_buf, len))
++		return -EFAULT;
++
++	buf[len] = '\0';
++	if (kstrtou8(buf, 0, &txpower_ratio))
++		return -EINVAL;
++
++	if (txpower_ratio > TXPOWER_RATIO_MAX)
++		return -EINVAL;
++
++	vif = ath6kl_vif_first(ar);
++	if (!vif)
++		return -EIO;
++
++	if (test_bit(CONNECTED, &vif->flags)) {
++		ar->tx_pwr = 0;
++
++		if (ath6kl_wmi_get_tx_pwr_cmd(ar->wmi, vif->fw_vif_idx) != 0) {
++			ath6kl_err("ath6kl_wmi_get_tx_pwr_cmd failed\n");
++			return -EIO;
++		}
++
++		wait_event_interruptible_timeout(ar->event_wq, ar->tx_pwr != 0,
++						 5 * HZ);
++
++		if (signal_pending(current)) {
++			ath6kl_err("target did not respond\n");
++			return -EINTR;
++		}
++
++		if(ar->tx_pwr > ar->max_tx_pwr)
++			ar->max_tx_pwr = ar->tx_pwr;
++
++		ath6kl_wmi_set_tx_pwr_cmd(ar->wmi, vif->fw_vif_idx, txpower_ratio*ar->max_tx_pwr/100);
++	}
++
++	return count;
++}
++
++/* debug fs for mcc profile */
++static const struct file_operations fops_txpower = {
++	.read = ath6kl_txpower_read,
++	.write = ath6kl_txpower_write,
++	.open = ath6kl_debugfs_open,
++	.owner = THIS_MODULE,
++	.llseek = default_llseek,
++};
++
+ int ath6kl_debug_init(struct ath6kl *ar)
+ {
+ 	skb_queue_head_init(&ar->debug.fwlog_queue);
+@@ -4402,6 +4502,9 @@
+	debugfs_create_file("reg_country", S_IWUSR,
+				ar->debugfs_phy, ar, &fops_reg_country_write);
+
++	debugfs_create_file("txpower", S_IRUSR | S_IWUSR,
++			    ar->debugfs_phy, ar, &fops_txpower);
++
+	debugfs_create_file("p2p_go_sync", S_IWUSR,
+				ar->debugfs_phy, ar, &fops_p2p_go_sync);

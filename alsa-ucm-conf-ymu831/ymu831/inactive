@@ -1,0 +1,142 @@
+# Use case Configuration for Wearable device
+# By Inha Song <ideal.song@samsung.com>
+
+SectionVerb {
+  EnableSequence [
+  ]
+  DisableSequence [
+  ]
+
+  Value {
+    TQ "Music"
+    PlaybackCTL "hw:0"
+    CaptureCTL "hw:0"
+  }
+}
+
+SectionDevice."All" {
+  Comment "reset all"
+
+  EnableSequence [
+    cset "name='Headphone Switch' 0,0"
+    cset "name='Speaker Switch' 0,0"
+    cset "name='Receiver Switch' 0"
+    cset "name='LineOut1 Switch' 0,0"
+    cset "name='LineOut2 Switch' 0,0"
+    cset "name='Master Playback Switch' 0,0"
+    cset "name='Output Path' 0"
+    cset "name='Music Input Switch' 0,0"
+    cset "name='Music In0 Swap' 0"
+    cset "name='Music In1 Swap' 0"
+    cset "name='Music In2 Swap'0 "
+    cset "name='Voice Input Switch' 0,0"
+    cset "name='Voice Playback Switch' 0,0"
+    cset "name='Voice In Swap' 0"
+    cset "name='Ext Input Switch' 0,0"
+    cset "name='Ext In Swap' 0"
+    cset "name='Dac0 Output Switch' 0,0"
+    cset "name='Dac1 Output Switch' 0,0"
+    cset "name='SP Gain' 0"
+    cset "name='Dac0 Swap' 0"
+    cset "name='Dac1 Swap' 0"
+    cset "name='MainMIC Playback Path' 0"
+    cset "name='SubMIC Playback Path' 0"
+    cset "name='2MIC Playback Path' 0"
+    cset "name='HeadsetMIC Playback Path' 0"
+    cset "name='BluetoothMIC Playback Path' 0"
+    cset "name='LIN 1 Playback Path' 0"
+    cset "name='Audio Mode Playback' 0"
+    cset "name='Music Output Switch' 0,0"
+    cset "name='Ext Output Switch' 0,0"
+    cset "name='Voice Output Switch' 0,0"
+    cset "name='Adif0 Input Switch' 0,0"
+    cset "name='ADIF0 Source' 0,0"
+    cset "name='Adif1 Input Switch' 0,0"
+    cset "name='ADIF1 Source' 0,0"
+    cset "name='Adif2 Input Switch' 0,0"
+    cset "name='ADIF2 Source' 0,0"
+    cset "name='LineIn1 Switch' 0,0"
+    cset "name='Main Mic' 0"
+    cset "name='Sub Mic' 0"
+    cset "name='Mic1 Switch' 0"
+    cset "name='Mic2 Switch' 0"
+    cset "name='Mic3 Switch' 0"
+    cset "name='Mic4 Switch' 0"
+    cset "name='Adif0 Swap' 0"
+    cset "name='Adif1 Swap' 0"
+    cset "name='Adif2 Swap' 0"
+    cset "name='Music Out0 Swap' 0"
+    cset "name='Input Path' 0"
+    cset "name='Audio Mode Capture' 0"
+    cset "name='Voice Recording Switch' 0"
+    cset "name='Clear Dsp Parameter' 1"
+  ]
+
+  DisableSequence [
+  ]
+}
+SectionDevice."Playback" {
+  Comment "reset playback"
+
+  EnableSequence [
+    cset "name='Headphone Switch' 0,0"
+    cset "name='Speaker Switch' 0,0"
+    cset "name='Receiver Switch' 0"
+    cset "name='LineOut1 Switch' 0,0"
+    cset "name='LineOut2 Switch' 0,0"
+    cset "name='Master Playback Switch' 0,0"
+    cset "name='Output Path' 0"
+    cset "name='Music Input Switch' 0,0"
+    cset "name='Music In0 Swap' 0"
+    cset "name='Music In1 Swap' 0"
+    cset "name='Music In2 Swap' 0"
+    cset "name='Voice In Swap' 0"
+    cset "name='Ext In Swap' 0"
+    cset "name='Dac0 Output Switch' 0,0"
+    cset "name='Dac1 Output Switch' 0,0"
+    cset "name='SP Gain' 0"
+    cset "name='Dac0 Swap' 0"
+    cset "name='Dac1 Swap' 0"
+    cset "name='MainMIC Playback Path' 0"
+    cset "name='SubMIC Playback Path' 0"
+    cset "name='2MIC Playback Path' 0"
+    cset "name='HeadsetMIC Playback Path' 0"
+    cset "name='BluetoothMIC Playback Path' 0"
+    cset "name='LIN 1 Playback Path' 0"
+    cset "name='Audio Mode Playback' 0"
+  ]
+
+  DisableSequence [
+  ]
+}
+
+SectionDevice."Capture" {
+  Comment "reset capture"
+
+  EnableSequence [
+    cset "name='Music Output Switch' 0,0"
+    cset "name='Voice Output Switch' 0,0"
+    cset "name='Adif0 Input Switch' 0,0"
+    cset "name='ADIF0 Source' 0,0"
+    cset "name='Adif1 Input Switch' 0,0"
+    cset "name='ADIF1 Source' 0,0"
+    cset "name='Adif2 Input Switch' 0,0"
+    cset "name='ADIF2 Source' 0,0"
+    cset "name='LineIn1 Switch' 0,0"
+    cset "name='Mic1 Switch' 0"
+    cset "name='Mic2 Switch' 0"
+    cset "name='Mic3 Switch' 0"
+    cset "name='Mic4 Switch' 0"
+    cset "name='Adif0 Swap' 0"
+    cset "name='Adif1 Swap' 0"
+    cset "name='Adif2 Swap' 0"
+    cset "name='Music Out0 Swap' 0"
+    cset "name='Input Path' 0"
+    cset "name='Audio Mode Capture' 0"
+    cset "name='Voice Recording Switch' 0"
+  ]
+
+  DisableSequence [
+  ]
+}
+

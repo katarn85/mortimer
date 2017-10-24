@@ -1,0 +1,984 @@
+diff -Naur ./hostap_ori/src/ap/ieee802_11.c ./hostap/src/ap/ieee802_11.c
+--- ./hostap_ori/src/ap/ieee802_11.c	2013-11-28 10:28:47.000000000 +0800
++++ ./hostap/src/ap/ieee802_11.c	2014-01-21 17:31:29.000000000 +0800
+@@ -576,20 +576,20 @@
+ 		return WLAN_STATUS_UNSPECIFIED_FAILURE;
+ 	}
+ 
+-	if (elems->supp_rates_len + elems->ext_supp_rates_len > 
+-		sizeof(sta->supported_rates)) {
++		if (elems->supp_rates_len + elems->ext_supp_rates_len >
++		    sizeof(sta->supported_rates)) {
+ 		hostapd_logger(hapd, sta->addr, HOSTAPD_MODULE_IEEE80211,
+-			       HOSTAPD_LEVEL_DEBUG,
++				       HOSTAPD_LEVEL_DEBUG,
+ 				"Invalid supported rates element length %d+%d",
+ 				elems->supp_rates_len,				
+-				elems->ext_supp_rates_len);
+-		return WLAN_STATUS_UNSPECIFIED_FAILURE;
+-	}
++				       elems->ext_supp_rates_len);
++			return WLAN_STATUS_UNSPECIFIED_FAILURE;
++		}
+ 
+         sta->supported_rates_len = merge_byte_arrays(
+ 		sta->supported_rates, sizeof(sta->supported_rates),
+ 		elems->supp_rates, elems->supp_rates_len,
+-		elems->ext_supp_rates, elems->ext_supp_rates_len);
++			  elems->ext_supp_rates, elems->ext_supp_rates_len);
+ 	return WLAN_STATUS_SUCCESS;
+ }
+ 
+diff -Naur ./hostap_ori/src/common/ieee802_11_common.c ./hostap/src/common/ieee802_11_common.c
+--- ./hostap_ori/src/common/ieee802_11_common.c	2013-11-28 10:28:48.000000000 +0800
++++ ./hostap/src/common/ieee802_11_common.c	2014-01-21 17:31:29.000000000 +0800
+@@ -120,6 +120,23 @@
+ 			return -1;
+ 		}
+ 		break;
++		
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	case OUI_SAMSUNG:
++		switch (pos[3]) {
++		case VENDOR_P2P_SKIP_DHCP_OUI_TYPE:
++			elems->static_ip = pos;
++			elems->static_ip_len = elen;
++			break;
++		default:
++			wpa_printf(MSG_EXCESSIVE, "Unknown Samsung "
++				   "information element ignored "
++				   "(type=%d len=%lu)",
++				   pos[3], (unsigned long) elen);
++			return -1;
++		}
++		break;
++#endif
+ 
+ 	default:
+ 		wpa_printf(MSG_EXCESSIVE, "unknown vendor specific "
+diff -Naur ./hostap_ori/src/common/ieee802_11_common.h ./hostap/src/common/ieee802_11_common.h
+--- ./hostap_ori/src/common/ieee802_11_common.h	2013-11-28 10:28:48.000000000 +0800
++++ ./hostap/src/common/ieee802_11_common.h	2014-01-21 17:31:29.000000000 +0800
+@@ -37,6 +37,9 @@
+ 	const u8 *p2p;
+ 	const u8 *link_id;
+ 	const u8 *interworking;
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	const u8 *static_ip;
++#endif
+ 
+ 	u8 ssid_len;
+ 	u8 supp_rates_len;
+@@ -63,6 +66,9 @@
+ 	u8 vendor_ht_cap_len;
+ 	u8 p2p_len;
+ 	u8 interworking_len;
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	u8 static_ip_len;
++#endif
+ };
+ 
+ typedef enum { ParseOK = 0, ParseUnknown = 1, ParseFailed = -1 } ParseRes;
+diff -Naur ./hostap_ori/src/common/ieee802_11_defs.h ./hostap/src/common/ieee802_11_defs.h
+--- ./hostap_ori/src/common/ieee802_11_defs.h	2013-11-28 10:28:48.000000000 +0800
++++ ./hostap/src/common/ieee802_11_defs.h	2014-01-21 17:31:29.000000000 +0800
+@@ -917,6 +917,12 @@
+ 
+ #define VENDOR_HT_CAPAB_OUI_TYPE 0x33 /* 00-90-4c:0x33 */
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++#define OUI_SAMSUNG 0x0000f0 /* Samsung OUI */
++#define SKIP_DHCP_VENDOR_TYPE 0x0000f00a
++#define VENDOR_P2P_SKIP_DHCP_OUI_TYPE 0x0a
++#endif
++
+ /* cipher suite selectors */
+ #define WLAN_CIPHER_SUITE_USE_GROUP	0x000FAC00
+ #define WLAN_CIPHER_SUITE_WEP40		0x000FAC01
+diff -Naur ./hostap_ori/src/drivers/driver.h ./hostap/src/drivers/driver.h
+--- ./hostap_ori/src/drivers/driver.h	2013-11-28 10:28:48.000000000 +0800
++++ ./hostap/src/drivers/driver.h	2014-01-21 17:31:29.000000000 +0800
+@@ -3548,11 +3548,17 @@
+ 		u16 supp_config_methods;
+ 		u8 dev_capab;
+ 		u8 group_capab;
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++		u32 static_ip;
++#endif
+ 	} p2p_prov_disc_req;
+ 
+ 	struct p2p_prov_disc_resp {
+ 		const u8 *peer;
+ 		u16 config_methods;
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++		u32 static_ip;
++#endif
+ 	} p2p_prov_disc_resp;
+ 
+ 	struct p2p_sd_req {
+diff -Naur ./hostap_ori/src/p2p/p2p_build.c ./hostap/src/p2p/p2p_build.c
+--- ./hostap_ori/src/p2p/p2p_build.c	2013-11-28 10:28:50.000000000 +0800
++++ ./hostap/src/p2p/p2p_build.c	2014-01-21 17:31:29.000000000 +0800
+@@ -439,3 +439,25 @@
+ 
+ 	p2p_buf_update_ie_hdr(buf, len);
+ }
++
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++void p2p_build_skip_dhcp_ie(struct p2p_data *p2p, struct wpabuf *buf, u32 ip_addr)
++{
++	u8 *len;
++
++	wpabuf_put_u8(buf, WLAN_EID_VENDOR_SPECIFIC);
++	len = wpabuf_put(buf, 1);
++	wpabuf_put_be24(buf, OUI_SAMSUNG);
++	wpabuf_put_u8(buf, VENDOR_P2P_SKIP_DHCP_OUI_TYPE);
++
++	wpabuf_put_u8(buf, 0); // element type
++	wpabuf_put_be16(buf, 4); // element length
++
++	wpabuf_put_be32(buf, ip_addr);
++
++	wpa_printf(MSG_DEBUG, "P2P: Static IP * --> len (%d) ip: %x", *len, ip_addr);
++
++	p2p_buf_update_ie_hdr(buf, len);
++}
++#endif
++
+diff -Naur ./hostap_ori/src/p2p/p2p.c ./hostap/src/p2p/p2p.c
+--- ./hostap_ori/src/p2p/p2p.c	2013-11-28 10:28:50.000000000 +0800
++++ ./hostap/src/p2p/p2p.c	2014-01-21 17:31:29.000000000 +0800
+@@ -4120,6 +4120,13 @@
+ 	return &dev->info;
+ }
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++void p2p_set_static_ip(struct p2p_data *p2p, u32 static_ip)
++{
++	wpa_printf(MSG_DEBUG, "P2P: Set static_ip: %x", static_ip);
++	p2p->cfg->static_ip = static_ip;
++}
++#endif
+ 
+ int p2p_in_progress(struct p2p_data *p2p)
+ {
+diff -Naur ./hostap_ori/src/p2p/p2p.h ./hostap/src/p2p/p2p.h
+--- ./hostap_ori/src/p2p/p2p.h	2014-01-21 16:29:11.000000000 +0800
++++ ./hostap/src/p2p/p2p.h	2014-01-21 17:31:29.000000000 +0800
+@@ -315,6 +315,10 @@
+ 	 * dev_addr - P2P Device Address
+ 	 */
+ 	u8 dev_addr[ETH_ALEN];
++	
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	u32 static_ip;
++#endif
+ 
+ 	/**
+ 	 * dev_name - Device Name
+@@ -632,7 +636,11 @@
+ 			      const u8 *dev_addr, const u8 *pri_dev_type,
+ 			      const char *dev_name, u16 supp_config_methods,
+ 			      u8 dev_capab, u8 group_capab,
+-			      const u8 *group_id, size_t group_id_len);
++			      const u8 *group_id, size_t group_id_len
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++			      , u32 static_ip
++#endif
++			      );
+ 
+ 	/**
+ 	 * prov_disc_resp - Callback on Provisiong Discovery Response
+@@ -645,8 +653,11 @@
+ 	 * p2p_prov_disc_req(). This callback handler can be set to %NULL if
+ 	 * provision discovery is not used.
+ 	 */
+-	void (*prov_disc_resp)(void *ctx, const u8 *peer, u16 config_methods);
+-
++	void (*prov_disc_resp)(void *ctx, const u8 *peer, u16 config_methods
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++			      , u32 static_ip
++#endif
++			      );
+ 	/**
+ 	 * prov_disc_fail - Callback on Provision Discovery failure
+ 	 * @ctx: Callback context from cb_ctx
+@@ -1699,6 +1710,10 @@
+ 
+ const char * p2p_wps_method_text(enum p2p_wps_method method);
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++void p2p_set_static_ip(struct p2p_data *p2p, u32 ip_addr);
++#endif
++
+ struct ieee802_11_elems;
+ int supp_rates_11b_only(struct ieee802_11_elems *elems);
+ 
+diff -Naur ./hostap_ori/src/p2p/p2p_i.h ./hostap/src/p2p/p2p_i.h
+--- ./hostap_ori/src/p2p/p2p_i.h	2013-11-28 10:28:50.000000000 +0800
++++ ./hostap/src/p2p/p2p_i.h	2014-01-21 17:31:29.000000000 +0800
+@@ -434,6 +434,19 @@
+ 	 * in IDLE state.
+ 	 */
+ 	int pd_retries;
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++	enum samsung_p2p_state {
++		SAMSUNG_P2P_IDLE,
++		SAMSUNG_P2P_DISCONNECTED,
++		SAMSUNG_P2P_GO_NEG_COMPLETE,
++		SAMSUNG_P2P_GROUP_FORMATION_COMPLETE,
++		SAMSUNG_P2P_COMPLETE,
++		SAMSUNG_P2P_JOIN
++	} s_p2p_state;
++#endif
++#ifdef SAMSUNG_P2P_JOIN_FREQ
++	int join_oper_freq;
++#endif
+ 
+ #ifdef CONFIG_WFD
+ 	/**
+@@ -450,6 +463,9 @@
+ struct p2p_message {
+ 	struct wpabuf *p2p_attributes;
+ 	struct wpabuf *wps_attributes;
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	struct wpabuf *skip_dhcp_attributes;
++#endif
+ 
+ 	u8 dialog_token;
+ 
+@@ -513,6 +529,10 @@
+ 
+ 	/* SSID IE */
+ 	const u8 *ssid;
++	
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	u32 static_ip;
++#endif
+ };
+ 
+ 
+@@ -554,6 +574,9 @@
+ int p2p_attr_text(struct wpabuf *data, char *buf, char *end);
+ int p2p_group_info_parse(const u8 *gi, size_t gi_len,
+ 			 struct p2p_group_info *info);
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++int p2p_parse_skip_dhcp_ie(const struct wpabuf *buf, struct p2p_message *msg);
++#endif
+ 
+ /* p2p_build.c */
+ 
+@@ -604,6 +627,9 @@
+ void p2p_buf_add_p2p_interface(struct wpabuf *buf, struct p2p_data *p2p);
+ void p2p_build_wps_ie(struct p2p_data *p2p, struct wpabuf *buf, int pw_id,
+ 		      int all_attr);
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++void p2p_build_skip_dhcp_ie(struct p2p_data *p2p, struct wpabuf *buf, u32 ip_addr);
++#endif
+ 
+ /* p2p_sd.c */
+ struct p2p_sd_query * p2p_pending_sd_req(struct p2p_data *p2p,
+diff -Naur ./hostap_ori/src/p2p/p2p_parse.c ./hostap/src/p2p/p2p_parse.c
+--- ./hostap_ori/src/p2p/p2p_parse.c	2013-11-28 10:28:50.000000000 +0800
++++ ./hostap/src/p2p/p2p_parse.c	2014-01-21 17:31:29.000000000 +0800
+@@ -370,6 +370,43 @@
+ 	return 0;
+ }
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++int p2p_parse_skip_dhcp_ie(const struct wpabuf *buf, struct p2p_message *msg)
++{
++	const u8 *pos = wpabuf_head_u8(buf);
++	const u8 *end = pos + wpabuf_len(buf);
++
++	u16 type, len;
++
++	wpa_printf(MSG_DEBUG, "P2P: Parsing SKIP_DHCP IE");
++
++	while (pos < end) {
++		if (end - pos < 4) {
++			wpa_printf(MSG_DEBUG, "P2P: Invalid SKIP_DHCP attribute");
++			return -1;
++		}
++
++		type = WPA_GET_BE16(pos);
++		pos += 1;
++		len = WPA_GET_BE16(pos);
++		pos += 2;
++		wpa_printf(MSG_EXCESSIVE, "P2P: attr type=0x%x len=%u", type, len);
++
++		if (len > end - pos) {
++			wpa_printf(MSG_DEBUG, "P2P: Attribute underflow");
++			wpa_hexdump(MSG_MSGDUMP, "P2P: Data", pos, end - pos);
++			return -1;
++		}
++		msg->static_ip = WPA_GET_BE32(pos);
++
++		pos += len;
++	}
++
++	wpa_printf(MSG_DEBUG, "P2P: SKIP_DHCP Info: %x ", msg->static_ip);
++
++	return 0;
++}
++#endif
+ 
+ /**
+  * p2p_parse_ies - Parse P2P message IEs (both WPS and P2P IE)
+@@ -413,6 +450,21 @@
+ 		p2p_parse_free(msg);
+ 		return -1;
+ 	}
++	
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	msg->skip_dhcp_attributes = NULL;
++	msg->skip_dhcp_attributes = ieee802_11_vendor_ie_concat(data, len,
++							  SKIP_DHCP_VENDOR_TYPE);
++	if (msg->skip_dhcp_attributes &&
++	    p2p_parse_skip_dhcp_ie(msg->skip_dhcp_attributes, msg)) {
++		wpa_printf(MSG_INFO, "P2P: Failed to parse SKIP_DHCP IP IE data");
++		if (msg->skip_dhcp_attributes)
++			wpa_hexdump_buf(MSG_MSGDUMP, "P2P: STATELESS IP IE data",
++					msg->skip_dhcp_attributes);
++		p2p_parse_free(msg);
++		return -1;
++	}
++#endif
+ 
+ 	return 0;
+ }
+diff -Naur ./hostap_ori/src/p2p/p2p_pd.c ./hostap/src/p2p/p2p_pd.c
+--- ./hostap_ori/src/p2p/p2p_pd.c	2013-11-28 10:28:50.000000000 +0800
++++ ./hostap/src/p2p/p2p_pd.c	2014-01-21 17:31:29.000000000 +0800
+@@ -66,6 +66,10 @@
+ 
+ 	/* WPS IE with Config Methods attribute */
+ 	p2p_build_wps_ie_config_methods(buf, config_methods);
++	
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	p2p_build_skip_dhcp_ie(p2p, buf, p2p->cfg->static_ip);
++#endif
+ 
+ #ifdef CONFIG_WFD
+ 	wfd_add_wfd_ie(p2p->cfg->cb_ctx, p2p->wfd, buf);
+@@ -89,6 +93,10 @@
+ 
+ 	/* WPS IE with Config Methods attribute */
+ 	p2p_build_wps_ie_config_methods(buf, config_methods);
++	
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	p2p_build_skip_dhcp_ie(p2p, buf, p2p->cfg->static_ip);
++#endif
+ 
+ #ifdef CONFIG_WFD
+ 	wfd_add_wfd_ie(p2p->cfg->cb_ctx, p2p->wfd, buf);
+@@ -262,7 +270,11 @@
+ 					msg.capability ? msg.capability[0] : 0,
+ 					msg.capability ? msg.capability[1] :
+ 					0,
+-					msg.group_id, msg.group_id_len);
++					msg.group_id, msg.group_id_len
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++					, msg.static_ip
++#endif
++					);
+ 	}
+ 	p2p_parse_free(&msg);
+ }
+@@ -359,7 +371,11 @@
+ 	}
+ 	if (success && p2p->cfg->prov_disc_resp)
+ 		p2p->cfg->prov_disc_resp(p2p->cfg->cb_ctx, sa,
+-					 report_config_methods);
++					 report_config_methods
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++					 , msg.static_ip
++#endif
++	        );
+ }
+ 
+ 
+diff -Naur ./hostap_ori/src/utils/common.h ./hostap/src/utils/common.h
+--- ./hostap_ori/src/utils/common.h	2013-11-28 10:28:51.000000000 +0800
++++ ./hostap/src/utils/common.h	2014-01-21 17:31:29.000000000 +0800
+@@ -393,6 +393,13 @@
+ #define COMPACT_MACSTR "%02x%02x%02x%02x%02x%02x"
+ #endif
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++#ifndef MAC2STR_SEC
++#define MAC2STR_SEC(a) (a)[0], (a)[4], (a)[5]
++#define MACSTR_SEC "%02X.%02X.%02X"
++#endif
++#endif
++
+ #ifndef BIT
+ #define BIT(x) (1 << (x))
+ #endif
+diff -Naur ./hostap_ori/src/utils/wpa_debug.c ./hostap/src/utils/wpa_debug.c
+--- ./hostap_ori/src/utils/wpa_debug.c	2013-11-28 10:28:51.000000000 +0800
++++ ./hostap/src/utils/wpa_debug.c	2014-01-21 17:31:29.000000000 +0800
+@@ -492,6 +492,40 @@
+ 	os_free(buf);
+ }
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++void wpa_msg_sec(void *ctx, int level, const char *fmt, ...)
++{
++	va_list ap;
++	char *buf;
++	const int buflen = 2048;
++	int len;
++	char prefix[130];
++
++	buf = os_malloc(buflen);
++	if (buf == NULL) {
++		wpa_printf(MSG_ERROR, "wpa_msg: Failed to allocate message "
++			   "buffer");
++		return;
++	}
++	va_start(ap, fmt);
++	prefix[0] = '\0';
++	if (wpa_msg_ifname_cb) {
++		const char *ifname = wpa_msg_ifname_cb(ctx);
++		if (ifname) {
++			int res = os_snprintf(prefix, sizeof(prefix), "%s: ",
++					      ifname);
++			if (res < 0 || res >= (int) sizeof(prefix))
++				prefix[0] = '\0';
++		}
++	}
++	len = vsnprintf(buf, buflen, fmt, ap);
++	va_end(ap);
++
++	if (wpa_msg_cb)
++		wpa_msg_cb(ctx, level, buf, len);
++	os_free(buf);
++}
++#endif
+ 
+ void wpa_msg_ctrl(void *ctx, int level, const char *fmt, ...)
+ {
+diff -Naur ./hostap_ori/src/utils/wpa_debug.h ./hostap/src/utils/wpa_debug.h
+--- ./hostap_ori/src/utils/wpa_debug.h	2013-11-28 10:28:51.000000000 +0800
++++ ./hostap/src/utils/wpa_debug.h	2014-01-21 17:31:29.000000000 +0800
+@@ -154,6 +154,9 @@
+ 
+ #ifdef CONFIG_NO_WPA_MSG
+ #define wpa_msg(args...) do { } while (0)
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++#define wpa_msg_sec(args...) do { } while (0)
++#endif
+ #define wpa_msg_ctrl(args...) do { } while (0)
+ #define wpa_msg_register_cb(f) do { } while (0)
+ #define wpa_msg_register_ifname_cb(f) do { } while (0)
+@@ -173,6 +176,9 @@
+  * Note: New line '\n' is added to the end of the text when printing to stdout.
+  */
+ void wpa_msg(void *ctx, int level, const char *fmt, ...) PRINTF_FORMAT(3, 4);
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++void wpa_msg_sec(void *ctx, int level, const char *fmt, ...) PRINTF_FORMAT(3, 4);
++#endif
+ 
+ /**
+  * wpa_msg_ctrl - Conditional printf for ctrl_iface monitors
+diff -Naur ./hostap_ori/wpa_supplicant/config_file.c ./hostap/wpa_supplicant/config_file.c
+--- ./hostap_ori/wpa_supplicant/config_file.c	2014-01-21 16:29:11.000000000 +0800
++++ ./hostap/wpa_supplicant/config_file.c	2014-01-21 17:31:29.000000000 +0800
+@@ -935,6 +935,13 @@
+ 	}
+ #endif /* CONFIG_NO_CONFIG_BLOBS */
+ 
++	// byssu : 20121122 for fflush
++	fflush(f);
++	// by ssu : 20121001 for fsync
++	if (fsync(fileno(f)) < 0) {
++		wpa_printf(MSG_ERROR, "fsync failed: %s", strerror(errno));
++	}
++
+ 	fclose(f);
+ 
+ 	wpa_printf(MSG_DEBUG, "Configuration file '%s' written %ssuccessfully",
+diff -Naur ./hostap_ori/wpa_supplicant/ctrl_iface.c ./hostap/wpa_supplicant/ctrl_iface.c
+--- ./hostap_ori/wpa_supplicant/ctrl_iface.c	2014-01-21 16:47:27.000000000 +0800
++++ ./hostap/wpa_supplicant/ctrl_iface.c	2014-01-21 17:31:29.000000000 +0800
+@@ -4456,6 +4456,13 @@
+ 		return 0;
+ 	}
+ 
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	if (os_strcmp(cmd, "static_ip") == 0) {
++		p2p_set_static_ip(wpa_s->global->p2p, inet_addr(param));
++		return 0;
++	}
++#endif
++
+ 	if (os_strcmp(cmd, "disallow_freq") == 0)
+ 		return p2p_ctrl_disallow_freq(wpa_s, param);
+ 
+diff -Naur ./hostap_ori/wpa_supplicant/events.c ./hostap/wpa_supplicant/events.c
+--- ./hostap_ori/wpa_supplicant/events.c	2014-01-21 16:29:12.000000000 +0800
++++ ./hostap/wpa_supplicant/events.c	2014-01-17 18:20:20.000000000 +0800
+@@ -43,6 +43,9 @@
+ #ifdef CONFIG_WIFI_DISC
+ #include <time.h>
+ #endif
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++static struct wpa_bss *g_LastSelected = NULL;
++#endif
+ #ifdef CONFIG_CUSTOM_WFD
+ #include "ctrl_iface.h"
+ #endif /* CONFIG_CUSTOM_WFD */
+@@ -1142,7 +1145,9 @@
+ 			wpa_supplicant_rsn_preauth_scan_results(wpa_s);
+ 			return 0;
+ 		}
+-
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++		g_LastSelected = selected;
++#endif
+ 		if (wpa_supplicant_connect(wpa_s, selected, ssid) < 0) {
+ 			wpa_dbg(wpa_s, MSG_DEBUG, "Connect failed");
+ 			return -1;
+@@ -1447,6 +1452,10 @@
+ 	int ft_completed;
+ 	int bssid_changed;
+ 	struct wpa_driver_capa capa;
++	
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++	g_LastSelected = NULL;
++#endif
+ 
+ #ifdef CONFIG_AP
+ 	if (wpa_s->ap_iface) {
+@@ -2098,6 +2107,12 @@
+ 	}
+ }
+ 
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++void wpa_supplicant_event_reject_fast_reassoc(struct wpa_supplicant *wpa_s)
++{
++	wpa_supplicant_req_fast_reauth(wpa_s , g_LastSelected);
++}
++#endif
+ #ifdef CONFIG_P2P
+ void wpa_check_p2p_listen_resume(struct wpa_supplicant *wpa_s)
+ {
+@@ -2267,6 +2282,9 @@
+ 		}
+ 		wpa_check_p2p_listen_resume(wpa_s);
+ #endif /* CONFIG_P2P */
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++		wpas_p2p_group_remove_notif(wpa_s, reason_code);
++#endif
+ 		break;
+ 	case EVENT_MICHAEL_MIC_FAILURE:
+ 		wpa_supplicant_event_michael_mic_failure(wpa_s, data);
+@@ -2327,6 +2345,12 @@
+ #ifdef CONFIG_P2P
+ 		wpa_check_p2p_listen_resume(wpa_s);
+ #endif
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++		if(wpa_s->ifname && (os_strcmp(wpa_s->ifname , "p2p-wlan0-0") == 0))
++			wpa_supplicant_event_reject_fast_reassoc(wpa_s);
++		else if(wpa_s->ifname && (os_strcmp(wpa_s->ifname , "p2p0") == 0))
++			wpa_supplicant_event_reject_fast_reassoc(wpa_s);
++#endif
+ 		break;
+ 	case EVENT_AUTH_TIMED_OUT:
+ 		if (wpa_s->drv_flags & WPA_DRIVER_FLAGS_SME)
+@@ -2592,11 +2616,19 @@
+ 				   data->p2p_prov_disc_req.supp_config_methods,
+ 				   data->p2p_prov_disc_req.dev_capab,
+ 				   data->p2p_prov_disc_req.group_capab,
+-				   NULL, 0);
++				   NULL, 0
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++				   , data->p2p_prov_disc_req.static_ip
++#endif
++				   );
+ 		break;
+ 	case EVENT_P2P_PROV_DISC_RESPONSE:
+ 		wpas_prov_disc_resp(wpa_s, data->p2p_prov_disc_resp.peer,
+-				    data->p2p_prov_disc_resp.config_methods);
++				    data->p2p_prov_disc_resp.config_methods
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++				   , data->p2p_prov_disc_resp.static_ip
++#endif
++				    );
+ 		break;
+ 	case EVENT_P2P_SD_REQUEST:
+ 		wpas_sd_request(wpa_s, data->p2p_sd_req.freq,
+diff -Naur ./hostap_ori/wpa_supplicant/p2p_supplicant.c ./hostap/wpa_supplicant/p2p_supplicant.c
+--- ./hostap_ori/wpa_supplicant/p2p_supplicant.c	2014-01-21 16:29:12.000000000 +0800
++++ ./hostap/wpa_supplicant/p2p_supplicant.c	2014-01-21 17:31:29.000000000 +0800
+@@ -288,6 +288,12 @@
+ 		reason = "";
+ 		break;
+ 	}
++	
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++	if(wpa_s->global && wpa_s->global->p2p)
++		wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_DISCONNECTED;
++#endif
++
+ 	if (!silent) {
+ 		wpa_msg(wpa_s->parent, MSG_INFO,
+ 			P2P_EVENT_GROUP_REMOVED "%s %s%s",
+@@ -577,6 +583,11 @@
+ 	}
+ 
+ 	wpa_msg(wpa_s->parent, MSG_INFO, P2P_EVENT_GROUP_FORMATION_SUCCESS);
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++	if(wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_GO_NEG_COMPLETE) {
++		wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_GROUP_FORMATION_COMPLETE;
++	}
++#endif
+ 
+ 	ssid = wpa_s->current_ssid;
+ 	if (ssid && ssid->mode == WPAS_MODE_P2P_GROUP_FORMATION) {
+@@ -622,6 +633,11 @@
+ 			wpa_s->ifname, ssid_txt, ssid->frequency, psk,
+ 			MAC2STR(go_dev_addr),
+ 			persistent ? " [PERSISTENT]" : "");
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++		if(wpa_s->global->p2p && wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_GROUP_FORMATION_COMPLETE) {
++			wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_COMPLETE;
++		}
++#endif
+ 		wpas_p2p_cross_connect_setup(wpa_s);
+ 		wpas_p2p_set_group_idle_timeout(wpa_s);
+ 	} else {
+@@ -632,6 +648,11 @@
+ 			ssid && ssid->passphrase ? ssid->passphrase : "",
+ 			MAC2STR(go_dev_addr),
+ 			persistent ? " [PERSISTENT]" : "");
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++		if(wpa_s->global->p2p && wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_GROUP_FORMATION_COMPLETE) {
++			wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_COMPLETE;
++		}
++#endif
+ 		wpas_p2p_cross_connect_setup(wpa_s);
+ 		wpas_p2p_set_group_idle_timeout(wpa_s);
+ 	}
+@@ -781,6 +802,11 @@
+ 			network_id = wpas_p2p_store_persistent_group(
+ 				wpa_s->parent, ssid,
+ 				wpa_s->global->p2p_dev_addr);
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++		if(wpa_s->global->p2p && wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_GROUP_FORMATION_COMPLETE) {
++			wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_COMPLETE;
++		}
++#endif
+ 		if (network_id < 0)
+ 			network_id = ssid->id;
+ 		wpas_notify_p2p_group_started(wpa_s, ssid, network_id, 0);
+@@ -1027,6 +1053,11 @@
+ 
+ 	wpa_msg(wpa_s, MSG_INFO, P2P_EVENT_GO_NEG_SUCCESS);
+ 	wpas_notify_p2p_go_neg_completed(wpa_s, res);
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++	if(wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_IDLE) {
++		wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_GO_NEG_COMPLETE;
++	}
++#endif
+ 
+ 	if (res->role_go && wpa_s->p2p_persistent_id >= 0) {
+ 		struct wpa_ssid *ssid;
+@@ -1825,7 +1856,11 @@
+ 			const u8 *dev_addr, const u8 *pri_dev_type,
+ 			const char *dev_name, u16 supp_config_methods,
+ 			u8 dev_capab, u8 group_capab, const u8 *group_id,
+-			size_t group_id_len)
++			size_t group_id_len
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++			, u32 static_ip
++#endif
++			)
+ {
+ 	struct wpa_supplicant *wpa_s = ctx;
+ 	char devtype[WPS_DEV_TYPE_BUFSIZE];
+@@ -1851,6 +1886,18 @@
+ 		os_memset(empty_dev_type, 0, sizeof(empty_dev_type));
+ 		pri_dev_type = empty_dev_type;
+ 	}
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++	os_snprintf(params, sizeof(params), " p2p_dev_addr=" MACSTR
++		    " pri_dev_type=%s name='%s' config_methods=0x%x "
++		    "dev_capab=0x%x group_capab=0x%x%s%s static_ip=0x%x",
++		    MAC2STR(dev_addr),
++		    wps_dev_type_bin2str(pri_dev_type, devtype,
++					 sizeof(devtype)),
++		    dev_name, supp_config_methods, dev_capab, group_capab,
++		    group ? " group=" : "",
++		    group ? group->ifname : "",
++			static_ip);
++#else
+ 	os_snprintf(params, sizeof(params), " p2p_dev_addr=" MACSTR
+ 		    " pri_dev_type=%s name='%s' config_methods=0x%x "
+ 		    "dev_capab=0x%x group_capab=0x%x%s%s",
+@@ -1860,6 +1907,8 @@
+ 		    dev_name, supp_config_methods, dev_capab, group_capab,
+ 		    group ? " group=" : "",
+ 		    group ? group->ifname : "");
++#endif
++
+ 	params[sizeof(params) - 1] = '\0';
+ 
+ 	if (config_methods & WPS_CONFIG_DISPLAY) {
+@@ -1878,7 +1927,11 @@
+ }
+ 
+ 
+-void wpas_prov_disc_resp(void *ctx, const u8 *peer, u16 config_methods)
++void wpas_prov_disc_resp(void *ctx, const u8 *peer, u16 config_methods
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++			, u32 static_ip
++#endif
++			)
+ {
+ 	struct wpa_supplicant *wpa_s = ctx;
+ 	unsigned int generated_pin = 0;
+@@ -1907,10 +1960,17 @@
+ 		generated_pin = wps_generate_pin();
+ 		wpas_prov_disc_local_display(wpa_s, peer, params,
+ 					     generated_pin);
+-	} else if (config_methods & WPS_CONFIG_PUSHBUTTON)
++	} else if (config_methods & WPS_CONFIG_PUSHBUTTON) {
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++		wpa_msg_sec(wpa_s, MSG_INFO, P2P_EVENT_PROV_DISC_PBC_RESP MACSTR
++			" static_ip=0x%x", MAC2STR(peer), static_ip);
++		wpa_printf(MSG_INFO, P2P_EVENT_PROV_DISC_PBC_RESP MACSTR_SEC
++			" static_ip=0x%x", MAC2STR_SEC(peer), static_ip);
++#else
+ 		wpa_msg(wpa_s, MSG_INFO, P2P_EVENT_PROV_DISC_PBC_RESP MACSTR
+ 			"%s", MAC2STR(peer), params);
+-
++#endif
++	}
+ 	wpas_notify_p2p_provision_discovery(wpa_s, peer, 0 /* response */,
+ 					    P2P_PROV_DISC_SUCCESS,
+ 					    config_methods, generated_pin);
+@@ -3112,6 +3172,17 @@
+ 	return 0;
+ }
+ 
++#ifdef SAMSUNG_P2P_JOIN_FREQ
++int p2p_get_device_oper_freq(struct p2p_data *p2p, const u8 *dev_addr)
++{
++	struct p2p_device *dev = p2p_get_device(p2p, dev_addr);
++	if (dev == NULL)
++		return -1;
++	wpa_printf(MSG_INFO , "SS: Go oper channel is = [%d] \r\n" , dev->oper_freq);
++	return dev->oper_freq;
++}
++#endif
++
+ 
+ /**
+  * wpas_p2p_connect - Request P2P Group Formation to be started
+@@ -3149,6 +3220,10 @@
+ 	if (wpa_s->global->p2p_disabled || wpa_s->global->p2p == NULL)
+ 		return -1;
+ 
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++	wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_IDLE;
++#endif
++
+ 	if (persistent_id >= 0) {
+ 		ssid = wpa_config_get_network(wpa_s->conf, persistent_id);
+ 		if (ssid == NULL || ssid->disabled != 2 ||
+@@ -3203,6 +3278,12 @@
+ 			p2p_get_dev_addr(wpa_s->global->p2p, peer_addr,
+ 					 dev_addr);
+ 		}
++#ifdef SAMSUNG_P2P_JOIN_FREQ
++		wpa_s->global->p2p->join_oper_freq = p2p_get_device_oper_freq(wpa_s->global->p2p, peer_addr);
++#endif
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++		wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_JOIN;
++#endif
+ 		if (auto_join) {
+ 			os_get_time(&wpa_s->p2p_auto_started);
+ 			wpa_printf(MSG_DEBUG, "P2P: Auto join started at "
+@@ -4386,6 +4467,11 @@
+ 			MAC2STR(go_dev_addr),
+ 			persistent ? " [PERSISTENT]" : "");
+ 	}
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++	if(wpa_s->global->p2p && wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_GROUP_FORMATION_COMPLETE) {
++		wpa_s->global->p2p->s_p2p_state = SAMSUNG_P2P_COMPLETE;
++	}
++#endif
+ 
+ #ifdef ANDROID
+ #ifdef SEAMLESS_ROAMING
+@@ -4534,6 +4620,63 @@
+ 	}
+ }
+ 
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++static void wpas_p2p_assoc_req(void *eloop_ctx, void *timeout_ctx)
++{
++	struct wpa_supplicant *wpa_s = eloop_ctx;
++	struct wpa_ssid *ssid;
++	struct wpa_bss *selected;
++
++	for (ssid = wpa_s->conf->ssid; ssid; ssid = ssid->next) {
++		wpa_printf(MSG_INFO , "[%s]: config select. [%s] \r\n" ,__func__, wpa_ssid_txt(ssid->ssid, ssid->ssid_len));
++		if(ssid->bssid == NULL) {
++			wpa_printf(MSG_INFO , "[%s]: bssid is NULL \r\n" , __func__);
++		}
++		selected = wpa_bss_get(wpa_s, ssid->bssid , ssid->ssid, ssid->ssid_len);
++		if(selected != NULL) {
++			wpa_supplicant_connect(wpa_s, selected, ssid);
++			break;
++		}
++	}
++
++}
++
++void wpas_p2p_req_assoc(struct wpa_supplicant *wpa_s, int sec, int usec)
++{
++	wpa_printf(MSG_INFO, "P2P-SAMSUNG: Quick association patch. wpas_p2p_req_assoc START......");
++
++	eloop_cancel_timeout(wpas_p2p_assoc_req, wpa_s, NULL);
++	eloop_register_timeout(sec, usec, wpas_p2p_assoc_req, wpa_s, NULL);
++}
++
++void wpas_p2p_group_remove_notif(struct wpa_supplicant *wpa_s, u16 reason_code)
++{
++	if(wpa_s->global && wpa_s->global->p2p_disabled)
++		return;
++
++	/* If we are running a P2P Client and we received a Deauth/Disassoc from the Go, then remove
++	   the virutal interface on which the client is running. */
++	if((wpa_s != wpa_s->parent) && (wpa_s->p2p_group_interface == P2P_GROUP_INTERFACE_CLIENT) && (wpa_s->key_mgmt != WPA_KEY_MGMT_WPS)) {
++
++		wpa_printf(MSG_INFO, "P2P: [EVENT_DEAUTH] Removing P2P_CLIENT virtual intf.");
++		wpa_supplicant_cancel_scan(wpa_s);
++		wpa_s->removal_reason = P2P_GROUP_REMOVAL_UNAVAILABLE;
++		wpas_p2p_group_delete(wpa_s, 0);
++	}
++#ifdef SAMSUNG_P2P_CHECK_STATUS
++#if 1
++	else {
++		if(wpa_s->global && wpa_s->global->p2p &&
++			((wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_GROUP_FORMATION_COMPLETE) || (wpa_s->global->p2p->s_p2p_state == SAMSUNG_P2P_JOIN))) {
++			if(wpa_s->p2p_group_interface == P2P_GROUP_INTERFACE_CLIENT) { // if gc
++				wpas_p2p_req_assoc(wpa_s , 0 , 450000);
++			}
++		}
++	}
++#endif
++#endif
++}
++#endif
+ 
+ void wpas_p2p_disassoc_notif(struct wpa_supplicant *wpa_s, const u8 *bssid,
+ 			     u16 reason_code, const u8 *ie, size_t ie_len,
+diff -Naur ./hostap_ori/wpa_supplicant/p2p_supplicant.h ./hostap/wpa_supplicant/p2p_supplicant.h
+--- ./hostap_ori/wpa_supplicant/p2p_supplicant.h	2013-11-28 10:28:52.000000000 +0800
++++ ./hostap/wpa_supplicant/p2p_supplicant.h	2014-01-21 17:31:29.000000000 +0800
+@@ -85,8 +85,16 @@
+ 			const u8 *dev_addr, const u8 *pri_dev_type,
+ 			const char *dev_name, u16 supp_config_methods,
+ 			u8 dev_capab, u8 group_capab, const u8 *group_id,
+-			size_t group_id_len);
+-void wpas_prov_disc_resp(void *ctx, const u8 *peer, u16 config_methods);
++			size_t group_id_len
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++			, u32 static_ip
++#endif
++			);
++void wpas_prov_disc_resp(void *ctx, const u8 *peer, u16 config_methods
++#ifdef SEC_PRODUCT_FEATURE_WLAN_DIRECT_SKIP_DHCP
++			, u32 static_ip
++#endif
++			);
+ void wpas_sd_request(void *ctx, int freq, const u8 *sa, u8 dialog_token,
+ 		     u16 update_indic, const u8 *tlvs, size_t tlvs_len);
+ void wpas_sd_response(void *ctx, const u8 *sa, u16 update_indic,
+@@ -122,6 +130,10 @@
+ void wpas_p2p_deauth_notif(struct wpa_supplicant *wpa_s, const u8 *bssid,
+ 			   u16 reason_code, const u8 *ie, size_t ie_len,
+ 			   int locally_generated);
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++void wpas_p2p_group_remove_notif(struct wpa_supplicant *wpa_s,
++				u16 reason_code);
++#endif
+ void wpas_p2p_disassoc_notif(struct wpa_supplicant *wpa_s, const u8 *bssid,
+ 			     u16 reason_code, const u8 *ie, size_t ie_len,
+ 			     int locally_generated);
+diff -Naur ./hostap_ori/wpa_supplicant/scan.c ./hostap/wpa_supplicant/scan.c
+--- ./hostap_ori/wpa_supplicant/scan.c	2014-01-21 16:29:12.000000000 +0800
++++ ./hostap/wpa_supplicant/scan.c	2014-01-21 17:31:29.000000000 +0800
+@@ -307,8 +307,18 @@
+ #ifdef CONFIG_P2P
+ 	if (params->freqs == NULL && wpa_s->p2p_in_provisioning &&
+ 	    wpa_s->go_params) {
++#ifdef SAMSUNG_P2P_JOIN_FREQ
++		if((wpa_s->go_params->freq <= 0) && !(wpa_s->go_params->freq_list[0])) {
++			if(wpa_s->global->p2p)
++				wpa_s->go_params->freq = wpa_s->global->p2p->join_oper_freq;
++		}
++#endif
+ 		/* Optimize provisioning state scan based on GO information */
++#ifdef SAMSUNG_P2P_JOIN_FREQ
++		if (wpa_s->p2p_in_provisioning < 15 &&
++#else
+ 		if (wpa_s->p2p_in_provisioning < 100 &&
++#endif
+ 		    wpa_s->go_params->freq > 0) {
+ 			wpa_dbg(wpa_s, MSG_DEBUG, "P2P: Scan only GO "
+ 				"preferred frequency %d MHz",
+@@ -316,7 +326,11 @@
+ 			params->freqs = os_zalloc(2 * sizeof(int));
+ 			if (params->freqs)
+ 				params->freqs[0] = wpa_s->go_params->freq;
++#ifdef SAMSUNG_P2P_JOIN_FREQ
++		} else if (wpa_s->p2p_in_provisioning < 20 &&
++#else
+ 		} else if (wpa_s->p2p_in_provisioning < 8 &&
++#endif
+ 			   wpa_s->go_params->freq_list[0]) {
+ 			wpa_dbg(wpa_s, MSG_DEBUG, "P2P: Scan only common "
+ 				"channels");
+diff -Naur ./hostap_ori/wpa_supplicant/wpa_supplicant.c ./hostap/wpa_supplicant/wpa_supplicant.c
+--- ./hostap_ori/wpa_supplicant/wpa_supplicant.c	2014-01-21 16:29:12.000000000 +0800
++++ ./hostap/wpa_supplicant/wpa_supplicant.c	2014-01-21 17:31:29.000000000 +0800
+@@ -197,6 +197,22 @@
+ 	wpa_supplicant_req_scan(wpa_s, 1, 0);
+ }
+ 
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++void wpa_supplicant_req_fast_reauth(struct wpa_supplicant *wpa_s, struct wpa_bss *selected)
++{
++	eloop_cancel_timeout(wpa_supplicant_timeout, wpa_s, NULL);
++	wpa_sm_notify_disassoc(wpa_s->wpa);
++	wpa_supplicant_disassociate(wpa_s, WLAN_REASON_DEAUTH_LEAVING);
++	if (selected == NULL) {
++		wpa_supplicant_req_scan(wpa_s, 1, 0);
++	}
++	else if (wpa_supplicant_connect(wpa_s, selected, wpa_s->conf->ssid) < 0) {
++		wpa_printf(MSG_INFO, "Connect Failed");
++		wpa_supplicant_req_scan(wpa_s, 1, 0);
++	 }
++}
++#endif
++
+ 
+ /**
+  * wpa_supplicant_req_auth_timeout - Schedule a timeout for authentication
+diff -Naur ./hostap_ori/wpa_supplicant/wpa_supplicant_i.h ./hostap/wpa_supplicant/wpa_supplicant_i.h
+--- ./hostap_ori/wpa_supplicant/wpa_supplicant_i.h	2014-01-21 16:47:27.000000000 +0800
++++ ./hostap/wpa_supplicant/wpa_supplicant_i.h	2014-01-21 17:31:29.000000000 +0800
+@@ -714,4 +714,8 @@
+ 
+ int wpas_network_disabled(struct wpa_supplicant *wpa_s, struct wpa_ssid *ssid);
+ 
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++void wpa_supplicant_req_fast_reauth(struct wpa_supplicant *wpa_s, struct wpa_bss *selected);
++#endif
++
+ #endif /* WPA_SUPPLICANT_I_H */

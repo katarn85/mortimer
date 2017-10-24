@@ -1,0 +1,568 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2013-09-26 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Белгіше"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Өшірілген."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Контекстік қалқымалы терезе"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Контекстік қалқымалы терезе ашық тұр. Жабу үшін екі рет түртіңіз"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Мәзір қалқымалы терезесі"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Мәзірді жабу үшін, екі рет түртіңіз."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "Тоқтату"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr ""
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "және басқа %d"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Алушыларды өзгерту үшін екі рет түртіңіз."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Өңдеу үшін екі рет түртіңіз."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Тақырыбы"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Қалқымалы тақырып"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Қалқымалы терезенің мәтіні"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Орталық қалқымалы терезе ашық тұр. Жабу үшін екі рет түртіңіз"
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Түйме"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr ""
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Таңдалған"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Таңдалмаған"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Белгі көзі"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "Белгі"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "Белгілемеу"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Қосу/өшіру түймесі"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Қосылған"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Өшірілген"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d пайыз"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Қолдану үшін түрту."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Түсті реттеу сырғытпасы"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Қанықтықты бақылау сырғытпасы"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Ашықтықты реттеу сырғытпасы"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Түс таңдағыш"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Ақ"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Сары"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Маржан"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Қызанақ"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Қызыл"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Ашық күлгін"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Алхоры"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Көгілдір күлгін"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Лайм түсті (жасыл)"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Орман жасыл"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Көгілдір"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Айқын көк"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Қою көк"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Қою сұр"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Қара"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Өзгертпелі бұлт бояуы"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Көшіру"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Кесу"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Таңдау"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Қою"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Өрісті өңдеу"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Жылдам айналдыру жолағы"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "Мазмұнды жылжыту үшін, екі рет түртіңіз."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Тартпа ашық. Жабу үшін екі рет түртіңіз."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Ауыстырғыш түйме"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "ден"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Орынды реттеу үшін, жоғары және төмен қарай сипаңыз."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Сырғытпа"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Таңдау"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Таңдалған"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Таңдалған"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Жиекбелгі"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Орнату"
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Аудару"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "%s реттеу үшін жоғары немесе төмен сипаңыз немесе пернетақтаны ашу үшін екі рет түртіңіз."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Өзгерту үшін екі рет түртіңіз."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Күнді орнату"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Уақытты орнату"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Кітап режимі"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Альбом режимі"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Жылдам өтуді іске қосу үшін екі рет түртіңіз."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Өңдеу."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Орынды реттеу үшін, жоғары және төмен қарай сипаңыз."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d таңба."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Контекстік қалқымалы терезе"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Қалқымалы терезені жабу үшін екі рет түртіңіз."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Орталық қалқымалы терезе"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Жабу үшін екі рет түртіңіз."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Тартпа ашық."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Тартпа мәзірін жабу үшін екі рет түртіңіз."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Курсор мәтіннің басында"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Курсор мәтіннің соңында"
+
+msgid "tap to change"
+msgstr "Режим өзгерту үшін түртіңіз."
+
+msgid "date"
+msgstr "Күні"
+
+msgid "hour"
+msgstr "сағат"
+
+msgid "minute"
+msgstr "минут"
+
+msgid "month"
+msgstr "ай"
+
+msgid "year"
+msgstr "жыл"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%2$d ішінен %1$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Күнді азайту"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Сағатты азайту"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Минутты азайту"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Айды азайту"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Жылды азайту"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Күнді көбейту"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Сағатты көбейту"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Минутты көбейту"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Айды көбейту"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Жылды көбейту"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Өзгерту үшін түртіңіз."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Бәрін бөлектеу"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Көшіру"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Таңдау"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Кесу"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Қою"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Буфер"
+

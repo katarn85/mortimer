@@ -1,0 +1,9 @@
+@PREFIX@/lib/gstreamer-0.10/libgstavsyssink.so
+@PREFIX@/lib/gstreamer-0.10/libgstencodebin.so
+@PREFIX@/lib/gstreamer-0.10/libgsttoggle.so
+@PREFIX@/lib/gstreamer-0.10/libgstavsysaudiosrc.so
+@PREFIX@/lib/gstreamer-0.10/libgstevasimagesink.so
+@PREFIX@/lib/gstreamer-0.10/libgstdrmsrc.so
+@PREFIX@/lib/gstreamer-0.10/libgstpdpushsrc.so
+@PREFIX@/lib/gstreamer-0.10/libgstaudiotp.so
+@PREFIX@/lib/gstreamer-0.10/libgstaudioeq.so

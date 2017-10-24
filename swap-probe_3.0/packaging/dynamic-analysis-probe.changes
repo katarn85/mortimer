@@ -1,0 +1,9 @@
+* Fri Jul 12 2013 Woojin Jung <woojin2.jung@samsung.com>
+- bug fix for ThreadProc, File::Seek probe
+- add filesize value for probe log of Tizen::Io::File APIs
+- function call inside app loader is excluded from user call
+- use original header files for Tizen APIs
+
+* Wed Jul 3 2013 Jaewon Lim <jaewon81.lim@samsung.com>
+- change screenshot file name for multiprocess application
+

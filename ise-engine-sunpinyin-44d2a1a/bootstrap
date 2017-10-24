@@ -1,0 +1,11 @@
+#! /bin/sh
+
+set -x
+mkdir -p ./m4
+autoreconf -f -i
+aclocal -I ./m4
+autoheader
+libtoolize -c --automake --force
+automake --add-missing --copy --include-deps
+autoconf
+## @end 1

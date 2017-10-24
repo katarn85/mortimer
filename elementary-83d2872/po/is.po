@@ -1,0 +1,568 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2013-09-26 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Tákn"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Slökkt."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Samhengissprettigluggi"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Samhengissprettigluggi er opinn. Tvípikkaðu á hann til að loka honum."
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Sprettivalmynd"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Tvípikkaðu til að loka valmyndinni."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "Hætta við"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr ""
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "og %d í viðbót"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Tvípikkaðu til að breyta viðtakendum."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Tvípikkaðu til að breyta."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Titill"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Sprettihaus"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Texti í meginmáli sprettiglugga"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Miðlægur sprettigluggi er opinn. Tvípikkaðu á hann til að loka honum."
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Hnappur"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr ""
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Valið"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Ekki valið"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Merkibox"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "Merkja"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "Afmerkja"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Hnappur til að kveikja og slökkva"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Kveikt"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Slökkt"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d prósent"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Pikkaðu til að nota."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Sleði fyrir litastjórnun"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Sleði fyrir litmettun"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Sleði fyrir birtustig"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Velja lit"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Hvítt"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Gulur"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Kóral"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Tómatrauður"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Rautt"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Fagurbleikur"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Plómulitað"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Bláfjólublátt"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Súraldingrænt"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Skógargrænn"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Himinblátt"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Kóngablár"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Dökkblár"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Dökkgrár"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Svart"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Sérsniðið litaspjald"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Afrita"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Klippa"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Velja"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Líma"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Breyta reit"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Flýtiflettistika"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "Tvípikkaðu til að færa efni."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Skúffa er opin. Pikkaðu tvisvar á hana til að loka henni."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Valhringur"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "á"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Flettu upp og niður til að stilla stöðuna."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Skyggna"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Velja"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Valið"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Valið"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Flipi"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Stilla"
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Þýða"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "Flettu upp og niður til að stilla %s eða pikkaðu tvisvar til að opna lyklaborðið."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Tvípikkaðu til að breyta."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Stilla dagsetningu"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Stilla tíma"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Skammsnið"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Langsnið"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Tvípikkaðu til að kveikja á hraðflettingu."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Verið að breyta."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Flettu upp og niður til að stilla stöðuna."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d stafir."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Samhengissprettigluggi"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Pikkaðu tvisvar til að loka sprettiglugganum."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Miðlægur sprettigluggi"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Tvípikkaðu á hann til að loka honum."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Skúffa er opin."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Pikkaðu tvisvar til að loka skúffuvalmyndinni."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Bendill í upphafi texta"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Bendill í lokum texta"
+
+msgid "tap to change"
+msgstr "Pikkaðu til að skipta um stillingu."
+
+msgid "date"
+msgstr "Dagsetning"
+
+msgid "hour"
+msgstr "klukkustund"
+
+msgid "minute"
+msgstr "mínúta"
+
+msgid "month"
+msgstr "mánuð"
+
+msgid "year"
+msgstr "ár"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d af %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Minnka dag"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Minnka klukkustund"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Minnka mínútu"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Minnka mánuð"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Minnka ár"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Stækka dag"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Stækka klukkustund"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Stækka mínútu"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Stækka mánuð"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Stækka ár"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Pikkaðu til að breyta."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Velja allt"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Afrita"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Velja"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Klippa"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Líma"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Klippiborð"
+

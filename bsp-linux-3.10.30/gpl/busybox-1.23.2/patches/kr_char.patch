@@ -1,0 +1,24 @@
+diff -urN busybox-1.20.2_org/libbb/printable_string.c busybox-1.20.2/libbb/printable_string.c
+--- busybox-1.20.2_org/libbb/printable_string.c	2012-06-26 22:35:45.000000000 +0900
++++ busybox-1.20.2/libbb/printable_string.c	2013-09-13 15:35:46.372152972 +0900
+@@ -31,8 +31,8 @@
+ 		}
+ 		if (c < ' ')
+ 			break;
+-		if (c >= 0x7f)
+-			break;
++		//if (c >= 0x7f)
++		//	break;
+ 		s++;
+ 	}
+ 
+@@ -45,7 +45,8 @@
+ 			unsigned char c = *d;
+ 			if (c == '\0')
+ 				break;
+-			if (c < ' ' || c >= 0x7f)
++			if (c < ' ')
++			//if (c < ' ' || c >= 0x7f)
+ 				*d = '?';
+ 			d++;
+ 		}

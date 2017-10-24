@@ -1,0 +1,3 @@
+prefix = "@INSTALL_PREFIX@"
+datadir = "@INSTALL_PREFIX@/share"
+localedir = "@INSTALL_PREFIX@/share/locale"

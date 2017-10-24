@@ -1,0 +1,20 @@
+<manifest>
+	<define>
+		<domain name="gst_plugin_scanner"/>
+		<permit>
+		</permit>
+		<request>
+			<smack request="dtv-libave" type="rw"/>
+			<smack request="dtv-trustzone-nwd" type="rw"/>
+			<smack request="device::app_logging" type="w"/>
+			<smack request="device::sys_logging" type="w"/>
+		</request>
+	</define>
+	<request>
+		<domain name="_" />
+	</request>
+	<assign>
+		<filesystem path="/usr/bin/*" label="_" exec_label="none" />
+		<filesystem path="/usr/libexec/gstreamer-0.10/gst-plugin-scanner" label="_" exec_label="gst_plugin_scanner" />
+	</assign>
+</manifest>

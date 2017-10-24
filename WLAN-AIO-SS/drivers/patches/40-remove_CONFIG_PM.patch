@@ -1,0 +1,208 @@
+diff -Naur WLAN-AIO-SS.orig/drivers/ath6kl/acl_ioctl.c WLAN-AIO-SS/drivers/ath6kl/acl_ioctl.c
+--- WLAN-AIO-SS.orig/drivers/ath6kl/acl_ioctl.c	2013-10-23 13:49:03.000000000 +0800
++++ WLAN-AIO-SS/drivers/ath6kl/acl_ioctl.c	2013-10-23 15:23:29.000000000 +0800
+@@ -72,7 +72,7 @@
+ 		vif->acl_db.policy = req->val;
+ 	}
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 	if (req->mode == IEEE80211_PARAM_SUSPEND_SET) {
+ 		if (req->val == 1) /* enetr suspend mode */
+ 			cfg80211_suspend_issue(vif->ndev, 1);
+diff -Naur WLAN-AIO-SS.orig/drivers/ath6kl/ce_athtst.c WLAN-AIO-SS/drivers/ath6kl/ce_athtst.c
+--- WLAN-AIO-SS.orig/drivers/ath6kl/ce_athtst.c	2013-10-23 13:49:03.000000000 +0800
++++ WLAN-AIO-SS/drivers/ath6kl/ce_athtst.c	2013-10-23 15:23:29.000000000 +0800
+@@ -1503,7 +1503,7 @@
+ 
+ 	if (down_interruptible(&vif->ar->sem))
+ 		return -EBUSY;
+-#ifdef CONFIG_PM
++#if 0
+ 	printk(KERN_DEBUG "%s[%d]val->val=%d\n\r",
+ 		__func__, __LINE__, val->val);
+ 	if (val->val == 1) /* enetr suspend mode */
+diff -Naur WLAN-AIO-SS.orig/drivers/ath6kl/cfg80211.c WLAN-AIO-SS/drivers/ath6kl/cfg80211.c
+--- WLAN-AIO-SS.orig/drivers/ath6kl/cfg80211.c	2013-10-23 15:23:23.000000000 +0800
++++ WLAN-AIO-SS/drivers/ath6kl/cfg80211.c	2013-10-23 15:23:29.000000000 +0800
+@@ -4442,7 +4442,7 @@
+ 	return 0;
+ }
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 
+ /* hif layer decides what suspend mode to use */
+ static int __ath6kl_cfg80211_suspend(struct wiphy *wiphy,
+@@ -6247,7 +6247,7 @@
+ 	.del_pmksa = ath6kl_del_pmksa,
+ 	.flush_pmksa = ath6kl_flush_pmksa,
+ 	CFG80211_TESTMODE_CMD(ath6kl_tm_cmd)
+-#ifdef CONFIG_PM
++#if 0
+ 	.suspend = __ath6kl_cfg80211_suspend,
+ 	.resume = __ath6kl_cfg80211_resume,
+ #ifdef NL80211_CMD_GET_WOWLAN_QCA
+@@ -6777,7 +6777,7 @@
+ 	wiphy->features |= NL80211_FEATURE_VIF_TXPOWER;
+ #endif
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 	wiphy->wowlan.flags = WIPHY_WOWLAN_ANY |
+ 				WIPHY_WOWLAN_MAGIC_PKT |
+ 				WIPHY_WOWLAN_DISCONNECT |
+diff -Naur WLAN-AIO-SS.orig/drivers/ath6kl/usb.c WLAN-AIO-SS/drivers/ath6kl/usb.c
+--- WLAN-AIO-SS.orig/drivers/ath6kl/usb.c	2013-10-23 15:23:23.000000000 +0800
++++ WLAN-AIO-SS/drivers/ath6kl/usb.c	2013-10-23 15:24:53.000000000 +0800
+@@ -202,12 +202,12 @@
+ };
+ #endif
+ /* function declarations */
+-#ifdef CONFIG_PM
++#ifdef CONFIG_SWOW_SUPPORT
+ 
+ static int ath6kl_usb_pm_suspend(struct usb_interface *interface,
+ 			      pm_message_t message);
+ static int ath6kl_usb_pm_resume(struct usb_interface *interface);
+-static int ath6kl_usb_pm_reset_resume(struct usb_interface *intf);
++//static int ath6kl_usb_pm_reset_resume(struct usb_interface *intf);
+ 
+ #else
+ 
+@@ -2249,7 +2249,7 @@
+ 
+ int ath6kl_usb_suspend(struct ath6kl *ar, struct cfg80211_wowlan *wow)
+ {
+-#ifdef CONFIG_PM
++#ifdef CONFIG_SWOW_SUPPORT
+ 	struct ath6kl_usb *device = ath6kl_usb_priv(ar);
+ 	struct usb_interface *interface = device->interface;
+ #endif
+@@ -2268,7 +2268,7 @@
+ 			return ret;
+ 	} else {
+ 		memset(&message, 0, sizeof(message));
+-#ifdef CONFIG_PM
++#ifdef CONFIG_SWOW_SUPPORT
+ 		ret = ath6kl_usb_pm_suspend(interface, message);
+ #else
+ 		ret = 0;
+@@ -2280,7 +2280,7 @@
+ 
+ int ath6kl_usb_resume(struct ath6kl *ar)
+ {
+-#ifdef CONFIG_PM
++#ifdef CONFIG_SWOW_SUPPORT
+ 	struct ath6kl_usb *device = ath6kl_usb_priv(ar);
+ 	struct usb_interface *interface = device->interface;
+ 
+@@ -2668,7 +2668,7 @@
+ 	ath6kl_usb_device_detached(interface);
+ }
+ 
+-#ifdef CONFIG_PM
++#ifdef CONFIG_SWOW_SUPPORT
+ 
+ #ifdef CONFIG_ANDROID
+ static int ath6kl_usb_pm_suspend(struct usb_interface *interface,
+@@ -2760,6 +2760,7 @@
+ 	return 0;
+ }
+ 
++#if 0
+ static int ath6kl_usb_pm_reset_resume(struct usb_interface *intf)
+ {
+ 	struct ath6kl_usb *device;
+@@ -2781,6 +2782,7 @@
+ 	return 0;
+ }
+ #endif
++#endif
+ 
+ /* table of devices that work with this driver */
+ static struct usb_device_id ath6kl_usb_ids[] = {
+@@ -2803,7 +2805,7 @@
+ static struct usb_driver ath6kl_usb_driver = {
+ 	.name = "ath6kl_usb",
+ 	.probe = ath6kl_usb_probe,
+-#ifdef CONFIG_PM
++#if 0
+ 	.suspend = ath6kl_usb_pm_suspend,
+ 	.resume = ath6kl_usb_pm_resume,
+ 	.reset_resume = ath6kl_usb_pm_reset_resume,
+diff -Naur WLAN-AIO-SS.orig/drivers/cfg80211_382/core.c WLAN-AIO-SS/drivers/cfg80211_382/core.c
+--- WLAN-AIO-SS.orig/drivers/cfg80211_382/core.c	2013-10-23 13:49:04.000000000 +0800
++++ WLAN-AIO-SS/drivers/cfg80211_382/core.c	2013-10-23 15:23:29.000000000 +0800
+@@ -463,7 +463,7 @@
+ 	int i;
+ 	u16 ifmodes = wiphy->interface_modes;
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 	if (WARN_ON((wiphy->wowlan.flags & WIPHY_WOWLAN_GTK_REKEY_FAILURE) &&
+ 		    !(wiphy->wowlan.flags & WIPHY_WOWLAN_SUPPORTS_GTK_REKEY)))
+ 		return -EINVAL;
+@@ -549,7 +549,7 @@
+ 		return -EINVAL;
+ 	}
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 	if (rdev->wiphy.wowlan.n_patterns) {
+ 		if (WARN_ON(!rdev->wiphy.wowlan.pattern_min_len ||
+ 			    rdev->wiphy.wowlan.pattern_min_len >
+diff -Naur WLAN-AIO-SS.orig/drivers/cfg80211_382/kernel_80211_h/net/cfg80211.h WLAN-AIO-SS/drivers/cfg80211_382/kernel_80211_h/net/cfg80211.h
+--- WLAN-AIO-SS.orig/drivers/cfg80211_382/kernel_80211_h/net/cfg80211.h	2013-10-23 15:23:23.000000000 +0800
++++ WLAN-AIO-SS/drivers/cfg80211_382/kernel_80211_h/net/cfg80211.h	2013-10-23 15:23:29.000000000 +0800
+@@ -2336,7 +2336,7 @@
+ 	char fw_version[ETHTOOL_BUSINFO_LEN];
+ 	u32 hw_version;
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 	struct wiphy_wowlan_support wowlan;
+ #endif
+ 
+diff -Naur WLAN-AIO-SS.orig/drivers/cfg80211_382/nl80211.c WLAN-AIO-SS/drivers/cfg80211_382/nl80211.c
+--- WLAN-AIO-SS.orig/drivers/cfg80211_382/nl80211.c	2013-10-23 13:49:04.000000000 +0800
++++ WLAN-AIO-SS/drivers/cfg80211_382/nl80211.c	2013-10-23 15:23:29.000000000 +0800
+@@ -1200,7 +1200,7 @@
+ 		nla_nest_end(msg, nl_ifs);
+ 	}
+ 
+-#ifdef CONFIG_PM
++#if 0
+ 	if (dev->wiphy.wowlan.flags || dev->wiphy.wowlan.n_patterns) {
+ 		struct nlattr *nl_wowlan;
+ 
+@@ -6679,7 +6679,7 @@
+ 	return cfg80211_leave_mesh(rdev, dev);
+ }
+ 
+-#ifdef CONFIG_PM
++#if 0
+ static int nl80211_get_wowlan(struct sk_buff *skb, struct genl_info *info)
+ {
+ 	struct cfg80211_registered_device *rdev = info->user_ptr[0];
+@@ -7686,7 +7686,7 @@
+ 		.internal_flags = NL80211_FLAG_NEED_NETDEV_UP |
+ 				  NL80211_FLAG_NEED_RTNL,
+ 	},
+-#ifdef CONFIG_PM
++#if 0
+ 	{
+ 		.cmd = NL80211_CMD_GET_WOWLAN,
+ 		.doit = nl80211_get_wowlan,
+diff -Naur WLAN-AIO-SS.orig/drivers/include_local/net/mac80211.h WLAN-AIO-SS/drivers/include_local/net/mac80211.h
+--- WLAN-AIO-SS.orig/drivers/include_local/net/mac80211.h	2013-10-23 14:10:17.000000000 +0800
++++ WLAN-AIO-SS/drivers/include_local/net/mac80211.h	2013-10-23 15:23:29.000000000 +0800
+@@ -2103,7 +2103,7 @@
+ 	void (*tx)(struct ieee80211_hw *hw, struct sk_buff *skb);
+ 	int (*start)(struct ieee80211_hw *hw);
+ 	void (*stop)(struct ieee80211_hw *hw);
+-#ifdef CONFIG_PM
++#if 0
+ 	int (*suspend)(struct ieee80211_hw *hw, struct cfg80211_wowlan *wowlan);
+ 	int (*resume)(struct ieee80211_hw *hw);
+ #endif

@@ -1,0 +1,133 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2014-02-07 13:50+0900\n"
+"PO-Revision-Date: 2014-02-07 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elm_entry.c:2007
+msgid "Cancel"
+msgstr "Batal"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Salin"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Potong"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Pilih"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Tampal"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Tetapkan"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Tetapkan tarikh"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Tetap masa"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+msgid "tap to change"
+msgstr "Ketik untuk mengubah mod."
+
+msgid "date"
+msgstr "Tarikh"
+
+msgid "hour"
+msgstr "jam"
+
+msgid "minute"
+msgstr "minit"
+
+msgid "month"
+msgstr "bulan"
+
+msgid "year"
+msgstr "tahun"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d daripada %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Mengurangkan hari"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Mengurangkan jam"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Mengurangkan minit"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Mengurangkan bulan"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Mengurangkan tahun"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Meningkatkan hari"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Meningkatkan jam"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Meningkatkan minit"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Meningkatkan bulan"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Meningkatkan tahun"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Ketik untuk mengubah."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Pilih semua"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Salin"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Pilih"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Potong"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Tampal"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Papan klip"
+

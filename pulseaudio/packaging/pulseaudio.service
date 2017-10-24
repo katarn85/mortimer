@@ -1,0 +1,15 @@
+[Unit]
+Description=pulseaudio service
+After=syslog.target dbus.service alsa-restore.service adsp-loader.service
+
+[Service]
+Type=forking
+ExecStartPre=/bin/mkdir -p /tmp/pulseaudio ; /usr/bin/chsmack -a pulseaudio -t /tmp/pulseaudio
+ExecStart=/usr/bin/pulseaudio
+Restart=always
+KillSignal=SIGKILL
+MemoryLimit=50M
+PIDFile=/var/run/pulse/pid
+
+[Install]
+WantedBy=multi-user.target

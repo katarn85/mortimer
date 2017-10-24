@@ -1,0 +1,96 @@
+diff --git a/Makefile b/Makefile
+index 09fb3ed..4d05900 100644
+--- a/Makefile
++++ b/Makefile
+@@ -73,12 +73,12 @@ CURSES := -lncurses
+ # Something like this is probably needed to make the SE Linux
+ # library loading not conflict with embedded systems stuff.
+ #
+-#ifeq ($(SHARED),1)
+-#ldl := -ldl
+-#LIBTYPE := -DSHAREDLIB
+-#else
+-#LIBTYPE := -DSTATICLIB
+-#endif
++ifeq ($(SHARED),1)
++ldl := -ldl
++LIBTYPE := -DSHAREDLIB
++else
++LIBTYPE := -DSTATICLIB
++endif
+ 
+ # Preprocessor flags.
+ PKG_CPPFLAGS := -D_GNU_SOURCE -I proc
+@@ -103,7 +103,7 @@ PKG_CFLAGS   := -fno-common -ffast-math \
+ # Note that some stuff below is conditional on CFLAGS containing
+ # an option that starts with "-g". (-g, -g2, -g3, -ggdb, etc.)
+ CFLAGS       := -O2 -s
+-ALL_CFLAGS   := $(PKG_CFLAGS) $(CFLAGS)
++ALL_CFLAGS   := $(PKG_CFLAGS) $(CFLAGS) $(LIBTYPE)
+ 
+ PKG_LDFLAGS  := -Wl,-warn-common
+ LDFLAGS      :=
+diff --git a/ps/output.c b/ps/output.c
+index 87bf9de..edbb4cb 100644
+--- a/ps/output.c
++++ b/ps/output.c
+@@ -1099,7 +1099,7 @@ static int pr_sgi_p(char *restrict const outbuf, const proc_t *restrict const pp
+   return snprintf(outbuf, COLWID, "*");
+ }
+ 
+-
++#ifdef STATICLIB
+ /****************** FLASK & seLinux security stuff **********************/
+ // move the bulk of this to libproc sometime
+ 
+@@ -1131,7 +1131,7 @@ fail:
+   return 1;
+ }
+ 
+-#if 0
++#else
+ // This needs more study, considering:
+ // 1. the static linking option (maybe disable this in that case)
+ // 2. the -z and -Z option issue
+diff --git a/ps/parser.c b/ps/parser.c
+index 5ad9035..2659d4d 100644
+--- a/ps/parser.c
++++ b/ps/parser.c
+@@ -231,7 +231,7 @@ static const char *parse_sysv_option(void){
+     // In the meantime, please do not add to it. The list is
+     // intended to ONLY contain flags defined by the POSIX and UNIX
+     // standards published by The Open Group, IEEE, and ISO.
+-    if(!strchr("aAdefgGlnoptuU", *flagptr)) not_pure_unix = 1;  // dude, -Z ain't in POSIX
++    if(!strchr("aAdefgGlnoptuUZ", *flagptr)) not_pure_unix = 1;  // dude, -Z ain't in POSIX
+ 
+     switch(*flagptr){
+     case 'A':
+diff --git a/ps/ps.1 b/ps/ps.1
+index 64953d5..aab2584 100644
+--- a/ps/ps.1
++++ b/ps/ps.1
+@@ -450,6 +450,9 @@ display virtual memory format
+ Do not show flags; show rss in place of addr.
+ This option can only be used with \fB\-l\fR.
+ 
++.opt \-Z
++display security context format (SELinux, etc.)
++
+ .opt \-\-format \ format
+ user\-defined format.  Identical to \fB\-o\fR and \fBo\fR.
+ 
+diff --git a/w.c b/w.c
+index 1b2a0fc..207a8a1 100644
+--- a/w.c
++++ b/w.c
+@@ -163,6 +163,10 @@ static const proc_t *getproc(const utmp_t *restrict const u, const char *restric
+ 	if(best && tmp->start_time <= best->start_time) continue;
+     	best = tmp;
+     }
++    /* It is there but SELinux wouldn't allow us to know the detail. Really
++       w should just be given rights */
++    if(!kill(u->ut_pid, 0) || errno != ESRCH)
++    	*found_utpid = 1;
+     return best ? best : secondbest;
+ }
+ 

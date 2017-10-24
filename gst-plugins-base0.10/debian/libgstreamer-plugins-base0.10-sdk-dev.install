@@ -1,0 +1,2 @@
+usr/lib/*.{a,la}
+usr/lib/pkgconfig/*.pc

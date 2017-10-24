@@ -1,0 +1,11 @@
+--- a/src/su.c
++++ b/src/su.c
+@@ -342,7 +342,7 @@
+ #endif
+ #endif				/* !USE_PAM */
+ 
+-	sanitize_env ();
++	/* sanitize_env (); */
+ 
+ 	(void) setlocale (LC_ALL, "");
+ 	(void) bindtextdomain (PACKAGE, LOCALEDIR);

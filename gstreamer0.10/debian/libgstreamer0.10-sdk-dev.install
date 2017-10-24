@@ -1,0 +1,4 @@
+usr/lib/*.{a,la}
+usr/lib/gstreamer-0.10/*.{a,la}
+usr/lib/pkgconfig
+usr/share/aclocal

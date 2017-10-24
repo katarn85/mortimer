@@ -1,0 +1,11 @@
+prefix=@prefix@
+libdir=@libdir@
+includedir=${prefix}/include
+libexecdir=@libexecdir@
+pulsetestdir=${libexecdir}/pulse-tests
+
+Name: pulsecore
+Description: Module building interface for pulseaudio
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -L${libdir}/pulseaudio -L${libdir}/pulse-@PA_MAJORMINOR@/modules -lpulsecore-@PA_MAJORMINOR@ -lpulsecommon-@PA_MAJORMINOR@ -lpulse @PTHREAD_LIBS@
+Cflags: -D_REENTRANT -D__INCLUDED_FROM_PULSE_AUDIO -DPA_DEFAULT_CONFIG_DIR=\"@PA_DEFAULT_CONFIG_DIR@\" -I${includedir}

@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/cmake.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+DEB_DH_MAKESHLIBS_ARGS_libwbxml2-0 := -V"libwbxml2-0 (>= 0.10.0)"
+DEB_MAKE_CHECK_TARGET := LD_LIBRARY_PATH=$(CURDIR)/$(DEB_BUILDDIR)/src test

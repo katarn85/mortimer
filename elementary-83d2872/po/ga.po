@@ -1,0 +1,133 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2013-09-26 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elm_entry.c:2007
+msgid "Cancel"
+msgstr "Cuir ar ceal"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Cóipeáil"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Gearr"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Roghnaigh"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Greamaigh"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "RN"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "IN"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Socraigh"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Socraigh dáta"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Socraigh am"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+msgid "tap to change"
+msgstr "Tapáil leis an mód a athrú."
+
+msgid "date"
+msgstr "Dáta"
+
+msgid "hour"
+msgstr "uair an chloig"
+
+msgid "minute"
+msgstr "nóiméad"
+
+msgid "month"
+msgstr "mí"
+
+msgid "year"
+msgstr "bliain"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d as %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Laghdaigh lá"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Laghdaigh uair"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Laghdaigh nóiméad"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Laghdaigh mí"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Laghdaigh bliain"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Méadaigh lá"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Méadaigh uair an chloig"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Méadaigh nóiméad"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Méadaigh mí"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Méadaigh bliain"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Tapáil lena athrú"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Roghnaigh gach"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Cóipeáil"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Roghnaigh"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Gearr"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Greamaigh"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Gearrthaisce"
+

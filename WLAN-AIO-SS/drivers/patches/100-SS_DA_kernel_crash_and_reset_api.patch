@@ -1,0 +1,106 @@
+diff -uNr WLAN-AIO-SS_org/drivers/ath6kl/reg.c WLAN-AIO-SS/drivers/ath6kl/reg.c
+--- WLAN-AIO-SS_org/drivers/ath6kl/reg.c	2015-05-27 13:46:16.829439919 +0900
++++ WLAN-AIO-SS/drivers/ath6kl/reg.c	2015-05-27 13:46:32.093440066 +0900
+@@ -872,8 +872,15 @@
+ {
+ 	struct reg_info *reg = ar->reg_ctx;
+ 
++	//printk(KERN_ERR "[%s:%d]\n", __FUNCTION__, __LINE__);
++	if(reg == NULL)
++	{
++		printk(KERN_ERR "reg to be NULL\n");
++		return false;
++	}
++
+ 	if (!((reg->current_reg_code >> ATH6KL_COUNTRY_RD_SHIFT) &
+-						ATH6KL_WORLDWIDE_ROAMING_FLAG))
++		  ATH6KL_WORLDWIDE_ROAMING_FLAG))
+ 		return true;
+ 	else
+ 		return false;
+diff -uNr WLAN-AIO-SS_org/drivers/ath6kl/usb.c WLAN-AIO-SS/drivers/ath6kl/usb.c
+--- WLAN-AIO-SS_org/drivers/ath6kl/usb.c	2015-05-27 13:46:16.829439919 +0900
++++ WLAN-AIO-SS/drivers/ath6kl/usb.c	2015-05-27 13:46:26.909440008 +0900
+@@ -2617,6 +2617,35 @@
+ 	extern void Direct_Audio_init(struct ath6kl *ar);
+ #endif
+ 
++#if 1
++static struct proc_dir_entry *proc_power;
++static struct proc_dir_entry *proc_root;
++
++static int wifi_pm_power_stat(struct file *filp, char *buf, size_t count, loff_t *offp)
++{
++	struct ath6kl *ar;
++
++	printk(KERN_ERR"in wifi_pm_power_stat\n");
++	
++	ar = (struct ath6kl *)PDE_DATA(file_inode(filp));
++	if (!(ar)) {
++		printk(KERN_ERR "Null data");
++		return 0;
++	}
++
++	ath6kl_reset_device(ar, ar->target_type, true, true);
++
++	return 0;
++}
++
++static const struct file_operations wifi_proc_fops = {
++	.read = wifi_pm_power_stat,
++};
++
++static int check_reset = 0;
++
++#endif
++
+ u8 suspend_idx = 1;
+ /* ath6kl usb driver registered functions */
+ static int ath6kl_usb_probe(struct usb_interface *interface,
+@@ -2770,6 +2799,32 @@
+ #ifdef DIRECT_AUDIO_SUPPORT
+ 	Direct_Audio_init(ar);
+ #endif
++#if 1
++	if (check_reset == 1) {
++		remove_proc_entry("power", proc_root);
++		remove_proc_entry("driver/ar1021x", 0);
++		check_reset = 0;
++	}
++
++	if (check_reset == 0) {
++		char proc_rootname[] = "driver/ar1021x";
++
++		proc_root = proc_mkdir(proc_rootname, NULL);
++		if (IS_ERR(proc_root))
++		{
++			printk(KERN_ERR"failed to create procfs \"driver/ar1021x\".\n");
++		}
++
++		proc_power = proc_create_data("power", 0666, proc_root, &wifi_proc_fops, ar);
++		if (IS_ERR(proc_power))
++		{
++			printk(KERN_ERR"failed to create procfs \"power\".\n");
++		}
++
++		check_reset = 1;
++	}
++#endif
++
+ 	return ret;
+ 
+ err_core_free:
+@@ -3144,6 +3199,13 @@
+ 	if(cookie_mem_ctrl)
+ 		kfree(cookie_mem_ctrl);
+ #endif
++#if 1
++	if (check_reset == 1) {
++		remove_proc_entry("power", proc_root);
++		remove_proc_entry("driver/ar1021x", 0);
++		check_reset = 0;
++	}
++#endif
+ }
+ #endif
+ 

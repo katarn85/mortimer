@@ -1,0 +1,23 @@
+Source: ise-engine-hangul
+Section: utils
+Priority: optional
+Maintainer: Jihoon Kim <jihoon48.kim@samsung.com>, Ji-hoon Lee <dalton.lee@samsung.com>
+Build-Depends: debhelper (>= 5), autotools-dev, pkg-config, libisf-dev, libhangul-dev
+Standards-Version: 0.3.2
+
+Package: ise-engine-hangul
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Hangul Input Method Engine for ISF
+ <this module is IM engine of SCIM and built for ISF (ISF is input service framework for supporing mobile input and is extended from SCIM 1.4.7.>
+ Hangul Input Method Engine enables isf to input Hangul (Korean)
+ characters from the keyboard using the plugin modules and the data 
+ files.
+ .
+
+Package: ise-engine-hangul-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ise-engine-hangul (unstripped)
+ This package contains ise-engine-hangul unstripped files.

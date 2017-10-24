@@ -1,0 +1,137 @@
+Source: gst-plugins-base0.10
+Section: libs
+Priority: optional
+Maintainer: Shin Seung Bae <seungbae.shin@samsung.com>, JongHyuk Choi <jhchoi.choi@samsung.com>
+Uploaders: Cho Ye Jin <cho.yejin@samsung.com>, Hyunseok Lee <hs7388.lee@samsung.com>, Ranjit Reddy B <b.ranjit@samsung.com>, Naveen Ch <naveen.ch@samsung.com>, Jeongmo Yang <jm80.yang@samsung.com>
+Build-Depends: libgstreamer0.10-dev (>= 0.10.22), libasound2-dev (>= 0.9.0) [alpha amd64 arm armeb armel hppa i386 ia64 lpia m32r m68k mips mipsel powerpc ppc64 s390 s390x sh3 sh3eb sh4 sh4eb sparc], autotools-dev, debhelper (>= 5), pkg-config (>= 0.11.0), libxv-dev (>= 6.8.2), libxt-dev,liboil0.3-dev (>= 0.3.14), libglib2.0-dev (>= 2.15.2), libxml2-dev (>= 2.4.23), zlib1g-dev (>= 1:1.1.4), gstreamer0.10-tools (>= 0.10.14), libvorbis-dev, libogg-dev, libtheora-dev, libpango1.0-dev
+Standards-Version: 3.8.0
+
+Package: gstreamer0.10-plugins-base-apps
+Architecture: any
+Section: utils
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         gstreamer0.10-tools
+Description: GStreamer helper programs from the "base" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains helper programs from the "base" set, an essential
+ exemplary set of elements.
+
+Package: libgstreamer-plugins-base0.10-0
+Architecture: any
+Section: libs
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: GStreamer libraries from the "base" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains libraries from the "base" set, an essential
+ exemplary set of elements.
+
+Package: libgstreamer-plugins-base0.10-dev
+XB-Public-Package: no
+Architecture: any
+Section: libdevel
+Depends: libgstreamer0.10-dev (>= 0.10.22), libgstreamer-plugins-base0.10-sdk-dev
+Description: GStreamer development files for libraries from the "base" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains development files for GStreamer libraries from
+ the "base" set, an essential exemplary set of elements.
+
+Package: libgstreamer-plugins-base0.10-sdk-dev
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libgstreamer-plugins-base0.10-0 (= ${binary:Version}),
+         libc6-dev | libc-dev,
+         pkg-config,
+         libgstreamer0.10-sdk-dev (>= 0.10.22),
+         libglib2.0-dev,
+         libxml2-dev, 
+Description: GStreamer SDK development files for libraries from the "base" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains SDK development files for GStreamer libraries from
+ the "base" set, an essential exemplary set of elements.
+
+
+Package: gstreamer0.10-alsa
+Architecture: alpha amd64 arm armeb armel hppa i386 ia64 lpia m32r m68k mips mipsel powerpc ppc64 s390 s390x sh3 sh3eb sh4 sh4eb sparc
+Section: libs
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libgstreamer-plugins-base0.10-0 (>= 0.10.22)
+Description: GStreamer plugin for ALSA
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the GStreamer plugin for the ALSA library.  ALSA
+ is the Advanced Linux Sound Architecture.
+
+Package: gstreamer0.10-plugins-base
+Architecture: any
+Section: libs
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libgstreamer-plugins-base0.10-0 (>= 0.10.22),
+Provides: ${gstreamer:Provides}
+Description: GStreamer plugins from the "base" set
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the GStreamer plugins from the "base" set, an
+ essential exemplary set of elements.
+
+Package: gstreamer0.10-x
+Architecture: any
+Section: libs
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libgstreamer-plugins-base0.10-0 (>= 0.10.22)
+Description: GStreamer plugins for X11
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the GStreamer plugins for X11 video output, both
+ for standard Xlib support and for the Xv extension.
+
+Package: gstreamer0.10-plugins-base-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer0.10-plugins-base (= ${Source-Version})
+Description: GStreamer plugins from the "base" set (unstripped)

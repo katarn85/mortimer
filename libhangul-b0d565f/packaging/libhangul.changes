@@ -1,0 +1,7 @@
+* Tue Nov 05 2013 Philippe Coval <philippe.coval@eurogiciel.fr> upstream/0.1.0@e936879
+- resetting manifest requested domain to floor
+- Bump to 0.1.0+14+g55b7084 (reworked git to separate upstream and packaging)
+  Bug-Tizen: TZPC-4608 (Input methods Korean repo are missing)
+  Bug-Tizen: PTREL-153 (upstream branches are missing...)
+- Initial packaging on 0.0.10
+

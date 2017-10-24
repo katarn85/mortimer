@@ -1,0 +1,171 @@
+kernel: init kernel-init kernel-build 
+
+kernel-init:
+	
+	@echo "##################################################################"
+	@echo "# kerenl init                                                    #"
+	@echo "##################################################################"
+	cp -rf $(PROJECT_ROOT)/kernel/* $(KERNEL_ROOT)/
+
+.PHONY: kernel-init
+
+kernel-build: kernel-uImage kernel-modules kernel-dtb kernel-export
+
+.PHONY: kernel-build
+
+kernel-uImage: 
+
+	@echo "##################################################################"
+	@echo "# kernel-uImage $(KERNEL_VER)                                    #"
+	@echo "##################################################################"
+	
+	if [ -e $(EXPORT_KERNEL)/modules ]; then\
+	  rm -rf $(EXPORT_KERNEL)/modules;\
+	fi;
+
+	if [ -e $(EXPORT_KERNEL)/images/uImage ]; then\
+	  rm -f $(EXPORT_KERNEL)/images/uImage;\
+	fi;
+	
+	if [ -e $(KERNEL_ROOT)/arch/arm/boot/uImage ]; then\
+		rm -f $(KERNEL_ROOT)/arch/arm/boot/uImage; \
+	fi;	
+	
+	cd $(KERNEL_ROOT);\
+	make $(KERNEL_DEFCONFIG_FILE); \
+	make silentoldconfig; \
+	cp ./arch/$(ARCH)/configs/$(KERNEL_DEFCONFIG_FILE) ./.config; \
+	make -j $(NCPU) -C $(KERNEL_ROOT) ARCH=$(ARCH) uImage; \
+	make -j $(NCPU) -C $(KERNEL_ROOT) modules; \
+	make -j $(NCPU) -C $(KERNEL_ROOT) modules_install INSTALL_MOD_PATH=$(KERNEL_ROOT)
+	
+	if [ ! -e $(KERNEL_ROOT)/arch/arm/boot/uImage ]; then\
+		exit 1; \
+	fi;
+
+.PHONY: kernel-uImage
+
+kernel-dtb:
+	@echo "##################################################################"
+	@echo "# kernel-dtb $(KERNEL_DTS_FILE)                                  #"
+	@echo "##################################################################"
+
+	cd $(KERNEL_ROOT);\
+	make -C $(KERNEL_ROOT) ARCH=$(ARCH) $(KERNEL_DTB_FILE);
+	
+
+.PHONY: kernel-dtb
+
+kernel-menuconfig:
+	@echo "##################################################################"
+	@echo "# kernel-menuconfig $(KERNEL_VER)                                #"
+	@echo "##################################################################"
+	
+	cd $(KERNEL_ROOT);\
+	make $(KERNEL_DEFCONFIG_FILE); \
+	make menuconfig ARCH=$(ARCH);\
+	cp ./.config ./arch/$(ARCH)/configs/$(KERNEL_DEFCONFIG_FILE)
+
+.PHONY: kernel-menuconfig
+
+kernel-export: kernel-export-init kernel-export-module-image 
+	
+	if [ -e $(EXPORT_KERNEL)/images ]; then\
+	  cp -afr $(EXPORT_KERNEL)/images/* $(RELEASE_ROOT);\
+	fi;
+
+.PHONY: kernel-export
+
+kernel-export-init:
+
+	@echo "##################################################################"
+	@echo "# kernel-export $(KERNEL_VER)                                    #"
+	@echo "##################################################################"
+	if [ -e $(EXPORT_KERNEL)/images ]; then\
+	  rm -rf $(EXPORT_KERNEL)/images;\
+	fi;
+	
+	mkdir -p $(EXPORT_KERNEL)/images
+
+	if [ -e $(KERNEL_ROOT)/arch/arm/boot/uImage ]; then\
+		cp $(KERNEL_ROOT)/arch/arm/boot/uImage $(EXPORT_KERNEL)/images; \
+	fi
+
+	if [ -e $(KERNEL_ROOT)/arch/arm/boot/dts/$(KERNEL_DTB_FILE) ]; then\
+		cp $(KERNEL_ROOT)/arch/arm/boot/dts/$(KERNEL_DTB_FILE) $(EXPORT_KERNEL)/images/dtb.bin; \
+	fi
+
+	if [ -e $(EXPORT_KERNEL)/modules ]; then\
+	  rm -rf $(EXPORT_KERNEL)/modules;\
+	fi;
+	
+	install -d $(EXPORT_KERNEL)/modules/$(KERNEL_VER)/kernel
+
+	if [ -e $(KERNEL_DIR)/lib/modules/$(KERNEL_VER)/kernel ]; then\
+	  cp -afr --remove-destination $(KERNEL_DIR)/lib/modules/* $(EXPORT_KERNEL)/modules/;\
+	  echo $(MODEL_CODE) $(DATE) > $(EXPORT_KERNEL)/modules/$(KERNEL_VER)/version; \
+	  rm -rf $(EXPORT_KERNEL)/modules/$(KERNEL_VER)/source; \
+	  rm -rf $(EXPORT_KERNEL)/modules/$(KERNEL_VER)/build; \
+	fi;
+
+.PHONY: kernel-export-init
+
+kernel-export-module-image:
+
+	@rm -rf $(EXPORT_KERNEL)/images/modules.img
+	@genext2fs -b 32768 -d $(EXPORT_KERNEL)/modules -i 8192 -U $(EXPORT_KERNEL)/images/modules.img
+	@tune2fs -O extents,uninit_bg,dir_index $(EXPORT_KERNEL)/images/modules.img
+	@e2fsck -p -f $(EXPORT_KERNEL)/images/modules.img; echo "e2fsck modules.img done"
+	@resize2fs -M $(EXPORT_KERNEL)/images/modules.img
+
+.PHONY: kernel-export-module-image
+
+###############################################################################
+
+kernel-modules: kernel-modules-wifi
+
+	find $(KERNEL_DIR)/lib/modules -name '*.ko*' -exec $(STRIP) -g {} \;
+	/sbin/depmod -a -b $(KERNEL_DIR) 3.10.30 -F $(KERNEL_DIR)/System.map
+
+.PHONY: kernel-modules
+
+###############################################################################
+kernel-modules-wifi:
+
+	@echo "##################################################################"
+	@echo "# kernel-module (WiFi driver) $(KERNEL_VER)                      #"
+	@echo "##################################################################"
+
+	cd $(GPL_ROOT)/ar1021x-c;\
+	make clean && make ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE)
+
+	if [ ! -e $(KERNEL_DIR)/lib/modules/$(KERNEL_VER)/kernel/net/wireless ]; then\
+		mkdir -p $(KERNEL_DIR)/lib/modules/$(KERNEL_VER)/kernel/net/wirelss;\
+	fi;
+
+	if [ ! -e $(EXPORT_KERNEL)/modules/net/wireless ]; then\
+		mkdir -p $(EXPORT_KERNEL)/modules/net/wireless;\
+	fi;
+
+	cp $(GPL_ROOT)/ar1021x-c/WLAN-AIO-SS/rootfs-ss.build/lib/modules/* \
+		$(KERNEL_DIR)/lib/modules/$(KERNEL_VER)/kernel/net/wireless -rf
+
+
+.PHONY: kernel-modules-wifi
+
+kernel-modules-wifi-clean:
+	cd $(GPL_ROOT)/ar1021x-c;\
+	make clean ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE)
+
+.PHONY: kernel-modules-wifi-clean
+
+###############################################################################
+kernel-clean: 
+	
+	@echo "##################################################################"
+	@echo "# kernel-clean $(KERNEL_VER)                                     #"
+	@echo "##################################################################"
+	
+	make -C $(KERNEL_ROOT) distclean
+
+.PHONY: kernel-clean

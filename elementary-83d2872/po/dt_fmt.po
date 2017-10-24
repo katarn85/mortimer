@@ -1,0 +1,1437 @@
+# Datetime default format strings for all locales.
+# This file is put in Samsung domain.
+# Sumanth Krishna Mannam <sumanth.m@samsusng.com>, 2013.
+#
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: Elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2013-04-29 15:50+0900\n"
+"PO-Revision-Date: 2013-07-23 15:45+0900\n"
+"Last-Translator: Sumanth Krishna Mannam <sumanth.m@samsusng.com>\n"
+"Language-Team: EFL <sumanth.m@samsusng.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Poedit-Language: ENGLISH\n"
+"X-Poedit-Country: ENGLISH\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "UTF-8_DTFMT_12HR_ar_DZ."
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "UTF-8_DTFMT_24HR_ar_DZ."
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "ar_DZ.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "ar_BH.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_EG.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "as_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ar_IQ.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_JO.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_KW.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_LB.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_LY.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_MA.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "ar_OM.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_QA.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_SA.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_SD.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_SY.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%p%I:%M"
+
+msgid "ar_TN.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "ar_AE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%p%I:%M"
+
+msgid "ar_YE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%p%I:%M"
+
+msgid "az_AZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "hy_AM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "az_Cyrl_AZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "az_Latn_AZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "eu_ES.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "bg_BG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "bn_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "bn_BD.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "id_ID.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ms_MY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "tl_PH.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "fa_IR.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "gu_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "he_IL.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "or_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ta_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "te_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "kn_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ml_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "si_LK.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "th_TH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "my_MM.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "lo_LA.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "km_KH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ne_NP.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "zh_CN.UTF-8_DTFMT_12HR"
+msgstr "%Y/%m/%d%p%I:%M"
+
+msgid "zh_TW.UTF-8_DTFMT_12HR"
+msgstr "%Y/%m/%d%I:%M%p"
+
+msgid "zh_HK.UTF-8_DTFMT_12HR"
+msgstr "%Y/%m/%d%p%I:%M"
+
+msgid "mr_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pa_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sq_AL.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "ur_PK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "vi_VN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ca_ES.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "zh_Hans_CN.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%p%I:%M"
+
+msgid "zh_Hans_HK.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%p%I:%M"
+
+msgid "zh_Hans_MO.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%p%I:%M"
+
+msgid "zh_Hans_SG.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%p%I:%M"
+
+msgid "zh_Hant_HK.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%p%I:%M"
+
+msgid "zh_Hant_MO.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%I:%M%p"
+
+msgid "zh_Hant_TW.UTF-8_DTFMT_12HR"
+msgstr "%d/%m/%Y%p%I:%M"
+
+msgid "hr_HR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "cs_CZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "da_DK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "nl_AW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "nl_BE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "nl_NL.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_AS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_AU.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_BB.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_BE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_BZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_BM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_BW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_CA.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "en_GU.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_HK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_IE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_JM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_MT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_MH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_MU.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_NA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_NZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_MP.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_PK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_PH.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "en_SG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_ZA.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "en_TT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_UM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_VI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GB.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_US.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "en_ZW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "et_EE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fi_FI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_BE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_BJ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_BF.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_BI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_CM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_CA.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "fr_CF.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_TD.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_KM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_CG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_CD.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_CI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_DJ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_GQ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_FR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_GF.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_GA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_GP.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_GN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_LU.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_MG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_ML.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_MQ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_YT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_MC.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_NE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_RW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_RE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_BL.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_MF.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_SN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_CH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "fr_TG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "gl_ES.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ka_GE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "de_AT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "de_BE.UTF-8_DTFMT_12HR"
+msgstr "%Y/%d/%b%I:%M%p"
+
+msgid "de_DE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "de_LI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "de_LU.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "de_CH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "el_CY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "el_GR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "hi_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "hu_HU.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%p%I:%M"
+
+msgid "is_IS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ga_IE.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "it_IT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "it_CH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ja_JP.UTF-8_DTFMT_12HR"
+msgstr "%Y/%m/%d%p%I:%M"
+
+msgid "kk_Cyrl_KZ.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "ko_KR.UTF-8_DTFMT_12HR"
+msgstr "%Y/%m/%d%p%I:%M"
+
+msgid "kk_KZ.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "lv_LV.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "lt_LT.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "mk_MK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "mn_MN.UTF-8_DTFMT_12HR"
+msgstr "%Y/%m/%d%I:%M%p"
+
+msgid "ms_Latn_BN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "ms_Latn_MY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "ms_Latn_SG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "nb_NO.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pl_PL.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pt_AO.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pt_BR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pt_GW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pt_MZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pt_PT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "pt_ST.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ro_MD.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ro_RO.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "rm_CH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ru_MD.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ru_RU.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ru_UA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_Cyrl_BA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_Cyrl_ME.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_Cyrl_RS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_Latn_BA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_Latn_ME.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_Latn_RS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sr_RS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sk_SK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ta_MY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "ta_SG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "ta_LK.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%H:%M%p"
+
+msgid "sl_SI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_AR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_BO.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_CL.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_CO.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_CR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_DO.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_EC.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_SV.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_GQ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_GT.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_HN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_419.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_MX.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_NI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_PA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_PY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_PE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_PR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_ES.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_US.UTF-8_DTFMT_12HR"
+msgstr "%b/%d/%Y%I:%M%p"
+
+msgid "es_UY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "es_VE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_BS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_ZM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_AG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_KE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_SB.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GD.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_VG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_KY.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GH.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_GG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_IM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_JE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_KI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_LS.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_LR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_MG.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_MW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_FM.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "en_PW.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sv_FI.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "sv_SE.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "tr_TR.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "uk_UA.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "ur_IN.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "uz_Arab_AF.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "uz_Cyrl_UZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "uz_Latn_UZ.UTF-8_DTFMT_12HR"
+msgstr "%d/%b/%Y%I:%M%p"
+
+msgid "uz_UZ.UTF-8_DTFMT_12HR"
+msgstr "%Y/%b/%d%I:%M%p"
+
+msgid "ar_DZ.UTF-8_DTFMT_24HR"
+msgstr "%%d/%b/%Y%H:%M"
+
+msgid "ar_BH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_EG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "as_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_IQ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_JO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_KW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_LB.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_LY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_MA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_OM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_QA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_SA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_SD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_SY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_TN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_AE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ar_YE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "az_AZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "bn_BD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "hy_AM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "az_Cyrl_AZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "az_Latn_AZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "eu_ES.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "bg_BG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "bn_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "id_ID.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ms_MY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "tl_PH.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "fa_IR.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "gu_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "he_IL.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "or_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ta_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "te_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "kn_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ml_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "si_LK.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "th_TH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "my_MM.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "lo_LA.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "km_KH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ne_NP.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "zh_CN.UTF-8_DTFMT_24HR"
+msgstr "%Y/%m/%d%H:%M"
+
+msgid "zh_TW.UTF-8_DTFMT_24HR"
+msgstr "%Y/%m/%d%H:%M"
+
+msgid "zh_HK.UTF-8_DTFMT_24HR"
+msgstr "%Y/%m/%d%H:%M"
+
+msgid "mr_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pa_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sq_AL.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "ur_PK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "vi_VN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ca_ES.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "zh_Hans_CN.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "zh_Hans_HK.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "zh_Hans_MO.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "zh_Hans_SG.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "zh_Hant_HK.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "zh_Hant_MO.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "zh_Hant_TW.UTF-8_DTFMT_24HR"
+msgstr "%d/%m/%Y%H:%M"
+
+msgid "hr_HR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "cs_CZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "da_DK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "nl_AW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "nl_BE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "nl_NL.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_AS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_AU.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_BB.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_BE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_BZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_BM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_BW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_CA.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "en_GU.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_HK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_IE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_JM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_MT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_MH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_MU.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_NA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_NZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_MP.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_PK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_PH.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "en_SG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_ZA.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "en_TT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_UM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_VI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GB.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_US.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "en_ZW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "et_EE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fi_FI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_BE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_BJ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_BF.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_BI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_CM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_CA.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "fr_CF.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_TD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_KM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_CG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_CD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_CI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_DJ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_GQ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_FR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_GF.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_GA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_GP.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_GN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_LU.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_MG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_ML.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_MQ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_YT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_MC.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_NE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_RW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_RE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_BL.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_MF.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_SN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_CH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "fr_TG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "gl_ES.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ka_GE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "de_AT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "de_BE.UTF-8_DTFMT_24HR"
+msgstr "%Y/%d/%b%H:%M"
+
+msgid "de_DE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "de_LI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "de_LU.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "de_CH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "el_CY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "el_GR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "hi_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "hu_HU.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "is_IS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ga_IE.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "it_IT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "it_CH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ja_JP.UTF-8_DTFMT_24HR"
+msgstr "%Y/%m/%d%H:%M"
+
+msgid "kk_Cyrl_KZ.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "ko_KR.UTF-8_DTFMT_24HR"
+msgstr "%Y/%m/%d%H:%M"
+
+msgid "kk_KZ.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "lv_LV.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "lt_LT.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"
+
+msgid "mk_MK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "mn_MN.UTF-8_DTFMT_24HR"
+msgstr "%Y/%m/%d%H:%M"
+
+msgid "ms_Latn_BN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ms_Latn_MY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ms_Latn_SG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "nb_NO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pl_PL.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pt_AO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pt_BR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pt_GW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pt_MZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pt_PT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "pt_ST.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ro_MD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ro_RO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "rm_CH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ru_MD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ru_RU.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ru_UA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_Cyrl_BA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_Cyrl_ME.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_Cyrl_RS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_Latn_BA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_Latn_ME.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_Latn_RS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sr_RS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sk_SK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sl_SI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ta_MY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ta_SG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ta_LK.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_AR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_BO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_CL.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_CO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_CR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_DO.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_EC.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_SV.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_GQ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_GT.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_HN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_419.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_MX.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_NI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_PA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_PY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_PE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_PR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_ES.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_US.UTF-8_DTFMT_24HR"
+msgstr "%b/%d/%Y%H:%M"
+
+msgid "es_UY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "es_VE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_BS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_ZM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_AG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_KE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_SB.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GD.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_VG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_KY.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GH.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_GG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_IM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_JE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_KI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_LS.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_LR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_MG.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_MW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_FM.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "en_PW.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sv_FI.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "sv_SE.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "tr_TR.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "uk_UA.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "ur_IN.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "uz_Arab_AF.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "uz_Cyrl_UZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "uz_Latn_UZ.UTF-8_DTFMT_24HR"
+msgstr "%d/%b/%Y%H:%M"
+
+msgid "uz_UZ.UTF-8_DTFMT_24HR"
+msgstr "%Y/%b/%d%H:%M"

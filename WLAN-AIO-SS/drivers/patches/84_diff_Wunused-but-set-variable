@@ -1,0 +1,95 @@
+diff -U 5 -p -r WLAN-AIO/drivers_old/ath6kl/cfg80211.c WLAN-AIO/drivers_new//ath6kl/cfg80211.c
+--- WLAN-AIO/drivers_old/ath6kl/cfg80211.c	2012-11-28 18:46:56.000000000 +0800
++++ WLAN-AIO/drivers_new//ath6kl/cfg80211.c	2012-11-28 19:50:31.000000000 +0800
+@@ -3312,11 +3312,10 @@ static int ath6kl_ap_beacon(struct wiphy
+ {
+ 	struct ath6kl *ar = ath6kl_priv(dev);
+ 	struct ath6kl_vif *vif = netdev_priv(dev);
+ 	struct ieee80211_mgmt *mgmt;
+ 	u8 *ies;
+-	int ies_len;
+ 	struct wmi_connect_cmd p;
+ 	int res;
+ 	int i;
+ 	u16 chan;
+ 
+@@ -3432,11 +3431,10 @@ static int ath6kl_ap_beacon(struct wiphy
+ 	ies = mgmt->u.beacon.variable;
+ 	if (ies > info->head + info->head_len) {
+ 		up(&ar->sem);
+ 		return -EINVAL;
+ 	}
+-	ies_len = info->head + info->head_len - ies;
+ 
+ 	if (info->ssid == NULL) {
+ 		up(&ar->sem);
+ 		return -EINVAL;
+ 	}
+diff -U 5 -p -r WLAN-AIO/drivers_old/ath6kl/htc_pipe.c WLAN-AIO/drivers_new//ath6kl/htc_pipe.c
+--- WLAN-AIO/drivers_old/ath6kl/htc_pipe.c	2012-11-28 18:46:56.000000000 +0800
++++ WLAN-AIO/drivers_new//ath6kl/htc_pipe.c	2012-11-28 19:52:11.000000000 +0800
+@@ -989,11 +989,10 @@ static struct htc_packet *htc_lookup_tx_
+ 
+ static int htc_tx_completion(struct htc_target *context, struct sk_buff *netbuf)
+ {
+ 	struct htc_target *target = (struct htc_target *)context;
+ 	u8 *netdata;
+-	u32 netlen;
+ 	struct htc_frame_hdr *htc_hdr;
+ 	u8 EpID;
+ 	struct htc_endpoint *ep;
+ 	struct htc_packet *packet;
+ 	struct ath6kl *ar;
+@@ -1003,11 +1002,10 @@ static int htc_tx_completion(struct htc_
+ 	u16 resources_thresh[DATA_EP_SIZE]; /* urb resources */
+ 	u16 resources;
+ 	u16 resources_max;
+ 
+ 	netdata = netbuf->data;
+-	netlen = netbuf->len;
+ 
+ 	htc_hdr = (struct htc_frame_hdr *)netdata;
+ 
+ 	EpID = htc_hdr->eid;
+ 	ep = &target->endpoint[EpID];
+@@ -1281,16 +1279,12 @@ static int htc_process_trailer(struct ht
+ 			       u8 *buffer,
+ 			       int len, enum htc_endpoint_id from_ep)
+ {
+ 	struct htc_record_hdr *record;
+ 	u8 *record_buf;
+-	u8 *orig_buf;
+-	int orig_len;
+ 	int status;
+ 
+-	orig_buf = buffer;
+-	orig_len = len;
+ 	status = 0;
+ 
+ 	while (len > 0) {
+ 
+ 		if (len < sizeof(struct htc_record_hdr)) {
+@@ -1382,11 +1376,10 @@ static void recv_packet_completion(struc
+ struct sk_buff *rx_sg_to_single_netbuf(struct htc_target *target)
+ {
+ 	struct sk_buff *skb;
+ 	u8 *anbdata;
+ 	u8 *anbdata_new;
+-	u32 anblen;
+ 	struct sk_buff *new_skb = NULL;
+ 	struct sk_buff_head *rx_sg_queue = &target->rx_sg_q;
+ 
+ 	if (skb_queue_empty(rx_sg_queue)) {
+ 		ath6kl_dbg(ATH6KL_DBG_HTC,
+@@ -1401,11 +1394,10 @@ struct sk_buff *rx_sg_to_single_netbuf(s
+ 			__func__, target->rx_sg_total_len_exp);
+ 		goto _failed;
+ 	}
+ 
+ 	anbdata_new = new_skb->data;
+-	anblen = new_skb->len;
+ 
+ 	while ((skb = skb_dequeue(rx_sg_queue))) {
+ 		anbdata = skb->data;
+ 		memcpy(anbdata_new, anbdata, skb->len);
+ 		skb_put(new_skb, skb->len);

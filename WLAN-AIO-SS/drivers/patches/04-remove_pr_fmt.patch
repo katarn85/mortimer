@@ -1,0 +1,22 @@
+diff -Naur cfg80211/core.c cfg80211.patch/core.c
+--- cfg80211/core.c	2012-01-12 17:12:02.000000000 +0800
++++ cfg80211.patch/core.c	2012-01-13 10:20:03.000000000 +0800
+@@ -4,7 +4,6 @@
+  * Copyright 2006-2010		Johannes Berg <johannes@sipsolutions.net>
+  */
+ 
+-#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+ 
+ #include <linux/if.h>
+ #include <linux/module.h>
+diff -Naur cfg80211/reg.c cfg80211.patch/reg.c
+--- cfg80211/reg.c	2012-01-10 14:18:15.000000000 +0800
++++ cfg80211.patch/reg.c	2012-01-13 10:20:21.000000000 +0800
+@@ -33,7 +33,6 @@
+  *
+  */
+ 
+-#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+ 
+ #include <linux/kernel.h>
+ #include <linux/export.h>

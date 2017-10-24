@@ -1,0 +1,30 @@
+#!/bin/sh
+
+find . -name CMakeFiles -exec rm -rf {} \;
+find . -name CMakeCache.txt -exec rm -rf {} \;
+find . -name Makefile -exec rm -rf {} \;
+find . -name cmake_install.cmake -exec rm -rf {} \;
+find . -name install_manifest.txt -exec rm -rf {} \;
+
+rm -rf ./obj-arm-linux-gnueabi
+rm -rf ./obj-i486-linux-gnu
+
+rm -rf ./debian/PKG
+rm -rf ./debian/libwbxml2-0
+rm -rf ./debian/libwbxml2-0-dbg
+rm -rf ./debian/libwbxml2-dev
+rm -rf ./debian/libwbxml2-utils
+rm -rf ./debian/tmp
+rm -rf ./debian/files
+rm -rf ./debian/*.log
+rm -rf ./debian/*.debhelper
+rm -rf ./debian/*.substvars
+rm -rf ./debian/substvars
+rm -rf ./debian/stamp-*
+
+
+rm -rf ../libwbxml2-0-dbg_0.11.0-1_armel.deb
+rm -rf ../libwbxml2-0_0.11.0-1_armel.deb
+rm -rf ../libwbxml2-dev_0.11.0-1_armel.deb
+rm -rf ../libwbxml2-utils_0.11.0-1_armel.deb
+rm -rf ../wbxml2_0.11.0-1_armel.changes

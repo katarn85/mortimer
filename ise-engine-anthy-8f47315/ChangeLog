@@ -1,0 +1,2409 @@
+2012-11-25 Li Zhang <li2012.zhang@samsung.com>
+
+	* commit preedit string when reset, Version-0.0.0125.
+
+2009-0l-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.7.
+
+2009-01-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Add missing include file.
+	Thanks Utumi-san, Ikuya-san.
+
+2009-0l-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp, src/scim_anthy_setup.cpp,
+	  src/scim_anthy_prefs.h:
+	Set UTF-8 as default encoding (ported from 1.4 branch).
+
+2009-0l-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Removed a needless line.
+
+2008-08-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Set NICOLA engine as case sensitive.
+
+2008-03-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.6.
+
+2008-03-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.cpp:
+	Fix typo. Thanks Malcolm Parsons and Ikuya Awashiro. 
+
+2008-02-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.5.
+
+2008-02-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Sort style file list by name.
+
+2008-02-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Update credit.
+
+2008-01-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_kana.cpp,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_prefs.cpp,
+	  src/scim_anthy_setup.cpp, src/scim_anthy_utils.cpp:
+	Added missing include files to build against gcc-4.3.
+
+2007-10-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/de.po: Add. Thanks Gerrit Sangel.
+	* data/nicola-f.sty: Backport from trunk. 
+
+2007-05-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.4.
+
+2007-05-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_color_button.{cpp,h}: Renamed to
+	scim_anthy_color_button.{cpp,h}.
+	* src/scim_anthy_color_button.{cpp.h]: Added.
+	* src/Makefile.am, scim_anthy_setup.cpp: Renamed to
+	scim_anthy_color_button* and ScimAnthyColorButton*.
+
+2007-05-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.cpp: Clear m_last_key on clear().
+
+2007-05-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.cpp: Fix a bug that voiced consonants are
+	gone after inputing "Ro" has been fixed. Thanks MORIYAMA Masayuki.
+
+2007-04-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.3.
+
+2007-04-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/Makefile.am: Remove binary version from the install path of the
+	helper module.
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_key2kana.{cpp,h},
+	  src/scim_anthy_prefs.h, src/scim_anthy_default_table.cpp:
+	Add spcial treatment for "RO" key of JIS kana layout. It requires
+	scim-1.4.6 or later (it is not released yet).
+
+2007-03-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}: Show aux string again if the lookup
+	table is activated on focus in event.
+	Thanks TAGOH-san and somebody who contributes the patch.
+
+2007-01-06  Takuro Ashie  <ashie@homa.ne.jp>
+
+	* src/scim_anthy_utils.h: Include missing header files.
+	Thanks Gregor Waltz.
+
+2006-11-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac; Version-1.2.2.
+
+2006-10-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Fix a bug that a wrong partial string
+	is converted on direct kana conversion after commiting a piece of
+	segments.
+
+2006-09-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.1.
+
+2006-09-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Enable dictionary encoding prefs.
+	* src/scim_anthy_prefs.h: Revert default dictionary encoding to EUC-JP.
+
+2006-09-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp, src/scim_anthy_key2kana.cpp:
+	Apply TAGOH-san's solution for the previous problem. Thanks.
+
+2006-09-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Give a first aid to the problem that
+	codes of pseudo ASCII mode breaks pending state of normal kana input
+	mode. Thanks Ryo Dairiki for your report.
+	Fix indent.
+	* src/scim_anthy_key2kana.cpp: Fix indent.
+
+2006-09-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* README, src/scim_anthy_factory.cpp: Change Dairiki-san's mail address.
+	* po/ja.po: Update.
+
+2006-08-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Add AC_SUBST(LIBTOOL_EXPORT_OPTIONS).
+	Thanks Kouhei Sutou.
+
+2006-07-31 Takuro Ashie <ashie@homa.ne.jp>
+
+	* NEWS: Add a missing entry (The description about the tsuki layout).
+
+2006-07-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.2.0.
+
+2006-07-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Raise priority of "pseudo ascii mode
+	cancel" key.
+	* src/scim_anthy_imengine.cpp: Ignore key event without relation
+	at AnthyInstance::action_cancel_pseudo_ascii_mode().
+	* src/scim_anthy_prefs.h: Add "Escape" into
+	SCIM_ANTHY_CONFIG_ROMAJI_PSEUDO_ASCII_BLANK_BEHAVIOR_DEFAULT key.
+
+2006-07-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Insert a half space on pressing space
+	key during pseudo ascii mode.
+
+2006-07-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Hide dictionary encoding option.
+
+2006-07-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_reading.cpp,
+	  src/scim_anthy_setup.cpp, src/scim_anthy_setup_romaji.cpp:
+	DIC_ENCODING -> DICT_ENCODING. And fix compile time warnings.
+
+2006-07-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	EUCJP-MS -> EUC-JP-MS and set default encoding as EUC-JP-MS.
+	* po/ja.po: Update.
+
+2006-07-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	  Add "Encoding of dictionary" preference to improve
+	  interoperatability with Microsoft Windows.
+	* src/scim_anthy_key2kana_base.h: Fix compile time warning.
+	* po/ja.po: Update.
+
+2006-07-18 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp: Fix some messages.
+	* po/ja.po: Update.
+
+2006-07-13 Akira TAGOH <at@gclab.org>
+
+	* src/scim_anthy_action.{cpp,h}, src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_kana.{cpp,h},
+	  src/scim_anthy_key2kana.{cpp,h}, src/scim_anthy_key2kana_base.h,
+	  src/scim_anthy_nicola.{cpp,h}, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_reading.{cpp,h},
+	  src/scim_anthy_setup.cpp, src/scim_anthy_setup_romaji.cpp:
+	  Enable to enter space during pseudo ASCII mode.
+
+2006-07-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/Makefile.am, data/tsuki-2-203-101.sty,
+	data/tsuki-2-203-106.sty: Add "tsuki" layout. Thanks Tatsuki Sugiura.
+
+2006-07-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Enable reconversion feature on non-GTK+
+	application. But it's a ad-hoc solution.
+	Thank you for your patch > Takashi Nakamoto
+
+2006-07-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Fix a bug that scim-anthy never
+	switch to conversion mode when the auto prediction feature is enabled.
+
+2006-07-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_prefs.h,
+	  src/scim_anthy_setup.cpp: Add a preference to choose behavior on
+	focus out.
+
+2006-06-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Fix indent.
+
+2006-06-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.h: Fix some comments.
+
+2006-06-18 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_preedit.{cpp,h}: Add an arguemnt to Preedit::clear()
+	and Conversion::clear() to specify segment_id to enable partial clear.
+	It is needed for commiting without learn. Thanks Jun Oizumi for your
+	report.
+
+2006-06-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Fix a typo in a comment.
+
+2006-06-02 Ikuya Awashiro <ikuya@oooug.jp>
+
+	* data/msime.sty: Add predict keys.
+	* data/wnn.sty: ditto.
+	* data/canna.sty: ditto.
+
+2006-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Fix some wrong entries in Romaji
+	table. Thanks Jun Oizumi.
+
+2006-05-31 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: The bug that direct select keys didn't
+	work while predicting has been fixed. Thank you for reporting >
+	TAGOH-san, UTUMI-san, Bando-san.
+
+2006-04-10 Akira TAGOH <at@gclab.org>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_key2kana.{cpp,h}, src/scim_anthy_key2kana_base.h,
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_prefs.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}, src/scim_anthy_setup_romaji.cpp:
+	  Add pseudo ASCII input mode.
+
+2006-03-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-1.0.0.
+	
+2006-03-29 Takuro Ashie <ashie@homa.ne.jp>
+
+        * src/scim_anthy_imengine.cpp: Don't activate direct select key when
+	the lookup window isn't shown. Thanks TAGOH-san.
+
+2006-02-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Strange bihavior of resizing segment
+	after partial commit has been fixed.
+
+2006-02-14 Takuro Ashie <ashie@homa.ne.jp>
+
+        * src/scim_anthy_setup.cpp: Modify order of symbol style.
+
+2006-02-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Install symbol style properties.
+	* src/scim_anthy_setup.cpp: Show check box for symbol style label.
+
+2006-02-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/canna.sty, data/msime.sty, data/vje-delta.sty,
+	  data/wnn.sty: "/", "[", "]" entries in romaji table aren't needed
+	anymore.
+
+2006-02-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	Add a preference to show or hide symbol style label on toolbar.
+	But label itself is not added yet.
+
+2006-02-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Split symbol related preferences from
+	"Common" page. Change order of candidates in some combos.
+
+2006-02-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Fix credit.
+	* po/ja.po: Update.
+
+2006-02-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po: Update.
+
+2006-02-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Add version information.
+
+2006-02-08 Akira TAGOH <at@gclab.org>
+
+	* src/scim_anthy_default_tables.{cpp,h},
+	  src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.{cpp,h},
+	  src/scim_anthy_key2kana_table.{cpp,h},
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_prefs.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}, src/scim_anthy_setup.cpp:
+	Add symbol style preference.
+
+2006-01-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.9.0.
+
+2006-01-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Fix double commiting on wide latin mode.
+	Thanks UTUMI-san and Dairiki-san.
+
+2006-01-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Fix typo (ANthy -> Anthy).
+
+2005-12-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}: Minor fix.
+
+2005-12-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.h, src/scim_anthy_style_file.h:
+	Remove needless #include.
+
+2005-12-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/wnn.sty: Fix typo (shrink segment).
+
+2005-12-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Remove needless code.
+
+2005-12-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Avoid double deleting both former and
+	later mathced text when start reconversion.
+
+2005-12-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: NULL terminate for voiced
+	contonant table.
+
+2005-12-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Half space character was never outputed
+	by space key when the typing method is NICOLA mode.
+
+2005-12-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp, po/ja.po: Fix typo.
+
+2005-12-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Through space key event on
+	action_insert_space() family to activate application's specific
+	features.
+
+2005-12-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Timer didn't work correctly when both
+	a normal key and a thumb shift key was pressed.
+
+2005-11-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Add predict keys.
+
+2005-11-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* Version-0.8.0.
+
+2005-11-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Don't set NICOLA engine as case
+	sensitive by default.
+
+2005-11-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/tron-dvorak.sty, src/tron-qwerty-jp.sty:
+	Add TRON layout. Thanks Okano, Shinchi <shinchan.okano@nifty.com>.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp: Add mnemonic.
+	* po/ja.po: Update.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.cpp: Remove needless comment.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_preedit.h: Rename SCIM_ANTHY_CANDIDATE_NORMAL to
+	SCIM_ANTHY_CANDIDATE_DEFAULT.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.{cpp,h}, src/scim_anthy_conversion.cpp,
+	  src/scim_anthy_preedit.cpp: Remove needless code in Reading class.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Remove debug print.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Don't eat unknown key release event.
+	* src/scim_anthy_imengine.cpp: Add a comment.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_base.h, src/scim_anthy_kana.{cpp,h},
+	  src/scim_anthy_key2kana.{cpp,h}, src/scim_anthy_nicola.{cpp,h}:
+	Move implementation of set_case_sensitive() and get_case_sensitive() to
+	Key2KanaConvertorBase.
+
+2005-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_base.h, src/scim_anthy_kana.{cpp,h},
+	  src/scim_anthy_key2kana.{cpp,h}, src/scim_anthy_nicola.{cpp,h},
+	  src/scim_anthy_reading.cpp:
+	Add reset_pending () to Key2KanaConvertorBase class.
+
+2005-11-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Remove needless code.
+
+2005-11-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Sorry, forgot to set alarm at some place.
+
+2005-11-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: Add voiced consonants as shift
+	modifired keys into default NICOLA table.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Add remaining HAS_ANTHY_PREDICTION
+	condition.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	Add UI for preferences of prediction.
+	* po/ja.po: Update.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.h: Enable to choose whether use direct select key
+	while predicting or not.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_helper.h: Fix typo.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Enable to select a candidte by direct
+	select key on prediction.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Enable to select a candidte on
+	prediction.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: NICOLA engine should be case sensitive.
+	* src/scim_anthy_default_tables.cpp: Add some shift modifired keys into
+	NICOLA table.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_kana.cpp: Fix some messages.
+	* po/ja.po: Update.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Don't to use m_lookup_table for\
+	prediction to avoid conflict.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.h: Add a preference to select whether predict
+	while inputting or not.
+
+2005-11-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_factory.cpp,
+	  src/scim_anthy_prefs.{cpp,h}: Add key bindings for prediction, and
+	comment out realtime prediction.
+	* src/scim_anthy_preedit.{cpp,h}: Add is_predicting ().
+	* src/scim_anthy_conversion.{cpp,h}: Add a feature for getting predicted
+	candidates.
+	* po/ja.po: Update.
+
+2005-11-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_preedit.cpp:
+	Cleanup.
+
+2005-11-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}: Add test code for prediction.
+
+2005-11-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}: Cleanup.
+
+2005-11-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_preedit.{cpp,h}:
+	Add prediction. Other minor fix.
+
+2005-11-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.h: Fix typo.
+	* src/scim_anthy_conversion.cpp: Fix indent.
+
+2005-11-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Requires scim-1.2.0.
+
+2005-11-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Add a comment.
+
+2005-11-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp, src/scim_anthy_prefs.cpp,
+	  src/scim_anthy_setup_kana.cpp:
+	Add a preference for simultaneous key pressing time.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_helper.h: Add new commands for creating and deleting
+	input context.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Set limit of timer to 5ms < time < 1000ms.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.{cpp,h}: Process single pressing more strictly
+	using timer.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_helper.cpp, src/scim_anthy_imengine.cpp:
+	The timer feature has been tested and minor fix.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_helper.cpp, src/scim_anthy_imengine.cpp:
+	Add timer, but it isn't tested yet.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp, data/atok.sty, data/msime.sty:
+	Add reconversion key.
+	* po/ja.po: Update.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.{cpp,h}:
+	Fix some bit problems in reconversion feature.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_imengine.cpp: Add reconversion feature, but it has some
+	bit problems yet.
+
+2005-11-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* Makefile.am, src/scim_anthy_helper.cpp,
+	  src/scim_anthy_imengine.{cpp,h}: Add test code getting selection text.
+
+2005-11-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_prefs.h: Add reconvert key, but not implemented yet.
+
+2005-11-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac, src/scim_anthy_helper.cpp, src/Makefile.am:
+	Add anthy-imengine-helper. But it does nothing yet.
+
+2005-11-09 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp:
+	Add package name and version into authors text.
+	Thank you for your notifying > Masatake YAMATO <jet@gyve.org>
+
+2005-11-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	*po/ja.po: Update.
+
+2005-11-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Add help text.
+
+2005-11-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	*po/ja.po: Update.
+
+2005-11-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Modify some default key bindings.
+
+2005-11-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp:
+	Handle keypad correctly on thumb shift typing method.
+
+2005-11-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.cpp:
+	Handle keypad correctly on kana typing method.
+
+2005-11-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_key2kana.cpp,
+	  src/scim_anthy_utils.{cpp,h}:
+	Apply ten key setting exactly. But it's not enough yet for kana and
+	thumb shift typing method.
+
+2005-11-05 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_imengine.{cpp,h},
+	  src/scim_anthy_factgory.cpp: Change & add some key bindings.
+	Now previous "LatinModeKey" is renamed to "OnOffKey". Please reset your
+	configuration if you use non-default key bindings.
+	* data/atok.sty, data/canna.sty, data/msime.sty, data/vje-delta.sty,
+	  data/wnn.sty:
+	Sync with new key bindings.
+
+2005-11-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/nicola-a.sty, data/nicola-j.sty, data/oasys100j.sty:
+	Use wide character for numbers.
+
+2005-11-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: Fix NICOLA table.
+
+2005-10-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Change uuid to increase priority.
+
+2005-10-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Fix typo in romaji table.
+
+2005-10-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Remove needless entry.
+
+2005-10-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp: Fix typo.
+	* po/ja.po: Update.
+
+2005-10-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Add Henkan key to "Convert key" and "Next
+	candidate" key.
+
+2005-10-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/Makefile.am: Add wnn.sty.
+	* data/wnn.sty: Add "Shift+space" to "Latin mode".
+
+2005-10-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* Version-0.7.1 (BRANCH-0.7.0).
+
+2005-10-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp, src/scim_anthy_prefs.cpp: Fix typo.
+	* po/ja.po: Translate some untranslated messages. 
+
+2005-10-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Fix typo.
+
+2005-10-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_table_editor.cpp: Fix a crash bug.
+	Thanks reporting! > Yukiko Bando & AWASHIRO Ikuya
+
+2005-09-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.7.0.
+
+2005-09-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/canna.sty: Comment out non-implemented key bind.
+
+2005-09-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* AUTHORS, src/scim_anthy_factory.cpp: Change order of authors list.
+
+2005-09-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/wnn.sty: Add Wnn like romaji table and key map.
+
+2005-09-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/canna.sty: Fix typo.
+	* src/scim_anthy_factory.cpp, src/scim_anthy_imengine.{cpp,h},
+	  src/scim_anthy_prefs.{cpp,h}: Add some key bindings.
+	(CancelAllKey, ConvertCharTypeForwardKey, ConvertCharTypeBackwardKey)
+
+2005-08-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/canna.sty, data/msime.sty, data/vje-delta.sty: Fix typo.
+
+2005-08-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Show dictionary menu on the panel by default.
+
+2005-08-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/scim-anthy.png: Replace with new icon.
+
+2005-08-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Sorry, wrong key was set on startup.
+
+2005-08-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/vje-delta.sty: Add.
+	* data/atok.sty, data/canna.sty, data/msime.sty: Minor fix.
+
+2005-08-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/Makefile.am, data/canna.sty: Add Canna like style.
+
+2005-08-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp, src/scim_anthy_setup_kana.cpp:
+	Minor fix.
+
+2005-08-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Minor fix.
+
+2005-08-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Show all key bindings by default.
+
+2005-08-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Add authors.
+
+2005-08-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configfure.ac: Version-0.6.1 (Branch 0.6.0).
+
+2005-08-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_table_editor.cpp: Fix a stupid bug.
+	Thank you very much :D > Yukiko Bando
+
+2005-08-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Revive multi/dead key related code.
+	Thanks Yukiko Bando.
+
+2005-08-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_table_editor.cpp: NULL check before strcmp().
+
+2005-08-09 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Set correct default value.
+
+2005-08-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Plug memory leak. Check file name length
+	of style file before load it.
+	* src/scim_anthy_imengine.cpp: Set custom typing table correctly even if
+	typing method label on toolbar is shown.
+	* src/scim_anthy_table_editor.cpp: Compare all columns on sorting.
+
+2005-08-05 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_kana.cpp: Fix initial window size.
+
+2005-08-05 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp: Minor fix.
+	* po/ja.po, src/scim_anthy_setup_kana.cpp,
+	  src/scim_anthy_setup_romaji.cpp, src/scim_anthy_table_editor.{cpp,h}:
+	Add NICOLA customize window.
+
+2005-08-05 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_kana.cpp: Enable to switch NICOLA layout by
+	option menu.
+
+2005-08-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.cpp, src/scim_anthy_reading.cpp,
+	  src/scim_anthy_style_file.cpp: Bug fix. Now loading custom NICOLA
+	layout is available.
+
+2005-08-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.{cpp,h},
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_reading.{cpp,h}: 
+	Load custom NICOLA layout. Some minor fix.
+
+2005-08-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}: Clean up.
+
+2005-08-03 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.{cpp,h}, src/scim_anthy_nicola.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}: Ready for customizable NICOLA layout.
+
+2005-08-03 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.cpp, scim_anthy_key2kana_table.{cpp,h},
+	  scim_anthy_style_file.cpp: Ready for customizable NICOLA layout.
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}: Add get_typing_method() and
+	get_input_mode ().
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anhthy_conversion.h: Remove needless code.
+	* src/scim_anhthy_conversion.h, src/scim_anthy_reading.h: Minor fix.
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_kana.{cpp,h},
+	  src/scim_anthy_key2kana.{cpp,h}, src/scim_anthy_key2kana_base.h,
+	  src/scim_anthy_nicola.{cpp,h}, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}:
+	Make each object to read static configurations directly from
+	AnthyFactory.
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.{cpp,h},
+	  src/scim_anthy_setup_kana.cpp: Clean up.
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.cpp: Remove needless code.
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Always set file name of style file
+	object on loading even if it fails.
+
+2005-08-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Process user defined key bindings before
+	input key event for [Scim-imengine-dev 573] issue.
+	Only thumb shift keys should be processed before user defined key
+	bindings.
+	Thanks Ryo Dairiki.
+
+2005-08-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp, src/scim_anthy_conversion.cpp:
+	Remove needless code.
+
+2005-07-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.6.0.
+
+2005-07-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.5.3 (BRNACH_0_5_0).
+
+2005-07-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/nicola-a.sty, data/nicola-j.sty, data/oasys100j.sty:
+	Add copyright notice.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_kana.cpp: Comment out NICOLA time setting.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp: Sorry, wrong step size for NICOLA time was
+	set.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.{cpp,h}, src/scim_anthy_kana.cpp,
+	  src/scim_anthy_reading.cpp:
+	Add keypad table to KanaConvertor, but it's not used yet.
+	Class name should be renamed.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.cpp:
+	Don't flush pending string on realtime conversion.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h, src/scim_anthy_setup_romaji.cpp,
+	  src/scim_anthy_setup_kana.cpp:
+	Don't save romaji theme & kana layout name.
+	* src/scim_anthy_setup.cpp: The bug that user defined key bindings
+	aren't loaded has been fixed.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Don't create new segment if empty string
+	is returned from Key2KanaConvertor.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp, src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_prefs.h,
+	  src/scim_anthy_utils.{cpp,h}:
+	Apply preedit style preference. Fixed default settings of preedit style.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po: Update.
+	* src/scim_anthy_setup.cpp: Bug fix.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_factory.h,
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}, src/scim_anthy_setup.cpp:
+	Each object should read its configuration directly.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp: Flush pending string in reading before
+	start conversion. Thanks 428 of SCIM thread in 2ch Linux borad.
+
+2005-07-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_prefs.{cpp,h},
+	  src/scim_anthy_setup.{cpp,h}:
+	Add preferences for color of conversion string.
+	Add UI for preference of preedit style, but it's not applied yet.
+
+2005-07-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.h: Don't use operator "!=" for KeyEvent class.
+
+2005-07-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/msime.sty: Fix a wrong key binding.
+
+2005-07-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/Makefile.am, data/nicola-a.sty, data/nicola-j.sty,oasys100j.sty:
+	Add NICOLA layouts. Thanks Hatuka*nezumi.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}: Always load mode settings on
+	initializing.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_action.cpp, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_nicola.cpp, src/scim_anthy_utils.{cpp,h}:
+	Specify ignore mask when matching key event.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp,
+	Show units for integer type configurations.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/scim_anthy_factory.h, src/scim_anthy_imengine.h,
+	  src/scim_anthy_nicola.{cpp,h}, src/scim_anthy_setup.{cpp,h},
+	  src/scim_anthy_setup_kana.cpp:
+	Apply preferences for NICOLA except layout setting.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_setup.cpp, src/scim_anthy_utils.{cpp,h}:
+	Load preferenes for NICOLA.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/scim_anthy_factory.cpp, src/scim_anthy_prefs.{cpp,h},
+	  src/scim_anthy_setup.{cpp,h}, src/scim_anthy_setup_kana.cpp:
+	Add preferences for NICOLA.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Ignore Control and Alt modifiered keys.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imenginne.cpp, src/scim_anthy_setup.cpp:
+	Remove #define ENABLE_NICOLA.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_nicola.cpp:
+	Temporary solution for handling single thumb shift key pressing.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_nicola.{cpp,h},
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_reading.{cpp,h}:
+	Handle single thumb shift key pressing. Still has some bugs.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Fix indent and other minor fix.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.{cpp,h}: Refactoring.
+
+2005-07-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.cpp: Bug fix of handling key repeat.
+
+2005-07-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.{cpp,h}: Minor fixes.
+
+2005-07-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.{cpp,h}: Rewrite. But still has some bugs.
+
+2005-07-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp, po/ja.po:
+	Add a preferenece to show/hide the "Candidates" label.
+
+2005-07-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Show the "Candidates" label for lookup
+	window using aux string like honoka-tan.
+
+2005-07-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Don't apply some setting which can be
+	changed from toolabr.
+
+2005-07-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reding.{cpp,h}: Support voiced sound on X's kana
+	typing.
+
+2005-07-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reding.{cpp,h}: Test for supporting kana symbol of X.
+
+2005-07-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_kana.{cpp,h}: Added to support kana symbol of X.
+
+2005-07-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.{cpp,h},
+	  src/scim_anthy_default_tables.{cpp,h}:
+	Create voiced consonant table automatically.
+
+2005-07-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Don't use convert as you type on Latin
+	or Wide Latin mode.
+
+2005-07-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_setup.cpp:
+	Disable NICOLA by default because some required features aren't
+	implemented yet. To enable it, please define ENABLE_NICOLA macro.
+
+2005-07-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.{cpp,h}: Add KanaRule.
+
+2005-07-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Add "Zenkaku_Hankaku" to LatinModeKey.
+	* src/scim_anthy_factory.cpp, src/scim_anthy_setup.cpp:
+	Load key bindings from system wide style file.
+
+2005-07-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/scim_anthy_prefs.cpp, src/scim_anthy_setup.cpp:
+	Set mnemonic for spin button and fix typo.
+
+2005-07-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	Added preference to set the page size of the lookup table.
+	* po/ja.po: Update.
+
+2005-07-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/Makefile.am, data/101kana.sty: Added a kana table for 101
+	keyboard. Voiced consonants aren't handled yet by this table.
+
+2005-07-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: Sort Kana and NICOLA table by
+	QWERTY order.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.cpp: Minor bug fix.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: Modified Kana table.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: Modified NICOLA table.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.{cpp,h},
+	  src/scim_anthy_key2kana_table.cpp:
+	Use half/wide setting of symbols and numbers also on kana mode.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.5.2 (BRANCH_0_5_0 branch).
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp, src/scim_anthy_key2kana_table.cpp:
+	The bug that preferences for period, comma and width of numbers aren't
+	applied correctly has been fixed.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	Added a widget to set the previous added preference.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp:
+	  src/scim_anthy_prefs.h:
+	Add a preference to set number of triggers to show lookup table.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Set initial cursor position of lookup
+	table.
+	* src/scim_anthy_factory.cpp, src/scim_anthy_imengine.{cpp,h}:
+	Count the number of times on which the convertion key was pressed.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/Makefile.am, data/azik.sty: Add AZIK extended romaji table.
+
+2005-07-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Minor fix.
+
+2005-07-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_prefs.h,
+	  src/scim_anthy_setup_kana.cpp, src/scim_anthy_setup_romaji.cpp,
+	  src/scim_anthy_style_file.{cpp,h}:
+	Load romaji or kana table directly from system wide theme file instead
+	of user's config file when the file name is specified at ~/.scim/config.
+
+2005-07-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, po/POTFILES.in: Update.
+	* src/Makefile.am, src/scim_anthy_prefs.h,  src/scim_anthy_setup.cpp,
+	  src/scim_anthy_setup_kana.{cpp,h}: Enable to customize kana table.
+	* src/scim_anthy_setup_romaji.cpp: Minor bugfix.
+
+2005-07-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp, src/scim_anthy_table_editor.{cpp,h}:
+	Use ScimAnthyTableEditor class.
+
+2005-07-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp: Minor fix.
+	* src/scim_anthy_table_editor.{cpp,h}: Add.
+	* src/Makefile.am: Add above file.
+
+2005-07-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po: Update.
+
+2005-07-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.{cpp,h}, src/scim_anthy_setup_romaji.cpp:
+	Use UTF-8 as internal encoding. Add some functions for setting array.
+
+2005-07-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.5.1 (BRANCH_0_5_0 branch).
+
+2005-07-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp: Use new functions to getting array.
+
+2005-07-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.{cpp,h}: Refactoring.
+
+2005-07-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.{cpp,h}: Add functions for getting array.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp:
+	Load kana typing table from "KanaTable/FundamentalTable" section in
+	~/.scim/Anthy/config.sty.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Set Key2KanaConvertor as case sensitive
+	when switch typing method to kana typing mode.
+	* src/scim_anthy_style_file.cpp: Enable to treate "continue" field of
+	key2kana conversion rule.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_setup.cpp,
+	  src/scim_anthy_utils.{cpp,h}:
+	Changed naming rule of global functions.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.cpp:
+	It's the ashie's refactoring ;-P
+	It's ashie quality ;-P
+	-                for (unsigned int i = 0; i < seq.length (); i++)
+	-                    seq[i] = tolower (seq[i]);
+	+                for (unsigned int j = 0; j < seq.length (); i++)
+	+                    seq[i] = tolower (seq[j]);
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp, src/scim_anthy_key2kana.cpp,
+	  src/scim_anthy_key2kana_table.{cpp,h}, src/scim_anthy_setup.cpp,
+	  src/scim_anthy_setup_romaji.cpp, src/scim_anthy_style_file.{cpp,h}:
+	Refactoring.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_table.{cpp,h}, scim_anthy_key2kana_table.cpp:
+	Split voiced consonant rule from kana typing table.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.{cpp,h}:
+	Revive set_typing_method() and get_typing_method() of Preedit class.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_color_button.cpp: Remove compile time & run time warnings.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp, src/scim_anthy_setup.cpp: Fix typo.
+	* po/POTFILES.in, po/ja.po: Update.
+
+2005-07-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Set border width of color choice button.
+	* po/ja.po: Update.
+
+2005-07-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp, src/scim_anthy_imengine.{cpp,h},
+	  src/scim_anthy_prefs.{cpp,h}: 
+	Add "Do nothing" action to disable a certain key event such as the space
+	key. It may be needed to use the space key as thumb shift key, or to
+	insert a space at a release event of space key, not a press event.
+
+2005-07-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Fixed order of buttons for showing/hiding
+	toolbar items.
+
+2005-07-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_nicola.{cpp,h}: Fix a problem that NicolaConvertor
+	ignores a shift modifiered key event.
+
+2005-07-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/Makefile.am, src/scim_anthy_default_tables.{cpp,h},
+	  src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_key2kana.{cpp,h},
+	  src/scim_anthy_key2kana_base.h, src/scim_anthy_key2kana_table.h,
+	  src/scim_anthy_nicola.{cpp,h}, src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_reading.{cpp,h}, src/scim_anthy_setup.cpp:
+	Started to implement NICOLA support.
+
+2005-07-04 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_conversion.cpp:
+	Removed foreground attribute from selected segment text
+	since Gecko handles text as reversed text if foreground color is set.
+
+2005-07-04 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_color_button.{cpp,h},
+	  src/scim_anthy_setup.cpp:
+	Use String class for color value.
+
+2005-07-03 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Fixed typo.
+	  src/scim_anthy_factory: Raise priority of PageUp and PageDown.
+	  Thanks AWASHIRO ikuya.
+
+2005-07-01 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* data/scim-anthy-swap-colors.png,
+	  src/scim_color_button.{cpp,h},
+	  src/scim_anthy_conversion.{cpp,h},
+	  src/scim_anthy_factory.{cpp,h},
+	  src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_preedit.{cpp,h},
+	  src/scim_anthy_prefs.{cpp,h},
+	  src/scim_anthy_setup.cpp:
+	Preference of preedit and segment text color.
+
+2005-06-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.5.0.
+
+2005-06-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/Makefile.am: Add header files.
+
+2005-06-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp: Changed widget order.
+
+2005-06-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Minor bug fix.
+
+2005-06-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}: Fixed order of configurations.
+
+2005-06-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Remove needless code.
+
+2005-06-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imnegine.cpp: Reconvert before auto commit on
+	"Convert as you type".
+
+2005-06-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_prefs.{cpp,h},
+	  src/scim_anthy_setup.cpp:
+	Add preference to commit on inputting period or comma.
+	* po/ja.po: Update.
+
+2005-06-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_utils.{h,cpp}:
+	Move launch_program () into scim_anthy_utils.cpp
+	* src/scim_anthy_setup.cpp: Add "Launch" button for dictionary relates
+	commands.
+	* po/ja.po: Update.
+
+2005-06-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp:
+	Enable F6-F10 keys while "Convert as you type".
+
+2005-06-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Make "Allow split romaji" setting as ture by
+	default.
+
+2005-06-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	Add "Input mode" and "Conversion mode" preference.
+	* po/ja.po: Update.
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.{cpp,h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_prefs.{cpp,h}, src/scim_anthy_setup.cpp:
+	Add preference to show/hide conversion mode label on toolbar.
+	* po/ja.po: Update.
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Enable to delete letters on "Convert as
+	you type".
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Select last segment when start selecting
+	candidates on "Convert as you type".
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_imengine.{cpp,h}:
+	Started to implement "Convert as you type" feature.
+	* po/ja.po: Update.
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.cpp: Make Key2KanaConvertor as case
+	insensitive by default.
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_action.cpp: Ignore CapsLock on matching key bindings.
+
+2005-06-23 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_utils.{cpp,h}:
+	Rotate case of alphabet letters on pressing F8, F9 and F10 key like ATOK
+	or Microsoft IME.
+	* TODO: update.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp: Set reading length to ConversionSegment
+	class correctly.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp.h}: implement get_segment_length ()
+	of Conversion class correctly.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp.h}, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_preedit.{cpp,h}:
+	Unify some functions.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}: Refactoring.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}: Added some members into
+	ConversionSegment class.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Swap F9 and F10.
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* TODO, data/atok.sty, data/msime.sty, po/ja.po,
+	  src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_factory.cpp,
+	  src/scim_anthy_imengine.{cpp,h}, src/scim_anthy_preedit.h,
+	  src/scim_anthy_prefs.{cpp,h}:
+	Add half width conversion feature.
+	(The function binded to F8 key)
+
+2005-06-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Add "User defined" label for key theme.
+
+2005-06-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp: Add "User defined" label.
+
+2005-06-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po: Update.
+
+2005-06-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/POTFILES.in, po/ja.po: Update.
+
+2005-06-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty, src/scim_anthy_default_tables.cpp:
+	Add some symbols.
+
+2005-06-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.cpp: Changed priority of tables.
+
+2005-06-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Changed page order.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Remove needless entry in romaji table.
+	* data/msime.sty: Fix order of romaji table.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana_table.cpp: Disable auto convert when
+	preedition is started with comma or period.
+	Thanks reporting > UTUMI-san.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* scim_anthy_key2kana_table.cpp: Sorry, wrong comma table is set.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Set compare func to sort correctly.
+	Thanks reporting > UTUMI-san.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Don't reduce trailing space.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Bug fix.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/msime.sty: Add "-" entry into romaji table.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Handle escaped "=" correctly.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Also "[" and "]" should be escaped.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Also "=" should be escaped.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup_romaji.cpp: Fix typo.
+	* src/scim_anthy_style_file.cpp: Escape string.
+
+2005-06-10 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Minor fix.
+
+2005-06-09 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.h, scim_anthy_setup.{cpp,h}:
+	Split from scim_anthy_setup.cpp.
+
+2005-06-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Add romaji theme menu onto romaji window.
+	Thanks suggestion > UTUMI-san.
+	Also other minor bug fixes are made.
+
+2005-06-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Skip style files which contains no key bind
+	or romaji settings.
+
+2005-06-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Set fundamental key2kana table for kana
+	typing method as NULL. It's not support customizing yet.
+	* src/scim_anthy_setup.cpp: Code clean up.
+
+2005-06-08 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Make columns on romaji table as sortable.
+	Thank you for suggestion > UTUMI-san.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp:
+	Don't allow inserting non-ascii character for romaji string.
+	Set sensitivity of add button on romaji window.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Minor tunings for adding romaji.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Implement add button on romaji table, but
+	it's not enough yet. Exception handling is too poor.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Add entries to edit romaji, but it doesn't
+	work yet.
+	* po/ja.po, po/POTFILES.in: Update.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Reset preedit string on changing input
+	mode.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Set sensitivity of remove button on romaji
+	window.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Add some key bindings.
+
+2005-06-07 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_tables.cpp: Changed romaji order.
+	* src/scim_anthy_setup.cpp: Implement remove button of romaji window.
+
+2005-06-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_setup.cpp: Rename from scim_anthy_imengine_setup.cpp.
+
+2005-06-06 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Bug fix.
+	* src/scim_anthy_imengine_setup.cpp: Add UI for cutomizing romaji table,
+	but it doesn't work yet.
+
+2005-06-04 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.4.3 (BRANCH_0_4_3 branch).
+
+2005-06-03 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.cpp, src/scim_anthy_imengine.{cpp,h},
+	  src/scim_anthy_preedit.{cpp,h}, src/scim_anthy_reading.{cpp,h}:
+	Reading::commit -> Reading::finish.
+	Preedit::flush_pending -> Preedit::finish.
+
+2005-06-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/msime.sty: Fixed typo in romaji table.
+
+2005-06-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_action.{cpp,h}, src/scim_anthy_factory.cpp:
+	Fix for gcc-4.0. It's ad-hoc solution.
+	* src/scim_anthy_imengine.cpp: Fix indent.
+
+2005-06-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.{cpp,h}: Split from scim_anthy_imengine_setup.cpp
+
+2005-06-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.{cpp,h}:
+	Insert space before new section.
+	Remove "m_iconv" member from StyleLine.
+
+2005-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Add "Setting" section.
+
+2005-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* Makefile.am, scim_anthy_imengine_setup.cpp,
+	  scim_anthy_style_file.cpp, scim_anthy_style_file.h:
+	Add test code for switching romaji table.
+
+2005-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp: Add functions deleting key/section &
+	adding new section.
+
+2005-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Add "n" entry for romaji table.
+
+2005-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp: Sorry, previous code had a clash bug.
+
+2005-06-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_factory.cpp, src/scim_anthy_factory.h,
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_key2kana.cpp,
+	  src/scim_anthy_key2kana.h, src/scim_anthy_key2kana_table.cpp,
+	  src/scim_anthy_key2kana_table.h, src/scim_anthy_style_file.cpp,
+	  src/scim_anthy_style_file.h:
+	Add test code for loading a custom romaji table.
+	If you want to test it, please copy data/atok.sty or data/msime.sty to
+	~/.scim/Anthy/config.sty, and edit it. Currently AdditionalTableList
+	isn't loaded yet.
+
+2005-05-31 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po: Fix typo.
+
+2005-05-31 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Add UI for switching romaji table,
+	but it doesn't work yet.
+
+2005-05-31 Takuro Ashie <ashie@homa.ne.jp>
+
+	* TODO: Update.
+
+2005-05-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Minor fix.
+	* data/scim_style_file.{cpp,h}: Add m_format_version and m_version.
+
+2005-05-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Remove ID entry.
+
+2005-05-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Set "Key bindings" column as
+	resizable.
+
+2005-05-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Add "Choose keys..." button for
+	key preference.
+
+2005-05-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Add a label for key theme.
+
+2005-05-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Revert.
+	* src/scim_anthy_imengine_setup.cpp: Save current key theme name.
+
+2005-05-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Use space character for empty key bind.
+	* src/scim_anthy_imengine_setup.cpp: Add test UI for changing key theme.
+
+2005-05-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Fix wrong key bindings
+	* src/scim_anthy_imengine.cpp: Bug fixes for committing first or
+	selected segment.
+	
+2005-05-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/msime.sty: Fix wrong key bindings.
+
+2005-05-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* scim_anthy_imengine_setup.cpp, scim_anthy_style_file.h:
+	Load style files.
+
+2005-05-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_preedit.cpp:
+	get_current_segment_pos() -> get_segment_pos().
+
+2005-05-28 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conversion.{cpp,h}, src/scim_anthy_utils.{cpp,h}:
+	Split from scim_anthy_preedit.{cpp,h}.
+
+2005-05-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_key2kana.{cpp,h}:
+	Rename from scim_anthy_key2kana_convertor.{cpp,h}.
+	* src/scim_anthy_factory.{cpp,h}:
+	Rename from scim_anthy_imengine_factory.{cpp,h}.
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp: Fix length of vocied consonant in half
+	width katakana letters. Thanks reporting! > Seiichi SATO
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp, src/scim_anthy_reading.h:
+	Split the segment when append a letter between letters in the segment.
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Reset values for caret position when
+	segment is splitted.
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Make enable to split a segment which
+	contains only alphabet letters.
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp:
+	Add a check button for the preference to split ReadingSegment.
+	* po/ja.po: Update.
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine_factory.cpp,
+          src/scim_anthy_imengine_factory.h, src/scim_anthy_preedit.cpp,
+          src/scim_anthy_preedit.h, src/scim_anthy_prefs.h,
+	  src/scim_anthy_reading.cpp, src/scim_anthy_reading.h:
+	Add a setting to choose whether allow splitting ReadingSegment or not.
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.{cpp,h}: Make enable to choose whether allow
+	splitting ReadingSegment or not on Reading::erase().
+
+2005-05-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Bug fixes for previous commited code.
+
+2005-05-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_reading.cpp: Make enable to split ReadingSegment.
+
+2005-05-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_dfault_table.{cpp,h},
+	  src/scim_anthy_key2kana_table.cpp:
+	Split consonant rule from fundamental table.
+
+2005-05-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp: Sorry, new erase() implementation didn't
+	work correctly on certain condition.
+
+2005-05-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_default_table.cpp, src/scim_anthy_default_table.h:
+	Rename from src/scim_anthy_key2kana_table_default.{cpp,h}.
+
+2005-05-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h:
+	Erase commited string in m_reading.
+
+2005-05-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h
+          src/scim_anthy_reading.cpp. src/scim_anthy_reading.h:
+	Fixed arguments and implementation of Reading::erase().
+
+2005-05-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h:
+	Minor fix.
+	* src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_reading.cpp, src/scim_anrhy_reading.h:
+	Divide. Currently partial commiting is broken.
+
+2005-05-18 Takuro Ashie <ashie@homa.ne.jp>
+
+	* all files: Use "scim_anthy" name space.
+
+2005-05-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Sorry, AM_INIT_AUTOMAKE(1.9), not AM_PREREQ.
+
+2005-05-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.4.2 (BRANCH_0_4_0 branch).
+
+2005-05-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Add AM_PREREQ & AC_PREREQ.
+
+2005-05-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.src/scim_anthy_imengine.cpp: Clean up.
+
+2005-05-17 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po: Fix typo. Thanks DAIRIKI-san.
+
+2005-05-16 Takuro Ashie <ashie@homa.ne.jp>
+
+        * src/configure.ac: Version-0.4.1.
+        * NEWS: Uppdate.
+
+2005-05-16 Takuro Ashie <ashie@homa.ne.jp>
+
+        * src/scim_anthy_preedit.cpp: Revive key mask checking to enable
+        apllication's short cut key on non-preedition state.
+        Thanks DAIRIKI-san.
+
+22005-05-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imegnine_table.cpp: Priority of symbol and number
+	tables are lower than comma and period.
+
+2005-05-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h:
+	Revive key mask checking to enable apllication's short cut key on
+	non-preedition state. Thanks DAIRIKI-san.
+	Rename AnthyPreeditChar to AnthyPreeditSegment, and remove "pending"
+	member.
+
+2005-05-16 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_intl.h, src/scim_anthy_key2kana_convertor.cpp,
+	  src/scim_anthy_key2kana_convertor.cpp,
+	  src/scim_anthy_key2kana_table.cpp, src/scim_anthy_key2kana_table.h,
+	  src/scim_anthy_key2kana_table_default.cpp,
+	  src/scim_anthy_key2kana_table_default.h:
+	Add.
+	* src/scim_anthy_conv_table.cpp, src/scim_anthy_conv_table.h,
+	  src/scim_anthy_automaton.cpp, src/scim_anthy_automaton.h:
+	Remove.
+
+2005-05-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/configure.ac: Version-0.4.0.
+	* NEWS: Uppdate.
+
+2005-05-14 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Set editable of key prefs entry to
+	FALSE.
+
+2005-05-13 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Remove mask checking to compile against
+	scim-1.3.0. Thanks UTUMI-san.
+
+2005-05-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Add "Group:" label.
+	* po/ja.po: Update.
+
+2005-05-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/src/scim_anthy_imengine.h:
+	Restore visibility of preedit string and lookup table window on focus
+	in.
+
+2005-05-12 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_factory.h,
+	  src/scim_anthy_imengine_setup.cpp, src/scim_anthy_preedit.cpp,
+	  src/scim_anthy_preedit.h, src/scim_anthy_prefs.h:
+	Added learning preferences.
+
+2005-05-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_factory.cpp: Don't reverse key list.
+
+2005-05-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Eat all key event while preediting.
+	* src/scim_anthy_preedit.cpp: Don't process space character.
+
+2005-05-11 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Fixed typo.
+
+2005-05-09 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.3.2 (BRANCH_0_3_0 branch).
+
+2005-05-09 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Fixed typo.
+	Thanks to UTUMI-san & DAIRIKI-san.
+	* src/scim_anthy_preedit.cpp: Fixed some clash bugs.
+	This patch is contributed by Ryo Dairiki <ryo-dairiki@mbm.nifty.com>.
+	Thanks reporting.
+
+2005-05-03 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac, data/Makefile.am, src/Makefile.am: Install style file.
+
+2005-05-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/Makefile.am, src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_style_file.cpp, src/scim_anthy_style_file.h:
+	Added style file parser.
+
+2005-05-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Added missing keys.
+
+2005-05-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h, data/msime.sty: Fixed typo.
+
+2005-05-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Fixed typo.
+
+2005-05-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty, data/msime.sty: Minor fix.
+
+2005-04-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anhy_imengine_setup.cpp, src/scim_anthy_imengine.cpp,
+	  po/ja.po:
+	Fixed typo.
+
+2005-04-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_prefs.h:
+	Add hiragana mode, katakana mode, circle typing method keys.
+	* po/ja.po: Update.
+
+2005-04-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_prefs.h:
+	Add key bindings to inserting half & wide space.
+	* po/ja.po: Update.
+
+2005-04-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_style_file.cpp, src/scim_anthy_style_file.h: Add.
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_setup.cpp, scim_anthy_prefs.h:
+	Add key binding for selecting first & last candidate.
+
+2005-04-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Add key bindings.
+	* data/msime.sty: Fix some entries.
+
+2005-04-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/atok.sty: Added ATOK like style definition file.
+
+2005-04-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/msime.sty: Add Version field.
+
+2005-04-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* data/msime.sty: Added Microsoft IME like style definition file.
+
+2005-04-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conv_table.cpp: Don't treat "-" as symbol.
+	Thanks to UTUMI-san.
+
+2005-04-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Minor fixes.
+
+2005-04-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Add description field to key list
+	view.
+	* po/ja.po: Update.
+
+2005-04-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_setup.cpp, src/scim_anthy_preedit.cpp,
+	  src/scim_anthy_preedit.h, src/scim_anthy_prefs.h:
+	Add inserting space & alternative space action.
+
+2005-04-22 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Use new key list view.
+	* src/scim_anthy_prefs.h: Remove some wasted key settings.
+	* po/ja.po: Update.
+
+2005-04-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Now start to create a new key
+	preference widget.
+
+2005-04-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_factory.cpp: Fixed typo.
+
+2005-04-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_factory.h, src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_prefs.h:
+	Added preference for ten key.
+
+2005-04-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Remove debug code.
+	* src/scim_anthy_preedit.cpp: Always use half width character for
+	pressing keys on key pad. This feature should be customizable.
+
+2005-04-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.cpp,
+	  src/scim_anthy_preedit.h:
+	Added key pad support.
+
+2005-04-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_factory.h:
+	Apply most preferences immediately.
+
+2005-04-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Added mnemonic.
+	* po/ja.po: Updated.
+
+2005-04-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.cpp: Don't show the typing method label by
+	default.
+
+2005-04-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_factory.h, src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_prefs.h: Added preferences for symbols & numbers width.
+	* po/ja.po: Updated.	
+
+2005-04-20 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Refactoring.
+	* src/scim_anthy_prefs.h: Fixed typo.
+	* po/ja.po: Updated.	
+
+2005-04-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_conv_table.cpp, src/scim_anthy_conv_table.h,
+	  src/scim_anthy_preedit.cpp:
+	Fixed naming rule of conversion tables.
+	Divide symbol & number conversion rule from roma-kana table.
+
+2005-04-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/conv_table.cpp: Remove.
+	* src/scim_anthy_conv_table.cpp: Renamed from src/conv_table.cpp
+	* src/scim_anthy_conv_table.h: Added.
+	* src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_imengine.h:
+	Rename Preedit class to AnthyPreedit.
+
+2005-04-18 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/conv_table.cpp: Added wide number rule.
+	* src/scim_anthy_prefs.h: Fixed some key name.
+
+2005-03-21 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Modified labels for input mode to make
+	easy to recognize.
+
+2005-03-15 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_factory.cpp,
+	  src/scim_anthy_imengine_factory.h, intl.h:
+	Divided from scim_anthy_imengine.{cpp,h}.
+	* src/scim_anthy_action.cpp, src/scim_anthy_action.h,
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	Introduced action manager.
+	* po/POTFILES.in, ja.po: Updated.	
+
+2005-02-01 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp:
+	Removed comment lines about commiting the preediting string when 
+	focusing out. It should not be so.
+	We need get the event(?) of switching off scim and clear the preedit
+	string at that time.
+
+2005-01-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* Applied patches provided by David Oftedal <david@start.no> and
+	Yukiko Bando <ybando@k6.dion.ne.jp> to input some symbols.
+	Thank you!
+
+2005-01-29 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Version-0.3.1.
+	Updated automake (no changes in source code).
+
+2005-01-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* configure.ac: Inclemented version number.
+
+2005-01-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h, 
+	  src/scim_anthy_imengine_setup.cpp, src/scim_anthy_prefs.h, po/ja.po:
+	Added an option to close candidate window on direct selecting.
+	
+2005-01-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h, 
+	  src/scim_anthy_imengine_setup.cpp, src/scim_anthy_prefs.h, po/ja.po:
+	Enabled to select keys to select candidates directly.
+
+2005-01-27 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp:
+	Added popup menu to switching notebook pages.
+
+2005-01-02 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp:
+	Applied the patch from james Su <james.su@gmail.com>.
+	Do not disconnect a signal-slot with in the slot function.
+
+2004-12-24 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Clear preedit string on reset().
+	See http://lists.freedesktop.org/pipermail/scim/2004-December/001298.html
+	for more detail.
+
+2004-12-17 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp:
+	Comment out action_commit() in foucs_out().
+
+2004-12-15 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp, src/scim_anthy_preedit.cpp:
+	Fixed a bug that Up key indicates 'R' on LC_CTYPE=en_US.UTF-8
+	environment.
+
+2004-12-15 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp:
+	Fixed a bug that dead key does not work.
+
+2004-12-15 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp:
+	Applied two patches from James Su.
+	It fixed 
+	http://lists.sourceforge.jp/mailman/archives/scim-imengine-dev/2004-December/000041.html 
+
+2004-12-02 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine_setup.cpp:
+	Fixed an issue that left arrow on the left of the tab label
+	is enabled on starup time.
+
+2004-12-02 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Remove dictionary label string.
+
+2004-12-02 Takuro Ashie <ashie@homa.ne.jp>
+	* po/ja.po, src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_setup.cpp, src/scim_anthy_prefs.h:
+	Added key bindings for dictionary related actions.
+
+2004-12-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_imengine_setup.cpp, src/scim_anthy_prefs.h:
+	Add dictionary menu.
+	* src/scim_anthy_preedit.cpp: bug fix.
+
+2004-12-01 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Added Zenkaku_Hankaku and Shift+space key
+	bind for toggling latin mode. Thanks suggestion > UTUMI-san
+
+2004-11-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Changed page order.
+	Thank your for your suggestion > UTUMI Hirosi <utuhiro78@yahoo.co.jp>
+
+2004-11-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/conv_table.cpp, src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_prefs.h:
+	Added a comma and period type. Also other minor fixes are made.
+
+2004-11-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Declare some functions as static.
+
+2004-11-30 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine_setup.cpp: Set tooltips.
+
+2004-11-29 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* version 0.2.0.
+
+2004-11-27 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp: pressing space key 
+	at the tail of candidates returns the head of the candidates.
+
+2004-11-27 Hiroyuki Ikezoe <poincare@ikezoe.net>
+
+	* src/scim_anthy_imengine.cpp: select next/prev candidate is loop.
+	But there is a bug that pressing space key at the tail of the candidates 
+	cannot be moved at the head of the candidates. Why?
+
+2004-11-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_imengine.cpp: Bug fix for selecting candidate by
+	SCIM_KEY_0.
+
+2004-11-26 Takuro Ashie <ashie@homa.ne.jp>
+
+	* src/scim_anthy_prefs.h: Added some key bindings.
+	Thank you for your suggestion > Yukiko Bando <ybando@k6.dion.ne.jp>
+
+2004-11-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_imengine.cpp, src/scim_anthy_imengine.h,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_prefs.h:
+	Added partial commit feature, but this work is not completed yet.
+	The caret position isn't reset yet.
+
+2004-11-25 Takuro Ashie <ashie@homa.ne.jp>
+
+	* po/ja.po, src/conv_table.cpp, src/scim_anthy_imengine.cpp,
+	  src/scim_anthy_imengine.h, src/scim_anthy_imengine_setup.cpp,
+	  src/scim_anthy_preedit.cpp, src/scim_anthy_preedit.h,
+	  src/scim_anthy_prefs.h:
+	Added space type preference.
+
+2004-11-19  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add intl,
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): New variable.
+	* configure.ac (AC_CONFIG_FILES): Add intl/Makefile,
+
+2004-11-19 Takuro Ashie <ashie@homa.ne.jp>
+
+	* Implemented almost all basic features.

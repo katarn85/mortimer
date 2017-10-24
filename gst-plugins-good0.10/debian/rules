@@ -1,0 +1,215 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+CFLAGS ?= -Wall -g -fPIC
+LDFLAGS ?= 
+PREFIX ?= /usr
+DATADIR ?= /opt
+
+CONFIGURE_OPTION += --disable-static		\
+		--disable-nls			\
+		--with-html-dir=/tmp/dump	\
+		--disable-examples		\
+		--disable-gconftool		\
+		--disable-alpha			\
+		--disable-apetag		\
+		--disable-audiofx		\
+		--disable-auparse		\
+		--disable-cutter		\
+		--disable-debugutils		\
+		--disable-deinterlace		\
+		--disable-effectv		\
+		--disable-equalizer		\
+		--disable-icydemux		\
+		--disable-flx			\
+		--disable-goom			\
+		--disable-goom2k1		\
+		--disable-level			\
+		--disable-monoscope		\
+		--disable-replaygain		\
+		--disable-smpte			\
+		--disable-spectrum		\
+		--disable-videobox		\
+		--disable-videomixer		\
+		--disable-y4m			\
+		--disable-directsound		\
+		--disable-oss			\
+		--disable-sunaudio		\
+		--disable-osx_aidio		\
+		--disable-osx_video		\
+		--disable-aalib			\
+		--disable-aalibtest		\
+		--disable-annodex		\
+		--disable-cairo			\
+		--disable-esd			\
+		--disable-esdtest		\
+		--disable-flac			\
+		--disable-gconf			\
+		--disable-hal			\
+		--disable-libcaca		\
+		--disable-libdv			\
+		--disable-dv1394		\
+		--disable-shout2		\
+		--disable-shout2test		\
+		--disable-speex			\
+		--disable-taglib
+
+#--disable-wavenc   \
+#--disable-bz2 \
+#--disable-jpeg \
+#--disable-autodetext \
+#--disable-wavpack \
+#--disable-avi \
+#--disable-soup \
+#--disable-id3demux \
+#--disable-qtdemux \
+#--disable-rtp \
+#--disable-rtpmanager \
+#--disable-udp \
+#--disable-gst_v4l2 \
+#--disable-taglib \
+#--disable-zlib \
+#--disable-wavparse \
+#--disable-videofilter \
+#--disable-libpng \
+#--disable-x \
+#--disable-xshm \
+#--disable-xvideo \
+#--disable-videocrop \
+
+CFLAGS += -DGST_EXT_SOUP_MODIFICATION
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+#ifneq (,$(findstring arm, $(DEB_HOST_GNU_TYPE)))
+#endif
+
+# architecture is not arm
+ifneq (, $(findstring arm, $(DEB_HOST_ARCH)))
+        # ARM
+	CONFIGURE_OPTION += --enable-divx-drm
+else
+	# OTHER
+endif
+
+LDFLAGS += -Wl,--hash-style=both -Wl,--as-needed
+
+config.status: configure
+	dh_testdir
+	./autogen.sh
+	# Add here commands to configure the package.
+	./configure $(CONFIGURE_OPTION) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"
+
+#configure:
+#	dh_testdir
+# 	./autogen.sh
+
+build: build-stamp
+build-stamp:  config.status
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+
+	for f in `find $(CURDIR)/debian/ -name "*.in"`; do \
+		cat $$f > $${f%.in}; \
+		sed -i -e "s#@PREFIX@#$(PREFIX)#g" $${f%.in}; \
+		sed -i -e "s#@DATADIR@#$(DATADIR)#g" $${f%.in}; \
+	done
+
+	touch $@
+
+clean::
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp stamp-h1
+	# Add here commands to clean up after the build process.
+	-$(MAKE) clean
+
+ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+	cp -f /usr/share/misc/config.sub config.sub
+endif
+ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+	cp -f /usr/share/misc/config.guess config.guess
+endif
+
+	find ./ -depth -name "Makefile" -exec rm {} -f \;
+	find ./ -depth -name ".deps" -exec rm {} -rf \;
+	rm -f common/shave
+	rm -f common/shave-libtool
+	rm -f docs/version.entities
+	rm -f gconf/gstreamer.schemas
+	rm -f pkgconfig/gstreamer-plugins-good-uninstalled.pc
+	rm -f po/Makefile.in
+	rm -f po/POTFILES
+	rm -f tests/check/elements/.dirstamp
+	rm -f win32/common/config.h-new
+	rm -f _stdint.h
+	rm -f config.h
+	rm -f config.log
+	rm -f config.status
+	rm -f libtool
+
+	for f in `find $(CURDIR)/debian/ -name "*.in"`; do \
+		rm -f $${f%.in}; \
+	done
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	# Add here commands to install the package into debian/tmp
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installexamples
+	dh_install --sourcedir debian/tmp --list-missing
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_python
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip --dbg-package=gstreamer0.10-plugins-good-dbg
+	dh_compress
+	dh_fixperms
+	dh_perl
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps 
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 

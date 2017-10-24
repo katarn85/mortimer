@@ -1,0 +1,384 @@
+--- coreutils-6.7/tests/help-version.runuser	2006-12-07 09:06:04.000000000 +0000
++++ coreutils-6.7/tests/help-version	2007-01-09 17:31:44.000000000 +0000
+@@ -168,6 +168,7 @@
+ seq_args=10
+ sleep_args=0
+ su_args=--version
++runuser_args=--version
+ 
+ # I'd rather not run sync, since it spins up disks that I've
+ # deliberately caused to spin down (but not unmounted).
+--- coreutils-6.7/README.runuser	2006-11-24 21:28:27.000000000 +0000
++++ coreutils-6.7/README	2007-01-09 17:32:16.000000000 +0000
+@@ -11,7 +11,7 @@
+   dd df dir dircolors dirname du echo env expand expr factor false fmt fold
+   ginstall groups head hostid hostname id join kill link ln logname ls
+   md5sum mkdir mkfifo mknod mv nice nl nohup od paste pathchk pinky pr
+-  printenv printf ptx pwd readlink rm rmdir seq sha1sum sha224sum sha256sum
++  printenv printf ptx pwd readlink rm rmdir runuser seq sha1sum sha224sum sha256sum
+   sha384sum sha512sum shred shuf sleep sort split stat stty su sum sync tac
+   tail tee test touch tr true tsort tty uname unexpand uniq unlink uptime
+   users vdir wc who whoami yes
+--- coreutils-6.7/src/su.c.runuser	2007-01-09 17:27:56.000000000 +0000
++++ coreutils-6.7/src/su.c	2007-01-09 17:30:12.000000000 +0000
+@@ -110,9 +110,15 @@
+ #include "error.h"
+ 
+ /* The official name of this program (e.g., no `g' prefix).  */
++#ifndef RUNUSER
+ #define PROGRAM_NAME "su"
++#else
++#define PROGRAM_NAME "runuser"
++#endif
+ 
++#ifndef AUTHORS
+ #define AUTHORS "David MacKenzie"
++#endif
+ 
+ #if HAVE_PATHS_H
+ # include <paths.h>
+@@ -150,6 +156,10 @@
+ #ifndef USE_PAM
+ char *crypt ();
+ #endif
++#ifndef CHECKPASSWD
++#define CHECKPASSWD 1
++#endif
++
+ char *getusershell ();
+ void endusershell ();
+ void setusershell ();
+@@ -157,7 +167,11 @@
+ extern char **environ;
+ 
+ static void run_shell (char const *, char const *, char **, size_t,
+-	const struct passwd *)
++	const struct passwd *
++#ifdef RUNUSER
++		       , gid_t *groups, int num_groups
++#endif
++	)
+ #ifdef USE_PAM
+ 	;
+ #else
+@@ -187,6 +201,10 @@
+   {"login", no_argument, NULL, 'l'},
+   {"preserve-environment", no_argument, NULL, 'p'},
+   {"shell", required_argument, NULL, 's'},
++#ifdef RUNUSER
++  {"group", required_argument, NULL, 'g'},
++  {"supp-group", required_argument, NULL, 'G'},
++#endif
+   {GETOPT_HELP_OPTION_DECL},
+   {GETOPT_VERSION_OPTION_DECL},
+   {NULL, 0, NULL, 0}
+@@ -288,10 +306,12 @@
+   retval = pam_start(PROGRAM_NAME, pw->pw_name, &conv, &pamh);
+   PAM_BAIL_P;
+ 
++#ifndef RUNUSER
+   if (getuid() != 0 && !isatty(0)) {
+ 	fprintf(stderr, "standard in must be a tty\n");
+ 	exit(1);
+   }
++#endif
+ 
+   caller = getpwuid(getuid());
+   if(caller != NULL && caller->pw_name != NULL) {
+@@ -308,6 +328,11 @@
+     retval = pam_set_item(pamh, PAM_TTY, tty_name);
+     PAM_BAIL_P;
+   }
++#ifdef RUNUSER
++  if (getuid() != geteuid())
++    /* safety net: deny operation if we are suid by accident */
++    error(EXIT_FAIL, 1, "runuser may not be setuid");
++#else
+   retval = pam_authenticate(pamh, 0);
+   PAM_BAIL_P;
+   retval = pam_acct_mgmt(pamh, 0);
+@@ -317,6 +342,7 @@
+     PAM_BAIL_P;
+   }
+   PAM_BAIL_P;
++#endif
+   /* must be authenticated if this point was reached */
+   return 1;
+ #else /* !USE_PAM */
+@@ -398,11 +424,22 @@
+ /* Become the user and group(s) specified by PW.  */
+ 
+ static void
+-change_identity (const struct passwd *pw)
++change_identity (const struct passwd *pw
++#ifdef RUNUSER
++		 , gid_t *groups, int num_groups
++#endif
++	)
+ {
+ #ifdef HAVE_INITGROUPS
++  int rc = 0;
+   errno = 0;
+-  if (initgroups (pw->pw_name, pw->pw_gid) == -1) {
++#ifdef RUNUSER
++  if (num_groups)
++    rc = setgroups(num_groups, groups);
++  else
++#endif
++    rc = initgroups(pw->pw_name, pw->pw_gid);
++  if (rc == -1) {
+ #ifdef USE_PAM
+     pam_close_session(pamh, 0);
+     pam_end(pamh, PAM_ABORT);
+@@ -449,7 +486,11 @@
+ 
+ static void
+ run_shell (char const *shell, char const *command, char **additional_args,
+-	   size_t n_additional_args, const struct passwd *pw)
++	   size_t n_additional_args, const struct passwd *pw
++#ifdef RUNUSER
++	   , gid_t *groups, int num_groups
++#endif
++	)
+ {
+   size_t n_args = 1 + fast_startup + 2 * !!command + n_additional_args + 1;
+   char const **args = xnmalloc (n_args, sizeof *args);
+@@ -480,7 +521,11 @@
+ 
+   child = fork();
+   if (child == 0) {  /* child shell */
+-  change_identity (pw);
++  change_identity (pw
++#ifdef RUNUSER
++		   , groups, num_groups
++#endif
++	  );
+   pam_end(pamh, 0);
+   if (!same_session)
+     setsid ();
+@@ -657,6 +702,12 @@
+   char *shell = NULL;
+   struct passwd *pw;
+   struct passwd pw_copy;
++#ifdef RUNUSER
++  struct group *gr;
++  gid_t groups[NGROUPS_MAX];
++  int num_supp_groups = 0;
++  int use_gid = 0;
++#endif
+ 
+   initialize_main (&argc, &argv);
+   program_name = argv[0];
+@@ -671,7 +722,11 @@
+   simulate_login = false;
+   change_environment = true;
+ 
+-  while ((optc = getopt_long (argc, argv, "c:flmps:", longopts, NULL)) != -1)
++  while ((optc = getopt_long (argc, argv, "c:flmps:"
++#ifdef RUNUSER
++			      "g:G:"
++#endif
++			      , longopts, NULL)) != -1)
+     {
+       switch (optc)
+ 	{
+@@ -701,6 +756,28 @@
+ 	  shell = optarg;
+ 	  break;
+ 
++#ifdef RUNUSER
++	case 'g':
++	  gr = getgrnam(optarg);
++	  if (!gr)
++	    error (EXIT_FAIL, 0, _("group %s does not exist"), optarg);
++	  use_gid = 1;
++	  groups[0] = gr->gr_gid;
++	  break;
++
++	case 'G':
++	  num_supp_groups++;
++	  if (num_supp_groups >= NGROUPS_MAX)
++	    error (EXIT_FAIL, 0,
++		   _("Can't specify more than %d supplemental groups"),
++		   NGROUPS_MAX - 1);
++	  gr = getgrnam(optarg);
++	  if (!gr)
++	    error (EXIT_FAIL, 0, _("group %s does not exist"), optarg);
++	  groups[num_supp_groups] = gr->gr_gid;
++	  break;
++#endif
++
+ 	case_GETOPT_HELP_CHAR;
+ 
+ 	case_GETOPT_VERSION_CHAR (PROGRAM_NAME, AUTHORS);
+@@ -739,7 +816,20 @@
+ 			  : DEFAULT_SHELL);
+   endpwent ();
+ 
+-  if (!correct_password (pw))
++#ifdef RUNUSER
++  if (num_supp_groups && !use_gid)
++  {
++    pw->pw_gid = groups[1];
++    memmove (groups, groups + 1, sizeof(gid_t) * num_supp_groups);
++  }
++  else if (use_gid)
++  {
++    pw->pw_gid = groups[0];
++    num_supp_groups++;
++  }
++#endif
++
++  if (CHECKPASSWD && !correct_password (pw))
+     {
+ #ifdef SYSLOG_FAILURE
+       log_su (pw, false);
+@@ -771,8 +861,16 @@
+   modify_environment (pw, shell);
+ 
+ #ifndef USE_PAM
+-  change_identity (pw);
++  change_identity (pw
++#ifdef RUNUSER
++		   , groups, num_supp_groups
++#endif
++		   );
+ #endif
+ 
+-  run_shell (shell, command, argv + optind, MAX (0, argc - optind), pw);
++  run_shell (shell, command, argv + optind, MAX (0, argc - optind), pw
++#ifdef RUNUSER
++	     , groups, num_supp_groups
++#endif
++	     );
+ }
+--- coreutils-6.7/src/Makefile.am.runuser	2007-01-09 17:27:56.000000000 +0000
++++ coreutils-6.7/src/Makefile.am	2007-01-09 17:27:56.000000000 +0000
+@@ -17,7 +17,7 @@
+ ## along with this program; if not, write to the Free Software Foundation,
+ ## Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ 
+-EXTRA_PROGRAMS = chroot df hostid nice pinky stty su uname uptime users who
++EXTRA_PROGRAMS = chroot df hostid nice pinky stty su runuser uname uptime users who
+ 
+ bin_SCRIPTS = groups
+ bin_PROGRAMS = [ chgrp chown chmod cp dd dircolors du \
+@@ -112,6 +112,10 @@
+ mv_LDADD += $(LIB_ACL)
+ ginstall_LDADD += $(LIB_ACL)
+ 
++runuser_SOURCES = su.c
++runuser_CFLAGS = -DRUNUSER -DAUTHORS="\"David MacKenzie, Dan Walsh\""
++runuser_LDADD = $(LDADD) $(LIB_CRYPT) @LIB_PAM@
++
+ $(PROGRAMS): ../lib/libcoreutils.a
+ 
+ SUFFIXES = .sh
+@@ -126,7 +130,7 @@
+ 	chmod +x $@-t
+ 	mv $@-t $@
+ 
+-all-local: su$(EXEEXT)
++all-local: su$(EXEEXT) runuser
+ 
+ installed_su = $(DESTDIR)$(bindir)/`echo su|sed '$(transform)'`
+ 
+--- coreutils-6.7/AUTHORS.runuser	2006-10-22 17:54:15.000000000 +0100
++++ coreutils-6.7/AUTHORS	2007-01-09 17:27:56.000000000 +0000
+@@ -60,6 +60,7 @@
+ readlink: Dmitry V. Levin
+ rm: Paul Rubin, David MacKenzie, Richard Stallman, Jim Meyering
+ rmdir: David MacKenzie
++runuser: David MacKenzie, Dan Walsh
+ seq: Ulrich Drepper
+ sha1sum: Ulrich Drepper, Scott Miller, David Madore
+ sha224sum: Ulrich Drepper, Scott Miller, David Madore
+--- coreutils-6.7/man/Makefile.am.runuser	2006-11-16 08:49:56.000000000 +0000
++++ coreutils-6.7/man/Makefile.am	2007-01-09 17:32:38.000000000 +0000
+@@ -26,7 +26,7 @@
+   link.1 ln.1 logname.1 \
+   ls.1 md5sum.1 mkdir.1 mkfifo.1 mknod.1 mv.1 nl.1 nohup.1 od.1 \
+   paste.1 pathchk.1 pr.1 printenv.1 printf.1 ptx.1 pwd.1 readlink.1 \
+-  rm.1 rmdir.1 seq.1 sha1sum.1 sha224sum.1 sha256sum.1 sha384sum.1 sha512sum.1 \
++  rm.1 rmdir.1 runuser.1 seq.1 sha1sum.1 sha224sum.1 sha256sum.1 sha384sum.1 sha512sum.1 \
+   shred.1 shuf.1 sleep.1 sort.1 split.1 stat.1 \
+   su.1 sum.1 sync.1 tac.1 tail.1 tee.1 test.1 touch.1 tr.1 true.1 tsort.1 \
+   tty.1 unexpand.1 uniq.1 unlink.1 vdir.1 wc.1 \
+--- /dev/null	2007-01-09 09:38:07.860075128 +0000
++++ coreutils-6.7/man/runuser.x	2007-01-09 17:27:56.000000000 +0000
+@@ -0,0 +1,4 @@
++[NAME]
++runuser \- run a shell with substitute user and group IDs
++[DESCRIPTION]
++.\" Add any additional description here
+--- /dev/null	2007-01-09 09:38:07.860075128 +0000
++++ coreutils-6.7/man/runuser.1	2007-01-09 17:27:56.000000000 +0000
+@@ -0,0 +1,68 @@
++.\" DO NOT MODIFY THIS FILE!  It was generated by help2man 1.33.
++.TH RUNUSER "1" "September 2004" "runuser (coreutils) 5.2.1" "User Commands"
++.SH NAME
++runuser \- run a shell with substitute user and group IDs, similar to su, but will not run PAM hooks
++.SH SYNOPSIS
++.B runuser
++[\fIOPTION\fR]... [\fI-\fR] [\fIUSER \fR[\fIARG\fR]...]
++.SH DESCRIPTION
++.\" Add any additional description here
++.PP
++Change the effective user id and group id to that of USER.  No PAM hooks
++are run, and there will be no password prompt.  This command is useful
++when run as the root user.  If run as a non-root user without privilege
++to set user ID, the command will fail.
++.TP
++-, \fB\-l\fR, \fB\-\-login\fR
++make the shell a login shell
++.TP
++\fB\-c\fR, \fB\-\-commmand\fR=\fICOMMAND\fR
++pass a single COMMAND to the shell with \fB\-c\fR
++.TP
++\fB\-f\fR, \fB\-\-fast\fR
++pass \fB\-f\fR to the shell (for csh or tcsh)
++.TP
++\fB\-g\fR, \fB\-\-group\fR=\fIGROUP\fR
++specify the primary group
++.TP
++\fB\-G\fR, \fB\-\-supp-group\fR=\fIGROUP\fR
++specify a supplemental group
++.TP
++\fB\-m\fR, \fB\-\-preserve\-environment\fR
++do not reset environment variables
++.TP
++\fB\-p\fR
++same as \fB\-m\fR
++.TP
++\fB\-s\fR, \fB\-\-shell\fR=\fISHELL\fR
++run SHELL if /etc/shells allows it
++.TP
++\fB\-\-help\fR
++display this help and exit
++.TP
++\fB\-\-version\fR
++output version information and exit
++.PP
++A mere - implies \fB\-l\fR.   If USER not given, assume root.
++.SH AUTHOR
++Written by David MacKenzie, Dan Walsh.
++.SH "REPORTING BUGS"
++Report bugs to <bug-coreutils@gnu.org>.
++.SH COPYRIGHT
++Copyright \(co 2004 Free Software Foundation, Inc.
++.br
++This is free software; see the source for copying conditions.  There is NO
++warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++.SH "SEE ALSO"
++Since this command is trimmed down version of su use you can use the su manual.
++The full documentation for
++.B su
++is maintained as a Texinfo manual.  If the
++.B info
++and
++.B su
++programs are properly installed at your site, the command
++.IP
++.B info coreutils su
++.PP
++should give you access to the complete manual.

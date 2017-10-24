@@ -1,0 +1,62 @@
+Source: wbxml2
+Priority: optional
+Section: libs
+Maintainer: WooJin Yun <suhoangel9@samsung.com>, Joohark Park <juhaki.park@samsung.com>, Byonguk Lee <byonguk.lee@samsung.com>
+Homepage: http://libwbxml.opensync.org/
+Build-Depends: debhelper (>= 5.0.0), cdbs, check, libexpat1-dev | libexpat-dev, popt-dev, zlib1g-dev | libz-dev
+Standards-Version: 3.8.3
+
+Package: libwbxml2-dev
+Section: libdevel
+Architecture: any
+Depends: libwbxml2-0 (= ${binary:Version}), zlib1g-dev | libz-dev, libexpat1-dev | libexpat-dev, popt-dev, ${misc:Depends}
+Description: WBXML library development file
+ The WBXML Library (aka libwbxml) contains a library and its associated
+ tools to Parse, Encode and Handle WBXML documents.  The WBXML format
+ is a binary representation of XML, defined by the Wap Forum, and used
+ to reduce bandwidth in mobile communications.
+ .
+ Install this package if you wish to develop your own programs using
+ WBXML.
+
+Package: libwbxml2-0-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: libwbxml2-0 (= ${binary:Version}), ${misc:Depends}
+Recommends: libwbxml2-dev
+Description: WBXML library development file
+ The WBXML Library (aka libwbxml) contains a library and its associated
+ tools to Parse, Encode and Handle WBXML documents.  The WBXML format
+ is a binary representation of XML, defined by the Wap Forum, and used
+ to reduce bandwidth in mobile communications.
+ .
+ Install this package if you wish to debug wbxml2 using applications.
+
+Package: libwbxml2-0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libwbxml2
+Replaces: libwbxml2
+Description: WBXML parsing and encoding library
+ The WBXML Library (aka libwbxml) contains a library and its associated
+ tools to Parse, Encode and Handle WBXML documents.  The WBXML format
+ is a binary representation of XML, defined by the Wap Forum, and used
+ to reduce bandwidth in mobile communications.
+ .
+ This package contains the dynamic library needed by applications
+ using libwbxml2.
+
+Package: libwbxml2-utils
+Section: text
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Binary XML utilities
+ The WBXML Library (aka libwbxml) contains a library and its associated
+ tools to Parse, Encode and Handle WBXML documents.  The WBXML format
+ is a binary representation of XML, defined by the Wap Forum, and used
+ to reduce bandwidth in mobile communications.
+ .
+ This package contains wbxml2xml and xml2wbxml utils to convert xml
+ files to wbxml and back.

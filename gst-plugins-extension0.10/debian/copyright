@@ -1,0 +1,21 @@
+This is gst-plugins-secext, written and maintained by jongmin lee <jm105.lee@samsung.com>
+on Thu, 12 Nov 2009 14:21:10 +0900.
+
+The original source can always be found at:
+	ftp://slp.samsung.net/dists/unstable/main/source/
+
+Copyright Holder: jongmin lee
+
+License:
+   samsung
+
+
+   SLP2.0
+   Copyright (c) 2008 Samsung Electronics, Inc.
+   All rights reserved.
+
+   This software is a confidential and proprietary information
+   of Samsung Electronics, Inc. ("Confidential Information").  You
+   shall not disclose such Confidential Information and shall use
+   it only in accordance with the terms of the license agreement
+   you entered into with Samsung Electronics. 

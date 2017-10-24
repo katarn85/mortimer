@@ -1,0 +1,14 @@
+--- coreutils-5.92/tests/group-names.chgrp	2005-10-28 09:20:12.000000000 +0100
++++ coreutils-5.92/tests/group-names	2005-10-28 09:55:27.000000000 +0100
+@@ -18,3 +18,11 @@
+      (exit 77); exit 77
+      ;;
+ esac
++
++set `id -Gn`
++if echo "$2" | grep -q '[^0-9]'
++then
++  exit 0
++else
++  (exit 77); exit 77
++fi

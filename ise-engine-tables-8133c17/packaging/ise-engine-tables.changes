@@ -1,0 +1,27 @@
+* Wed Mar 05 2014 Jihoon Kim <jihoon48.kim@samsung.com> accepted/tizen/20130912.195949@3907595
+- Modified to install LICENSE information
+- Add russian and greek support
+- upload ise-engine-tables-0.0.0517
+
+* Tue Sep 10 2013 Li Zhang <li2012.zhang@samsung.com> submit/tizen_2.2/20130816.030416@ba89fa6
+- Support function key when Capslock On
+
+* Fri Aug 16 2013 Li Zhang <li2012.zhang@samsung.com> submit/tizen_2.2/20130723.031518@27b2d5b
+- Set default value of forward mode to false
+- Avoiding suggestion bar blink when focusing in number layout
+- Add show_lookup_table in reset
+- Hide candidate in NUMBERONLY layout
+- initialize member variable
+- flush preedit string when turn off ise
+- Modified to decide whether to display candidate window according to layout style
+
+* Thu Jan 31 2013 Li Zhang <li2012.zhang@samsung.com> accepted/tizen_2.0/20130120.045825@585a4e4
+- Remove the characters out of BMP range
+- Remove unnecessary database
+- flush preedit when immcontext calling reset
+- Remove ja,ko,additional database rpm
+- change package and spec file name
+- Add m4 files
+- ise-engine-tables-zh-0.0.0125, Migrate scim-tables to Tizen
+- Initial empty repository
+

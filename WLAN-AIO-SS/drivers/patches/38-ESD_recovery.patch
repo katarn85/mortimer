@@ -1,0 +1,33 @@
+diff -p -r drivers.ori/ath6kl/cfg80211.c drivers/ath6kl/cfg80211.c
+*** drivers.ori/ath6kl/cfg80211.c	2013-05-07 10:51:38.000000000 +0800
+--- drivers/ath6kl/cfg80211.c	2013-05-07 13:13:25.000000000 +0800
+*************** void ath6kl_scan_timer_handler(unsigned
+*** 1746,1751 ****
+--- 1746,1754 ----
+  
+  #endif
+  	}
++     
++ 	/* Electric Shock testing: Trigger USB module reset */
++ 	cfg80211_disconnected(vif->ndev, 99, NULL, 0, GFP_KERNEL);
+  }
+  
+  /* assume we support not more than two differnet channels */
+diff -p -r drivers.ori/cfg80211/sme.c drivers/cfg80211/sme.c
+*** drivers.ori/cfg80211/sme.c	2013-05-07 10:51:38.000000000 +0800
+--- drivers/cfg80211/sme.c	2013-05-07 13:11:37.000000000 +0800
+*************** void __cfg80211_disconnected(struct net_
+*** 687,692 ****
+--- 687,698 ----
+  
+  	ASSERT_WDEV_LOCK(wdev);
+  
++ 	/* Electric Shock testing: Trigger USB module reset */
++ 	if (reason == 99) {
++ 		nl80211_send_disconnected(rdev, dev, reason, ie, ie_len, from_ap);
++ 		return;
++ 	}
++ 
+  	if (WARN_ON(wdev->iftype != NL80211_IFTYPE_STATION &&
+  		    wdev->iftype != NL80211_IFTYPE_P2P_CLIENT))
+  		return;

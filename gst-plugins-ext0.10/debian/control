@@ -1,0 +1,18 @@
+Source: gst-plugins-ext0.10
+Section: libs
+Priority: extra
+Maintainer: JongHyuk Choi <jhchoi.choi@samsung.com>, Seungbae Shin <seungbae.shin@samsung.com>, Younghwan Ahn <younghwan_.an@samsung.com>, Jeongmo Yang <jm80.yang@samsung.com>, Sangchul Lee <sc11.lee@samsung.com>, Santhoshi KS <santhoshi.ks@samsung.com>
+Build-Depends: debhelper (>= 5), libgstreamer0.10-dev, libgstreamer-plugins-base0.10-dev, libavsystem-dev, libmm-ta-dev, drm-client-dev, drm-trusted-dev, libecore-dev, libevas-dev, libmm-ta-dev
+Standards-Version: 3.7.2
+
+Package: gstreamer0.10-plugins-ext
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0, libgstreamer-plugins-base0.10-0, libavsystem-0, libmm-ta, drm-client-0, drm-trusted-0, libcamsrcjpegenc
+Description: GStreamer extra plugins (common)
+
+Package: gstreamer0.10-plugins-ext-dbg
+Section: debug
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer0.10-plugins-ext (= ${Source-Version})
+Description: GStreamer extra plugins (all) (unstripped)

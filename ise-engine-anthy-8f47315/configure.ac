@@ -1,0 +1,156 @@
+# Process this file with autoconf to produce a configure script.
+AC_PREREQ(2.59)
+# base on scim-anthy-1.2.7
+AC_INIT(ise-engine-anthy, 0.0.0125, ashie@homa.ne.jp)
+AC_CONFIG_SRCDIR([configure.ac])
+
+# Save this value here, since automake will set cflags and cxxflags later
+cflags_set=${CFLAGS+set}
+cppflags_set=${CPPFLAGS+set}
+
+SCIM_ANTHY_MAJOR_VERSION=0
+SCIM_ANTHY_MINOR_VERSION=0
+SCIM_ANTHY_MICRO_VERSION=0125
+
+SCIM_ANTHY_VERSION=$SCIM_ANTHY_MAJOR_VERSION.$SCIM_ANTHY_MINOR_VERSION.$SCIM_ANTHY_MICRO_VERSION
+
+AC_SUBST(SCIM_ANTHY_MAJOR_VERSION)
+AC_SUBST(SCIM_ANTHY_MINOR_VERSION)
+AC_SUBST(SCIM_ANTHY_MICRO_VERSION)
+AC_SUBST(SCIM_ANTHY_VERSION)
+
+# Init automake stuff
+AM_INIT_AUTOMAKE(1.9)
+AM_CONFIG_HEADER(config.h)
+
+# Init gettext
+ALL_LINGUAS="de ja"
+AM_GNU_GETTEXT
+
+GETTEXT_PACKAGE=ise-engine-anthy
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The gettext domain])
+
+# Init libtool
+AC_LIBTOOL_DLOPEN
+AC_PROG_LIBTOOL
+AC_LIB_LTDL
+AC_SUBST(LIBTOOL_DEPS)
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_LANG(C++)
+
+AC_C_CONST
+AC_TYPE_SIZE_T
+
+# Checks for libraries.
+
+SCIM_VERSION=1.2.0
+
+PKG_CHECK_MODULES(SCIM,[isf >= $SCIM_VERSION])
+
+PKG_CHECK_MODULES(ECORE,[ecore])
+
+AC_SUBST(SCIM_VERSION)
+
+# Check if we should build setup module
+#PKG_CHECK_MODULES(SCIM_GTKUTILS,[scim-gtkutils >= $SCIM_VERSION],
+#		  		[SCIM_HAS_GTKUTILS=yes],
+#				[SCIM_HAS_GTKUTILS=no])
+SCIM_HAS_GTKUTILS="no"
+AM_CONDITIONAL(SCIM_BUILD_SETUP, [test "$SCIM_HAS_GTKUTILS" = "yes"])
+
+if test "$SCIM_HAS_GTKUTILS" = "yes"; then
+  SCIM_BUILD_SETUP=1
+else
+  SCIM_BUILD_SETUP=0
+fi
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_FUNC_ALLOCA
+AC_CHECK_HEADERS([argz.h fcntl.h float.h inttypes.h langinfo.h libintl.h limits.h locale.h malloc.h stddef.h stdint.h stdio_ext.h stdlib.h string.h strings.h sys/param.h unistd.h wchar.h])
+
+# Checks for library functions.
+AC_SUBST(ac_aux_dir)
+
+# Checks for anthy
+AC_CHECK_HEADER(anthy/anthy.h, [], [AC_MSG_ERROR(anthy/anthy.h was not found.)])
+ANTHY_LIBS="-lanthy -lanthydic"
+ANTHY_CFLAGS=""
+AC_SUBST(ANTHY_LIBS)
+AC_SUBST(ANTHY_CFLAGS)
+
+
+# Check gtk2
+#PKG_CHECK_MODULES(GTK2, [gtk+-2.0 >= 2.4.0],
+#                        [HAS_GTK=yes],
+#                        [HAS_GTK=no])
+HAS_GTK="no"
+AM_CONDITIONAL(SCIM_BUILD_HELPER, [test "$HAS_GTK" = "yes"])
+
+if test "$HAS_GTK" = "yes"; then
+  SCIM_BUILD_HELPER=1
+else
+  SCIM_BUILD_HELPER=0
+fi
+AC_SUBST(SCIM_BUILD_HELPER)
+
+# libtool option to control which symbols are exported
+# right now, symbols starting with _ are not exported
+LIBTOOL_EXPORT_OPTIONS='-export-symbols-regex "^[[^_]].*"'
+AC_SUBST(LIBTOOL_EXPORT_OPTIONS)
+
+# Extra args.
+AC_ARG_ENABLE(debug,
+	      [  --enable-debug     Turn on debugging],
+	      [case "${enableval}" in
+	       yes) debug=yes ;;
+	       no)  debug=no ;;
+	       *) AC_MSG_ERROR(bad value ${enableval} for --enable-debug) ;;
+       	      esac],[debug=no])
+
+if test "x$debug" = "xyes"; then
+  test "$cflags_set" = set || CFLAGS="$CFLAGS -g"
+  test "$cppflags_set" = set || CPPFLAGS="$CXXFLAGS -g"
+  SCIM_DEBUG_FLAGS="-DENABLE_DEBUG=1"
+else
+  SCIM_DEBUG_FLAGS=""
+fi
+AC_SUBST(SCIM_DEBUG_FLAGS)
+
+SCIM_DATADIR=`$PKG_CONFIG --variable=scimdatadir scim`
+SCIM_ICONDIR=`$PKG_CONFIG --variable=icondir scim`
+SCIM_MODULEDIR=`$PKG_CONFIG --variable=moduledir scim`
+
+if test "x$SCIM_DATADIR" = "x"; then
+  SCIM_DATADIR=${datadir}/scim
+fi
+
+if test "x$SCIM_ICONDIR" = "x"; then
+  SCIM_ICONDIR=${datadir}/scim/icons
+fi
+
+if test "x$SCIM_MODULEDIR" = "x"; then
+  SCIM_MODULEDIR=${libdir}/scim-1.0
+fi
+
+SCIM_ANTHY_DATADIR=${SCIM_DATADIR}/Anthy
+
+AC_SUBST(SCIM_DATADIR)
+AC_SUBST(SCIM_ICONDIR)
+AC_SUBST(SCIM_MODULEDIR)
+AC_SUBST(SCIM_ANTHY_DATADIR)
+        
+AC_CONFIG_FILES([
+Makefile
+intl/Makefile
+po/Makefile.in
+m4/Makefile
+src/Makefile
+data/Makefile
+])
+
+AC_OUTPUT

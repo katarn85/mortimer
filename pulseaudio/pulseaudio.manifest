@@ -1,0 +1,35 @@
+<manifest>
+	<define>
+		<domain name="pulseaudio"/>
+		<request>
+			<smack request="dbus" type="rw"/>
+			<smack request="system::vconf" type="arwxt"/>
+			<smack request="system::vconf_multimedia" type="arwxt"/>
+			<smack request="system::vconf_setting" type="rw"/>
+			<smack request="system::share" type="-rwx-"/>
+			<smack request="system::homedir" type="arwxt"/>
+			<smack request="deviced::display" type="rw"/>
+			<smack request="device::audio" type="arwxt"/>
+			<smack request="device::recording" type="rw"/>
+			<smack request="bluez" type="rw"/>
+			<smack request="sys-assert::core" type="arwxt"/>
+			<smack request="syslogd" type="w"/>
+			<smack request="security-server::api-privilege-by-pid" type="w"/>
+			<smack request="svi-data" type="rx"/>
+			<smack request="org.tizen.setting::default-resources" type="arwxt"/>
+		</request>
+		<permit>
+			<smack permit="dbus" type="rw"/>
+		</permit>
+		<provide>
+			<label name="pulseaudio::record"/>
+		</provide>
+	</define>
+	<assign>
+		<filesystem path="/usr/bin/pulseaudio" label="pulseaudio" exec_label="pulseaudio"/>
+		<filesystem path="/opt/var/lib/pulse" label="pulseaudio"/>
+	</assign>
+	<request>
+		<domain name="_"/>
+	</request>
+</manifest>

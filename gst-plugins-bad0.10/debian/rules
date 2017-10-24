@@ -1,0 +1,252 @@
+#!/usr/bin/make -f
+
+#include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+CFLAGS ?= -Wall -g -fPIC
+LDFLAGS ?= 
+PREFIX ?= /usr
+DATADIR ?= /opt
+
+
+CONFIGURE_OPTION= --disable-static		\
+		--disable-nls			\
+		--with-html-dir=/tmp/dump	\
+		--disable-examples		\
+		--disable-adpcmdec		\
+		--disable-aiff			\
+		--disable-amrparse		\
+		--disable-asfmux		\
+		--disable-bayer			\
+		--disable-cdxaparse		\
+		--disable-dccp			\
+		--disable-dvdspu		\
+		--disable-festival		\
+		--disable-freeze		\
+		--disable-frei0r		\
+		--disable-hdvparse		\
+		--disable-librfb		\
+		--disable-modplug		\
+		--disable-mpegtsmux		\
+		--disable-mpegpsmux		\
+		--disable-mve			\
+		--disable-mxf			\
+		--disable-nsf			\
+		--disable-nuvdemux		\
+		--disable-pcapparse		\
+		--disable-pnm			\
+		--disable-qtmux			\
+		--disable-real			\
+		--disable-scaletempo		\
+		--disable-shapewipe		\
+		--disable-siren			\
+		--disable-speed			\
+		--disable-subenc		\
+		--disable-stereo		\
+		--disable-tta			\
+		--disable-videomeasure		\
+		--disable-videosignal		\
+		--disable-vmnc			\
+		--disable-directsound		\
+		--disable-directdraw		\
+		--disable-osx_video		\
+		--disable-vcd			\
+		--disable-assrender		\
+		--disable-amrwb			\
+		--disable-apexsink		\
+		--disable-bz2			\
+		--disable-cdaudio		\
+		--disable-celt			\
+		--disable-cog			\
+		--disable-dc1394		\
+		--disable-directfb		\
+		--disable-dirac			\
+		--disable-dts			\
+		--disable-divx			\
+		--disable-dvdnav		\
+		--disable-faac			\
+		--disable-faad			\
+		--disable-fbdev			\
+		--disable-gsm			\
+		--disable-ivorbis		\
+		--disable-jack			\
+		--disable-jp2k			\
+		--disable-kate			\
+		--disable-ladspa		\
+		--disable-lv2			\
+		--disable-libmms		\
+		--disable-modplug		\
+		--disable-mimic			\
+		--disable-mpeg2enc		\
+		--disable-mplex			\
+		--disable-musepack		\
+		--disable-musicbrainz		\
+		--disable-mythtv		\
+		--disable-nas			\
+		--disable-neon			\
+		--disable-ofa			\
+		--disable-timidity		\
+		--disable-wildmidi		\
+		--disable-sdl			\
+		--disable-sdltest		\
+		--disable-sndfile		\
+		--disable-soundtouch		\
+		--disable-spc			\
+		--disable-gme			\
+		--disable-swfdec		\
+		--disable-theoradec		\
+		--disable-xvid			\
+		--disable-dvb			\
+		--disable-oss4			\
+		--disable-wininet		\
+		--disable-acm			\
+		--disable-vdpau			\
+		--disable-schro			\
+		--disable-zbar			\
+		--disable-dataurisrc		\
+		--disable-shm			\
+		--disable-coloreffects		\
+		--disable-colorspace		\
+		--disable-videomaxrate		\
+		--disable-jp2kdecimator		\
+		--disable-interlace		\
+		--disable-gaudieffects		\
+		--disable-y4m			\
+		--disable-adpcmdec		\
+		--disable-adpcmenc		\
+		--disable-segmentclip		\
+		--disable-geometrictransform	\
+		--disable-inter			\
+		--disable-dvbsuboverlay		\
+		--disable-ivfparse		\
+		--disable-gsettings		\
+		--disable-opus			\
+		--disable-openal		\
+		--disable-snapdsp		\
+		--disable-teletextdec		\
+		--disable-audiovisualizers	\
+		--disable-faceoverlay		\
+		--disable-freeverb		\
+		--disable-removesilence		\
+		--disable-smooth		\
+		--disable-avc			\
+		--disable-d3dvideosink		\
+		--disable-pvr2d
+
+
+#--disable-camerabin   \
+#--disable-aacparse    \
+#--disable-lagacyresample   \
+#--disable-id3tag \
+#--disable-quicktime    \
+#--disable-h264parse    \
+#--disable-mpeg4videoparse  \
+#--disable-sdp  \
+#--disable-alsa \
+#--disable-selector \
+#--disable-metadata \
+
+CFLAGS += -DGST_EXT_HLS_MODIFICATION \
+          -DGST_H264PARSE_MODIFICATION
+
+LDFLAGS += -Wl,--hash-style=both -Wl,--as-needed
+
+config.status: configure
+	dh_testdir
+	./autogen.sh || exit 1
+	# Add here commands to configure the package.
+	./configure $(CONFIGURE_OPTION) --prefix=$(PREFIX) CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"
+
+#configure:
+#	dh_testdir
+#	./autogen.sh
+
+build: build-stamp
+build-stamp:  config.status
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+
+	for f in `find $(CURDIR)/debian/ -name "*.in"`; do \
+		cat $$f > $${f%.in}; \
+		sed -i -e "s#@PREFIX@#$(PREFIX)#g" $${f%.in}; \
+		sed -i -e "s#@DATADIR@#$(DATADIR)#g" $${f%.in}; \
+	done
+
+	touch $@
+
+clean::
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp stamp-h1
+	# Add here commands to clean up after the build process.
+	-$(MAKE) distclean
+
+ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+	cp -f /usr/share/misc/config.sub config.sub
+endif
+ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+	cp -f /usr/share/misc/config.guess config.guess
+endif
+
+#	find ./ -depth -name "Makefile" -exec rm {} -f \;
+#	find ./ -depth -name ".deps" -exec rm {} -rf \;
+
+	for f in `find $(CURDIR)/debian/ -name "*.in"`; do \
+		rm -f $${f%.in}; \
+	done
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	# Add here commands to install the package into debian/tmp
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_install --sourcedir debian/tmp --list-missing
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_python
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip --dbg-package=gstreamer0.10-plugins-bad-dbg
+	dh_compress
+	dh_fixperms
+	dh_perl
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps 
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 

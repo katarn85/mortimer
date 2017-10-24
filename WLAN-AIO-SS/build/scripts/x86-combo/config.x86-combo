@@ -1,0 +1,45 @@
+#
+# Please modify KERNELPATH, KERNELARCH and TOOLPREFIX to meet your environment
+#
+
+# X86-PC example ################################################################################################################
+export KERNELPATH=/lib/modules/${shell uname -r}/build
+#export KERNELPATH=/usr/src/linux-2.6.31.14/
+#export KERNELPATH=/usr/src/linux-2.6.32.27/
+#export KERNELPATH=/usr/src/linux-2.6.35.4/
+#export KERNELPATH=/usr/src/linux-2.6.38.6/
+
+export KERNELARCH=i386
+export TOOLPREFIX=
+
+# Use local libnl library or not
+#export BUILD_LIBNL=y
+#export INCLUDE_LIBNL11_HEADER=${ATH_TOPDIR}/apps/libnl-1/include
+#export INCLUDE_LIBNL11_LIB=-lm ${ATH_TOPDIR}/apps/libnl-1/lib/libnl.a 
+
+# Put one copy of firmware to local PC or not. Need root privilege.
+export BUILD_DRIVERFW_TOLOCAL=y
+
+# Build regdb into cfg80211.ko
+export CONFIG_CFG80211_INTERNAL_REGDB=y
+
+# PMF (11W)
+export CONFIG_PMF_SUPPORT=y
+
+# custome behavior
+export CONFIG_CE_SUPPORT=y
+
+# ATHTST
+export CONFIG_ATHTST_SUPPORT=y
+
+# TX99
+export CONFIG_TX99_SUPPORT=y
+
+# ACS
+export CONFIG_ACS_SUPPORT=y
+
+# ACL
+export CONFIG_ACL_SUPPORT=y
+
+# Enable TCMD
+#export CONFIG_NL80211_TESTMODE=y

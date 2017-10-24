@@ -1,0 +1,8 @@
+src/scim_anthy_imengine.cpp
+src/scim_anthy_factory.cpp
+src/scim_anthy_setup.cpp
+src/scim_anthy_setup_romaji.cpp
+src/scim_anthy_setup_kana.cpp
+src/scim_anthy_table_editor.cpp
+src/scim_anthy_prefs.cpp
+src/scim_anthy_color_button.cpp

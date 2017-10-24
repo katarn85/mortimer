@@ -1,0 +1,14 @@
+--- coreutils-5.92/man/date.1.dateman	2005-10-22 19:14:46.000000000 +0100
++++ coreutils-5.92/man/date.1	2005-10-24 17:57:38.000000000 +0100
+@@ -188,6 +188,11 @@
+ then an optional modifier, which is either
+ E to use the locale's alternate representations if available, or
+ O to use the locale's alternate numeric symbols if available.
++.SH ENVIRONMENT
++.TP
++TZ
++Specifies the timezone, unless overridden by command line parameters.
++If neither is specified, the setting from /etc/localtime is used.
+ .SH AUTHOR
+ Written by David MacKenzie.
+ .SH "REPORTING BUGS"

@@ -1,0 +1,67 @@
+GPL_LIST = 	$(ROOTFS_BASE_PACKAGES) $(SALFS_PACKAGES)
+
+FILE_LIST = $(shell find $(GPL_INSTALL_PATH)/lib/pkgconfig/ -name "*.pc")
+
+gpl: init gpl-buildall
+
+.PHONY: gpl
+
+gpl-cleanbuild: gpl-cleanall gpl-buildall
+
+.PHONY: gpl-cleanbuild
+
+gpl-buildall: gpl-list
+
+	@echo "##################################################################"
+	@echo "# GPL Library                                                    #"
+	@echo "##################################################################"
+
+	@for package in $(GPL_LIST); do \
+		if [ ! -e $$package/$(LC_PATH) ]; then \
+			cd $$package; make clean ; make; \
+		fi; \
+		echo "==============================";\
+		echo "make opensource package..." $$package | sed -e 's/.*\///g'; \
+		echo "==============================";\
+		cp -afr --remove-destination $$package/$(LC_PATH)/* $(GPL_INSTALL_PATH)/; \
+	done	
+
+	@for filename in $(FILE_LIST); do \
+		sed -i "/^prefix=/ c prefix=${GPL_INSTALL_PATH}" $$filename; \
+		sed -i "/^exec_prefix=/ c exec_prefix=${GPL_INSTALL_PATH}" $$filename; \
+	done
+
+.PHONY: gpl-buildall
+
+
+gpl-clean: gpl-list
+	@for package in $(GPL_LIST); do \
+		if [ -e $$package/$(LC_PATH) ]; then \
+			cd $$package; make clean ;\
+		fi; \
+	done
+	
+	@if [ -e $(GPL_INSTALL_PATH) ]; then\
+		rm -rf $(GPL_INSTALL_PATH);	\
+		install -d $(GPL_INSTALL_PATH); \
+	fi;
+
+.PHONY: gpl-clean
+
+
+gpl-cleanall: gpl-list gpl-clean
+	
+.PHONY: gpl-cleanall
+
+gpl-list:
+	@echo ""
+	@echo "=============< open source package list >============="
+	@for package in $(GPL_LIST); do \
+		echo $$package | sed -e 's/.*\///g'; \
+	done
+	@echo "======================================================"
+	@echo ""
+	
+.PHONY: gpl-list
+
+

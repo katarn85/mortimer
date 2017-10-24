@@ -1,0 +1,88 @@
+--- ath6kl.ori/init.c	2013-05-02 10:35:40.000000000 +0800
++++ ath6kl/init.c	2013-05-02 16:05:18.000000000 +0800
+@@ -1122,11 +1122,11 @@
+ 
+ 	ath6kl_reg_deinit(ar);
+ 
+-	vfree(ar->fw_board);
+-	vfree(ar->fw_otp);
+-	vfree(ar->fw);
+-	vfree(ar->fw_ext);
+-	vfree(ar->fw_patch);
++	//vfree(ar->fw_board);
++	//vfree(ar->fw_otp);
++	//vfree(ar->fw);
++	//vfree(ar->fw_ext);
++	//vfree(ar->fw_patch);
+ 	vfree(ar->fw_testscript);
+ 	vfree(ar->fw_softmac);
+ 
+@@ -1178,9 +1178,60 @@
+ }
+ #endif
+ 
++#include "fw_bdata.h"
++#include "fw_ram.h"
++#include "fw_bdata_2_0.h"
++#include "fw_ram_2_0.h"
++#include "fw_bdata_3_0.h"
++#include "fw_ram_3_0.h"
++#include "fw_bdata_6006_1_1.h"
++#include "fw_ram_6006_1_1.h"
++
+ static int ath6kl_get_fw(struct ath6kl *ar, const char *filename,
+ 			 u8 **fw, size_t *fw_len)
+ {
++#if 1
++      char tmpfilename[100];
++
++	snprintf(tmpfilename, sizeof(tmpfilename), "%s/%s",
++		 ar->hw.fw.dir, ar->hw.fw.fw);
++
++	if (strncmp(filename, AR6004_HW_1_3_BOARD_DATA_FILE, strlen(AR6004_HW_1_3_BOARD_DATA_FILE)) == 0) {
++		*fw_len = sizeof(fw_bdata);
++		*fw = fw_bdata;
++	} else if (strncmp(filename, AR6004_HW_2_0_BOARD_DATA_FILE, strlen(AR6004_HW_2_0_BOARD_DATA_FILE)) == 0) {
++		*fw_len = sizeof(fw_bdata_2_0);
++		*fw = fw_bdata_2_0;
++	} else if ((strncmp(ar->hw.fw.dir, AR6004_HW_2_0_FW_DIR, strlen(AR6004_HW_2_0_FW_DIR)) == 0) &&
++		   (strncmp(filename, tmpfilename, strlen(tmpfilename)) == 0)) {
++		*fw_len = sizeof(fw_ram_2_0);
++		*fw = fw_ram_2_0;
++	} else if (strncmp(filename, AR6004_HW_3_0_BOARD_DATA_FILE, strlen(AR6004_HW_3_0_BOARD_DATA_FILE)) == 0) {
++		*fw_len = sizeof(fw_bdata_3_0);
++		*fw = fw_bdata_3_0;
++	} else if ((strncmp(ar->hw.fw.dir, AR6004_HW_3_0_FW_DIR, strlen(AR6004_HW_3_0_FW_DIR)) == 0) &&
++		   (strncmp(filename, tmpfilename, strlen(tmpfilename)) == 0)) {
++		*fw_len = sizeof(fw_ram_3_0);
++		*fw = fw_ram_3_0;
++	} else if (strncmp(filename, AR6006_HW_1_1_BOARD_DATA_FILE, strlen(AR6006_HW_1_1_BOARD_DATA_FILE)) == 0) {
++		*fw_len = sizeof(fw_bdata_6006_1_1);
++		*fw = fw_bdata_6006_1_1;
++	} else if ((strncmp(ar->hw.fw.dir, AR6006_HW_1_1_FW_DIR, strlen(AR6006_HW_1_1_FW_DIR)) == 0) &&
++		   (strncmp(filename, tmpfilename, strlen(tmpfilename)) == 0)) {
++		*fw_len = sizeof(fw_ram_6006_1_1);
++		*fw = fw_ram_6006_1_1;
++	} else if (strncmp(filename, tmpfilename, strlen(tmpfilename)) == 0) {
++		*fw_len = sizeof(fw_ram);
++		*fw = fw_ram;
++	} else {
++		ath6kl_dbg(ATH6KL_DBG_BOOT, "ath6kl: Get firmware %s fail!!\n", filename);
++		
++		return -1;
++	}
++	printk("ath6kl: Get firmware %s !!\n", filename);
++
++	return 0;
++#else
+ #ifdef CE_SUPPORT
+ #define MAX_BUFFER_SIZE	128
+ 	struct file *fp = NULL;
+@@ -1268,6 +1319,7 @@
+ 
+ 	return ret;
+ #endif
++#endif
+ }
+ 
+ #ifdef CONFIG_OF

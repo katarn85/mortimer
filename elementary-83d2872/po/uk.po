@@ -1,0 +1,568 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2013-09-26 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Значок"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Вимкнено."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Контекстне спливаюче повідомлення"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Контекстне спливаюче повідомлення відкрито. Двічі натисніть, щоб його закрити"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Спливне повідомлення меню"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Двічі натисніть, щоб закрити меню."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr ""
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "і ще %d"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Двічі натисніть, щоб змінити одержувачів."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Двічі натисніть, щоб редагувати."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Назва"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Заголовок спливаючого повідомлення"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Текст всередині спливаючого повідомлення"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Основне спливаюче повідомлення відкрито. Двічі натисніть, щоб його закрити"
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Кнопка"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr ""
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Вибрано"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Не вибрано"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Прапорець"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "Вибрати"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "Відхилити вибір"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Кнопка ввімкнення/вимкнення"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Увімкнено"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Вимкнено"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d відсотків"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Натисніть для застосування."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Регулятор кольору"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Регулятор насиченості"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Регулятор яскравості"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Засіб вибору кольору"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Білий"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Жовтий"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Корал"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Томатний"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Червоний"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Яскраво-рожевий"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Фіолетовий"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Бузково-блакитний"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Жовто-зелений"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Трав'янисто-зелений"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Блакитний"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Велично-синій"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Темно-синій"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Темно-сірий"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Чорний"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Настроювана кольорова палітра"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Копіювати"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Вирізати"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Вибрати"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Редагувати поле"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Смуга швидкого прокручування"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "Двічі натисніть, щоб перейти до вмісту."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Висувне меню відкрито. Двічі натисніть, щоб його закрити."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Перемикач"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "з"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Проведіть вгору або вниз, щоб налаштувати положення."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Слайдер"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Вибрати"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Вибрано"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Вибрано"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Вкладка"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Встанов."
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Перекласти"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "Проведіть вгору та вниз, щоб налаштувати %s, або двічі натисніть, щоб відкрити клавіатуру."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Двічі натисніть, щоб змінити."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Встановити дату"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Встановити час"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Книжковий режим"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Альбомний режим"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Двічі натисніть, щоб увімкнути функцію швидкого прокручування."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Редагування."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Проведіть вгору або вниз, щоб налаштувати положення."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d символів."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Контекстне спливне повідомлення"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Двічі натисніть, щоб закрити спливне повідомлення."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Центральне спливне повідомлення"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Двічі натисніть, щоб його закрити."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Висувне меню відкрито."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Двічі натисніть, щоб закрити висувне меню."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Курсор знаходиться на початку тексту"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Курсор знаходиться в кінці тексту"
+
+msgid "tap to change"
+msgstr "Натисніть, щоб змінити режим."
+
+msgid "date"
+msgstr "Дата"
+
+msgid "hour"
+msgstr "година"
+
+msgid "minute"
+msgstr "хвилина"
+
+msgid "month"
+msgstr "місяць"
+
+msgid "year"
+msgstr "рік"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d з %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Зменшення днів"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Зменшення годин"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Зменшення хвилин"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Зменшення місяців"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Зменшення років"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Збільшення днів"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Збільшення годин"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Збільшення хвилин"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Збільшення місяців"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Збільшення років"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Натисніть, щоб змінити."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Вибрати всі"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Копіювати"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Вибрати"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Вирізати"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Вставити"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Буфер обміну"
+

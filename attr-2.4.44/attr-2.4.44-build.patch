@@ -1,0 +1,11 @@
+--- attr/Makefile.orig	2011-10-12 18:43:29.552518009 +0900
++++ attr/Makefile	2011-10-12 18:43:37.936518001 +0900
+@@ -36,7 +36,7 @@
+ 	Logs/* built .census install.* install-dev.* install-lib.* *.gz
+ 
+ LIB_SUBDIRS = include libmisc libattr
+-TOOL_SUBDIRS = attr getfattr setfattr examples test m4 man doc po debian build
++TOOL_SUBDIRS = attr getfattr setfattr examples test m4 man doc po build
+ 
+ SUBDIRS = $(LIB_SUBDIRS) $(TOOL_SUBDIRS)
+ 

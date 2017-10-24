@@ -1,0 +1,188 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_HOST_ARCH       ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_ARCH_OS    ?= $(shell dpkg-architecture -qDEB_HOST_GNU_OS)
+
+CFLAGS += -Wall -g
+LDFLAGS ?= 
+PREFIX ?= /usr
+DATADIR ?= /opt
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+MODULES= --disable-extpar-amr			\
+	--disable-ext-mp3			\
+	--disable-ext-overlay			\
+	--disable-extdec-aac 			\
+	--disable-extdec-mp3 			\
+	--disable-extdec-ogg 			\
+	--disable-extenc-amr 			\
+	--disable-extdec-amr 			\
+	--disable-extdec-wma 			\
+	--disable-extdec-h263-hw 		\
+	--disable-extdec-h264-hw 		\
+	--disable-extdec-mpeg4-hw 		\
+	--disable-extenc-h263-hw 		\
+	--disable-extenc-mpeg4-hw 		\
+	--disable-ext-httpsrc 			\
+	--disable-ext-overlay 			\
+	--disable-ext-ippjpegenc 		\
+	--disable-ext-exifwriter 		\
+	--disable-ext-soundeq 			\
+	--disable-ext-soundreverb 		\
+	--disable-ext-sound3d 			\
+	--disable-ext-ippjpegenc 		\
+	--disable-ext-ippvideoscale 		\
+	--disable-ext-ppvideoscale		\
+	--disable-ext-gif			\
+	--disable-ext-png			\
+	--disable-ext-jpeg			\
+	--disable-ext-mpegaudioparse \
+	--disable-ext-asfdemux \
+	--disable-ext-httpsrc \
+	--disable-ext-multisession-httpsrc \
+	--disable-ext-wfdrtspsrc
+#	--disable-ext-savsimgp
+#	--disable-ext-voicedatasrcbin
+	
+EXECSTACK_FILES = 
+	
+# architecture is arm
+ifneq (, $(findstring arm, $(DEB_HOST_ARCH)))
+	# ARM
+	OPTION= --disable-i386
+	MODULES += 
+	EXECSTACK_FILES += $(CURDIR)/debian/tmp/usr/lib/libSamsungVoiceBooster.so \
+			$(CURDIR)/debian/tmp/usr/lib/libSamsungR2VSlibrary.so \
+			$(CURDIR)/debian/tmp/usr/lib/libarkamys_lib_HDSX20_i7800_LIMO.so \
+			$(CURDIR)/debian/tmp/usr/lib/gstreamer-0.10/libgstdnse.so
+
+else
+	# OTHER
+	OPTION= --enable-i386
+	MODULES += --disable-ext-secrtspsrc	\
+		--disable-ext-sechttpsrc	\
+		--disable-ext-dnse	\
+		--disable-ext-vt	\
+		--disable-ext-savsimgp  \
+		--disable-ext-voicedatasrcbin \
+		--disable-ext-fimcconvert	\
+		--disable-ext-avsysvideosrc \
+		--disable-ext-soundalive \
+		--disable-ext-audiovsp   \
+		--disable-ext-audiodha
+endif
+
+LDFLAGS += -Wl,--rpath=$(PREFIX)/lib -Wl,--as-needed
+
+config.status: configure
+	dh_testdir
+	# Add here commands to configure the package.
+	./autogen.sh
+	CFLAGS="$(CFLAGS) -DGST_EXT_USE_DATANETWORK -DGST_EXT_TIME_ANALYSIS -DEXPORT_API=\"__attribute__((visibility(\\\"default\\\")))\" " LDFLAGS="$(LDFLAGS)" ./configure $(MODULES) $(OPTION) --prefix=$(PREFIX) 
+
+build: build-stamp
+
+build-stamp:  config.status
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+	#docbook-to-man debian/ncurses.sgml > ncurses.1
+
+	for f in `find $(CURDIR)/debian/ -name "*.in"`; do \
+		cat $$f > $${f%.in}; \
+		sed -i -e "s#@PREFIX@#$(PREFIX)#g" $${f%.in}; \
+		sed -i -e "s#@DATADIR@#$(DATADIR)#g" $${f%.in}; \
+	done
+	
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp 
+
+	# Add here commands to clean up after the build process.
+	-$(MAKE) distclean
+ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+	cp -f /usr/share/misc/config.sub config.sub
+endif
+ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+	cp -f /usr/share/misc/config.guess config.guess
+endif
+
+	for f in `find $(CURDIR)/debian/ -name "*.in"`; do \
+		rm -f $${f%.in}; \
+	done
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs -s
+
+	# Add here commands to install the package into debian/ncurses.
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+ifneq (, $(findstring arm, $(DEB_HOST_ARCH)))
+	execstack -c $(EXECSTACK_FILES)
+endif
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -s
+#	dh_installdocs 
+#	dh_installexamples
+	dh_install -s --list-missing --sourcedir=debian/tmp
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_python
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+#	dh_installman
+	dh_link -s
+	dh_strip -s --dbg-package=gstreamer0.10-plugins-extension-dbg
+	dh_compress -s
+	dh_fixperms -s
+#	dh_perl
+	dh_makeshlibs -s
+	dh_installdeb -s
+	dh_shlibdeps -s
+	dh_gencontrol -s
+	dh_md5sums -s
+	dh_builddeb -s
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 

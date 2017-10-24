@@ -1,0 +1,217 @@
+Overview of Changes from scim-anthy-1.2.6 to scim-anthy-1.2.7
+==============================================================
+* Changed default encoding (for getting strings from Anthy) to UTF-8.
+* Now NICOLA engine is case sensitive.
+
+Overview of Changes from scim-anthy-1.2.5 to scim-anthy-1.2.6
+==============================================================
+* Fix packaging misstake.
+* Fix typo (Thanks Malcolm Parsons and Ikuya Awashiro).
+
+Overview of Changes from scim-anthy-1.2.4 to scim-anthy-1.2.5
+==============================================================
+* Fixed a build problem against gcc-4.3.
+* Addd de.po (Thanks Gerrit Sangel).
+* Added a style file for NICOLA-F layout (Thanks MORIYAMA Masayuki).
+* Sort style list by name.
+
+Overview of Changes from scim-anthy-1.2.3 to scim-anthy-1.2.4
+==============================================================
+* Fixed a bug that a character which is possible to become a voiced consonant
+  is gone after inputing "Ro" has been fixed.
+* Fixed a name collision issue of ScimColorButton. Now you can use scim-anthy
+  with scim-chewing, maybe.
+
+Overview of Changes from scim-anthy-1.2.2 to scim-anthy-1.2.3
+==============================================================
+* Fix install path of helper module.
+* Distinguish two backslash key of jp106 keybord. It requires scim-1.4.6.
+  Please clear ~/.scim/config after install scim-1.4.6.
+* Some minor fixes.
+
+Overview of Changes from scim-anthy-1.2.1 to scim-anthy-1.2.2
+==============================================================
+* Fix a bug that a wrong partial string is converted on direct kana conversion
+  after commiting a piece of segments.
+
+Overview of Changes from scim-anthy-1.2.0 to scim-anthy-1.2.1
+==============================================================
+* Fix a problem that the romaji pending state aren't restored on pressing a
+  backspace or moving the caret has been fixed.
+  (Thanks Ryo Dairiki and Akira TAGOH)
+* Add a dictionary encoding preference into setup UI.
+* Revert the default dictionary encoding preference to EUC-JP.
+* Other minor fixes (Thanks Sutou).
+
+Overview of Changes from scim-anthy-1.0.0 to scim-anthy-1.2.0
+==============================================================
+* Add pseudo ASCII input mode. It enables users to enter ASCII letters during
+  Japanese mode. Thanks Akira TAGOH for your patch.
+* Enable reconversion feature on non-GTK+ application (It's a ad-hoc solition).
+  Thanks Takashi Nakamoto.
+* Enable to choose behavior on focus out.
+* Add predict key into some key bindings themes. Thanks Ikuya Awashiro.
+* Try EUC-JP-MS first when convert characters from Anthy to Unicode.
+* Add tsuki layout into the list of kana typing layouts. Thanks Sugi.
+* The bug that direct select keys doesn't work during predicting has been fixed.
+  Thanks TAGOH, UTUMI, Bando for your report.
+* Fix some wrong entries in Romaji tables. Thanks Jun Oizumi.
+* Fix a bug that commited clauses aren't cleared when the learning preferenece
+  is disabled. Thanks Jun Oizumi.
+
+Overview of Changes from scim-anthy-0.9.0 to scim-anthy-1.0.0
+==============================================================
+* Add symbol style preference (Thanks Akira TAGOH).
+* Don't activate direct select key when the lookup window isn't shown
+  (Thanks Akira TAGOH).
+* Fix credit.
+
+Overview of Changes from scim-anthy-0.8.0 to scim-anthy-0.9.0
+=============================================================
+* Add SKIM support (Provide as external package).
+* Add prediction key bindings to ATOK like key bindings theme.
+* Ensure to through space key event to enable application's specific feature
+  like Mozilla's scrolling feature (Thanks reporting > Yukiko Bando).
+* Fix double commiting bug on Wide Latin mode.
+  (Thanks Ryo Dairiki and UTUMI Hirosi)
+* Other minor fixes.
+
+Overview of Changes from scim-anthy-0.7.1 to scim-anthy-0.8.0
+=============================================================
+* Now scim-anthy requires scim-1.2.0 or later.
+* Add prediction feature.
+* Add reconversion feature. It can reconvert already commited string.
+  Currently this feature will be enabled only on Gtk+2.
+* Default thumb shift layout has been improved.
+* Add timer for thumb shift layout.
+* Some key bindings are modified. Please select "Default" key bindings theme
+  in the setup window once to upgrade safely.
+* Add Wnn like style file.
+* Add TRON layout. Thanks Okano Shinchi.
+* Apply ten key setting exactly on all input modes. 
+* Add help text.
+
+Overview of Changes from scim-anthy-0.7.0 to scim-anthy-0.7.1
+=============================================================
+* Fix a bug that sicm-setup crashes when close romaji editor.
+
+Overview of Changes from scim-anthy-0.6.1 to scim-anthy-0.7.0
+=============================================================
+* Show dictionary menu on the panel by default.
+  It uses kasumi (http://kasumi.sourceforge.jp/).
+  It's very important package for scim-anthy.
+  Distributors, please install also kasumi when install scim-anthy.
+* Enable to customize NICOLA table.
+* Replace the scim-anthy icon with new one. Thanks SHIMODA-san.
+* Show all key bindings on key bindings view by default.
+* Add some style files (Canna, VJE-Delta).
+* Fix typo in some style files.
+
+Overview of Changes from scim-anthy-0.6.0 to scim-anthy-0.6.1
+=============================================================
+* The bug that some key bindings is dead has been fixed.
+  Thanks Ryo Dairiki.
+* The bug that custom typing tables aren't set correctly has been fixed.
+* Pluged a memory leak.
+
+Overview of Changes from scim-anthy-0.5.3 to scim-anthy-0.6.0
+=============================================================
+* Method of loading romaji table has been changed.
+  Old user settings will be cleared when you change it by scim-setup.
+* Add preedit color preference.
+* Add some prefereneces for lookup window.
+* Add AZIK extended romaji table.
+* Enable to customize kana typing table.
+* Add a kana table for 101 keyborad.
+* Support kana key symbols of X Window System.
+  But this feature has some limitations:
+    - You can't switch to X's kana typing mode from scim-anthy.
+      You should customize /etc/X11/xorg.conf to switch it.
+      See http://ikumi.revery.net/cmp/kanainputonx.htm for more details.
+    - Typing method indicator on the panel can't indicate X's kana lock state.
+* Experimental NICOLA support.
+* Other minor fixes.
+
+Overview of Changes from scim-anthy-0.5.2 to scim-anthy-0.5.3
+=============================================================
+* Fix a wrong key binding in the Microsoft IME like key bindings.
+
+Overview of Changes from scim-anthy-0.5.1 to scim-anthy-0.5.2
+=============================================================
+* The bug that preferences of period, comma and width of numbers aren't
+  applied correctly has been fixed.
+
+Overview of Changes from scim-anthy-0.5.0 to scim-anthy-0.5.1
+=============================================================
+* The bug that some letters cannot be typed correctly on kana typing mode has
+  been fixed.
+* The bug that some key bindings of ATOK style aren't set correctly has been
+  fixed. (Thanks AWASHIRO Ikuya)
+
+Overview of Changes from scim-anthy-0.4.3 to scim-anthy-0.5.0
+=============================================================
+* Enable to customize romaji table.
+* Add "Key bindings theme" and "Romaji table theme" features.
+  (Thank you for testing and many suggestions > UTUMI-san and Bando-san)
+* Add "Convert as you type" feature.
+* Enable to split a romaji sequence. (Thanks! DAIRIKI-san)
+* Enable to rotate case of alphabet letters on pressing F8, F9 and F10 key like   ATOK or Microsoft IME.
+* Other minor bug fixes. (Thanks! UTUMI-san, SATO-san)
+
+Overview of Changes from scim-anthy-0.4.2 to scim-anthy-0.4.3
+=============================================================
+* Fix for gcc-4.0. Thanks UTUMI-san.
+* Fix a bug that selecting first & last candidate feature doesn't work.
+  Thanks BANDO-san.
+
+Overview of Changes from scim-anthy-0.4.1 to scim-anthy-0.4.2
+=============================================================
+* Fix typo in Japanese message (Thanks! DAIRIKI-san).
+* Update automake version because previous version reduce filename extension
+  of the module.
+
+Overview of Changes from scim-anthy-0.4.0 to scim-anthy-0.4.1
+=============================================================
+* Fix a bug that scim-anthy eats all key events although it doesn't have
+  preedit string (Thanks! DAIRIKI-san).
+
+Overview of Changes from scim-anthy-0.3.2 to scim-anthy-0.4.0
+=============================================================
+* Add preference for width of symbols and numbers.
+* Add ten keys support.
+* Enable to insert a alternative width space by "Shift + Space".
+  Now this key binding doesn't use as changing input mode by default anymore.
+* Modify to apply most preferences immediately.
+* Refine key bindings preference.
+* Add some miscellaneous key bindings.
+* Add preferences for learning.
+* Modify label text on toolbar to make easy to recognize.
+* Don't show typing method label on toolbar by default anymore.
+* Add some symbols to romaji-table (Thanks! David Oftedal and Yukiko Bando).
+* Other minor bug fixes (Thaks! UTUMI Hirosi).
+
+Overview of Changes from scim-anthy-0.3.1 to scim-anthy-0.3.2
+=============================================================
+* Fixed a bug that the 10th candidate on the lookup window can't be selected by
+  direct selecting key. To enable this, please clear previous setting
+  ("/IMEngine/PRIME/SelectCandidates10Key" in ~/.scim/config).
+  Thanks to UTUMI-san and DAIRIKI-san.
+* Fixed some clash bugs. Thanks to DAIRIKI-san.
+
+Overview of Changes from scim-anthy-0.3.0 to scim-anthy-0.3.1
+=============================================================
+* Update automake version.
+
+Overview of Changes from scim-anthy-0.2.0 to scim-anthy-0.3.0
+=============================================================
+* Enable to select short cut keys to choose candidate directly.
+* Added an option to close candidate window on direct selecting.
+* Added period and comma style preference.
+* Launch dictionary administration tools from toolbar or short cut key.
+* Fixed a bug which clashes the scim-setup when reload the config.
+  (Thanks! James Su)
+* Other minor fixes (Thanks! UTUMI-san, Bando-san)
+
+scim-anthy-0.2.0
+=============================================================
+* Initial release.

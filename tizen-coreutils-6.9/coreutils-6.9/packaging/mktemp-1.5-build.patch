@@ -1,0 +1,15 @@
+--- mktemp-1.5/Makefile.in.orig	2004-12-20 16:02:18.336177215 +0100
++++ mktemp-1.5/Makefile.in	2004-12-20 16:03:23.279430678 +0100
+@@ -108,10 +108,10 @@
+ 	$(SHELL) $(srcdir)/mkinstalldirs $(bindir) $(mandir)/man1
+ 
+ install-binaries: $(PROG)
+-	$(INSTALL) -m 0555 -s $(PROG) $(bindir)/$(PROG)
++	$(INSTALL) -m 0755 $(PROG) $(bindir)/$(PROG)
+ 
+ install-man:
+-	$(INSTALL) -m 0444 $(srcdir)/$(PROG).$(mantype) $(mandir)/man1/$(PROG).1
++	$(INSTALL) -m 0644 $(srcdir)/$(PROG).$(mantype) $(mandir)/man1/$(PROG).1
+ 
+ check:
+ 	@echo nothing to check

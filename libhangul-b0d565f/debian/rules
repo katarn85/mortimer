@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+DEB_DBG_PACKAGES = libhangul0-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_libhangul0 := --version-info
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk

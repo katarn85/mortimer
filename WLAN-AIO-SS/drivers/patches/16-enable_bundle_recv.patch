@@ -1,0 +1,12 @@
+--- ./ath6kl.orig/init.c	2012-10-05 17:06:46.000000000 +0800
++++ ./ath6kl/init.c	2012-10-05 16:17:05.000000000 +0800
+@@ -32,7 +32,7 @@
+ #include "pm.h"
+
+ unsigned int debug_mask;
+ unsigned int debug_mask_ext;
++unsigned int htc_bundle_recv=1;
+-unsigned int htc_bundle_recv;
+ unsigned int htc_bundle_send;
+ unsigned int htc_bundle_send_timer;
+ static unsigned int testmode;

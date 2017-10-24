@@ -1,0 +1,12 @@
+<manifest>
+  <request>
+    <domain name="_"/>
+  </request>
+  <assign>
+    <filesystem path="/bin/*" label="_" exec_label="none" />
+    <filesystem path="/sbin/*" label="_" exec_label="none" />
+    <filesystem path="/usr/bin/*" label="_" exec_label="none" />
+    <filesystem path="/usr/sbin/*" label="_" exec_label="none" />
+    <filesystem path="/usr/share/getopt/getopt-parse.bash" label="_" exec_label="none" />
+  </assign>
+</manifest>

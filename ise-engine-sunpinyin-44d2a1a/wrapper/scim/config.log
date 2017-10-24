@@ -1,0 +1,31 @@
+file /home/zeus/workspace/sunpinyin-git/wrapper/scim/SConstruct,line 95:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking for pkg-config... 
+scons: Configure: ".sconf_temp/conftest_0" is up to date.
+scons: Configure: The original builder output was:
+  |pkg-config --atleast-pkgconfig-version=0.12.0
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for scim... 
+scons: Configure: ".sconf_temp/conftest_1" is up to date.
+scons: Configure: The original builder output was:
+  |pkg-config --exists 'scim'
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for sunpinyin-2.0... 
+scons: Configure: ".sconf_temp/conftest_2" is up to date.
+scons: Configure: The original builder output was:
+  |pkg-config --exists 'sunpinyin-2.0'
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for scim-gtkutils... 
+scons: Configure: ".sconf_temp/conftest_3" is up to date.
+scons: Configure: The original builder output was:
+  |pkg-config --exists 'scim-gtkutils'
+  |
+scons: Configure: (cached) yes
+
+

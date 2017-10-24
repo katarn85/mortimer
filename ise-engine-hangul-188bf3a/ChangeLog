@@ -1,0 +1,104 @@
+2007-12-30 07:36  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r65] configure.ac, src/Makefile.am: update install directories
+	  * change the hangul data directory to ${scimdatadir}/hangul
+	  * use $(localedir) instead of $(datadir)/locale
+
+2007-12-30 07:31  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r64] bootstrap: add local macro directory to aclocal option
+
+2007-12-30 06:43  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r62] Makefile.am: add documents ChangeLog_0.3.1 README.ko
+
+2007-12-30 03:26  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r60] NEWS, RELEASE: update documents
+
+2007-12-30 03:25  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r59] configure.ac, skim/configure.in.in: update version to 0.3.2
+
+2007-12-30 03:21  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r58] po/de.po, po/fr.po, po/ja.po, po/ko.po, po/nl.po, po/pa.po,
+	  po/scim-hangul.pot, po/zh_CN.po: update po
+
+2007-07-14 12:27  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r43] ChangeLog_0.3.1: add log to ChangeLog_0.3.1 between last
+	  release and migration to svn
+
+2007-07-14 12:22  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r42] ChangeLog, ChangeLog_0.3.1, Makefile.am: rename ChangeLog
+	  to ChangeLog_0.3.1
+	  update the makefile rule that makes ChangeLog to use svn2cl
+
+2007-07-14 12:03  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r41] data/symbol.txt: add data/symbol.txt
+
+2007-07-14 12:01  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r40] ., data, intl, m4, po, skim, skim/icons, skim/po,
+	  skim/setupui, src: add svn ignore list
+
+2007-07-14 11:40  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r39] skim/bootstrap: change skim repository hostname
+
+2007-06-24 13:09  'Choe Hwanjin <hwanjin@users.sourceforge.net>'
+
+	* [r29] scim-hangul, ., ABOUT-NLS, AUTHORS, COPYING, ChangeLog,
+	  INSTALL, Makefile.am, NEWS, README, README.ko, RELEASE,
+	  bootstrap, configure.ac, data, data/Makefile.am,
+	  data/scim-hangul.png, developers, intl, intl/ChangeLog,
+	  intl/Makefile.in, intl/VERSION, intl/bindtextdom.c,
+	  intl/config.charset, intl/dcgettext.c, intl/dcigettext.c,
+	  intl/dcngettext.c, intl/dgettext.c, intl/dngettext.c,
+	  intl/eval-plural.h, intl/explodename.c, intl/finddomain.c,
+	  intl/gettext.c, intl/gettextP.h, intl/gmo.h, intl/hash-string.h,
+	  intl/intl-compat.c, intl/l10nflist.c, intl/libgnuintl.h.in,
+	  intl/loadinfo.h, intl/loadmsgcat.c, intl/localcharset.c,
+	  intl/localcharset.h, intl/locale.alias, intl/localealias.c,
+	  intl/localename.c, intl/log.c, intl/ngettext.c, intl/os2compat.c,
+	  intl/os2compat.h, intl/osdep.c, intl/plural-exp.c,
+	  intl/plural-exp.h, intl/plural.c, intl/plural.y,
+	  intl/printf-args.c, intl/printf-args.h, intl/printf-parse.c,
+	  intl/printf-parse.h, intl/printf.c, intl/ref-add.sin,
+	  intl/ref-del.sin, intl/relocatable.c, intl/relocatable.h,
+	  intl/textdomain.c, intl/vasnprintf.c, intl/vasnprintf.h,
+	  intl/vasnwprintf.h, intl/wprintf-parse.h, intl/xsize.h, m4,
+	  m4/ChangeLog, m4/Makefile.am, m4/codeset.m4, m4/gettext.m4,
+	  m4/glibc21.m4, m4/iconv.m4, m4/intdiv0.m4, m4/intmax.m4,
+	  m4/inttypes-pri.m4, m4/inttypes.m4, m4/inttypes_h.m4,
+	  m4/isc-posix.m4, m4/lcmessage.m4, m4/lib-ld.m4, m4/lib-link.m4,
+	  m4/lib-prefix.m4, m4/longdouble.m4, m4/longlong.m4, m4/nls.m4,
+	  m4/po.m4, m4/printf-posix.m4, m4/progtest.m4, m4/signed.m4,
+	  m4/size_max.m4, m4/stdint_h.m4, m4/uintmax_t.m4, m4/ulonglong.m4,
+	  m4/wchar_t.m4, m4/wint_t.m4, m4/xsize.m4, po, po/Makefile.in.in,
+	  po/Makevars, po/Makevars.template, po/POTFILES.in, po/Rules-quot,
+	  po/boldquot.sed, po/de.po, po/en@boldquot.header,
+	  po/en@quot.header, po/fr.po, po/insert-header.sin, po/ja.po,
+	  po/ko.po, po/nl.po, po/pa.po, po/quot.sed,
+	  po/remove-potcdate.sin, po/scim-hangul.pot, po/zh_CN.po,
+	  scim-hangul.spec.in, skim, skim/AUTHORS, skim/Makefile.am,
+	  skim/Makefile.cvs, skim/README, skim/bootstrap,
+	  skim/configure.in.bot, skim/configure.in.in, skim/icons,
+	  skim/icons/.cvsignore, skim/icons/Makefile.am,
+	  skim/icons/scim-hangul.png, skim/po, skim/po/.cvsignore,
+	  skim/po/Makefile.am, skim/po/de.po, skim/po/fr.po, skim/po/it.po,
+	  skim/po/ja.po, skim/po/ko.po, skim/po/nl.po, skim/po/pa.po,
+	  skim/po/skim-scim-hangul.pot, skim/po/zh_CN.po, skim/po/zh_TW.po,
+	  skim/setupui, skim/setupui/.cvsignore, skim/setupui/Makefile.am,
+	  skim/setupui/scim_hangul.kcfg, skim/setupui/scim_hangul.kcfgc,
+	  skim/setupui/scim_hangul_ui.ui,
+	  skim/setupui/scimhangulsettingloader.cpp,
+	  skim/setupui/scimhangulsettingloader.h,
+	  skim/setupui/skimplugin_scim_hangul_config.desktop, src,
+	  src/Makefile.am, src/scim_hangul_imengine.cpp,
+	  src/scim_hangul_imengine.h, src/scim_hangul_imengine_setup.cpp:
+	  Import scim-hangul from CVS HEAD
+

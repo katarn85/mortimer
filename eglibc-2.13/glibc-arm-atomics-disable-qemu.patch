@@ -1,0 +1,12 @@
+Index: eglibc-2.13/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/atomic.h
+===================================================================
+--- eglibc-2.13.orig/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/atomic.h
++++ eglibc-2.13/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/atomic.h
+@@ -39,6 +39,7 @@ void __arm_link_error (void);
+ /* Use the atomic builtins provided by GCC in case the backend provides
+    a pattern to do this efficiently.  */
+ 
++#undef __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4
+ #ifdef __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4
+ #define atomic_full_barrier() __sync_synchronize ()
+ #elif defined __thumb2__

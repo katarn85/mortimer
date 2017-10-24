@@ -1,0 +1,6 @@
+setBadness('devel-file-in-non-devel-package', 0)
+setBadness('library-without-ldconfig-postun', 0)
+addFilter("gcc.* devel-file-in-non-devel-package")
+addFilter("gcc-objc.* devel-file-in-non-devel-package")
+addFilter("gcc-multilib.* devel-file-in-non-devel-package")
+addFilter("gcc.* library-without-ldconfig-postun")

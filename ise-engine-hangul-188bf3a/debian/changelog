@@ -1,0 +1,109 @@
+ise-engine-hangul (1.3.3-4) unstable; urgency=low
+
+  * Change preedit style as underline
+  * Git: framework/uifw/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.3.3-4
+
+ -- Jihoon Kim <jihoon48.kim@samsung.com>  Tue, 06 Nov 2012 17:35:21 +0900
+
+ise-engine-hangul (1.3.3-2) unstable; urgency=low
+
+  * don't install *.la
+  * Git: 165.213.180.234:slp/pkgs/i/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.3.3-2
+
+ -- Jihoon Kim <jihoon48.kim@samsung.com>  Fri, 18 May 2012 14:03:48 +0900
+
+ise-engine-hangul (1.3.3-1) unstable; urgency=low
+
+  * Fix Makefile.am not to build GTK setup module.
+  * Git: 165.213.180.234:slp/pkgs/i/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.3.3-1
+
+ -- Jihoon Kim <jihoon48.kim@samsung.com>  Thu, 01 Sep 2011 17:06:54 +0900
+
+ise-engine-hangul (1.3.2-3) unstable; urgency=low
+
+  * Remove unused GTK dependency
+  * Git: 165.213.180.234:slp/pkgs/i/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.3.2-3
+
+ -- Jihoon Kim <jihoon48.kim@samsung.com>  Wed, 31 Aug 2011 16:39:20 +0900
+
+ise-engine-hangul (1.3.2-2) unstable; urgency=low
+
+  * Remove libhangul-bin in debian/control
+  * Git: 165.213.180.234:slp/pkgs/i/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.3.2-2
+
+ -- Jihoon Kim <jihoon48.kim@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-7) unstable; urgency=low
+
+  * Add the libgtk2.0-dev dep
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-7
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-6) unstable; urgency=low
+
+  * Add the gtk header file path
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-6
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-5) unstable; urgency=low
+
+  * Add the ise-engine-hangul-dbg package
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-5
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-4) unstable; urgency=low
+
+  * Add the libhangul-bin dependency
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-4
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-3) unstable; urgency=low
+
+  * Add the libhangul-dev dependency
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-3
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-2) unstable; urgency=low
+
+  * Add the libhangul dependency
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-2
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.1-1) unstable; urgency=low
+
+  * Add the debian build directory
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.1-1
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 23 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.0-1) unstable; urgency=low
+
+  * Add the debian build directory
+  * Git: 165.213.180.234:/git/slp/pkgs/ise-engine-hangul
+  * Tag: ise-engine-hangul_1.0-1
+  
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 12 Nov 2010 16:00:08 +0900
+
+ise-engine-hangul (1.0) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Wei Ye <wei.ye@samsung.com>  Tue, 04 Nov 2010 12:00:08 +0900

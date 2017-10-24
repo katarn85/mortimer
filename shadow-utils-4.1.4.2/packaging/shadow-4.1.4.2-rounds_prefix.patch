@@ -1,0 +1,42 @@
+diff -ruN shadow-4.1.4.2-orig/libmisc/loginprompt.c shadow-4.1.4.2/libmisc/loginprompt.c
+--- shadow-4.1.4.2-orig/libmisc/loginprompt.c	2012-12-03 19:11:51.416226723 +0900
++++ shadow-4.1.4.2/libmisc/loginprompt.c	2012-12-03 19:16:28.636237330 +0900
+@@ -158,10 +158,9 @@
+ 				envp[envc] = nvar;
+ 			} else {
+ 				size_t len = strlen (nvar) + 32;
+-				int wlen;
+ 				envp[envc] = xmalloc (len);
+-				wlen = snprintf (envp[envc], len, "L%d=%s", count++, nvar);
+-				assert (wlen == (int) len -1);
++                                (void) snprintf (envp[envc], len,
++                                        "L%d=%s", count++, nvar);
+ 			}
+ 		}
+ 		set_env (envc, envp);
+diff -ruN shadow-4.1.4.2-orig/libmisc/salt.c shadow-4.1.4.2/libmisc/salt.c
+--- shadow-4.1.4.2-orig/libmisc/salt.c	2012-12-03 19:11:51.412226719 +0900
++++ shadow-4.1.4.2/libmisc/salt.c	2012-12-03 19:15:11.840234397 +0900
+@@ -106,7 +106,7 @@
+  */
+ static /*@observer@*/const char *SHA_salt_rounds (/*@null@*/int *prefered_rounds)
+ {
+-	static char rounds_prefix[18];
++        static char rounds_prefix[18]; /* Max size: rounds=999999999$ */
+ 	long rounds;
+ 
+ 	if (NULL == prefered_rounds) {
+@@ -152,11 +152,8 @@
+ 
+ 	snprintf (rounds_prefix, 18, "rounds=%ld$", rounds);
+ 
+-	/* Sanity checks. That should not be necessary. */
+-	rounds_prefix[17] = '\0';
+-	if ('$' != rounds_prefix[16]) {
+-		rounds_prefix[17] = '$';
+-	}
++        (void) snprintf (rounds_prefix, sizeof rounds_prefix,
++                "rounds=%ld$", rounds);
+ 
+ 	return rounds_prefix;
+ }

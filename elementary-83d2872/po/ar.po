@@ -1,0 +1,137 @@
+# Elementary translation file for Left To Right languages.
+# This file is distributed under the same license as the Elementary package.
+# FIRST AUTHOR <tom.hacohen@samsung.com>, 2010.
+#
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2013-08-08 14:31+0000\n"
+"PO-Revision-Date: 2010-12-26 10:05+0200\n"
+"Last-Translator: Shilpa Singh <shilpa.singh@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: src/lib/elm_entry.c:2007
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "نسخ"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "قص"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "اختيار"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "لصق"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "ص"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "م"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "ضبط"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "ضبط التاريخ"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "ضبط الوقت"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr "default:RTL"
+
+msgid "tap to change"
+msgstr "انقر لتغيير الوضع."
+
+msgid "date"
+msgstr "التاريخ"
+
+msgid "hour"
+msgstr "ساعة"
+
+msgid "minute"
+msgstr "دقيقة"
+
+msgid "month"
+msgstr "الشهر"
+
+msgid "year"
+msgstr "سنة"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d من %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "إنقاص يوم"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "إنقاص ساعة"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "إنقاص دقيقة"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "إنقاص شهر"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "إنقاص سنة"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "إضافة يوم"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "إضافة ساعة"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "إضافة دقيقة"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "إضافة شهر"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "إضافة سنة"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "انقر للتغيير."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "اختيار الكل"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "نسخ"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "اختيار"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "قص"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "لصق"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "الحافظة"

@@ -1,0 +1,200 @@
+# Use case Configuration for Wearable device
+# By Inha Song <ideal.song@samsung.com>
+
+SectionVerb {
+  EnableSequence [
+  ]
+  DisableSequence [
+  ]
+
+  Value {
+    TQ "Music"
+    PlaybackCTL "hw:0"
+    CaptureCTL "hw:0"
+  }
+}
+
+SectionDevice."MainMic" {
+  Comment "built-in main mic"
+
+  EnableSequence [
+  ]
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."Speaker" {
+  Comment "media-speaker"
+
+  EnableSequence [
+	cset "name='Dsp Parameter' 32"
+	cset "name='Dsp Parameter' 37"
+	cset "name='Dsp Parameter' 33"  
+	cset "name='Dsp Parameter' 34"  
+  cset "name='Output Path' 4"
+  cset "name='Master Playback Volume' 75,75"
+	cset "name='Master Playback Switch' 1,1"
+	cset "name='Music Input Volume' 96,96"
+	cset "name='Music Input Switch' 1,1"
+	cset "name='Ext Output Volume' 96,96"
+	cset "name='Ext Output Switch' 1,1"	
+	cset "name='Ext Out Swap' 3"	
+	cset "name='Main Mic' 2"
+	cset "name='Sub Mic' 3"
+	cset "name='ADC0L Source' 1"
+	cset "name='ADC0R Source' 2"
+	cset "name='ADIF0L Source' 1"
+	cset "name='ADIF0R Source' 2"
+	cset "name='Input Path' 0"
+	cset "name='Mic2 Volume' 54"
+	cset "name='Mic2 Switch' 1"
+	cset "name='Mic3 Volume' 54"
+	cset "name='Mic3 Switch' 1"	
+	cset "name='Adif0 Input Volume' 94,94"
+	cset "name='Adif0 Input Switch' 1,1"	
+	cset "name='Dac0 Output Volume' 96,96"
+	cset "name='Dac0 Output Switch' 1,1"
+	cset "name='LineOut1 Volume' 111,111"
+	cset "name='LineOut1 Switch' 1,1"
+	cset "name='Audio Mode Playback' 2"
+	cset "name='Audio Mode Capture' 1"
+#	cset "name='adc in' 0"
+	cset "name='sub out source select' 4"
+	cset "name='main out gain' 100"
+	cset "name='main out mute' 0"
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."LoopbackSPK" {
+  Comment "loopback-speaker"
+
+  SupportedDevice [
+    "Speaker"
+  ]
+
+  EnableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."FactorySPK" {
+  Comment "factory-speaker"
+
+  SupportedDevice [
+    "Speaker"
+  ]
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."Camcording" {
+  Comment "camcording-mic"
+
+  SupportedDevice [
+    "MainMic"
+  ]
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."VoiceRecord" {
+  Comment "voicerec-mic"
+
+  SupportedDevice [
+    "MainMic"
+  ]
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."VoiceSearch" {
+  Comment "voicesearch-mic"
+
+  SupportedDevice [
+    "MainMic"
+  ]
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."VoiceCommand" {
+  Comment "voicecommand-mic"
+
+  SupportedDevice [
+    "MainMic"
+  ]
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionModifier."LoopbackMic" {
+  Comment "loopback-mainmic"
+
+  SupportedDevice [
+    "MainMic"
+  ]
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}

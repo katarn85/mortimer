@@ -1,0 +1,110 @@
+Source: gstreamer0.10
+Section: libs
+Priority: optional
+Maintainer: Shin Seung Bae <seungbae.shin@samsung.com>, JongHyuk Choi <jhchoi.choi@samsung.com>
+Uploaders: Shin Seung Bae <seungbae.shin@samsung.com>, JongHyuk Choi <jhchoi.choi@samsung.com>, Hyunseok Lee <hs7388.lee@samsung.com>, YoungHwan Ahn <younghwan_.an@samsung.com>, Jeongmo Yang <jm80.yang@samsung.com>, Naveen Ch <naveen.ch@samsung.com>
+Build-Depends: debhelper (>= 5),
+               autotools-dev,
+               libxml2-dev (>= 2.6.0),
+               zlib1g-dev (>= 1:1.1.4),
+               libglib2.0-dev (>= 2.12),
+               pkg-config (>= 0.11.0),
+               libmm-ta-dev
+Standards-Version: 3.8.0
+
+Package: libgstreamer0.10-0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, libmm-ta
+Suggests: gstreamer0.10-tools,
+          gstreamer0.10-plugins
+Description: Core GStreamer libraries and elements
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the core library and elements.
+
+Package: libgstreamer0.10-dev
+XB-Public-Package: no
+Architecture: any
+Section: libdevel
+Depends: libmm-ta-dev, libgstreamer0.10-sdk-dev
+Description: GStreamer core SDK development files
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains SDK development files for the core library and
+ elements.
+
+
+Package: libgstreamer0.10-sdk-dev
+Architecture: any
+Section: libdevel
+Depends: libgstreamer0.10-0 (= ${binary:Version}),
+         libc6-dev | libc-dev,
+         pkg-config,
+         libglib2.0-dev,
+         libxml2-dev,
+	 libmm-ta-sdk-dev,
+         ${shlibs:Depends}
+Replaces: gstreamer-tools (<< 0.10.20-2)
+Recommends: debhelper
+Suggests: gstreamer0.10-doc
+Description: GStreamer core development files
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains development files for the core library and
+ elements.
+
+Package: gstreamer0.10-tools
+Architecture: any
+Section: utils
+Depends: ${shlibs:Depends},
+         pkg-config,
+         libgstreamer0.10-0 (>= 0.10.21.3)
+Suggests: gstreamer0.10-plugins-base
+Description: Tools for use with GStreamer
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains versioned command-line tools for GStreamer.
+
+Package: gstreamer-tools
+Architecture: any
+Section: utils
+Depends: ${shlibs:Depends},
+         gstreamer0.10-tools | gstreamer0.8-tools
+Conflicts: gstreamer0.8-tools (<< 0.8.11-2)
+Description: Tools for use with GStreamer
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains unversioned command-line tools for GStreamer
+ that work with different major/minor versions of GStreamer.
+
+Package: libgstreamer0.10-0-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer0.10-0 (= ${Source-Version})
+Description: Core GStreamer libraries and elements (unstripped)

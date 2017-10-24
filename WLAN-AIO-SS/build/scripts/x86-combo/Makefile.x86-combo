@@ -1,0 +1,124 @@
+# Build list
+
+targetList := udev drivers drivers_firmware
+ifdef BUILD_LIBNL
+targetList += libnl
+endif
+# targetList += iw wpa_supplicant_combo rootfs_build 
+targetList += iw wpa_supplicant_combo rootfs_build 
+# targetList += wireless_tools_build
+ifdef CONFIG_ATHTST_SUPPORT
+targetList += athtst_build
+endif
+ifdef CONFIG_TX99_SUPPORT
+targetList += tx99_build
+endif
+#targetList += spe_package
+#targetList += wfadut_build
+#targetList += sigmadut_build
+
+default: ${targetList}
+
+#################################################################################################################################
+export WFDSIGMA_TOPDIR=${ATH_TOPDIR}/apps/wfa-sigma-dut
+export SIGMADUT_TOPDIR=${ATH_TOPDIR}/apps/sigma-dut
+export BE_TEST_TOPDIR=${ATH_TOPDIR}/build/scripts/x86-combo
+export WLAN_DRIVER_TOPDIR=$(ATH_TOPDIR)/drivers
+export ATHTSTPATH_TOPDIR=${ATH_TOPDIR}/apps/athtst
+export TX99PATH_TOPDIR=${ATH_TOPDIR}/apps/tx99
+
+#################################################################################################################################
+#
+# driver build
+#
+drivers_patch:
+	@echo Build drivers patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/00-remore_ns-type.patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/01-add_CFG80211_WEXT.patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/02-remore_netlink-seq.patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/03-change_IFF_BRIDGE_PORT.patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/06-Kbuild.patch
+ifndef BUILD_2.6.23_SUPPORT
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/12-intra_reg.patch
+endif
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/22-add_p2p0_phy_info.patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/27-scan_timeout_20sec.patch
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/37-FY13_cfg80211_and_include.patch
+	@cd ${WLAN_DRIVER_TOPDIR}/include_local/net/ && patch -p0 < ${WLAN_DRIVER_TOPDIR}/patches/18-Add_Android_compile_option.patch
+ifdef BUILD_2.6.23_SUPPORT
+	@cd ${WLAN_DRIVER_TOPDIR} && patch -p0 < patches/05-change_fw-request-SB.patch
+	@cd $(ATH_TOPDIR) && patch -p1 < ${WLAN_DRIVER_TOPDIR}/patches/diff_2.6.23_libnl
+	@cd $(ATH_TOPDIR) && patch -p1 < ${WLAN_DRIVER_TOPDIR}/patches/diff_2.6.23_athr_hostap_wfd
+	@cd $(ATH_TOPDIR) && patch -p1 < ${WLAN_DRIVER_TOPDIR}/patches/diff_2.6.23_include_local
+	@cd $(ATH_TOPDIR) && patch -p1 < ${WLAN_DRIVER_TOPDIR}/patches/diff_2.6.23_cfg80211
+	@cd $(ATH_TOPDIR) && patch -p1 < ${WLAN_DRIVER_TOPDIR}/patches/diff_2.6.23_compat
+endif
+
+#################################################################################################################################
+#
+# WFA-Sigma package
+#
+wfadut_build: rootfs_prep wfadut_clean
+	@echo Build WFA-Sigma
+	cd $(WFDSIGMA_TOPDIR) && \
+	${MAKEARCH} && \
+	cp $(WFDSIGMA_TOPDIR)/ca/wfa_ca $(WFDSIGMA_TOPDIR)/dut/wfa_dut $(INSTALL_ROOT)/sbin
+
+wfadut_clean:
+	@echo Clean WFA-Sigma
+	cd $(WFDSIGMA_TOPDIR) && \
+	${MAKEARCH} clean
+
+#################################################################################################################################
+#
+# Sigma-DUT package
+#
+sigmadut_build: rootfs_prep sigmadut_clean
+	@echo Build Sigma-DUT
+	cd $(SIGMADUT_TOPDIR) && \
+	${MAKEARCH} && \
+	cp $(SIGMADUT_TOPDIR)/sigma_dut $(INSTALL_ROOT)/sbin
+
+sigmadut_clean:
+	@echo Clean Sigma-DUT
+	cd $(SIGMADUT_TOPDIR) && \
+	${MAKEARCH} clean
+
+#
+# ATHTST Tools builds
+#
+athtst_build: rootfs_prep
+	@echo build ATHTST command
+	cd $(ATHTSTPATH_TOPDIR) && \
+		make && \
+		cp $(ATHTSTPATH_TOPDIR)/athtst $(INSTALL_ROOT)/sbin
+
+athtst_clean:
+	@echo clean ATHTST command
+	cd $(ATHTSTPATH_TOPDIR) && make clean
+
+#
+# tx99 Tools builds
+#
+tx99_build: rootfs_prep
+	@echo build TX99 command
+	cd $(TX99PATH_TOPDIR) && \
+		make && \
+		cp $(TX99PATH_TOPDIR)/tx99 $(INSTALL_ROOT)/sbin
+
+tx99_clean:
+	@echo clean TX99 command
+	cd $(TX99PATH_TOPDIR) && make clean
+
+udev:
+	@echo build udev
+	cd $(ATH_TOPDIR)/build/util/udev && \
+	./compat_firmware_install
+
+#
+# SPE_BE_TEST package
+#
+spe_package:
+	@echo Build SPE_BE_TEST
+	cd ${BE_TEST_TOPDIR} && \
+	./gen_spe_package.sh

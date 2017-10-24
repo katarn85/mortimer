@@ -1,0 +1,31 @@
+Source: gst-openmax
+Maintainer: Hyunseok Lee <hs7388.lee@samsung.com>, JongHyuk Choi <jhchoi.choi@samsung.com>
+Uploaders: Hyunseok Lee <hs7388.lee@samsung.com>, Dowan Kim <dowan2171.kim@samsung.com>, Sunghyun Eum <sunghyun.eum@samsung.com>
+Section: libs
+Priority: optional
+Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 5.0.37.2),
+	cdbs (>= 0.4.43),
+	autotools-dev,
+	dpkg-dev (>= 1.13.19),
+	libgstreamer0.10-dev,
+	libgstreamer-plugins-base0.10-dev,
+	pkg-config
+
+Package: gstreamer0.10-openmax
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Suggests: libomxil-bellagio0, libomxil-ti0
+Description: gst-openmax is a GStreamer plug-in that allows communication with
+ OpenMAX IL components.
+ .
+ Multiple OpenMAX IL implementations can be used, including but not limited to
+ Texas Instruments and Bellagio.
+
+Package: gstreamer0.10-openmax-dbg
+Section: libdevel
+Priority: extra
+Architecture: any
+Depends: gstreamer0.10-openmax (= ${binary:Version})
+Description: Debug symbols for gst-openmax.

@@ -1,0 +1,15 @@
+--- cfg80211.orig/core.c	2012-10-05 16:18:59.000000000 +0800
++++ cfg80211/core.c	2012-10-12 14:22:15.000000000 +0800
+@@ -830,9 +830,9 @@
+ 		wdev->wext.connect.auth_type = NL80211_AUTHTYPE_AUTOMATIC;
+ #endif
+ 
+-		if (wdev->wiphy->flags & WIPHY_FLAG_PS_ON_BY_DEFAULT)
+-			wdev->ps = true;
+-		else
++		//if (wdev->wiphy->flags & WIPHY_FLAG_PS_ON_BY_DEFAULT)
++			//wdev->ps = true;
++		//else
+ 			wdev->ps = false;
+ 		/* allow mac80211 to determine the timeout */
+ 		wdev->ps_timeout = -1;

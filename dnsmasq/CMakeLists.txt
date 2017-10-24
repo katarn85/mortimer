@@ -1,0 +1,61 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+PROJECT(dnsmasq C)
+
+SET(SRCS	src/bpf.c
+		src/cache.c
+		src/dbus.c
+		src/dhcp.c
+		src/dnsmasq.c
+		src/forward.c
+		src/helper.c
+		src/lease.c
+		src/log.c
+		src/netlink.c
+		src/network.c
+		src/option.c
+		src/rfc1035.c
+		src/rfc2131.c
+		src/tftp.c
+		src/util.c
+   )
+
+SET(VENDOR "samsung")
+SET(PACKAGE ${PROJECT_NAME})
+SET(PKGNAME ${PACKAGE})
+SET(PREFIX ${CMAKE_INSTALL_PREFIX})
+SET(BINDIR "${PREFIX}/bin")
+
+IF("${CMAKE_BUILD_TYPE}" STREQUAL "")
+	SET(CMAKE_BUILD_TYPE "Release")
+ENDIF("${CMAKE_BUILD_TYPE}" STREQUAL "")
+MESSAGE("Build type: ${CMAKE_BUILD_TYPE}")
+
+#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include)
+
+INCLUDE(FindPkgConfig)
+pkg_check_modules(pkgs REQUIRED dbus-1)
+
+FOREACH(flag ${pkgs_CFLAGS})
+	SET(EXTRA_CFLAGS "${EXTRA_CFLAGS} ${flag}")
+ENDFOREACH(flag)
+SET(EXTRA_CFLAGS "${EXTRA_CFLAGS} -fvisibility=hidden")
+
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${EXTRA_CFLAGS}")
+SET(CMAKE_C_FLAGS_DEBUG "-O0 -g")
+SET(CMAKE_C_FLAGS_RELEASE "-O2")
+
+ADD_DEFINITIONS("-DVENDOR=\"${VENDOR}\"")
+ADD_DEFINITIONS("-DPACKAGE=\"${PACKAGE}\"")
+ADD_DEFINITIONS("-DPACKAGE_NAME=\"${PKGNAME}\"")
+ADD_DEFINITIONS("-DPREFIX=\"${PREFIX}\"")
+
+FIND_PROGRAM(UNAME NAMES uname)
+EXEC_PROGRAM("${UNAME}" ARGS "-m" OUTPUT_VARIABLE "ARCH")
+#IF("${ARCH}" STREQUAL "arm")
+#	ADD_DEFINITIONS("-D_MMICHECK_ARM_CODE_")
+#ENDIF("${ARCH}" STREQUAL "arm")
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${SRCS})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${pkgs_LDFLAGS})
+
+INSTALL(TARGETS ${PROJECT_NAME} DESTINATION ${BINDIR})

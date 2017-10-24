@@ -1,0 +1,22 @@
+--- ath6kl.org/init.c	2012-12-21 14:08:10.000000000 +0800
++++ ath6kl/init.c	2012-12-24 16:03:35.000000000 +0800
+@@ -627,12 +627,14 @@
+ 	if (ar->roam_mode != ATH6KL_MODULEROAM_DISABLE)
+ 		vif->sc_params.scan_ctrl_flags |= ROAM_SCAN_CTRL_FLAGS;
+ 
+-	vif->sc_params.maxact_chdwell_time = (2 * ATH6KL_SCAN_ACT_DEWELL_TIME);
+-
+-	if (!(ar->wiphy->flags & WIPHY_FLAG_SUPPORTS_FW_ROAM))
+-		vif->sc_params.pas_chdwell_time =
+-			ATH6KL_SCAN_PAS_DEWELL_TIME_WITHOUT_ROAM;
++        vif->sc_params.maxact_chdwell_time = 60;//(2 * ATH6KL_SCAN_ACT_DEWELL_TIME);
+ 
++        if (!(ar->wiphy->flags & WIPHY_FLAG_SUPPORTS_FW_ROAM))
++                vif->sc_params.pas_chdwell_time =
++                        ATH6KL_SCAN_PAS_DEWELL_TIME_WITHOUT_ROAM;
++        else
++                vif->sc_params.pas_chdwell_time = 100;
++        vif->sc_params.maxact_scan_per_ssid = 2;
+ }
+ 
+ /*

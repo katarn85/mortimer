@@ -1,0 +1,25 @@
+--- ath6kl.ori/usb.c	2012-11-14 17:50:04.000000000 +0800
++++ ath6kl/usb.c	2012-11-27 16:38:58.000000000 +0800
+@@ -1923,6 +1923,7 @@
+ 	struct ath6kl_usb *ar_usb = NULL;
+ 	int vendor_id, product_id;
+ 	int ret = 0;
++	static int reset_cnt = 0;
+ 
+ 	usb_get_dev(dev);
+ 
+@@ -1968,8 +1969,13 @@
+ 	ret = ath6kl_core_init(ar);
+ 	if (ret) {
+ 		ath6kl_err("Failed to init ath6kl core: %d\n", ret);
++		if (reset_cnt < 1){
++			reset_cnt++;
++			ath6kl_reset_device(ar, ar->target_type, true, true);
++    } 
+ 		goto err_core_free;
+-	}
++	}else
++		reset_cnt = 0;
+ 
+ 	return ret;
+ 

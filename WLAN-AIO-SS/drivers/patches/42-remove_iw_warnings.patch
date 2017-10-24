@@ -1,0 +1,15 @@
+diff -Naur WLAN-AIO-SS.orig/apps/iw-3.0/scan.c WLAN-AIO-SS/apps/iw-3.0/scan.c
+--- WLAN-AIO-SS.orig/apps/iw-3.0/scan.c	2013-10-16 16:19:52.000000000 +0800
++++ WLAN-AIO-SS/apps/iw-3.0/scan.c	2013-10-21 17:19:45.000000000 +0800
+@@ -1296,9 +1296,9 @@
+ 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
+ 	struct nlattr *bss[NL80211_BSS_MAX + 1];
+ 	char mac_addr[20], dev[20];
+-	int index, freq;
++	int index, freq = 0;
+ 	double signal_value;
+-	SIGNAL_LIST *head = NULL;
++	//SIGNAL_LIST *head = NULL;
+ 	static struct nla_policy bss_policy[NL80211_BSS_MAX + 1] = {
+ 		[NL80211_BSS_TSF] = { .type = NLA_U64 },
+ 		[NL80211_BSS_FREQUENCY] = { .type = NLA_U32 },

@@ -1,0 +1,4 @@
+export ZLIB_ROOT                = $(GPL_ROOT)/zlib-1.2.7
+export BUSYBOX_ROOT             = $(GPL_ROOT)/busybox-1.23.2
+export E2FSPROGS_ROOT			= $(GPL_ROOT)/e2fsprogs-1.42.7
+export UTIL-LINUX_ROOT			= $(GPL_ROOT)/util-linux-2.23

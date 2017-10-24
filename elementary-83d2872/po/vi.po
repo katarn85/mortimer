@@ -1,0 +1,133 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2014-02-07 13:50+0900\n"
+"PO-Revision-Date: 2014-02-07 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elm_entry.c:2007
+msgid "Cancel"
+msgstr "Hủy"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Chép"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Cắt"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Chọn"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Dán"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Đặt"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Cài đặt ngày"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Cài đặt thời gian"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+msgid "tap to change"
+msgstr "Chạm để đổi chế độ."
+
+msgid "date"
+msgstr "Ngày"
+
+msgid "hour"
+msgstr "Giờ"
+
+msgid "minute"
+msgstr "phút"
+
+msgid "month"
+msgstr "tháng"
+
+msgid "year"
+msgstr "năm"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d trên %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Giảm ngày"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Giảm giờ"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Giảm phút"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Giảm tháng"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Giảm năm"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Tăng ngày"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Tăng giờ"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Tăng phút"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Tăng tháng"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Tăng năm"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Chạm để thay đổi."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Chọn tất cả"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Chép"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Chọn"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Cắt"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Dán"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Bộ nhớ tạm"
+

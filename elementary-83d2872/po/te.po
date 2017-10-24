@@ -1,0 +1,133 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2014-02-07 13:50+0900\n"
+"PO-Revision-Date: 2014-02-07 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elm_entry.c:2007
+msgid "Cancel"
+msgstr "రద్దు"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "కాపీ"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "కట్"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "ఎంచుకోండి"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "అతికించు"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "సెట్ చేయి"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "తేదీని సెట్ చేయి"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "సమయాన్ని సెట్ చేయి"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+msgid "tap to change"
+msgstr "మోడ్‌ని మార్చడానికి ట్యాప్ చేయండి."
+
+msgid "date"
+msgstr "తేదీ"
+
+msgid "hour"
+msgstr "గంట"
+
+msgid "minute"
+msgstr "నిమిషం"
+
+msgid "month"
+msgstr "నెల"
+
+msgid "year"
+msgstr "సంవత్సరం"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%2$dలో %1$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "రోజుని తగ్గించు"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "గంటను తగ్గించు"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "నిమిషంను తగ్గించు"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "నెలను తగ్గించు"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "సంవత్సరంను తగ్గించు"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "రోజుని పెంచండి"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "గంటను పెంచండి"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "నిమిషంను పెంచండి"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "నెలను పెంచండి"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "సంవత్సరంను పెంచండి"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "మార్చడానికి నొక్కండి."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "అన్నీ ఎంచుకోండి"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "కాపీ"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "ఎంచు."
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "కట్"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "అతికించు"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "క్లిప్‌బోర్డ్"
+

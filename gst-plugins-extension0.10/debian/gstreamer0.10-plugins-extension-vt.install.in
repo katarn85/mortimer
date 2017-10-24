@@ -1,0 +1,6 @@
+@PREFIX@/lib/gstreamer-0.10/libgstvtvideosink.so  
+@PREFIX@/lib/gstreamer-0.10/libgstvtaudiosink.so  
+@PREFIX@/lib/gstreamer-0.10/libgstvtvideosrc.so
+@PREFIX@/lib/gstreamer-0.10/libgstvtaudiosrc.so     
+@PREFIX@/lib/gstreamer-0.10/libgstvtmodeselector.so 
+

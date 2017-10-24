@@ -1,0 +1,43 @@
+# Build list
+
+ifdef BUILD_LIBNL
+targetList += libnl
+endif
+targetList += iw wpa_supplicant rootfs_build 
+
+default: ${targetList}
+
+#################################################################################################################################
+export SIGMA_TOPDIR=${ATH_TOPDIR}/apps/sigma-dut-intel-rtsplib/DirectDisplay2
+export WLAN_DRIVER_TOPDIR=$(ATH_TOPDIR)/drivers
+
+#################################################################################################################################
+#
+# driver build
+#
+drivers_patch:
+	@echo Build drivers patch
+	@echo 08-hostap_make_libnl.patch
+	@cd ${WLAN_DRIVER_TOPDIR}/../apps/hostap/src/ && patch -p0 < ${WLAN_DRIVER_TOPDIR}/patches/08-hostap_make_libnl.patch
+	@echo 13-change_wpa_supplicant_ctrl_iface.patch
+	@cd ${WLAN_DRIVER_TOPDIR}/../apps/hostap/ && patch -p0 < ${WLAN_DRIVER_TOPDIR}/patches/13-change_wpa_supplicant_ctrl_iface.patch
+	@echo 15-SS_specific_feature.patch
+	@cd ${WLAN_DRIVER_TOPDIR}/../apps/ && patch -p0 < ${WLAN_DRIVER_TOPDIR}/patches/15-SS_specific_feature.patch
+	@echo 42-remove_iw_warnings.patch
+	@cd ${WLAN_DRIVER_TOPDIR}/../ && patch -p1 < ${WLAN_DRIVER_TOPDIR}/patches/42-remove_iw_warnings.patch
+
+#
+# Sigma package
+#
+sigmadut_build: rootfs_prep sigmadut_clean
+	@echo Build Sigma
+	${MAKEARCH} -C $(SIGMA_TOPDIR)/wfd CC=$(TOOLPREFIX)gcc AR=$(TOOLPREFIX)ar LD=$(TOOLPREFIX)ld CXX=$(TOOLPREFIX)g++ && \
+	cp $(SIGMA_TOPDIR)/wfd/debug/libqcawfd.so $(INSTALL_ROOT)/lib && \
+	${MAKEARCH} -C $(SIGMA_TOPDIR)/sigma-dut CC=$(TOOLPREFIX)gcc AR=$(TOOLPREFIX)ar LD=$(TOOLPREFIX)ld CXX=$(TOOLPREFIX)g++ && \
+	cp $(SIGMA_TOPDIR)/sigma-dut/debug/sigma_dut $(INSTALL_ROOT)/sbin
+
+sigmadut_clean:
+	@echo Clean Sigma
+	${MAKEARCH} -C $(SIGMA_TOPDIR)/wfd clean && \
+	${MAKEARCH} -C $(SIGMA_TOPDIR)/sigma-dut clean
+	

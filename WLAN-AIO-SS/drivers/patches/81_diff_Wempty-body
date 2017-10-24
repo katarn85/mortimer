@@ -1,0 +1,18 @@
+diff -U 5 -p -r WLAN-AIO/drivers_old/cfg80211/reg.c WLAN-AIO/drivers_new/cfg80211/reg.c
+--- WLAN-AIO/drivers_old/cfg80211/reg.c	2012-11-28 18:47:45.000000000 +0800
++++ WLAN-AIO/drivers_new/cfg80211/reg.c	2012-11-27 15:22:48.000000000 +0800
+@@ -1747,12 +1747,13 @@ static void restore_alpha2(char *alpha2,
+ 		       "module parameter ieee80211_regdom: %c%c\n",
+ 		       ieee80211_regdom[0],
+ 		       ieee80211_regdom[1]);
+ 		alpha2[0] = ieee80211_regdom[0];
+ 		alpha2[1] = ieee80211_regdom[1];
+-	} else
++	} else {
+ 		REG_DBG_PRINT("Restoring regulatory settings\n");
++        }
+ }
+ 
+ /*
+  * Restoring regulatory settings involves ingoring any
+  * possibly stale country IE information and user regulatory

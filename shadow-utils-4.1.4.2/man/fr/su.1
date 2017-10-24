@@ -1,0 +1,398 @@
+'\" t
+.\"     Title: su
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.1 <http://docbook.sf.net/>
+.\"      Date: 24/07/2009
+.\"    Manual: Commandes utilisateur
+.\"    Source: Commandes utilisateur
+.\"  Language: French
+.\"
+.TH "SU" "1" "24/07/2009" "Commandes utilisateur" "Commandes utilisateur"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+su \- change user ID or become superuser
+.SH "SYNOPSIS"
+.HP \w'\fBsu\fR\ 'u
+\fBsu\fR [\fIoptions\fR] [\fInom_utilisateur\fR]
+.SH "DESCRIPTION"
+.PP
+The
+\fBsu\fR
+command is used to become another user during a login session\&. Invoked without a
+\fBusername\fR,
+\fBsu\fR
+defaults to becoming the superuser\&. The optional argument
+\fB\-\fR
+may be used to provide an environment similar to what the user would expect had the user logged in directly\&.
+.PP
+Des param\(`etres suppl\('ementaires peuvent \(^etre fournis apr\(`es le nom de l\'utilisateur\&. Dans ce cas, ils sont donn\('es \(`a l\'interpr\('eteur de commandes de connexion de l\'utilisateur\&. En particulier, le param\(`etre \(Fo\ \&\fB\-c\fR\ \&\(Fc consid\(`ere que le param\(`etre suivant est une commande pour la plupart des interpr\('eteurs de commandes\&. La commande sera ex\('ecut\('ee par l\'interpr\('eteur indiqu\('e dans
+/etc/passwd
+pour l\'utilisateur cible\&.
+.PP
+Vous pouvez utiliser le param\(`etre
+\fB\-\-\fR
+pour s\('eparer les options de
+\fBsu\fR
+des param\(`etres fournis par l\'interpr\('eteur de commandes\&.
+.PP
+Un mot de passe sera demand\('e \(`a l\'utilisateur, si n\('ecessaire\&. Les mots de passe incorrects produisent un message d\'erreur\&. Toutes les tentatives, r\('eussies ou non, sont enregistr\('ees afin de d\('etecter tout abus du syst\(`eme\&.
+.PP
+The current environment is passed to the new shell\&. The value of
+\fB$PATH\fR
+is reset to
+/bin:/usr/bin
+for normal users, or
+/sbin:/bin:/usr/sbin:/usr/bin
+for the superuser\&. This may be changed with the
+\fBENV_PATH\fR
+and
+\fBENV_SUPATH\fR
+definitions in
+/etc/login\&.defs\&.
+.PP
+Une connexion \(`a un sous\-syst\(`eme est indiqu\('ee par la pr\('esence d\'un \(Fo\ \&*\ \&\(Fc comme premier caract\(`ere de l\'interpr\('eteur de commandes initial\&. Le r\('epertoire personnel sera utilis\('e comme racine d\'un nouveau syst\(`eme de fichiers dans lequel l\'utilisateur sera connect\('e\&.
+.SH "OPTIONS"
+.PP
+Les options applicables \(`a la commande
+\fBsu\fR
+sont\ \&:
+.PP
+\fB\-c\fR, \fB\-\-command\fR \fICOMMAND\fR
+.RS 4
+Indiquer une commande qui sera invoqu\('ee par l\'interpr\('eteur de commandes en utilisant son option
+\fB\-c\fR
+.RE
+.PP
+\fB\-\fR, \fB\-l\fR, \fB\-\-login\fR
+.RS 4
+Fournir \(`a l\'utilisateur un environnement similaire \(`a celui qu\'il aurait obtenu s\'il s\'\('etait connect\('e directement\&.
+.sp
+Lorsque
+\fB\-\fR
+est utilis\('e, il doit \(^etre indiqu\('e comme dernier param\(`etre de
+\fBsu\fR
+option\&. Les autres formes (\fB\-l\fR
+et
+\fB\-\-login\fR) ne pr\('esentent pas cette restriction\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shell\fR \fIINTERPR\('ETEUR\fR
+.RS 4
+Interpr\('eteur de commande devant \(^etre appel\('e\&.
+.sp
+The invoked shell is chosen from (highest priority first):
+.PP
+.RS 4
+Interpr\('eteur de commande indiqu\('e par \-\-shell\&.
+.RE
+.PP
+.RS 4
+Si
+\fB\-\-preserve\-environment\fR
+est utilis\('e, l\'interpr\('eteur de commandes indiqu\('e par la variable d\'environnement
+\fB$SHELL\fR
+sera utilis\('e\&.
+.RE
+.PP
+.RS 4
+Interpr\('eteur de commandes indiqu\('e dans
+/etc/passwd
+pour l\'utilisateur cible\&.
+.RE
+.PP
+.RS 4
+/bin/sh
+si aucun interpr\('eteur de commandes ne peut \(^etre trouv\('e par l\'une des m\('ethodes ci\-dessus\&.
+.RE
+.sp
+If the target user has a restricted shell (i\&.e\&. the shell field of this user\'s entry in
+/etc/passwd
+is not listed in
+/etc/shell), then the
+\fB\-\-shell\fR
+option or the
+\fB$SHELL\fR
+environment variable won\'t be taken into account, unless
+\fBsu\fR
+is called by root\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-p\fR, \fB\-\-preserve\-environment\fR
+.RS 4
+Preserve the current environment, except for:
+.PP
+\fB$PATH\fR
+.RS 4
+reset according to the
+/etc/login\&.defs
+options
+\fBENV_PATH\fR
+or
+\fBENV_SUPATH\fR
+(see below);
+.RE
+.PP
+\fB$IFS\fR
+.RS 4
+reset to
+\(Fo\ \&<space><tab><newline>\ \&\(Fc, if it was set\&.
+.RE
+.sp
+Si l\'utilisateur cible poss\(`ede un interpr\('eteur de commandes restreint, cette option n\'a aucun effet (\(`a moins que
+\fBsu\fR
+ne soit appel\('e par le superutilisateur)\&.
+.sp
+Note that the default behavior for the environment is the following:
+.PP
+.RS 4
+The
+\fB$HOME\fR,
+\fB$SHELL\fR,
+\fB$USER\fR,
+\fB$LOGNAME\fR,
+\fB$PATH\fR, and
+\fB$IFS\fR
+environment variables are reset\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is not used, the environment is copied, except for the variables above\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is used, the
+\fB$TERM\fR,
+\fB$COLORTERM\fR,
+\fB$DISPLAY\fR, and
+\fB$XAUTHORITY\fR
+environment variables are copied if they were set\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is used, the
+\fB$TZ\fR,
+\fB$HZ\fR, and
+\fB$MAIL\fR
+environment variables are set according to the
+/etc/login\&.defs
+options
+\fBENV_TZ\fR,
+\fBENV_HZ\fR,
+\fBMAIL_DIR\fR, and
+\fBMAIL_FILE\fR
+(see below)\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is used, other environment variables might be set by the
+\fBENVIRON_FILE\fR
+file (see below)\&.
+.RE
+.sp
+.RE
+.SH "AVERTISSEMENTS"
+.PP
+Cette version de
+\fBsu\fR
+a de nombreuses options de compilation\&. Seules certaines d\'entre elles peuvent avoir \('et\('e activ\('ees sur votre site\&.
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBCONSOLE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\'il est d\('efini, soit un chemin complet du fichier contenant les noms de p\('eriph\('eriques (un par ligne), soit une liste de noms du p\('eriph\('erique d\('elimit\('ee par des \(Fo\ \&:\ \&\(Fc\&. Les connexions d\'un administrateur ne seront autoris\('ees que depuis ces p\('eriph\('eriques\&.
+.sp
+S\'il n\'est pas d\('efini, root pourra se connecter depuis n\'importe quel p\('eriph\('erique\&.
+.sp
+The device should be specified without the /dev/ prefix\&.
+.RE
+.PP
+\fBCONSOLE_GROUPS\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+Une liste de groupes \(`a rajouter aux groupes suppl\('ementaires de l\'utilisateur lors d\'une connexion sur une console (d\('etermin\('e par le param\(`etre CONSOLE)\&. Par d\('efaut, aucun groupe n\'est ajout\('e\&.
+
+\(`A utiliser avec pr\('ecaution\ \&: il est possible que les utilisateurs aient un acc\(`es permanent \(`a\ \&ces groupes, et cela m\(^eme s\'ils ne sont pas connect\('es sur la console\&.
+.RE
+.PP
+\fBDEFAULT_HOME\fR (bool\('een)
+.RS 4
+Indiquer si la connexion est permise si on ne peut pas acc\('eder au r\('epertoire personnel\&. Le r\('eglage par d\('efaut est \(Fo\ \&no\ \&\(Fc\&.
+.sp
+S\'il est r\('egl\('e sur
+\fIyes\fR, l\'utilisateur va se connecter dans le r\('epertoire racine (/) s\'il n\'est pas possible d\'acc\('eder \(`a\ \&son r\('epertoire personnel\&.
+.RE
+.PP
+\fBENV_HZ\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\'il est d\('efini, il sera utilis\('e pour d\('efinir la variable d\'environnement HZ lorsqu\'un utilisateur se connecte\&. La valeur doit \(^etre pr\('ec\('ed\('ee par
+\fIHZ=\fR\&. Une valeur commune sur Linux est
+\fIHZ=100\fR\&.
+.RE
+.PP
+\fBENVIRON_FILE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+Si ce fichier existe et est lisible, l\'environnement de connexion sera lu \(`a\ \& partir de lui\&. Chaque ligne doit \(^etre sous la forme nom=valeur\&.
+.sp
+Lines starting with a # are treated as comment lines and ignored\&.
+.RE
+.PP
+\fBENV_PATH\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\'il est d\('efini, il sera utilis\('e pour d\('efinir la variable d\'environnement PATH quand un utilisateur ordinaire se connecte\&. La valeur peut \(^etre pr\('ec\('ed\('ee par
+\fIPATH=\fR, ou une liste de chemins s\('epar\('es par des deux points (par exemple
+\fI/bin:/usr/bin\fR)\&. La valeur par d\('efaut est
+\fIPATH=/bin:/usr/bin\fR\&.
+.RE
+.PP
+\fBENV_SUPATH\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\'il est d\('efini, il sera utilis\('e pour d\('efinir la variable d\'environnement PATH quand le super\-utilisateur se connecte\&. La valeur peut \(^etre pr\('ec\('ed\('ee par
+\fIPATH=\fR
+ou une liste de chemins s\('epar\('es par deux points (par exemple
+\fI/sbin:/bin:/usr/sbin:/usr/bin\fR)\&. La valeur par d\('efaut est
+\fIPATH=/bin:/usr/bin\fR\&.
+.RE
+.PP
+\fBENV_TZ\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\'il est d\('efini, il sera utilis\('e pour d\('efinir la variable d\'environnement TZ quand un utilisateur se connecte\&. La valeur peut \(^etre le nom d\'un fuseau horaire pr\('ec\('ed\('e par
+\fITZ=\fR
+(par exemple
+\fITZ=CST6CDT\fR), ou le chemin complet vers le fichier contenant la sp\('ecification du fuseau horaire (par exemple
+/etc/tzname)\&.
+.sp
+Si un chemin complet est sp\('ecifi\('e mais que le fichier n\'existe pas ou ne peut pas \(^etre lu, la valeur par d\('efaut utilis\('ee est
+\fITZ=CST6CDT\fR\&.
+.RE
+.PP
+\fBLOGIN_STRING\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+La cha\(^ine de caract\(`eres utilis\('ee pour l\'invite de mot de passe\&. La valeur par d\('efaut est d\'utiliser "Password: " (\(Fo\ \&mot de passe\ \&:\ \&\(Fc), ou une traduction de cette cha\(^ine\&. Si vous d\('efinissez cette variable, l\'invite ne sera pas traduite\&.
+.sp
+Si la cha\(^ine contient
+\fI%s\fR, ces caract\(`eres seront remplac\('es par le nom de l\'utilisateur\&.
+.RE
+.PP
+\fBMAIL_CHECK_ENAB\fR (bool\('een)
+.RS 4
+Activer le contr\(^ole et l\'affichage du statut de la bo\(^ite aux lettres durant la connexion\&.
+.sp
+Vous devriez le d\('esactiver si les fichiers de d\('emarrage de l\'interpr\('eteur de commandes v\('erifie d\('ej\(`a la pr\('esence de courriers (\(Fo\ \&mail \-e\ \&\(Fc ou \('equivalent)\&.
+.RE
+.PP
+\fBMAIL_DIR\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+R\('epertoire d\'attente des courriels (\(Fo\ \&mail spool directory\ \&\(Fc)\&. Ce param\(`etre est n\('ecessaire pour manipuler les bo\(^ites \(`a lettres lorsque le compte d\'un utilisateur est modifi\('e ou supprim\('e\&. S\'il n\'est pas sp\('ecifi\('e, une valeur par d\('efaut d\('efinie \(`a la compilation est utilis\('ee\&.
+.RE
+.PP
+\fBMAIL_FILE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+D\('efinit l\'emplacement des bo\(^ites aux lettres des utilisateurs relativement \(`a leur r\('epertoire personnel\&.
+.RE
+.PP
+Les param\(`etres
+\fBMAIL_DIR\fR
+et
+\fBMAIL_FILE\fR
+sont utilis\('ees par
+\fBuseradd\fR,
+\fBusermod\fR, et
+\fBuserdel\fR
+pour cr\('eer, d\('eplacer, ou supprimer les bo\(^ites aux lettres des utilisateurs\&.
+.PP
+If
+\fBMAIL_CHECK_ENAB\fR
+is set to
+\fIyes\fR, they are also used to define the
+\fBMAIL\fR
+environment variable\&.
+.PP
+\fBQUOTAS_ENAB\fR (bool\('een)
+.RS 4
+Enable setting of ulimit, umask, and niceness from passwd gecos field\&.
+.RE
+.PP
+\fBSULOG_FILE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\'il est d\('efini, les activit\('es de su seront enregistr\('ees dans ce fichier\&.
+.RE
+.PP
+\fBSU_NAME\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+If defined, the command name to display when running "su \-"\&. For example, if this is defined as "su" then a "ps" will display the command is "\-su"\&. If not defined, then "ps" would display the name of the shell actually being run, e\&.g\&. something like "\-sh"\&.
+.RE
+.PP
+\fBSU_WHEEL_ONLY\fR (bool\('een)
+.RS 4
+If
+\fIyes\fR, the user must be listed as a member of the first gid 0 group in
+/etc/group
+(called
+\fIroot\fR
+on most Linux systems) to be able to
+\fBsu\fR
+to uid 0 accounts\&. If the group doesn\'t exist or is empty, no one will be able to
+\fBsu\fR
+to uid 0\&.
+.RE
+.PP
+\fBSYSLOG_SU_ENAB\fR (bool\('een)
+.RS 4
+Enable "syslog" logging of
+\fBsu\fR
+activity \- in addition to sulog file logging\&.
+.RE
+.PP
+\fBUSERGROUPS_ENAB\fR (bool\('een)
+.RS 4
+Enable setting of the umask group bits to be the same as owner bits (examples: 022 \-> 002, 077 \-> 007) for non\-root users, if the uid is the same as gid, and username is the same as the primary group name\&.
+.sp
+If set to
+\fIyes\fR,
+\fBuserdel\fR
+will remove the user\'s group if it contains no more members, and
+\fBuseradd\fR
+will create by default a group with the name of the user\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/passwd
+.RS 4
+Informations sur les comptes des utilisateurs\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informations s\('ecuris\('ees sur les comptes utilisateurs\&.
+.RE
+.PP
+/etc/login\&.defs
+.RS 4
+Configuration de la suite des mots de passe cach\('es \(Fo\ \&shadow password\ \&\(Fc\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBlogin\fR(1),
+\fBlogin.defs\fR(5),
+\fBsg\fR(1),
+\fBsh\fR(1)\&.

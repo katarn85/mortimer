@@ -1,0 +1,572 @@
+# Header entry was created by Lokalize.
+#
+# Vít Pelčák <vit@pelcak.org>, 2011.
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2011-10-23 01:31+0100\n"
+"Last-Translator: Shilpa Singh <shilpa.singh@samsung.com>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Ikona"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Vypnuto."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Kontextové okno"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Otevře se kontextové okno. Zavřete ho poklepáním."
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Místní menu"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Poklepáním zavřete menu."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr "Nahoru"
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr "Domů"
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr "OK"
+
+#: src/lib/elm_bubble.c:196
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "a %d dalších"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Poklepáním upravíte příjemce."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Poklepejte a upravte."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Název"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Záhlaví kontextového okna"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Text v kontextovém okně"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Otevře se okno uprostřed. Zavřete ho poklepáním."
+
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Tlačítko"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr "%B %Y"
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Vybráno"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Nevybráno"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Zaškrtávací políčko"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "Zaškrtnout"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "Zrušit zaškrtnutí"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Vypínač"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Zap"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Vyp"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d procent"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Klepnutím použijte."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Posuvník ovládání barvy"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Posuvník ovládání sytosti"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Posuvník ovládání jasu"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Výběr barvy"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Bílá"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Žlutá"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Korálové"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Tomatová"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Červená"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Jasně růžová"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Švestková"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Modrofialová"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Limetkově zelená"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Lesní zeleň"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Azurová"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Královská modrá"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Tmavě modrá"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Tmavě šedá"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Černá"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Vlastní paleta barev"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr "výchozí:LTR"
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Vyjmout"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Vybrat"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Vložit"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Upravit pole"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Rychlý posuvník"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "Poklepáním přesunete obsah."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Je otevřené menu se seznamem. Zavřete ho poklepáním."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Přepínač"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "z"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Přejetím nahoru a dolů nastavíte pozici."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Jezdec"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Vybrat"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Vybráno"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr "Oddělovač"
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Vybráno"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr "Má nabídku"
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Karta"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Nastavit"
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Přeložit"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "Přejetím nahoru a dolů upravíte %s nebo poklepáním otevřete klávesnici."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Poklepáním změňte."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Nastavit datum"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Nastavit čas"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Režim Na výšku"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Režim Na šířku"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Poklepáním zapnete rychlé posouvání."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Upravuje se."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Přejetím nahoru a dolů nastavíte pozici."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d znaků."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Kontextové okno"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Poklepáním zavřete okno."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Prostřední okno"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Zavřete ho poklepáním."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Zásuvka je otevřená."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Poklepáním zavřete vysouvací menu."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Kurzor na začátku textu"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Kurzor na konci textu"
+
+msgid "tap to change"
+msgstr "Klepnutím změňte režim."
+
+msgid "date"
+msgstr "Datum"
+
+msgid "hour"
+msgstr "hodina"
+
+msgid "minute"
+msgstr "minuta"
+
+msgid "month"
+msgstr "měsíc"
+
+msgid "year"
+msgstr "rok"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d z %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Snížit den"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Snížit hodinu"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Snížit minutu"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Snížit měsíc"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Snížit rok"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Zvýšit den"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Zvýšit hodinu"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Zvýšit minutu"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Zvýšit měsíc"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Zvýšit rok"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Klepnutím změnit."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Vybrat vše"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopírovat"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Vybrat"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Vyjmout"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Vložit"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Schránka"
+

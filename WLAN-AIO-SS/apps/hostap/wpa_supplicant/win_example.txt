@@ -1,0 +1,5 @@
+FILE DELETED
+
+Microsoft Forefront Protection for Exchange Server removed a file since it was found to match a filter.
+File name: "winmail.dat->ATH6KL-LSDK-WLAN-AIO-SS-5.0.1.25.tgz->->WLAN-AIO-SS/apps/hostap/wpa_supplicant/win_example.reg"
+Filter name: "FILE FILTER= File Extension Blocks: *.REG"

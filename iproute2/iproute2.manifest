@@ -1,0 +1,22 @@
+<manifest>
+    <request>
+        <domain name="_"/>
+    </request>
+	<assign>
+		<filesystem path="/usr/sbin/arpd" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/bridge" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/genl" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/ifcfg" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/ifstat" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/ip" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/lnstat" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/nstat" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/routef" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/routel" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/rtacct" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/rtmon" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/rtpr" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/ss" label="_" exec_label="none" />
+		<filesystem path="/usr/sbin/tc" label="_" exec_label="none" />
+	</assign>
+</manifest>

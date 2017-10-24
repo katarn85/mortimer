@@ -1,0 +1,1669 @@
+# translation of de.po to German
+# German translations for PACKAGE package.
+# Copyright (C) 2007 Takuro Ashie <ashie@homa.ne.jp>
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Gerrit Sangel <z0idberg@gmx.de>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: ashie@homa.ne.jp\n"
+"POT-Creation-Date: 2009-01-15 12:04+0900\n"
+"PO-Revision-Date: 2007-07-03 20:23+0200\n"
+"Last-Translator: Gerrit Sangel <z0idberg@gmx.de>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/scim_anthy_imengine.cpp:488
+#, c-format
+msgid "Candidates (%d/%d)"
+msgstr "Kandidaten (%d/%d)"
+
+#: src/scim_anthy_imengine.cpp:565
+msgid "Input mode"
+msgstr "Eingabemodus"
+
+#: src/scim_anthy_imengine.cpp:569 src/scim_anthy_setup.cpp:203
+msgid "Hiragana"
+msgstr "Hiragana"
+
+#: src/scim_anthy_imengine.cpp:573 src/scim_anthy_setup.cpp:204
+msgid "Katakana"
+msgstr "Katakana"
+
+#: src/scim_anthy_imengine.cpp:577 src/scim_anthy_imengine.cpp:578
+#: src/scim_anthy_setup.cpp:205
+msgid "Half width katakana"
+msgstr "Halbbreite Katakana"
+
+#: src/scim_anthy_imengine.cpp:582 src/scim_anthy_setup.cpp:206
+msgid "Latin"
+msgstr "Latein"
+
+#: src/scim_anthy_imengine.cpp:582
+msgid "Direct input"
+msgstr "Direkteingabe"
+
+#: src/scim_anthy_imengine.cpp:586 src/scim_anthy_setup.cpp:207
+msgid "Wide latin"
+msgstr "Breites Latein"
+
+#: src/scim_anthy_imengine.cpp:592
+msgid "Typing method"
+msgstr "Schreibmethode"
+
+#: src/scim_anthy_imengine.cpp:596
+msgid "Romaji"
+msgstr "Romaji"
+
+#: src/scim_anthy_imengine.cpp:600
+msgid "Kana"
+msgstr "Kana"
+
+#: src/scim_anthy_imengine.cpp:604
+msgid "Thumb shift"
+msgstr "Umschalt"
+
+#: src/scim_anthy_imengine.cpp:611
+#, fuzzy
+msgid "Conversion mode"
+msgstr "Konvertierungsmethode"
+
+#: src/scim_anthy_imengine.cpp:615 src/scim_anthy_imengine.cpp:616
+#: src/scim_anthy_setup.cpp:221
+msgid "Multi segment"
+msgstr "Mehrfachsegment"
+
+#: src/scim_anthy_imengine.cpp:620 src/scim_anthy_imengine.cpp:621
+#: src/scim_anthy_setup.cpp:222
+msgid "Single segment"
+msgstr "Einzelsegment"
+
+#: src/scim_anthy_imengine.cpp:625 src/scim_anthy_imengine.cpp:627
+#: src/scim_anthy_setup.cpp:223
+msgid "Convert as you type (Multi segment)"
+msgstr "Beim Tippen konvertieren (Mehrfachsegment)"
+
+#: src/scim_anthy_imengine.cpp:631 src/scim_anthy_imengine.cpp:633
+#: src/scim_anthy_setup.cpp:224
+msgid "Convert as you type (Single segment)"
+msgstr "Beim Tippen konvertieren (Einzelsegment)"
+
+#: src/scim_anthy_imengine.cpp:640
+#, fuzzy
+msgid "Period style"
+msgstr "Punkttyp"
+
+#: src/scim_anthy_imengine.cpp:669
+msgid "Symbol style"
+msgstr "Symboltyp"
+
+#: src/scim_anthy_imengine.cpp:717
+msgid "Dictionary menu"
+msgstr "Wörterbuchmenü"
+
+#: src/scim_anthy_imengine.cpp:722
+msgid "Edit the dictionary"
+msgstr "Wörterbuch bearbeiten"
+
+#: src/scim_anthy_imengine.cpp:724
+msgid "Launch the dictionary administration tool."
+msgstr "Die Wörterbuchverwaltung starten."
+
+#: src/scim_anthy_imengine.cpp:730 src/scim_anthy_prefs.cpp:1205
+msgid "Add a word"
+msgstr "Wort hinzufügen"
+
+#: src/scim_anthy_imengine.cpp:732
+#, fuzzy
+msgid "Add a word to the dictionary."
+msgstr "Ein Wort dem Wörterbuch hinzufügen."
+
+#: src/scim_anthy_factory.cpp:195
+#, fuzzy
+msgid ""
+"Authors of scim-anthy:\n"
+"  Copyright (C) 2004,2005 Takuro Ashie <ashie@homa.ne.jp>\n"
+"  Copyright (C) 2004,2005 Hiroyuki Ikezoe <poincare@ikezoe.net>\n"
+"  \n"
+"Authors of Anthy:\n"
+"  Copyright (C) 2000-2005 Yusuke TABATA <yusuke@w5.dion.ne.jp>\n"
+"  Copyright (C) 2004-2005 Yuichi YOSHIDA <oxy@kmc.gr.jp>\n"
+"  You can find out all credits of Anthy from AUTHORS file in Anthy package.\n"
+msgstr ""
+"Autoren von Scim-Anthy:\n"
+"  Copyright © 2004, 2005 Takuro Ashie <ashie@homa.ne.jp>\n"
+"  Copyright © 2004, 2005 Hiroyuki Ikezoe <poincare@ikezoe.net>\n"
+"  Copyright © 2006, 2007 Takashi Nakamoto <bluedwarf@bpost.plala.or.jp>\n"
+"  \n"
+"Autoren von Anthy:\n"
+"  Copyright © 2000–2005 Yusuke TABATA <yusuke@w5.dion.ne.jp>\n"
+"  Copyright © 2004–2005 Yuichi YOSHIDA <oxy@kmc.gr.jp>\n"
+"  Sie können alle Mitwirkenden von Anthy in der AUTHORS-Datei im Anthy-Paket "
+"finden.\n"
+
+#: src/scim_anthy_factory.cpp:211
+#, fuzzy
+msgid ""
+"Art work:\n"
+"  SHIMODA Hiroshi <piro@p.club.ne.jp>\n"
+"\n"
+"Translation:\n"
+"  Gerrit Sangel <z0idberg@gmx.de>\n"
+"Special thanks:\n"
+"  UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
+"  Yukiko Bando <ybando@k6.dion.ne.jp>\n"
+"  Mike Fabian <mfabian@suse.de>\n"
+"  David Oftedal <david@start.no>\n"
+"  Ryo Dairiki <ryo-dairiki@users.sourceforge.net>\n"
+"  Seiichi SATO\n"
+"  AWASHIRO Ikuya <ikuya@oooug.jp>\n"
+"  Hatuka*nezumi <nezumi@jca.apc.org>\n"
+"  Teppei Tamra <tam-t@par.odn.ne.jp>\n"
+"  Akira TAGOH <at@gclab.org>\n"
+"  Tatsuki Sugiura <sugi@nemui.org>\n"
+"  Takashi Nakamoto <bluedwarf@bpost.plala.or.jp>"
+msgstr ""
+"Art work:\n"
+"  SHIMODA Hiroshi <piro@p.club.ne.jp>\n"
+"Besonderen Dank an:\n"
+"  UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
+"  Yukiko Bando <ybando@k6.dion.ne.jp>\n"
+"  Mike Fabian <mfabian@suse.de>\n"
+"  David Oftedal <david@start.no>\n"
+"  Ryo Dairiki <ryo-dairiki@users.sourceforge.net>\n"
+"  Seiichi SATO\n"
+"  AWASHIRO Ikuya <ikuya@oooug.jp>\n"
+"  Hatuka*nezumi <nezumi@jca.apc.org>\n"
+"  Teppei Tamra <tam-t@par.odn.ne.jp>\n"
+"  Akira TAGOH <at@gclab.org>\n"
+"  Tatsuki Sugiura <sugi@nemui.org>\n"
+"  Takashi Nakamoto <bluedwarf@bpost.plala.or.jp>"
+
+#: src/scim_anthy_factory.cpp:236
+msgid ""
+"Basic operation:\n"
+"  \n"
+msgstr ""
+"Grundoperation:\n"
+"  \n"
+
+#: src/scim_anthy_factory.cpp:240
+msgid ""
+"1. Switch input mode:\n"
+"  You can switch on/off Japanese input mode by pressing Zenkaku_Hankaku key\n"
+"  or Control+J. Or you can rotate all input modes by pressing Control+,\n"
+"  (comma).\n"
+"  \n"
+msgstr ""
+"1. Eingabemodus wechseln:\n"
+"  Sie können den japanischen Eingabemodus durch Drücken der Zenkaku_Hankaku-"
+"Taste\n"
+"  oder Strg+J ein-/ausschalten. Oder sie können alle Eingabemodus durch "
+"Drücken von Strg+,\n"
+"  (Komma) rotieren.\n"
+"  \n"
+
+#: src/scim_anthy_factory.cpp:247
+#, fuzzy
+msgid ""
+"2. Input Japanese hiragana and katakana:\n"
+"  You can input Japanese hiragana and katakana by inputting romaji.\n"
+"  The Romaji table can be found out from the \"Anthy\" section of the setup\n"
+"  window in SCIM or SKIM.\n"
+"  If you want to hiragana and katakana directly by using Japanese keyboard,\n"
+"  please press Alt + Romaji key or Conrol+\\ key to switch typing method.\n"
+"  \n"
+msgstr ""
+"2. Hiragana und Katakana eingeben:\n"
+"  Sie können Hiragana und Katakana durch Eingabe von Romaji eingeben.\n"
+"  Die Romaji-Tabelle wird aus der „Anthy“-Sektion im Einrichtungsfenster von "
+"SCIM\n"
+"  oder SKIM gefunden.\n"
+"  Wenn Sie Hiragana und Katakana direkt mit der japanischen Tastatur "
+"eingeben\n"
+"  möchten, drücken Sie Alt + Romaji-Taste oder Strg+\\-Taste um die "
+"Schreibmethode zu\n"
+"  wechseln.\n"
+"  \n"
+
+#: src/scim_anthy_factory.cpp:256
+#, fuzzy
+msgid ""
+"3. Convert hiragana or katakana to Japanese kanji\n"
+"  After inputting hiragana or katakana, you can convert it to Japanese\n"
+"  kanji by pressing Space key. Then it will show some candidates. You can\n"
+"  select the next candidate by pressing Space key, and can commit it by\n"
+"  pressing Enter key.\n"
+"  If you input a sentense, Anthy will split it to some segments. You can\n"
+"  select the next or previous segment by pressing left or right cursor key,\n"
+"  and can extend or shrink the selected segment by pressing Shift + left or\n"
+"  right cursor key.\n"
+"  \n"
+msgstr ""
+"3. Hiragana oder Katakana in Kanji konvertieren\n"
+"  Nach der Eingabe von Hiragana oder Katakana können Sie sie in Kanji durch\n"
+"  Drücken der Leertaste konvertieren. Dann werden einige Kandidaten "
+"gezeigt.\n"
+"  Sie können den nächsten Kandidaten durch Drücken der Leertaste auswählen\n"
+"  und ihn dann durch Drücken der Eingabetaste festlegen.\n"
+"  Wenn sie einen Satz eingeben, wird Anthy ihn in einige Segmente "
+"aufteilen.\n"
+"  Sie können das nächste oder vorherige Segmente durch Drücken der linken\n"
+"  oder rechten Pfeiltaste auswählen und das ausgewählte Segment durch "
+"Drücken\n"
+"  von Shift + linker oder rechter Pfeiltaste vergrößern bzw. verkleinern.\n"
+"  \n"
+
+#: src/scim_anthy_factory.cpp:268
+msgid ""
+"4. Other key bindings:\n"
+"  You can find out all key bindings definition of scim-anthy from \"Anthy\"\n"
+"  section on setup window of SCIM or SKIM.\n"
+msgstr ""
+"4, Andere Tastatenkürzel:\n"
+"  Sie können alle Tastenkürzel von Scim-Anthy auf der „Anthy“-\n"
+"  Sektion im Einrichtungsbildschirm von SCIM oder SKIM finden.\n"
+
+#: src/scim_anthy_setup.cpp:119
+msgid "Anthy"
+msgstr "Anthy"
+
+#: src/scim_anthy_setup.cpp:124
+msgid "An Anthy IMEngine Module."
+msgstr "Ein Anthy-IMEngine-Modul"
+
+#: src/scim_anthy_setup.cpp:184
+msgid "Mode keys"
+msgstr "Modustasten"
+
+#: src/scim_anthy_setup.cpp:185
+#, fuzzy
+msgid "Edit keys"
+msgstr "Bearbeitungstasten"
+
+#: src/scim_anthy_setup.cpp:186
+msgid "Caret keys"
+msgstr ""
+
+#: src/scim_anthy_setup.cpp:187
+#, fuzzy
+msgid "Segments keys"
+msgstr "Segmenttasten"
+
+#: src/scim_anthy_setup.cpp:188
+msgid "Candidates keys"
+msgstr "Kandidatentasten"
+
+#: src/scim_anthy_setup.cpp:189
+msgid "Direct select keys"
+msgstr "Direktauswahltasten"
+
+#: src/scim_anthy_setup.cpp:190
+msgid "Convert keys"
+msgstr "Konvertierungsteasten"
+
+#: src/scim_anthy_setup.cpp:191
+msgid "Dictionary keys"
+msgstr "Wörterbuchtasten"
+
+#: src/scim_anthy_setup.cpp:213
+msgid "Romaji typing method"
+msgstr "Romaji-Schreibmethode"
+
+#: src/scim_anthy_setup.cpp:214
+msgid "Kana typing method"
+msgstr "Kana-Schreibmethode"
+
+#: src/scim_anthy_setup.cpp:215
+msgid "Thumb shift typing method"
+msgstr ""
+
+#: src/scim_anthy_setup.cpp:248 src/scim_anthy_setup.cpp:256
+#, fuzzy
+msgid "Follow input mode"
+msgstr "Eingabemodus folgen"
+
+#: src/scim_anthy_setup.cpp:249 src/scim_anthy_setup.cpp:257
+msgid "Wide"
+msgstr "Breit"
+
+#: src/scim_anthy_setup.cpp:250 src/scim_anthy_setup.cpp:258
+msgid "Half"
+msgstr "Halb"
+
+#: src/scim_anthy_setup.cpp:264 src/scim_anthy_prefs.cpp:740
+msgid "Do nothing"
+msgstr "Nichts tun"
+
+#: src/scim_anthy_setup.cpp:265
+msgid "Start conversion"
+msgstr "Konvertierung starten"
+
+#: src/scim_anthy_setup.cpp:266 src/scim_anthy_setup.cpp:272
+#: src/scim_anthy_prefs.cpp:680
+msgid "Commit"
+msgstr "Übergabe"
+
+#: src/scim_anthy_setup.cpp:273
+#, fuzzy
+msgid "Clear"
+msgstr "Löschen"
+
+#: src/scim_anthy_setup.cpp:279
+msgid "UTF-8"
+msgstr "UTF-8"
+
+#: src/scim_anthy_setup.cpp:280
+msgid "EUC-JP"
+msgstr "EUC-JP"
+
+#: src/scim_anthy_setup.cpp:281
+msgid "EUC-JP-MS"
+msgstr "EUC-JP-MS"
+
+#: src/scim_anthy_setup.cpp:287
+#, fuzzy
+msgid "No decoration"
+msgstr "Keine Hervorhebung"
+
+#: src/scim_anthy_setup.cpp:288
+msgid "Underline"
+msgstr "Unterstreichen"
+
+#: src/scim_anthy_setup.cpp:289
+#, fuzzy
+msgid "Reverse"
+msgstr "Umkehren"
+
+#: src/scim_anthy_setup.cpp:290
+msgid "Highlight"
+msgstr "Hervorheben"
+
+#: src/scim_anthy_setup.cpp:291
+msgid "String color"
+msgstr "Farbe der Zeichenkette"
+
+#: src/scim_anthy_setup.cpp:292
+msgid "BG color"
+msgstr "Hintergrundfarbe"
+
+#: src/scim_anthy_setup.cpp:293
+msgid "Both color"
+msgstr ""
+
+#: src/scim_anthy_setup.cpp:805
+msgid "_Group:"
+msgstr "_Gruppe:"
+
+#: src/scim_anthy_setup.cpp:826
+msgid "Search by key"
+msgstr "Nach Taste suchen"
+
+#: src/scim_anthy_setup.cpp:830
+#, fuzzy
+msgid "all"
+msgstr "Alles"
+
+#: src/scim_anthy_setup.cpp:873
+msgid "Feature"
+msgstr "Funktion"
+
+#: src/scim_anthy_setup.cpp:882 src/scim_anthy_setup.cpp:1289
+#, fuzzy
+msgid "Key bindings"
+msgstr "_Tastenkürzel:"
+
+#: src/scim_anthy_setup.cpp:890
+msgid "Description"
+msgstr "Beschreibung"
+
+#: src/scim_anthy_setup.cpp:914
+msgid "Key bindings _theme:"
+msgstr "Tastenkürzel-_Vorlage"
+
+#: src/scim_anthy_setup.cpp:928
+msgid "_Choose keys..."
+msgstr "Tasten _auswählen..."
+
+#: src/scim_anthy_setup.cpp:955
+#, fuzzy
+msgid "<b>Enable/Disable learning</b>"
+msgstr "<b>Lernen an-/ausschalten</b>"
+
+#: src/scim_anthy_setup.cpp:982
+#, fuzzy
+msgid "<b>Key preferences to commit with reversing learning preference</b>"
+msgstr "<b>Tastenpräferenzen zur Übergabe bei umgekehrten Lernpräferenzen</b>"
+
+#: src/scim_anthy_setup.cpp:1056 src/scim_anthy_setup.cpp:1070
+msgid "_Launch"
+msgstr "_Starten"
+
+#: src/scim_anthy_setup.cpp:1241
+#, c-format
+msgid ""
+"<span size=\"20000\">%s-%s</span>\n"
+"\n"
+"<span size=\"16000\" style=\"italic\">A Japanese input method module\n"
+"for SCIM using Anthy</span>\n"
+"\n"
+"\n"
+"\n"
+"<span size=\"12000\">Copyright 2005-2006, Takuro Ashie &lt;ashie@homa.ne."
+"jp&gt;</span>"
+msgstr ""
+"<span size=\"20000\">%s-%s</span>\n"
+"\n"
+"<span size=\"16000\" style=\"italic\">Eine japanische Eingabemethode\n"
+"für SCIM, benutzt Anthy</span>\n"
+"\n"
+"\n"
+"\n"
+"<span size=\"12000\">Copyright 2005-2006, Takuro Ashie &lt;ashie@homa.ne."
+"jp&gt;</span>"
+
+#: src/scim_anthy_setup.cpp:1277
+msgid "Common"
+msgstr "Gemeinsam"
+
+#: src/scim_anthy_setup.cpp:1283
+msgid "Symbols"
+msgstr "Symbole"
+
+#: src/scim_anthy_setup.cpp:1295
+#, fuzzy
+msgid "Romaji typing"
+msgstr "Romaji tippen"
+
+#: src/scim_anthy_setup.cpp:1301
+#, fuzzy
+msgid "Kana typing"
+msgstr "Kana tippen"
+
+#: src/scim_anthy_setup.cpp:1307
+#, fuzzy
+msgid "Prediction"
+msgstr "Vorhersagen"
+
+#: src/scim_anthy_setup.cpp:1313
+#, fuzzy
+msgid "Learning"
+msgstr "Lernen"
+
+#: src/scim_anthy_setup.cpp:1319
+msgid "Dictionary"
+msgstr "Wörterbuch"
+
+#: src/scim_anthy_setup.cpp:1325
+#, fuzzy
+msgid "Candidates window"
+msgstr "Kandidatenfenster"
+
+#: src/scim_anthy_setup.cpp:1331
+msgid "Toolbar"
+msgstr "Werkzeugleiste"
+
+#: src/scim_anthy_setup.cpp:1337
+msgid "Appearance"
+msgstr ""
+
+#: src/scim_anthy_setup.cpp:1343
+msgid "About"
+msgstr "Über"
+
+#: src/scim_anthy_setup.cpp:1405 src/scim_anthy_setup_romaji.cpp:255
+#: src/scim_anthy_setup_kana.cpp:413 src/scim_anthy_setup_kana.cpp:480
+msgid "User defined"
+msgstr "Benutzerdefiniert"
+
+#: src/scim_anthy_setup.cpp:1408 src/scim_anthy_setup_romaji.cpp:258
+#: src/scim_anthy_setup_kana.cpp:416 src/scim_anthy_setup_kana.cpp:483
+#, fuzzy
+msgid "Default"
+msgstr "Standard"
+
+#: src/scim_anthy_setup.cpp:2006
+msgid "Set key filter"
+msgstr "Tastenfilter setzen"
+
+#: src/scim_anthy_setup_romaji.cpp:124 src/scim_anthy_setup_romaji.cpp:195
+msgid "Romaji _table:"
+msgstr "Romaji-_Tabelle"
+
+#: src/scim_anthy_setup_romaji.cpp:137 src/scim_anthy_setup_kana.cpp:143
+#: src/scim_anthy_setup_kana.cpp:188
+msgid "_Customize..."
+msgstr "_Bearbeiten..."
+
+#: src/scim_anthy_setup_romaji.cpp:177
+msgid "Sequence"
+msgstr "Sequenz"
+
+#: src/scim_anthy_setup_romaji.cpp:178 src/scim_anthy_setup_kana.cpp:263
+msgid "Result"
+msgstr "Ergebnis"
+
+#: src/scim_anthy_setup_romaji.cpp:185
+#, fuzzy
+msgid "Customize romaji table"
+msgstr "Romaji-Tabelle bearbeiten"
+
+#: src/scim_anthy_setup_kana.cpp:114
+msgid "<b>JIS Kana Layout</b>"
+msgstr "<b>JIS Kana-Anordnung</b>"
+
+#: src/scim_anthy_setup_kana.cpp:130 src/scim_anthy_setup_kana.cpp:175
+msgid "La_yout:"
+msgstr "_Anordnung:"
+
+#: src/scim_anthy_setup_kana.cpp:155
+msgid "<b>Thumb Shift Layout</b>"
+msgstr ""
+
+#: src/scim_anthy_setup_kana.cpp:262 src/scim_anthy_setup_kana.cpp:332
+msgid "Key"
+msgstr "Taste"
+
+#: src/scim_anthy_setup_kana.cpp:270
+#, fuzzy
+msgid "Customize kana layout table"
+msgstr "Kana-Anordnungstabelle bearbeiten"
+
+#: src/scim_anthy_setup_kana.cpp:280 src/scim_anthy_setup_kana.cpp:352
+msgid "Layout _table:"
+msgstr "Anordnungs_tabelle"
+
+#: src/scim_anthy_setup_kana.cpp:333
+#, fuzzy
+msgid "Single press"
+msgstr "Einzelklick"
+
+#: src/scim_anthy_setup_kana.cpp:334
+msgid "Left thumb shift"
+msgstr ""
+
+#: src/scim_anthy_setup_kana.cpp:335
+msgid "Right thumb shift"
+msgstr ""
+
+#: src/scim_anthy_setup_kana.cpp:342
+#, fuzzy
+msgid "Customize thumb shift layout table"
+msgstr "Kana-Anordnungstabelle bearbeiten"
+
+#: src/scim_anthy_prefs.cpp:35
+#, fuzzy
+msgid "Show \"_Candidates\" label"
+msgstr "„Kandidaten“-Beschriftung anzeigen"
+
+#: src/scim_anthy_prefs.cpp:45
+msgid "Close candidate window when select a candidate _directly"
+msgstr ""
+"Kandidatenfenster schließen, wenn ein Kandidat _direkt ausgewählt wurde"
+
+#: src/scim_anthy_prefs.cpp:55
+#, fuzzy
+msgid "Learn on _manual committing"
+msgstr "Bei _manueller Übergabe lernen"
+
+#: src/scim_anthy_prefs.cpp:65
+msgid "Learn on a_uto committing"
+msgstr "Bei a_utomatischer Übergabe lernen"
+
+#: src/scim_anthy_prefs.cpp:75
+msgid "Use half-width characters for _symbols"
+msgstr "Benutze halbbreite Zeichen für _Symbole"
+
+#: src/scim_anthy_prefs.cpp:85
+msgid "Use half-width characters for _numbers"
+msgstr "Benutze halbbreite Zeichen für _Nummern"
+
+#: src/scim_anthy_prefs.cpp:95
+msgid "A_llow spliting romaji on editing preedit string"
+msgstr "Teilen der Romaji bei unbearbeiteter Zeichenkette _erlauben"
+
+#: src/scim_anthy_prefs.cpp:97
+#, fuzzy
+msgid "If this check is enabled, you can delete each letter."
+msgstr "Wenn diese Box angeklickt ist, können Sie jeden Buchstaben löschen"
+
+#: src/scim_anthy_prefs.cpp:104
+#, fuzzy
+msgid "_Entering the pseudo ASCII input mode with capital letters."
+msgstr "Pseudo-ASCII-Eingabemodus mit Großbuchstaben _eingeben"
+
+#: src/scim_anthy_prefs.cpp:106
+msgid ""
+"If this check is enabled, capital letters will becomes a trigger to enter "
+"the pseudo ASCII input mode."
+msgstr ""
+"Wenn diese Box angeklickt ist, werden Großbuchstaben Auslöser um zum Pseudo-"
+"ASCII-Eingabemodus zu gelangen"
+
+#: src/scim_anthy_prefs.cpp:113
+msgid "Insert a _blank with a blank key."
+msgstr "Eine _Lücke mit einer Leertaste einfügen"
+
+#: src/scim_anthy_prefs.cpp:115
+msgid ""
+"If this check is enabled, a blank key will works to insert a blank when "
+"entering the pseudo ASCII input mode."
+msgstr ""
+"Wenn diese Box angeklickt ist, wird bei der Eingabe mit dem Pseudo-ASCII-"
+"Modus eine Leertaste eine Lücke einfügen "
+
+#: src/scim_anthy_prefs.cpp:122
+msgid "_Show predicted candidates while inputting letters"
+msgstr "_Zeige vorhergesagte Kandidaten bei der Eingabe der Buchstaben"
+
+#: src/scim_anthy_prefs.cpp:131
+msgid "Use _direct select keys while predicting"
+msgstr "Nutze Direktauswahltasten bei der Vorhersage"
+
+#: src/scim_anthy_prefs.cpp:140
+msgid "Show _input mode label"
+msgstr "_Eingabemodus-Beschriftung zeigen"
+
+#: src/scim_anthy_prefs.cpp:150
+#, fuzzy
+msgid "Show _conversion mode label"
+msgstr "_Konvertierungsmethoden-Beschriftung zeigen"
+
+#: src/scim_anthy_prefs.cpp:160
+msgid "Show _typing method label"
+msgstr "_Schreibmethoden-Beschriftung zeigen"
+
+#: src/scim_anthy_prefs.cpp:170
+msgid "Show _period style label"
+msgstr "Zeige Punkt-Stilbezeichnung"
+
+#: src/scim_anthy_prefs.cpp:180
+#, fuzzy
+msgid "Show _symbol style label"
+msgstr "Zeige Symbol-Stilbezeichnung"
+
+#: src/scim_anthy_prefs.cpp:190
+msgid "Show _dictionary menu label"
+msgstr "_Wörterbuchmenü-Beschriftung zeigen"
+
+#: src/scim_anthy_prefs.cpp:200
+msgid "Show _edit dictionary label"
+msgstr "Wörterbuch-_bearbeiten-Beschriftung zeigen"
+
+#: src/scim_anthy_prefs.cpp:210
+msgid "Show _add word label"
+msgstr "Wort-_hinzufügen-Beschriftung zeigen"
+
+#: src/scim_anthy_prefs.cpp:235
+msgid "Number of candidates to show in a _page:"
+msgstr "Anzahl der auf einer _Seite anzuzeigenden Kandidaten"
+
+#: src/scim_anthy_prefs.cpp:238
+msgid ""
+"Specify the number of candidates to show in a page of the candidates window."
+msgstr ""
+"Die Anzahl der Kandidaten, die af einer Seite in dem Kandidatenfenster "
+"angezeigt werden, angeben"
+
+#: src/scim_anthy_prefs.cpp:247
+msgid "Number of _triggers until show:"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:248
+msgid "[times]"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:250
+msgid ""
+"The number of times to press a conversion key until show the candidates "
+"window.Specify 0 to never show it."
+msgstr ""
+"Die Anzahl der Zeiten, die eine Konvertierungstaste gedrückt werden muss, "
+"bis das Kandidatenfenster gezeigt wird. 0 eingeben, um es nie zu zeigen."
+
+#: src/scim_anthy_prefs.cpp:260
+#, fuzzy
+msgid "_Simultaneous pressing time:"
+msgstr "_Gleichzeitige Drückzeit"
+
+#: src/scim_anthy_prefs.cpp:261
+msgid "[msec]"
+msgstr "[msec]"
+
+#: src/scim_anthy_prefs.cpp:263
+msgid "Time to regard as simultaneous key pressing."
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:286
+msgid "_Input mode: "
+msgstr "_Eingabemodus:"
+
+#: src/scim_anthy_prefs.cpp:296
+msgid "Typing _method: "
+msgstr "Schreibmethode:"
+
+#: src/scim_anthy_prefs.cpp:306
+#, fuzzy
+msgid "_Conversion mode: "
+msgstr "_Konvertierungsmethode:"
+
+#: src/scim_anthy_prefs.cpp:316
+msgid "St_yle of comma and period: "
+msgstr "Stil von Komma und Punkt"
+
+#: src/scim_anthy_prefs.cpp:326
+msgid "Symb_ol input style: "
+msgstr "Symbol-Eingabestil"
+
+#: src/scim_anthy_prefs.cpp:336
+msgid "_Space type: "
+msgstr "_Leertastentyp:"
+
+#: src/scim_anthy_prefs.cpp:346
+#, fuzzy
+msgid "Input from _ten key: "
+msgstr "Eingabe von _Ziffernblock"
+
+#: src/scim_anthy_prefs.cpp:356
+msgid "_Behavior on a comma or a period:"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:366
+msgid "_Behavior on focus out:"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:376
+msgid "_Left thumb shift keys:"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:386
+msgid "_Right thumb shift keys:"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:396
+msgid "_Commit:"
+msgstr "_Übergabe:"
+
+#: src/scim_anthy_prefs.cpp:397 src/scim_anthy_prefs.cpp:681
+msgid "Select commit keys"
+msgstr "Übergabe-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:398
+msgid ""
+"The key events to commit the preedit string with reversing the preference of "
+"learning. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:407
+msgid "Commit the _first segment:"
+msgstr "Das _erste Segment übergeben:"
+
+#: src/scim_anthy_prefs.cpp:408 src/scim_anthy_prefs.cpp:880
+msgid "Select keys to commit the first segment"
+msgstr " Tasten wählen, um das erste Segment zu übergeben"
+
+#: src/scim_anthy_prefs.cpp:409
+msgid ""
+"The key events to commit the first segment with reversing the preference of "
+"learning. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:418
+msgid "Commit the _selected segment:"
+msgstr "Das _ausgewählte Segment übergeben:"
+
+#: src/scim_anthy_prefs.cpp:419 src/scim_anthy_prefs.cpp:890
+msgid "Select keys to commit the selected segment"
+msgstr " Tasten wählen, um das ausgewählte Segment zu übergeben"
+
+#: src/scim_anthy_prefs.cpp:420
+msgid ""
+"The key events to commit the selected segment with reversing the preference "
+"of learning. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:429
+msgid "En_coding of dictionary:"
+msgstr "_Kodierung des Wörterbuchs:"
+
+#: src/scim_anthy_prefs.cpp:431
+msgid ""
+"If you choose \"EUC-JP-MS\", interoperatability of documents created on this "
+"system with Microsoft Windows may improve, but it depends on the "
+"implementation of your operating system and actual encoding of your "
+"dictionary."
+msgstr ""
+"Wenn Sie „EUC-JP-MS“ auswählen, kann sich die Interoperabilität mit "
+"Microsoft Windows bei Dokumenten, die auf diesem System erstellt werden, "
+"verbessern, allerdings hängt es von der Implementierung Ihres Betriebssystem "
+"und der tatsächlichen Kodierung Ihres Wörterbuchs ab."
+
+#: src/scim_anthy_prefs.cpp:442
+msgid "\"_Edit dictionary\" command:"
+msgstr "„Wörterbuch b_earbeiten“-Befehl"
+
+#: src/scim_anthy_prefs.cpp:452
+msgid "\"_Add word\" command:"
+msgstr "„Wort hinzufügen“-Befehl:"
+
+#: src/scim_anthy_prefs.cpp:462
+msgid "_Preedit string:"
+msgstr "_Unbearbeitete Zeichenkette:"
+
+#: src/scim_anthy_prefs.cpp:472
+msgid "_Conversion string:"
+msgstr "_Konvertierungszeichenkette"
+
+#: src/scim_anthy_prefs.cpp:482
+msgid "_Selected segment:"
+msgstr "_Ausgewähltes Segment"
+
+#: src/scim_anthy_prefs.cpp:506
+msgid "Toggle on/off"
+msgstr "an/aus umschalten"
+
+#: src/scim_anthy_prefs.cpp:507
+msgid "Select toggle on/off keys"
+msgstr "Tasten um an/aus umzuschalten auswählen"
+
+#: src/scim_anthy_prefs.cpp:508
+msgid "The key events to toggle on/off Japanese mode. "
+msgstr "Die Tastatureignisse, die an/aus umschalten"
+
+#: src/scim_anthy_prefs.cpp:516
+msgid "Circle input mode"
+msgstr "Eingabemodus durchschalten"
+
+#: src/scim_anthy_prefs.cpp:517
+msgid "Select circle input mode keys"
+msgstr "Tasten um Eingabemodus durchzuschalten, auswählen"
+
+#: src/scim_anthy_prefs.cpp:518
+msgid "The key events to circle input mode. "
+msgstr "Die Tastatureignisse, die den Eingabemodus durchschalten"
+
+#: src/scim_anthy_prefs.cpp:526
+msgid "Circle kana mode"
+msgstr "Kana-Modus durchschalten"
+
+#: src/scim_anthy_prefs.cpp:527
+msgid "Select circle kana mode keys"
+msgstr "Tasten um Kana-Modus durchzuschalten, auswählen"
+
+#: src/scim_anthy_prefs.cpp:528
+msgid "The key events to circle kana mode. "
+msgstr "Die Tastatureignisse, die den Kana-Modus durchschalten"
+
+#: src/scim_anthy_prefs.cpp:536
+msgid "Latin mode"
+msgstr "Latein-Modus"
+
+#: src/scim_anthy_prefs.cpp:537
+msgid "Select Latin mode keys"
+msgstr "Latein-Modus-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:538
+msgid "The key events to switch input mode to Latin. "
+msgstr "Die Tastatureignisse, die den Eingabemodus zu Latein umschalten."
+
+#: src/scim_anthy_prefs.cpp:546
+msgid "Wide Latin mode"
+msgstr "Breites-Latein-Modus"
+
+#: src/scim_anthy_prefs.cpp:547
+msgid "Select wide Latin mode keys"
+msgstr "Breites-Latein-Modus-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:548
+msgid "The key events to switch input mode to wide Latin. "
+msgstr ""
+"Die Tastatureignisse, die den Eingabemodus zu breitem Latein umschalten."
+
+#: src/scim_anthy_prefs.cpp:556
+msgid "Hiragana mode"
+msgstr "Hiragana-Modus"
+
+#: src/scim_anthy_prefs.cpp:557
+msgid "Select hiragana mode keys"
+msgstr "Hiragana-Modus-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:558
+msgid "The key events to switch input mode to hiragana. "
+msgstr "Die Tastatureignisse, die den Eingabemodus zu Hiragana umschalten."
+
+#: src/scim_anthy_prefs.cpp:566
+msgid "Katakana mode"
+msgstr "Katakana-Modus"
+
+#: src/scim_anthy_prefs.cpp:567
+msgid "Select katakana mode keys"
+msgstr "Katakana-Modus-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:568
+msgid "The key events to switch input mode to katakana. "
+msgstr "Die Tastatureignisse, die den Eingabemodus zu Katakana umschalten."
+
+#: src/scim_anthy_prefs.cpp:576
+msgid "Half katakana mode"
+msgstr "Halb-Katakana-Modus"
+
+#: src/scim_anthy_prefs.cpp:577
+msgid "Select half katakana mode keys"
+msgstr "Halb-Katakana-Modus-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:578
+msgid "The key events to switch input mode to half katakana. "
+msgstr ""
+"Die Tastatureignisse, die den Eingabemodus zu Halb-Katakana umschalten."
+
+#: src/scim_anthy_prefs.cpp:586
+msgid "Pseudo ASCII mode cancel"
+msgstr "Pseudo-ASCII-Modus abbrechen"
+
+#: src/scim_anthy_prefs.cpp:587
+msgid "Select pseudo ASCII mode cancel key"
+msgstr "Tasten, um den Pseudo-ASCII-Modus abzubrechen, auswählen"
+
+#: src/scim_anthy_prefs.cpp:588
+msgid "The key events to cancel the pseudo ASCII mode."
+msgstr "Die Tastaturereignisse, die den Pseudo-ASCII-Modus abbrechen"
+
+#: src/scim_anthy_prefs.cpp:596
+msgid "Circle typing method"
+msgstr "Schreibmethode durchschalten"
+
+#: src/scim_anthy_prefs.cpp:597
+msgid "Select circle typing method keys"
+msgstr "Tasten um Schreibmethode durchzuschalten, auswählen"
+
+#: src/scim_anthy_prefs.cpp:598
+msgid "The key events to circle typing method. "
+msgstr "Die Tastatureignisse, die die Schreibmethode durchschalten"
+
+#: src/scim_anthy_prefs.cpp:620
+msgid "Insert space"
+msgstr "Leerzeichen hinzufügen"
+
+#: src/scim_anthy_prefs.cpp:621
+msgid "Select inserting space keys"
+msgstr "Tasten um ein Leerzeichen hinzuzufügen, auswählen"
+
+#: src/scim_anthy_prefs.cpp:622
+msgid "The key events to insert a space. "
+msgstr "Die Tastatureignisse, die ein Leerzeichen hinzufügen."
+
+#: src/scim_anthy_prefs.cpp:630
+msgid "Insert alternative space"
+msgstr "Alternatives Leerzeichen hinzuf+gen"
+
+#: src/scim_anthy_prefs.cpp:631
+msgid "Select inserting alternative space keys"
+msgstr "Tasten um ein alternatives Leerzeichen hinzuzufügen, auswählen"
+
+#: src/scim_anthy_prefs.cpp:632
+msgid "The key events to insert a alternative space. "
+msgstr "Die Tastatureignisse, die ein alternatives Leerzeichen hinzufügen."
+
+#: src/scim_anthy_prefs.cpp:640
+msgid "Insert half space"
+msgstr "Halbes Leerzeicehn hinzufügen"
+
+#: src/scim_anthy_prefs.cpp:641
+msgid "Select inserting half width space keys"
+msgstr "Tasten um ein halbbreites Leerzeichen hinzuzufügen, auswählen"
+
+#: src/scim_anthy_prefs.cpp:642
+msgid "The key events to insert a half width space. "
+msgstr "Die Tastatureignisse, die ein halbbreites Leerzeichen hinzufügen."
+
+#: src/scim_anthy_prefs.cpp:650
+msgid "Insert wide space"
+msgstr "Breites Leerzeichen hinzufügen"
+
+#: src/scim_anthy_prefs.cpp:651
+msgid "Select inserting wide space keys"
+msgstr "Tasten um ein breites Leerzeichen hinzuzufügen, auswählen"
+
+#: src/scim_anthy_prefs.cpp:652
+msgid "The key events to insert a wide space. "
+msgstr "Die Tastatureignisse, die  ein breites Leerzeichen hinzufügen."
+
+#: src/scim_anthy_prefs.cpp:660
+msgid "Backspace"
+msgstr "Backspace"
+
+#: src/scim_anthy_prefs.cpp:661
+msgid "Select backspace keys"
+msgstr "Backspace-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:662
+msgid "The key events to delete a character before caret. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:670
+msgid "Delete"
+msgstr "Entfernen"
+
+#: src/scim_anthy_prefs.cpp:671
+msgid "Select delete keys"
+msgstr "Entfernen-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:672
+msgid "The key events to delete a character after caret. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:682
+msgid "The key events to commit the preedit string. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:690
+msgid "Convert"
+msgstr "Konvertieren"
+
+#: src/scim_anthy_prefs.cpp:691
+msgid "Select convert keys"
+msgstr "Konvertierungstasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:692
+msgid "The key events to convert the preedit string to kanji. "
+msgstr ""
+"Die Tastatureignisse, die eine unbearbeitete Zeichenkette in Kanji "
+"konvertieren."
+
+#: src/scim_anthy_prefs.cpp:700
+msgid "Predict"
+msgstr "Vorhersagen"
+
+#: src/scim_anthy_prefs.cpp:701
+msgid "Select predict keys"
+msgstr "Wähle Vorhersagetasten"
+
+#: src/scim_anthy_prefs.cpp:702
+msgid ""
+"The key events to predict a word or sentence from already inserted text. "
+msgstr ""
+"Die Tastatureignisse, die ein Wort oder einen Satz aus einem bereits "
+"eingegebenen Text vorhersagen"
+
+#: src/scim_anthy_prefs.cpp:710
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/scim_anthy_prefs.cpp:711
+msgid "Select cancel keys"
+msgstr "Abbrechen-Tasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:712
+msgid "The key events to cancel preediting or converting. "
+msgstr ""
+"Die Tastatureignisse, die die Vorbearbeitung oder das Konvertieren abbrechen."
+
+#: src/scim_anthy_prefs.cpp:720
+msgid "Cancel all"
+msgstr "Alles abbrechen."
+
+#: src/scim_anthy_prefs.cpp:721
+msgid "Select cancel all keys"
+msgstr "Tasten um alles abzubrechen, auswählen."
+
+#: src/scim_anthy_prefs.cpp:722
+msgid "The key events to return to initial state. "
+msgstr "Die Tastaturereignisse, die wieder zum Anfangszustand zurückkehren"
+
+#: src/scim_anthy_prefs.cpp:730
+msgid "Reconvert"
+msgstr "Zurückkonvertieren"
+
+#: src/scim_anthy_prefs.cpp:731
+msgid "Select reconvert keys"
+msgstr "Tasten zum zurückkonvertieren wählen"
+
+#: src/scim_anthy_prefs.cpp:732
+msgid "The key events to reconvert the commited string in selection. "
+msgstr ""
+"Die Tastatureignisse, die die übergebene Zeichenkette wieder in eine Auswahl "
+"zurückkonvertieren"
+
+#: src/scim_anthy_prefs.cpp:741
+msgid "Select do nothing keys"
+msgstr "Tasten um nichts zu tun, auswählen"
+
+#: src/scim_anthy_prefs.cpp:742
+msgid ""
+"The key events to eat and do nothing anymore. For example, it can be used to "
+"disable space key completely."
+msgstr ""
+"Die Tastatureignisse, um Essen zu gehen und nichts mehr zu tun. Das kann zum "
+"Beispiel benutzt werden, um die Leertaste komplett zu deaktivieren."
+
+#: src/scim_anthy_prefs.cpp:765
+msgid "Move to first"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:766
+msgid "Select move caret to first keys"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:767
+msgid "The key events to move the caret to the first of preedit string. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:775
+msgid "Move to last"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:776
+msgid "Select move caret to last keys"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:777
+msgid "The key events to move the caret to the last of the preedit string. "
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:785
+msgid "Move forward"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:786
+#, fuzzy
+msgid "Select move caret forward keys"
+msgstr "Konvertierungstasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:787
+#, fuzzy
+msgid "The key events to move the caret forward. "
+msgstr "Die Tastatureignisse, die den nöchsten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:795
+msgid "Move backward"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:796
+#, fuzzy
+msgid "Select move caret backward keys"
+msgstr "Konvertierungstasten auswählen"
+
+#: src/scim_anthy_prefs.cpp:797
+#, fuzzy
+msgid "The key events to move the caret backward. "
+msgstr "Die Tastatureignisse, die den nöchsten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:819
+msgid "Select the first segment"
+msgstr "Das erste Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:820
+msgid "Select keys to select the first segment"
+msgstr "Tasten auswählen, um das erste Segment auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:821
+msgid "The key events to select the first segment. "
+msgstr "Die Tastatureignisse, die das erste Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:829
+msgid "Select the last segment"
+msgstr "Das letzte Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:830
+msgid "Select keys to select the last segment"
+msgstr "Tasten auswählen, um das letzte Segment auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:831
+msgid "The key events to select the the last segment. "
+msgstr "Die Tastatureignisse, die das letzte Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:839
+msgid "Select the next segment"
+msgstr "Das nächste Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:840
+msgid "Select keys to select the next segment"
+msgstr "Tasten auswählen, um das nächste Segment auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:841
+msgid "The key events to select the next segment. "
+msgstr "Die Tastatureignisse, die das nächste Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:849
+msgid "Select the previous segment"
+msgstr "Das vorherige Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:850
+msgid "Select keys to select the previous segment"
+msgstr "Tasten auswählen, um das vorherige Segment auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:851
+msgid "The key events to select the previous segment. "
+msgstr "Die Tastatureignisse, die das vorherige Segment auswählen"
+
+#: src/scim_anthy_prefs.cpp:859
+msgid "Shrink the segment"
+msgstr "Das Segment verkleinern"
+
+#: src/scim_anthy_prefs.cpp:860
+msgid "Select keys to shrink the segment"
+msgstr "Tasten auswählen, um das Segment zu verkleinern"
+
+#: src/scim_anthy_prefs.cpp:861
+msgid "The key events to shrink the selected segment. "
+msgstr "Die Tastatureignisse, die das ausgewählte Segment verkleinern"
+
+#: src/scim_anthy_prefs.cpp:869
+msgid "Expand the segment"
+msgstr "Das Segment vergrößern"
+
+#: src/scim_anthy_prefs.cpp:870
+msgid "Select keys to expand the segment"
+msgstr "Tasten auswählen, um das Segment zu vergrößern"
+
+#: src/scim_anthy_prefs.cpp:871
+msgid "The key events to expand the selected segment. "
+msgstr "Die Tastatureignisse, die das ausgewählte Segment vergrößern"
+
+#: src/scim_anthy_prefs.cpp:879
+msgid "Commit the first segment"
+msgstr "Das erste Segment übergeben"
+
+#: src/scim_anthy_prefs.cpp:881
+msgid "The key events to commit the first segment. "
+msgstr "Die Tastatureignisse, die das erste Segment übergeben"
+
+#: src/scim_anthy_prefs.cpp:889
+msgid "Commit the selected segment"
+msgstr "Das ausgewählte Segment übergeben"
+
+#: src/scim_anthy_prefs.cpp:891
+msgid "The key events to commit the selected segment. "
+msgstr "Die Tastatureignisse, die das ausgewählte Segment übergeben"
+
+#: src/scim_anthy_prefs.cpp:913
+msgid "First candidate"
+msgstr "Erster Kandidat"
+
+#: src/scim_anthy_prefs.cpp:914
+msgid "Select the first candidate keys"
+msgstr ""
+
+#: src/scim_anthy_prefs.cpp:915
+msgid "The key events to select the first candidate. "
+msgstr "Die Tastatureignisse, die den ersten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:923
+msgid "Last candidate"
+msgstr "Letzter Kandidat"
+
+#: src/scim_anthy_prefs.cpp:924
+msgid "Select the last candidate keys"
+msgstr "Tasten für den letzten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:925
+msgid "The key events to the select last candidate. "
+msgstr "Die Tastatureignisse, die den letzten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:933
+msgid "Next candidate"
+msgstr "Nächster Kandidat"
+
+#: src/scim_anthy_prefs.cpp:934
+msgid "Select the next candidate keys"
+msgstr "Tasten für den nächsten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:935
+msgid "The key events to select the next candidate. "
+msgstr "Die Tastatureignisse, die den nöchsten Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:943
+msgid "Previous candidate"
+msgstr "Vorheriger Kandidat"
+
+#: src/scim_anthy_prefs.cpp:944
+msgid "Select the previous candidate keys"
+msgstr "Tasten für den vorherigen Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:945
+msgid "The key events to select the previous candidate. "
+msgstr "Die Tastatureignisse, die den vorherigen Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:953
+msgid "Page up"
+msgstr "Seite hoch"
+
+#: src/scim_anthy_prefs.cpp:954
+msgid "Select page up candidates keys"
+msgstr "Tasten auswählen, um eine Kandidatenseite hochzugehen"
+
+#: src/scim_anthy_prefs.cpp:955
+msgid "The key events to switch candidates page up. "
+msgstr "Die Tastatureignisse, die eine Kandidatenseite hochgehen"
+
+#: src/scim_anthy_prefs.cpp:963
+msgid "Page down"
+msgstr "Seite runter"
+
+#: src/scim_anthy_prefs.cpp:964
+msgid "Select page down candidates keys"
+msgstr "Tasten auswählen, um eine Kandidatenseite herunterzugehen"
+
+#: src/scim_anthy_prefs.cpp:965
+msgid "The key events to switch candidates page down. "
+msgstr "Die Tastatureignisse, die eine Kandidatenseite heruntergehen"
+
+#: src/scim_anthy_prefs.cpp:987
+msgid "1st candidate"
+msgstr "1. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:988
+msgid "Select keys to select 1st candidate"
+msgstr " Tasten wählen, um 1. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:989
+msgid "The key events to select the 1st candidate. "
+msgstr "Die Tastatureignisse, die den 1. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:997
+msgid "2nd candidate"
+msgstr "2. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:998
+msgid "Select keys to select 2nd candidate"
+msgstr " Tasten wählen, um 2. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:999
+msgid "The key events to select the 2nd candidate. "
+msgstr "Die Tastatureignisse, die den 2. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1007
+msgid "3rd candidate"
+msgstr "3. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1008
+msgid "Select keys to select 3rd candidate"
+msgstr " Tasten wählen, um 3. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1009
+msgid "The key events to select the 3rd candidate. "
+msgstr "Die Tastatureignisse, die den 3. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1017
+msgid "4th candidate"
+msgstr "4. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1018
+msgid "Select keys to select 4th candidate"
+msgstr " Tasten wählen, um 4. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1019
+msgid "The key events to select the 4th candidate. "
+msgstr "Die Tastatureignisse, die den 4. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1027
+msgid "5th candidate"
+msgstr "5. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1028
+msgid "Select keys to select 5th candidate"
+msgstr " Tasten wählen, um 5. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1029
+msgid "The key events to select the 5th candidate. "
+msgstr "Die Tastatureignisse, die den 5. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1037
+msgid "6th candidate"
+msgstr "6. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1038
+msgid "Select keys to select 6th candidate"
+msgstr " Tasten wählen, um 6. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1039
+msgid "The key events to select the 6th candidate. "
+msgstr "Die Tastatureignisse, die den 6. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1047
+msgid "7th candidate"
+msgstr "7. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1048
+msgid "Select keys to select 7th candidate"
+msgstr " Tasten wählen, um 7. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1049
+msgid "The key events to select the 7th candidate. "
+msgstr "Die Tastatureignisse, die den 7. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1057
+msgid "8th candidate"
+msgstr "8. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1058
+msgid "Select keys to select 8th candidate"
+msgstr " Tasten wählen, um 8. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1059
+msgid "The key events to select the 8th candidate. "
+msgstr "Die Tastatureignisse, die den 8. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1067
+msgid "9th candidate"
+msgstr "9. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1068
+msgid "Select keys to select 9th candidate"
+msgstr "Die Tastatureignisse, die den 9. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1069
+msgid "The key events to select the 9th candidate. "
+msgstr "Die Tastatureignisse, um den 9. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1077
+msgid "10th candidate"
+msgstr "10. Kandidat"
+
+#: src/scim_anthy_prefs.cpp:1078
+msgid "Select keys to select 10th candidate"
+msgstr "Die Tastatureignisse, die den 10. Kandidaten auswählen"
+
+#: src/scim_anthy_prefs.cpp:1079
+msgid "The key events to select the 10th candidate. "
+msgstr "Die Tastatureignisse, um den 10. Kandidaten auszuwählen"
+
+#: src/scim_anthy_prefs.cpp:1101
+#, fuzzy
+msgid "Convert character type forward"
+msgstr "Zeichentyp vorwärts rotieren"
+
+#: src/scim_anthy_prefs.cpp:1102
+#, fuzzy
+msgid "Select keys to convert character type forward"
+msgstr "Zeichentyp vorwärts rotieren"
+
+#: src/scim_anthy_prefs.cpp:1103
+#, fuzzy
+msgid "Rotate character type forward."
+msgstr "Zeichentyp vorwärts rotieren"
+
+#: src/scim_anthy_prefs.cpp:1111
+#, fuzzy
+msgid "Convert character type backward"
+msgstr "Zeichentyp rückwärts rotieren"
+
+#: src/scim_anthy_prefs.cpp:1112
+#, fuzzy
+msgid "Select keys to convert character type backward"
+msgstr "Tasten auswählen, um in Katakana zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1113
+#, fuzzy
+msgid "Rotate character type backward."
+msgstr "Zeichentyp rückwärts rotieren"
+
+#: src/scim_anthy_prefs.cpp:1121
+msgid "Convert to hiragana"
+msgstr "In Hiragana konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1122
+msgid "Select keys to convert to hiragana"
+msgstr "Tasten auswählen, um in Hiragan zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1123
+msgid "The key events to convert the preedit string to hiragana. "
+msgstr ""
+"Die Tastaturereignisse, die die unbearbeitete Zeichenkette in Hiragana "
+"konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1131
+msgid "Convert to katakana"
+msgstr "In Katakana konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1132
+msgid "Select keys to convert to katakana"
+msgstr "Tasten auswählen, um in Katakana zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1133
+msgid "The key events to convert the preedit string to katakana. "
+msgstr ""
+"Die Tastaturereignisse, die die unbearbeitete Zeichenkette in Katakana "
+"konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1141
+msgid "Convert to half width"
+msgstr "in Halbbreit konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1142
+msgid "Select keys to convert to half width"
+msgstr "Tasten auswählen, um in Halbbreit zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1143
+msgid "The key events to convert the preedit string to half width. "
+msgstr ""
+"Die Tastaturereignisse, die die unbearbeitete Zeichenkette in Halbbreit "
+"konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1151
+msgid "Convert to half katakana"
+msgstr "In halbbreite Katakana konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1152
+msgid "Select keys to convert to half width katakana"
+msgstr "Tasten auswählen, um in halbbreite Katakana zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1153
+msgid "The key events to convert the preedit string to half width katakana. "
+msgstr ""
+"Die Tastaturereignisse, die die unbearbeitete Zeichenkette in halbbreite "
+"Katakana konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1161
+msgid "Convert to wide latin"
+msgstr "In breites Latein konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1162
+msgid "Select keys to convert to wide latin"
+msgstr "Tasten auswählen, um in breites Latein zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1163
+msgid "The key events to convert the preedit string to wide latin. "
+msgstr ""
+"Die Tastaturereignisse, die die unbearbeitete Zeichenkette in breites Latein "
+"konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1171
+msgid "Convert to latin"
+msgstr "In Latein konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1172
+msgid "Select keys to convert to latin"
+msgstr "Tasten auswählen, um in Latein zu konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1173
+msgid "The key events to convert the preedit string to latin. "
+msgstr ""
+"Die Tastaturereignisse, die die unbearbeitete Zeichenkette in Latein "
+"konvertieren"
+
+#: src/scim_anthy_prefs.cpp:1195
+msgid "Edit dictionary"
+msgstr "Wörterbuch bearbeiten"
+
+#: src/scim_anthy_prefs.cpp:1196
+msgid "Select edit dictionary keys"
+msgstr "Tasten auswählen, um Wörterbuch zu bearbeiten"
+
+#: src/scim_anthy_prefs.cpp:1197
+msgid "The key events to launch dictionary administration tool. "
+msgstr "Die Tastaturereignisse, die das Wörterbuchverwaltungsprogramm öffnen"
+
+#: src/scim_anthy_prefs.cpp:1206
+msgid "Select add a word keys"
+msgstr "Tasten auswählen, um ein Wort hinzuzufügen"
+
+#: src/scim_anthy_prefs.cpp:1207
+msgid "The key events to launch the tool to add a word. "
+msgstr ""
+"Die Tastatureignisse, die das Programm zum Hinzufügen eines Wortes öffnen"
+
+#: src/scim_anthy_prefs.cpp:1232 src/scim_anthy_prefs.cpp:1245
+#: src/scim_anthy_prefs.cpp:1258
+msgid "Color:"
+msgstr "Farbe:"
+
+#: src/scim_anthy_prefs.cpp:1233 src/scim_anthy_prefs.cpp:1234
+msgid "The color of preediting text"
+msgstr "Farbe des unbearbeiteten Textes"
+
+#: src/scim_anthy_prefs.cpp:1246 src/scim_anthy_prefs.cpp:1247
+msgid "The color of conversion text"
+msgstr "Farbe des konvertierten Textes"
+
+#: src/scim_anthy_prefs.cpp:1259
+msgid "The color of selected segment text"
+msgstr "Die Farbe des ausgewählten Segments"
+
+#: src/scim_anthy_prefs.cpp:1260
+#, fuzzy
+msgid "The color of selected segment text in the conversion text"
+msgstr "Die Farbe des ausgewählten Segments im konvertierten Text"
+
+#: src/scim_anthy_color_button.cpp:320
+msgid "Foreground color"
+msgstr "Vordergrundfarbe"
+
+#: src/scim_anthy_color_button.cpp:320
+msgid "Background color"
+msgstr "Hintergrundfarbe"
+
+#~ msgid "<b>Default Modes</b>"
+#~ msgstr "<b>Standardmodi</b>"
+
+#~ msgid "<b>Input Prediction</b>"
+#~ msgstr "<b>Eingabevorhersage</b>"
+
+#~ msgid "Key Bindings"
+#~ msgstr "Tastenkürzel"
+
+#~ msgid "Colors"
+#~ msgstr "Farben"
+
+#~ msgid "Table _entries:"
+#~ msgstr "Tabellen_einträge"
+
+#~ msgid "Use the scim-anthy's custom lookup _window instead of SCIM's one"
+#~ msgstr ""
+#~ "Das benutzerdefinierte Nachschlage_fenster von Scim-Anthy anstelle des "
+#~ "von SCIM benutzen."
+
+#, fuzzy
+#~ msgid "Show _diction of candidates"
+#~ msgstr "Zeige Schreibweise der Kandidaten"
+
+#~ msgid "Show _tray icon"
+#~ msgstr "_Tray-Icon anzeigen"
+
+#~ msgid "\"_Yomi\" option for \"Add word\" command:"
+#~ msgstr "„Yomi“-Option für „Wort hinzufügen“-Befehl:"

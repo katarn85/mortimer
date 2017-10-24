@@ -1,0 +1,742 @@
+diff -Naur ath6kl.ori/cfg80211.c ath6kl/cfg80211.c
+--- ath6kl.ori/cfg80211.c	2013-12-12 22:05:13.866594200 -0800
++++ ath6kl/cfg80211.c	2013-12-11 21:50:21.919095500 -0800
+@@ -127,7 +127,7 @@
+ 	CHAN5G(140, 0), CHAN5G(144, 0),
+ 	CHAN5G(149, 0),	CHAN5G(153, 0),
+ 	CHAN5G(157, 0),	CHAN5G(161, 0),
+-	CHAN5G(165, 0),
++	CHAN5G(165, 0), CHAN5G(169, 0),
+ };
+ 
+ static struct ieee80211_channel ath6kl_dsrc_channels[] = {
+@@ -2928,6 +2928,8 @@
+ 		}
+ 	}
+ 
++	printk("tx_pwr=%d\n", ar->tx_pwr);
++
+ 	*dbm = ar->tx_pwr;
+ 
+ 	up(&ar->sem);
+diff -Naur ath6kl.ori/init.c ath6kl/init.c
+--- ath6kl.ori/init.c	2013-12-12 22:05:13.590579500 -0800
++++ ath6kl/init.c	2013-12-11 00:16:16.488741500 -0800
+@@ -250,12 +250,12 @@
+ 	{
+ 		.id				= AR6004_HW_1_3_VERSION,
+ 		.name				= "ar6004 hw 1.3",
+-		.dataset_patch_addr		= 0x437860,
++		.dataset_patch_addr		= 0x437404,
+ 		.app_load_addr			= 0x1234,
+ 		.app_load_ext_addr		= 0x9a7000,
+ 		.board_ext_data_addr		= 0x437000,
+-		.reserved_ram_size		= 7168,
+-		.board_addr			= 0x436400,
++		.reserved_ram_size		= 7680,
++		.board_addr			= 0x436200,
+ 		.testscript_addr		= 0x434c00,
+ 		.flags				= ATH6KL_HW_TGT_ALIGN_PADDING |
+ 						  ATH6KL_HW_SINGLE_PIPE_SCHED |
+diff -Naur ath6kl.ori/p2p.h ath6kl/p2p.h
+--- ath6kl.ori/p2p.h	2013-12-04 00:17:41.000000000 -0800
++++ ath6kl/p2p.h	2013-12-11 21:27:57.685042800 -0800
+@@ -168,7 +168,7 @@
+ #define ATH6KL_RC_FLAGS_CHAN_RECORD_FETCHED	(1 << 4)
+ 
+ #define ATH6KL_RC_MAX_2G_CHAN_RECORD	(14)
+-#define ATH6KL_RC_MAX_5G_CHAN_RECORD	(66)
++#define ATH6KL_RC_MAX_5G_CHAN_RECORD	(70)
+ #define ATH6KL_RC_MAX_CHAN_RECORD	(ATH6KL_RC_MAX_2G_CHAN_RECORD + \
+ 					ATH6KL_RC_MAX_5G_CHAN_RECORD)
+ 
+diff -Naur ath6kl.ori/reg.c ath6kl/reg.c
+--- ath6kl.ori/reg.c	2013-12-04 00:17:41.000000000 -0800
++++ ath6kl/reg.c	2013-12-04 01:11:49.539224300 -0800
+@@ -185,7 +185,7 @@
+ 	{REGION_FCC2_ETSIC,   "22", NULL},
+ 	{REGION_FCC3_FCCA,    "3a", "CA"},
+ 	{REGION_FCC3_WORLD,   "3b", "AR"},
+-	{REGION_FCC3_ETSIC,   "3f", "NZ"},
++	{REGION_FCC3_ETSIC,   "3c", NULL},
+ 	{REGION_FCC4_FCCA,    "12", "PS"},
+ 	{REGION_FCC5_FCCA,    "13", NULL},
+ 	{REGION_FCC5_WORLD,   "16", NULL},
+diff -Naur ath6kl.ori/regdb.c ath6kl/regdb.c
+--- ath6kl.ori/regdb.c	2013-12-04 00:30:02.000000000 -0800
++++ ath6kl/regdb.c	2013-12-11 20:46:09.386386900 -0800
+@@ -2025,11 +2025,11 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_07 = {
++static const struct ieee80211_regdomain ath6kl_regd_07 = {//SS_A
+ 	.n_reg_rules = 1,
+ 	.alpha2 = "07",
+ 	.reg_rules = {
+-		REG_RULE(2432 - 10, 2442 + 10, 20, 3, 20, 0),
++		REG_RULE(2412 - 10, 2472 + 10, 20, 3, 20, 0),
+ 	}
+ };
+ 
+@@ -2054,7 +2054,7 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_21 = {
++static const struct ieee80211_regdomain ath6kl_regd_21 = {//SS_G
+ 	.n_reg_rules = 4,
+ 	.alpha2 = "21",
+ 	.reg_rules = {
+@@ -2063,7 +2063,7 @@
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
++		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+@@ -2112,6 +2112,22 @@
+ 	}
+ };
+ 
++static const struct ieee80211_regdomain ath6kl_regd_3c = {//SS_B
++	.n_reg_rules = 5,
++	.alpha2 = "3c",
++	.reg_rules = {
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 17, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 24, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 24, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
++	}
++};
++
+ static const struct ieee80211_regdomain ath6kl_regd_3f = {
+ 	.n_reg_rules = 5,
+ 	.alpha2 = "3f",
+@@ -2128,14 +2144,15 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_12 = {
++static const struct ieee80211_regdomain ath6kl_regd_12 = {//SS_L
+ 	.n_reg_rules = 4,
+ 	.alpha2 = "12",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2462 + 10, 40, 3, 30, 0),
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 30, 0),
+ 		REG_RULE(5180 - 10, 5240 + 10, 20, 3, 17, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 20, 3, 23, 0
+-						 | NL80211_RRF_DFS),
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
+ 		REG_RULE(5745 - 10, 5825 + 10, 20, 3, 30, 0),
+ 	}
+ };
+@@ -2149,36 +2166,39 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_16 = {
+-	.n_reg_rules = 2,
++static const struct ieee80211_regdomain ath6kl_regd_16 = {//SS_R
++	.n_reg_rules = 5,
+ 	.alpha2 = "16",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+ 		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 17, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5660 - 10, 5700 + 10, 40, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5845 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_14 = {
+-	.n_reg_rules = 6,
++static const struct ieee80211_regdomain ath6kl_regd_14 = {//SS_X
++	.n_reg_rules = 4,
+ 	.alpha2 = "14",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2462 + 10, 40, 3, 30, 0),
+ 		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 23, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5500 - 10, 5580 + 10, 40, 3, 23, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5660 - 10, 5700 + 10, 40, 3, 23, 0
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+ 		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_23 = {
+-	.n_reg_rules = 6,
++static const struct ieee80211_regdomain ath6kl_regd_23 = {//SS_M
++	.n_reg_rules = 5,
+ 	.alpha2 = "23",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+@@ -2186,23 +2206,19 @@
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5500 - 10, 5580 + 10, 40, 3, 23, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5660 - 10, 5700 + 10, 40, 3, 23, 0
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
++		REG_RULE(5745 - 10, 5845 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_37 = {
++static const struct ieee80211_regdomain ath6kl_regd_37 = {//SS_E
+ 	.n_reg_rules = 4,
+ 	.alpha2 = "37",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+@@ -2214,23 +2230,28 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_35 = {
+-	.n_reg_rules = 2,
++static const struct ieee80211_regdomain ath6kl_regd_35 = {//SS_Z
++	.n_reg_rules = 5,
+ 	.alpha2 = "35",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 18, 0
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 18, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5765 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_36 = {
++static const struct ieee80211_regdomain ath6kl_regd_36 = {//SS_H
+ 	.n_reg_rules = 3,
+ 	.alpha2 = "36",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 20, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+@@ -2238,86 +2259,72 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_30 = {
+-	.n_reg_rules = 3,
++static const struct ieee80211_regdomain ath6kl_regd_30 = {//SS_AB
++	.n_reg_rules = 4,
+ 	.alpha2 = "30",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 18, 0
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 18, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 20, 3, 18, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+ 						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5745 - 10, 5845 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_39 = {
++static const struct ieee80211_regdomain ath6kl_regd_39 = {//SS_I
+ 	.n_reg_rules = 2,
+ 	.alpha2 = "39",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 15, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 15, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_34 = {
+-	.n_reg_rules = 4,
++static const struct ieee80211_regdomain ath6kl_regd_34 = {//SS_AA
++	.n_reg_rules = 2,
+ 	.alpha2 = "34",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 23, 0
+-						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5260 - 10, 5280 + 10, 20, 3, 23, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN
+-						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5500 - 10, 5700 + 10, 20, 3, 30, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5745 - 10, 5845 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_3d = {
++static const struct ieee80211_regdomain ath6kl_regd_3d = {//SS_C
+ 	.n_reg_rules = 5,
+ 	.alpha2 = "3d",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+ 						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5660 - 10, 5700 + 10, 40, 3, 20, 0
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+ 						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0
++		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_NO_IBSS),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_3e = {
++static const struct ieee80211_regdomain ath6kl_regd_3e = {//SS_Q
+ 	.n_reg_rules = 5,
+ 	.alpha2 = "3e",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_NO_IBSS),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+ 						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5500 - 10, 5660 + 10, 40, 3, 20, 0
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN
+ 						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 20, 0
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_NO_IBSS),
+ 	}
+ };
+@@ -2336,7 +2343,7 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_11 = {
++static const struct ieee80211_regdomain ath6kl_regd_11 = {//SS_F
+ 	.n_reg_rules = 4,
+ 	.alpha2 = "11",
+ 	.reg_rules = {
+@@ -2362,16 +2369,23 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_52 = {
+-	.n_reg_rules = 2,
++static const struct ieee80211_regdomain ath6kl_regd_52 = {//SS_V
++	.n_reg_rules = 5,
+ 	.alpha2 = "52",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5500 - 10, 5640 + 10, 40, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_45 = {
++static const struct ieee80211_regdomain ath6kl_regd_45 = {//SS_N
+ 	.n_reg_rules = 2,
+ 	.alpha2 = "45",
+ 	.reg_rules = {
+@@ -2389,13 +2403,15 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_47 = {
++static const struct ieee80211_regdomain ath6kl_regd_47 = {//SS_W
+ 	.n_reg_rules = 3,
+ 	.alpha2 = "47",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5280 - 10, 5320 + 10, 40, 3, 17, 0),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 17, 0),
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5845 + 10, 40, 3, 17, 0),
+ 	}
+ };
+ 
+@@ -2409,7 +2425,7 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_42 = {
++static const struct ieee80211_regdomain ath6kl_regd_42 = {//SS_J
+ 	.n_reg_rules = 3,
+ 	.alpha2 = "42",
+ 	.reg_rules = {
+@@ -2419,7 +2435,7 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_58 = {
++static const struct ieee80211_regdomain ath6kl_regd_58 = {//SS_K
+ 	.n_reg_rules = 2,
+ 	.alpha2 = "58",
+ 	.reg_rules = {
+@@ -2428,8 +2444,8 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_5b = {
+-	.n_reg_rules = 4,
++static const struct ieee80211_regdomain ath6kl_regd_5b = {//SS_S
++	.n_reg_rules = 5,
+ 	.alpha2 = "5b",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+@@ -2437,42 +2453,46 @@
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
+ 		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_5c = {
++static const struct ieee80211_regdomain ath6kl_regd_5c = {//SS_Y
+ 	.n_reg_rules = 5,
+ 	.alpha2 = "5c",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2462 + 10, 40, 3, 30, 0),
+-		REG_RULE(5280 - 10, 5320 + 10, 40, 3, 17, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5500 - 10, 5580 + 10, 40, 3, 30, 0
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 30, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 17, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5660 - 10, 5700 + 10, 40, 3, 30, 0
++		REG_RULE(5600 - 10, 5700 + 10, 40, 3, 30, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
++		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_5d = {
+-	.n_reg_rules = 3,
++static const struct ieee80211_regdomain ath6kl_regd_5d = {//SS_P
++	.n_reg_rules = 4,
+ 	.alpha2 = "5d",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+-		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 30, 0
++		REG_RULE(5260 - 10, 5320 + 10, 20, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
++		REG_RULE(5500 - 10, 5700 + 10, 20, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_5e = {
+-	.n_reg_rules = 5,
++static const struct ieee80211_regdomain ath6kl_regd_5e = {//SS_O
++	.n_reg_rules = 6,
+ 	.alpha2 = "5e",
+ 	.reg_rules = {
+ 		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
+@@ -2480,14 +2500,18 @@
+ 		REG_RULE(5260 - 10, 5320 + 10, 20, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5500 - 10, 5620 + 10, 20, 3, 30, 0
++		REG_RULE(5500 - 10, 5580 + 10, 20, 3, 30, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 30, 0),
++		REG_RULE(5660 - 10, 5700 + 10, 20, 3, 30, 0
++						 | NL80211_RRF_DFS
++						 | NL80211_RRF_PASSIVE_SCAN),
++
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_5f = {
++static const struct ieee80211_regdomain ath6kl_regd_5f = {//SS_D
+ 	.n_reg_rules = 5,
+ 	.alpha2 = "5f",
+ 	.reg_rules = {
+@@ -2499,7 +2523,7 @@
+ 		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 30, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5805 + 10, 40, 3, 30, 0),
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+@@ -2544,7 +2568,7 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_99 = {
++static const struct ieee80211_regdomain ath6kl_regd_99 = {//SS_T
+ 	.n_reg_rules = 6,
+ 	.alpha2 = "99",
+ 	.reg_rules = {
+@@ -2610,20 +2634,18 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_d5 = {
+-	.n_reg_rules = 6,
++static const struct ieee80211_regdomain ath6kl_regd_d5 = {//SS_U
++	.n_reg_rules = 4,
+ 	.alpha2 = "d5",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2462 + 10, 40, 3, 30, 0),
+-		REG_RULE(4920 - 10, 4980 + 10, 20, 3, 23, 0),
+-		REG_RULE(5040 - 10, 5080 + 10, 20, 3, 23, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 30, 0),
+ 		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+ 		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+@@ -2764,51 +2786,32 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_63 = {
+-	.n_reg_rules = 11,
++static const struct ieee80211_regdomain ath6kl_regd_63 = {//SS_AC
++	.n_reg_rules = 4,
+ 	.alpha2 = "63",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2412 + 10, 20, 3, 18, 0),
+-		REG_RULE(2417 - 10, 2432 + 10, 20, 3, 18, 0),
+-		REG_RULE(2437 - 10, 2442 + 10, 20, 3, 18, 0),
+-		REG_RULE(2447 - 10, 2457 + 10, 20, 3, 18, 0),
+-		REG_RULE(2462 - 10, 2462 + 10, 20, 3, 18, 0),
+-		REG_RULE(2467 - 10, 2467 + 10, 20, 3, 18, 0),
+-		REG_RULE(2472 - 10, 2472 + 10, 20, 3, 18, 0),
+-		REG_RULE(5170 - 10, 5230 + 10, 40, 3, 30, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 30, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 18, 0
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 23, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_64 = {
+-	.n_reg_rules = 8,
++static const struct ieee80211_regdomain ath6kl_regd_64 = {//SS_AF
++	.n_reg_rules = 5,
+ 	.alpha2 = "64",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2412 + 10, 20, 3, 18, 0),
+-		REG_RULE(2417 - 10, 2432 + 10, 20, 3, 18, 0),
+-		REG_RULE(2437 - 10, 2442 + 10, 20, 3, 18, 0),
+-		REG_RULE(2447 - 10, 2457 + 10, 20, 3, 18, 0),
+-		REG_RULE(2462 - 10, 2462 + 10, 20, 3, 18, 0),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 30, 0
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 23, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 23, 0
+ 						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN
+-						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 18, 0
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN
+-						 | NL80211_RRF_NO_IBSS),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_PASSIVE_SCAN
+-						 | NL80211_RRF_NO_IBSS),
++						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+@@ -2839,59 +2842,37 @@
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_66 = {
+-	.n_reg_rules = 10,
++static const struct ieee80211_regdomain ath6kl_regd_66 = {//SS_AD
++	.n_reg_rules = 4,
+ 	.alpha2 = "66",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2412 + 10, 20, 3, 18, 0),
+-		REG_RULE(2417 - 10, 2432 + 10, 20, 3, 18, 0),
+-		REG_RULE(2437 - 10, 2442 + 10, 20, 3, 18, 0),
+-		REG_RULE(2447 - 10, 2457 + 10, 20, 3, 18, 0),
+-		REG_RULE(2462 - 10, 2462 + 10, 20, 3, 18, 0),
+-		REG_RULE(5170 - 10, 5230 + 10, 40, 3, 30, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 30, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 18, 0
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 20, 0
++		REG_RULE(5500 - 10, 5640 + 10, 40, 3, 30, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+ 	}
+ };
+ 
+-static const struct ieee80211_regdomain ath6kl_regd_67 = {
+-	.n_reg_rules = 12,
++static const struct ieee80211_regdomain ath6kl_regd_67 = {//SS_AE
++	.n_reg_rules = 6,
+ 	.alpha2 = "67",
+ 	.reg_rules = {
+-		REG_RULE(2412 - 10, 2412 + 10, 20, 3, 18, 0),
+-		REG_RULE(2417 - 10, 2432 + 10, 20, 3, 18, 0),
+-		REG_RULE(2437 - 10, 2442 + 10, 20, 3, 18, 0),
+-		REG_RULE(2447 - 10, 2457 + 10, 20, 3, 18, 0),
+-		REG_RULE(2462 - 10, 2462 + 10, 20, 3, 18, 0),
+-		REG_RULE(2467 - 10, 2467 + 10, 20, 3, 18, 0
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(2472 - 10, 2472 + 10, 20, 3, 18, 0
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5170 - 10, 5230 + 10, 40, 3, 30, 0
+-						 | NL80211_RRF_DFS
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 30, 0
++		REG_RULE(2412 - 10, 2472 + 10, 40, 3, 20, 0),
++		REG_RULE(5180 - 10, 5240 + 10, 40, 3, 20, 0),
++		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 20, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5260 - 10, 5320 + 10, 40, 3, 18, 0
++		REG_RULE(5500 - 10, 5580 + 10, 40, 3, 30, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 20, 0
+-						 | NL80211_RRF_PASSIVE_SCAN),
+-		REG_RULE(5500 - 10, 5700 + 10, 40, 3, 20, 0
++		REG_RULE(5660 - 10, 5700 + 10, 40, 3, 30, 0
+ 						 | NL80211_RRF_DFS
+ 						 | NL80211_RRF_PASSIVE_SCAN),
++		REG_RULE(5745 - 10, 5825 + 10, 40, 3, 30, 0),
+ 	}
+ };
+ 
+@@ -3182,7 +3163,7 @@
+ 	&ath6kl_regd_22,
+ 	&ath6kl_regd_3a,
+ 	&ath6kl_regd_3b,
+-	&ath6kl_regd_3f,
++	&ath6kl_regd_3c,
+ 	&ath6kl_regd_12,
+ 	&ath6kl_regd_13,
+ 	&ath6kl_regd_16,
+@@ -3375,7 +3356,7 @@
+ 	&ath6kl_regd_22,
+ 	&ath6kl_regd_3a,
+ 	&ath6kl_regd_3b,
+-	&ath6kl_regd_3f,
++	&ath6kl_regd_3c,
+ 	&ath6kl_regd_12,
+ 	&ath6kl_regd_13,
+ 	&ath6kl_regd_16,
+diff -Naur ath6kl.ori/reg.h ath6kl/reg.h
+--- ath6kl.ori/reg.h	2013-12-04 00:17:41.000000000 -0800
++++ ath6kl/reg.h	2013-12-04 01:11:49.551225000 -0800
+@@ -181,7 +181,7 @@
+ 					  DFS enabled */
+ 	REGION_FCC3_WORLD  = 0x3B,     /* USA & Canada w/5470 band, 11h,
+ 					  DFS enabled */
+-	REGION_FCC3_ETSIC  = 0x3F,
++	REGION_FCC3_ETSIC  = 0x3c,
+ 	REGION_FCC4_FCCA   = 0x12,     /* FCC public safety plus UNII bands */
+ 	REGION_FCC5_FCCA   = 0x13,     /* US with no DFS */
+ 	REGION_FCC5_WORLD  = 0x16,     /* US with no DFS */

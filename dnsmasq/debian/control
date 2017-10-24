@@ -1,0 +1,20 @@
+Source: dnsmasq
+Section: base
+Priority: extra
+Maintainer: Seungyoun Ju <sy39.ju@samsung.com>, Hocheol Seo <hocheol.seo@samsung.com>
+Build-Depends: debhelper (>= 5), libdbus-1-dev
+Standards-Version: 3.7.2
+
+Package: dnsmasq
+Section: base
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Dnsmasq is a lightweight, easy to configure DNS forwarder
+ and DHCP server.
+
+Package: dnsmasq-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, dnsmasq (= ${Source-Version})
+Description: Dnsmasq is a lightweight, easy to configure DNS forwarder
+ and DHCP server.

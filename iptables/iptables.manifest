@@ -1,0 +1,9 @@
+<manifest>
+	<request>
+		<domain name="_"/>
+	</request>
+	<assign>
+		<filesystem path="/usr/sbin/xtables-multi" label="_" exec_label="none"/>
+		<filesystem path="/usr/share/license/iptables" label="_"/>
+	</assign>
+</manifest>

@@ -1,0 +1,93 @@
+--- ath6kl.org/debug.c	2012-12-11 15:53:33.000000000 +0800
++++ ath6kl/debug.c	2012-12-11 15:54:43.000000000 +0800
+@@ -3683,6 +3683,80 @@
+ 	.llseek = default_llseek,
+ };
+ 
++static ssize_t ath6kl_passive_channel_skip_write(struct file *file,
++				const char __user *user_buf,
++				size_t count, loff_t *ppos)
++{
++	struct ath6kl *ar = file->private_data;
++	struct ath6kl_vif *vif;
++	int i;
++	char buf[16];
++	char *p;
++	int value;
++	int len;
++
++	len = min(count, sizeof(buf) - 1);
++	if (copy_from_user(buf, user_buf, len))
++		return -EFAULT;
++
++	p = buf;
++
++	SKIP_SPACE;
++
++	sscanf(p, "%d", &value);
++	for (i = 0; i < ar->vif_max; i++) {
++		vif = ath6kl_get_vif_by_index(ar, i);
++		if (vif) {
++        	if (value == 1)
++        		vif->sc_params.pas_chdwell_time = 3;
++            else
++        		vif->sc_params.pas_chdwell_time = 105;
++		}
++	}
++
++	return count;
++}
++
++static ssize_t ath6kl_passive_channel_skip_read(struct file *file,
++				char __user *user_buf,
++				size_t count, loff_t *ppos)
++{
++#define _BUF_SIZE	(512)
++	struct ath6kl *ar = file->private_data;
++	struct ath6kl_vif *vif;
++	u8 *buf;
++	unsigned int len = 0;
++	int i = 0;
++	ssize_t ret_cnt;
++
++	buf = kmalloc(_BUF_SIZE, GFP_ATOMIC);
++	if (!buf)
++		return -ENOMEM;
++
++		vif = ath6kl_get_vif_by_index(ar, i);
++		if (vif) {
++			len += scnprintf(buf + len, _BUF_SIZE - len,
++				"%s\n",
++				vif->sc_params.pas_chdwell_time == 3 ? "1" : "0");
++		}
++
++	ret_cnt = simple_read_from_buffer(user_buf, count, ppos, buf, len);
++
++	kfree(buf);
++
++	return ret_cnt;
++#undef _BUF_SIZE
++}
++
++/* debug fs for SCAN Params */
++static const struct file_operations fops_passive_channel_skip = {
++	.read = ath6kl_passive_channel_skip_read,
++	.write = ath6kl_passive_channel_skip_write,
++	.open = ath6kl_debugfs_open,
++	.owner = THIS_MODULE,
++	.llseek = default_llseek,
++};
++
+ /* File operation functions for AP Keep-alive */
+ static ssize_t ath6kl_ap_keepalive_params_write(struct file *file,
+ 				const char __user *user_buf,
+@@ -4647,6 +4721,9 @@
+ 	debugfs_create_file("txpower", S_IRUSR | S_IWUSR,
+ 			    ar->debugfs_phy, ar, &fops_txpower);
+ 
++	debugfs_create_file("passive_channel_skip", S_IRUSR | S_IWUSR,
++			    ar->debugfs_phy, ar, &fops_passive_channel_skip);
++
+	debugfs_create_file("p2p_go_sync", S_IWUSR,
+				ar->debugfs_phy, ar, &fops_p2p_go_sync);
+

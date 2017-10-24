@@ -1,0 +1,21 @@
+diff -Naur WLAN-AIO_org/drivers/ath6kl/init.c WLAN-AIO_new/drivers/ath6kl/init.c
+--- WLAN-AIO_org/drivers/ath6kl/init.c	2012-11-29 19:19:36.000000000 +0800
++++ WLAN-AIO_new/drivers/ath6kl/init.c	2012-11-29 19:23:41.000000000 +0800
+@@ -992,6 +992,7 @@
+ #include "fw_bdata_db7.h"
+ #include "fw_bdata_xpa.h"
+ #include "fw_ram.h"
++#include "fw_selftest.h"
+ #include "fw_bdata_2_0.h"
+ #include "fw_ram_2_0.h"
+ #include "fw_bdata_3_0.h"
+@@ -1014,6 +1015,9 @@
+ 			*fw_len = sizeof(fw_bdata);
+ 			*fw = fw_bdata;
+ 		}
++	} else if (strncmp(filename, AR6004_HW_1_3_SELFTEST_FILE, strlen(AR6004_HW_1_3_SELFTEST_FILE)) == 0) {
++		*fw_len = sizeof(fw_selftest);
++		*fw = fw_selftest;
+	} else if (strncmp(filename, AR6004_HW_2_0_BOARD_DATA_FILE, strlen(AR6004_HW_2_0_BOARD_DATA_FILE)) == 0) {
+		*fw_len = sizeof(fw_bdata_2_0);
+		*fw = fw_bdata_2_0;

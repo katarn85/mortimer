@@ -1,0 +1,133 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2014-02-07 13:50+0900\n"
+"PO-Revision-Date: 2014-02-07 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elm_entry.c:2007
+msgid "Cancel"
+msgstr "বাতিল"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "অনুলিপি করুন"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "কাট"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "নির্বাচন"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "প্রতিলেপন"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "সেট"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "তারিখ সেট করুন"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "সময় সেট করুন"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+msgid "tap to change"
+msgstr "মোডটি পরিবর্তন করতে ট্যাপ করুন।"
+
+msgid "date"
+msgstr "তারিখ"
+
+msgid "hour"
+msgstr "ঘন্টা"
+
+msgid "minute"
+msgstr "মিনিট"
+
+msgid "month"
+msgstr "মাস"
+
+msgid "year"
+msgstr "বছর"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%2$d এর %1$d।"
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "দিন হ্রাস"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "ঘন্টা হ্রাস"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "মিনিট হ্রাস"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "মাস হ্রাস"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "বছর হ্রাস"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "দিন বৃদ্ধি"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "ঘন্টা বৃদ্ধি"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "মিনিট বৃদ্ধি"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "মাস বৃদ্ধি"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "বছর বৃদ্ধি"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "পরিবর্তন করতে ট্যাপ করুন।"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "সমস্ত নির্বাচন করুন"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "অনুলিপি করুন"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "নির্বাচন"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "কাট"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "প্রতিলেপন"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "ক্লিপবোর্ড"
+

@@ -1,0 +1,75 @@
+diff -Naur ath6kl.ori/core.h ath6kl/core.h
+--- ath6kl.ori/core.h	2012-11-27 15:01:28.000000000 +0800
++++ ath6kl/core.h	2012-11-27 13:41:36.000000000 +0800
+@@ -1878,6 +1878,9 @@
+ 	struct country_code_to_enum_rd *current_reg_domain;
+ 
+ 	void (*fw_crash_notify)(struct ath6kl *ar);
++
++	int vendor_id;
++	int product_id;
+
+	u32 roam_mode;
+
+diff -Naur ath6kl.ori/init.c ath6kl/init.c
+--- ath6kl.ori/init.c	2012-11-27 15:01:28.000000000 +0800
++++ ath6kl/init.c	2012-11-27 14:58:02.000000000 +0800
+@@ -1227,6 +1227,8 @@
+ }
+ 
+ #include "fw_bdata.h"
++#include "fw_bdata_db7.h"
++#include "fw_bdata_xpa.h"
+ #include "fw_ram.h"
+ 
+ /* firmware upload */
+@@ -1245,8 +1247,16 @@
+ 		 ar->hw.fw.dir, ar->hw.fw.fw);
+ 
+ 	if (strncmp(filename, AR6004_HW_1_3_BOARD_DATA_FILE, strlen(AR6004_HW_1_3_BOARD_DATA_FILE)) == 0) {
+-		*fw_len = sizeof(fw_bdata);
+-		*fw = fw_bdata;
++		if(ar->product_id == 0x2078){
++			*fw_len = sizeof(fw_bdata_db7);
++			*fw = fw_bdata_db7;
++		}else if(ar->product_id == 0x2082){
++			*fw_len = sizeof(fw_bdata_xpa);
++			*fw = fw_bdata_xpa;
++		}else{
++			*fw_len = sizeof(fw_bdata);
++			*fw = fw_bdata;
++		}
+	} else if (strncmp(filename, AR6004_HW_2_0_BOARD_DATA_FILE, strlen(AR6004_HW_2_0_BOARD_DATA_FILE)) == 0) {
+		*fw_len = sizeof(fw_bdata_2_0);
+		*fw = fw_bdata_2_0;
+diff -Naur ath6kl.ori/usb.c ath6kl/usb.c
+--- ath6kl.ori/usb.c	2012-11-27 15:01:28.000000000 +0800
++++ ath6kl/usb.c	2012-11-27 14:14:30.000000000 +0800
+@@ -2576,7 +2576,9 @@
+ 	ar->hif_ops = &ath6kl_usb_ops;
+ 	ar->mbox_info.block_size = 16;
+ 	ar->bmi.max_data_size = 252;
+-
++	ar->vendor_id = vendor_id;
++	ar->product_id = product_id;
++    
+ 	ar_usb->ar = ar;
+ 
+ 	ath6kl_htc_pipe_attach(ar);
+@@ -2777,14 +2779,12 @@
+ 
+ /* table of devices that work with this driver */
+ static struct usb_device_id ath6kl_usb_ids[] = {
+-	{USB_DEVICE(0x0cf3, 0x1021)},
+ 	{USB_DEVICE(0x0cf3, 0x1022)},
+-	{USB_DEVICE(0x0cf3, 0x1023)},
+-	{USB_DEVICE(0x0cf3, 0x6204)},
+-	{USB_DEVICE(0x0cf3, 0x6234)},
+ 	{USB_DEVICE(0x0cf3, 0x9375)},
+ 	{USB_DEVICE(0x0cf3, 0x9374)},
+ 	{USB_DEVICE(0x0cf3, 0x9372)},
++	{USB_DEVICE(0x04E8, 0x2082)},
++	{USB_DEVICE(0x04E8, 0x2085)},
+ 	{ /* Terminating entry */ },
+ };
+ 

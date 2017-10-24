@@ -1,0 +1,3 @@
+* Wed Mar 05 2014 Jihoon Kim <jihoon48.kim@samsung.com> accepted/tizen/mobile/20140225.022222@7dc35bb
+- Fixed the bug that exception occurs due to NULL env string
+

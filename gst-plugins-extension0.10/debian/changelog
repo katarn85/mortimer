@@ -1,0 +1,2343 @@
+gst-plugins-extension0.10 (0.2.52-0) unstable; urgency=low
+
+  * [pip] Native buffer changed
+  * Tag: gst-plugins-extension0.10_0.2.51-0
+
+ -- Hyuntae Kim <ht1211.kim@samsung.com>  Mon, 29 Jul 2013 23:38:00 +0800
+
+gst-plugins-extension0.10 (0.2.35-0) unstable; urgency=low
+
+  * [pip] Fix preven bug
+  * Tag: gst-plugins-extension0.10_0.2.35-0
+
+ -- Qiang He <q.he@samsung.com>  Thu, 4 Jul 2013 19:04:22 +0800
+
+gst-plugins-extension0.10 (0.2.34-0) unstable; urgency=low
+
+  * [pip] Prevent CID54279 remove log for null dereferenced
+  * Tag: gst-plugins-extension0.10_0.2.34-0
+
+ -- Hyuntae Kim <ht1211.kim@samsung.com>  Thu, 30 May 2013 21:29:58 +0900
+
+gst-plugins-extension0.10 (0.2.33-0) unstable; urgency=low
+
+  * [pip] Add interface to hide inset window and null point dereferences
+  * Tag: gst-plugins-extension0.10_0.2.33-0
+
+ -- Qiang He <q.he@samsung.com>  Thu, 29 May 2013 10:59:00 +0800
+
+gst-plugins-extension0.10 (0.2.30-0) unstable; urgency=low
+
+  * [pip] Update code for dual camera capture and front camera is BACK, Fix memory leak
+  * Tag: gst-plugins-extension0.10_0.2.30-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Thu, 23 May 2013 15:42:01 +0900
+
+gst-plugins-extension0.10 (0.2.24-0) unstable; urgency=low
+
+  * [pip] The same native_buffer object is used for the same tbm_bo
+  * Tag: gst-plugins-extension0.10_0.2.24-0
+
+ -- Qiang He <q.he@samsung.com>  Mon,13  May 2013 13:37:26 +0800
+
+gst-plugins-extension0.10 (0.2.20-0) unstable; urgency=low
+
+  * [pip] Prevent issue for null check
+  * Tag: gst-plugins-extension0.10_0.2.20-0
+
+ -- Qiang He <q.he@samsung.com>  Thu, 2 May 2013 13:07:20 +0800
+
+gst-plugins-extension0.10 (0.2.18-0) unstable; urgency=low
+
+  * [pip] Native buffer provider api added from GL part
+  * Tag: gst-plugins-extension0.10_0.2.18-0
+
+ -- Qiang He <q.he@samsung.com>  Mon, 29 Apr 2013 14:54:53 +0800
+
+gst-plugins-extension0.10 (0.2.17-0) unstable; urgency=low
+
+  * [pip] Add download effect
+  * Tag: gst-plugins-extension0.10_0.2.17-0
+
+ -- Qiang He <q.he@samsung.com>  Wed, 24 Apr 2013 17:36:40 +0800
+
+gst-plugins-extension0.10 (0.2.14-0) unstable; urgency=low
+
+  * [pip] Fix bug - invalid capture data, front camera flip setting
+  * Tag: gst-plugins-extension0.10_0.2.14-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Sat, 13 Apr 2013 15:10:38 +0900
+
+gst-plugins-extension0.10 (0.2.13-0) unstable; urgency=low
+
+  * prevent issue fixes
+  * Tag: gst-plugins-extension0.10_0.2.13-0
+
+ -- Hyuntae Kim <ht1211.kim@samsung.com>  Sat, 13 Apr 2013 12:37:47 +0900
+
+gst-plugins-extension0.10 (0.2.11-0) unstable; urgency=low
+
+  * Add pip plugin
+  * Tag: gst-plugins-extension0.10_0.2.11-0
+
+ -- Hyuntae Kim <ht1211.kim@samsung.com>  Sat, 06 Apr 2013 15:37:47 +0900
+
+gst-plugins-extension0.10 (0.2.0-0) unstable; urgency=low
+
+  * exclude evaspixmapsink plugin (move it to gst-plugins-ext0.10)
+  * Tag: gst-plugins-extension0.10_0.2.0-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 14 Feb 2013 18:32:12 +0900
+
+gst-plugins-extension0.10 (0.1.138-0) unstable; urgency=low
+
+  * [fimcconvert] 1.use CONTIG option for creating gem  2.log clean-up
+  * [evaspixmapsink] log clean-up
+  * Tag: gst-plugins-extension0.10_0.1.138-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 15 Jan 2013 15:28:45 +0900
+
+gst-plugins-extension0.10 (0.1.137-2) unstable; urgency=low
+
+  * [fimcconvert] 1.create gem and do mmap only once for src buffer if colorspace format of input buffer is a standard format  2.add more MMTA macros for performance checking  3.code clean-up
+  * Tag: gst-plugins-extension0.10_0.1.137-2
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 15 Jan 2013 15:28:45 +0900
+
+gst-plugins-extension0.10 (0.1.135-0) unstable; urgency=low
+
+  * [soundalive] set preset mode to SA_USER for activating custom eq/ext
+  * Tag: gst-plugins-extension0.10_0.1.135-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 09 Jan 2013 18:34:27 +0900
+
+gst-plugins-extension0.10 (0.1.134-0) unstable; urgency=low
+
+  * [fimcconvert] fix omited munmap calls when src-rand-idx was set TRUE, use CACHABLE/NONCONTIG option for gem creation
+  * Tag: gst-plugins-extension0.10_0.1.134-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 09 Jan 2013 14:46:11 +0900
+
+gst-plugins-extension0.10 (0.1.133-0) unstable; urgency=low
+
+  * [fimcconvert] apply destination buffer management, add dst-buffer-num property
+  * Tag: gst-plugins-extension0.10_0.1.133-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 28 Dec 2012 11:27:23 +0900
+
+gst-plugins-extension0.10 (0.1.129-2) unstable; urgency=low
+
+  * Resolving Prevent issues
+  * Tag: gst-plugins-extension0.10_0.1.129-2
+
+ -- Abhishek Bajaj <abhi.bajaj@samsung.com>  Fri, 21 Dec 2012 16:00:11 +0530
+
+gst-plugins-extension0.10 (0.1.124-0) unstable; urgency=low
+
+  * [videoeffects] Adding defense code when freeing the memory in cartoon and face engine
+  * Tag: gst-plugins-extension0.10_0.1.124-0
+
+ -- Abhishek Bajaj <abhi.bajaj@samsung.com>  Fri, 07 Dec 2012 16:55:11 +0530
+
+gst-plugins-extension0.10 (0.1.121-0) unstable; urgency=low
+
+  * [soundalive] update version and add wrapper layer(cpp to c)
+  * Tag: gst-plugins-extension0.10_0.1.121-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 03 Dec 2012 15:50:11 +0900
+
+gst-plugins-extension0.10 (0.1.119-0) unstable; urgency=low
+
+  * [fimcconvert] exclude ITLV format for checking standard colorspace src format
+  * Tag: gst-plugins-extension0.10_0.1.119-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 30 Nov 2012 18:17:12 +0900
+
+gst-plugins-extension0.10 (0.1.117-0) unstable; urgency=low
+
+  * [fimcconvert] add determining buf_shared_type(PADDR/FD) code when using standard format for input buffer
+  * [evaspixmapsink] increase size of internal array for gem handle for using FD type buffer
+  * Tag: gst-plugins-extension0.10_0.1.117-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 27 Nov 2012 17:54:43 +0900
+
+gst-plugins-extension0.10 (0.1.116-0) unstable; urgency=low
+
+  * [fimcconvert] apply changes of exynos_drm.h header
+  * Tag: gst-plugins-extension0.10_0.1.116-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 22 Nov 2012 17:07:11 +0900
+
+gst-plugins-extension0.10 (0.1.114-0) unstable; urgency=low
+
+  * [fimcconvert] apply bit alignment to gem size of y/cb/cr plane for each colorspace format
+  * Tag: gst-plugins-extension0.10_0.1.114-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 14 Nov 2012 21:56:21 +0900
+
+gst-plugins-extension0.10 (0.1.113-0) unstable; urgency=low
+
+  * [fimcconvert] fix resources leaks (closing gem,fd for cb/cr plane of dst buffer)
+  * Tag: gst-plugins-extension0.10_0.1.113-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 14 Nov 2012 15:06:02 +0900
+
+gst-plugins-extension0.10 (0.1.112-0) unstable; urgency=low
+
+  * [fimcconvert] 1. set usr_addr in output buffer when using FD type  2. add skip converting codes when src-plugin gives invalid information
+  * Tag: gst-plugins-extension0.10_0.1.112-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 09 Nov 2012 18:20:02 +0900
+
+gst-plugins-extension0.10 (0.1.111-0) unstable; urgency=low
+
+  * [fimcconvert] 1. apply bit alignment for dst size when setting IPP SET PROPERTY 2.user can set flip/rotate via caps information 3.code clean-up
+  * Tag: gst-plugins-extension0.10_0.1.111-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 07 Nov 2012 22:20:02 +0900
+
+gst-plugins-extension0.10 (0.1.107-0) unstable; urgency=low
+
+  * [evaspixmapsink] correct wrong 'if' statements in drm_init() function
+  * Tag: gst-plugins-extension0.10_0.1.107-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 26 Oct 2012 17:22:02 +0900
+
+gst-plugins-extension0.10 (0.1.106-0) unstable; urgency=low
+
+  * [videoeffects] support for mutiple theme
+  * Tag: gst-plugins-extension0.10_0.1.106-0
+
+ -- Abhishek Bajaj <abhi.bajaj@samsung.com>  Thur, 25 Oct 2012 10:40:08 +0530
+
+gst-plugins-extension0.10 (0.1.105-0) unstable; urgency=low
+
+  * [fimcconvert] support DMA-BUF
+  * Tag: gst-plugins-extension0.10_0.1.105-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 24 Oct 2012 21:54:08 +0900
+
+gst-plugins-extension0.10 (0.1.104-0) unstable; urgency=low
+
+  * [fimcconvert] add flip property, fix resource leak when using standard colorspace format for source
+  * Tag: gst-plugins-extension0.10_0.1.104-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 23 Oct 2012 15:25:03 +0900
+
+gst-plugins-extension0.10 (0.1.102-0) unstable; urgency=low
+
+  * [fimcconvert] apply DRM-IPP interface
+  * [evaspixmapsink] fix memory and resource leak related to DMA-BUF
+  * Tag: gst-plugins-extension0.10_0.1.102-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 18 Oct 2012 17:30:05 +0900
+
+gst-plugins-extension0.10 (0.1.96-0) unstable; urgency=low
+
+  * [secrecord] Support 1 channel source
+  * Git: gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.96-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Fri, 28 Sep 2012 13:46:27 +0900
+
+gst-plugins-extension0.10 (0.1.95-0) unstable; urgency=low
+
+  * [fimcconvert] Add new field for buffer share method and bug fix for rotated color converting
+  * Git: gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.95-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Thu, 27 Sep 2012 19:23:53 +0900
+
+gst-plugins-extension0.10 (0.1.93-0) unstable; urgency=low
+
+  * [soundalive] Replace Sound Booster library
+
+ -- Hyunseok Lee <hs7388.lee@samsung.com>  Wed, 26 Sep 2012 13:26:05 +0900
+
+gst-plugins-extension0.10 (0.1.92-0) unstable; urgency=low
+
+  * [soundalive] Modify to skip wrong input buffer
+
+ -- Hyunseok Lee <hs7388.lee@samsung.com>  Sat, 22 Sep 2012 11:32:23 +0900
+
+gst-plugins-extension0.10 (0.1.91-1) unstable; urgency=low
+
+  * [all] add default smack manifest
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.91-1
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 21 Sep 2012 12:46:57 +0900
+
+gst-plugins-extension0.10 (0.1.91-0) unstable; urgency=low
+
+  * [evaspixmapsink] apply DMA-BUF handling code
+  * [xvimagesrc] apply DMA-BUF handling code (0.1.90-1)
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.91-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 20 Sep 2012 16:33:37 +0900
+
+gst-plugins-extension0.10 (0.1.90-0) unstable; urgency=low
+
+  * [fimcconvert] fix memory leak when using ST12, SN12 for dst buffer
+  * [evaspixmapsink] clear pixmap with returned size(width,height) from x server
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.90-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 17 Sep 2012 17:48:37 +0900
+
+gst-plugins-extension0.10 (0.1.89-0) unstable; urgency=low
+
+  * [mshttpsrc] Add mshttpsrc plugin to extension common package
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.89-0
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Fri, 14 Sep 2012 15:16:10 +0900
+
+gst-plugins-extension0.10 (0.1.88-0) unstable; urgency=low
+
+  * [mshttpsrc] Enable mshttpsrc and fix it to set default value
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.88-0
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Thu, 13 Sep 2012 13:13:25 +0900
+
+gst-plugins-extension0.10 (0.1.86-0) unstable; urgency=low
+
+  * Auto effects addition
+  * Tag: gst-plugins-extension0.10_0.1.86-0
+
+ -- Abhishek Bajaj <abhi.bajaj@samsung.com>  Tue, 11 Sep 2012 17:11:08 +0530
+
+gst-plugins-extension0.10 (0.1.85-0) unstable; urgency=low
+
+  * Theme toggle and Animation Fixes (0.1.85)
+  * Fix Build error (0.1.84)
+  * Add Samsung Recording Filter Plugin (0.1.83)
+  * Enable Sound Booster & Acoustic Equalizer (0.1.82)
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.85-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 06 Sep 2012 11:05:08 +0900
+
+gst-plugins-extension0.10 (0.1.81-0) unstable; urgency=low
+
+  * [evaspixmapsink] remove unnecesssary xpixmap_clear() call in resize callback
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.81-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 30 Aug 2012 21:19:56 +0900
+
+gst-plugins-extension0.10 (0.1.80-0) unstable; urgency=low
+
+  * [evaspixmapsink] do native surface unset of evas image object in the delete callback of the evas image object
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.80-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 28 Aug 2012 11:42:32 +0900
+
+gst-plugins-extension0.10 (0.1.79-0) unstable; urgency=low
+
+  * [secrtspsrc] update tag for secrtspsrc to updated
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.79-0
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Mon, 27 Aug 2012 16:21:52 +0900
+
+gst-plugins-extension0.10 (0.1.78-0) unstable; urgency=low
+
+  * [secrtspsrc] Fix to play sdp file
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.78-0
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Mon, 27 Aug 2012 15:48:40 +0900
+
+gst-plugins-extension0.10 (0.1.77-0) unstable; urgency=low
+
+  * [fimcconvert] change video dev name video2/3 to video0/1
+  * Git: magnolia/framework/multimedia/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.77-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 27 Aug 2012 14:45:21 +0900
+
+gst-plugins-extension0.10 (0.1.76-0) unstable; urgency=low
+
+  * [fimcconvert] bug fix - size mismatch when using two fimcconverts, do set gst buffer size as image data size, not as meta data size
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.76-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 06 Aug 2012 17:53:12 +0900
+
+gst-plugins-extension0.10 (0.1.75-0) unstable; urgency=low
+
+  * [fimcconvert] expand input/output colorspace formats
+  * [videoeffects] add videoeffects plugin
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.75-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 02 Aug 2012 16:26:08 +0900
+
+gst-plugins-extension0.10 (0.1.74-1) unstable; urgency=low
+
+  * xvimagesrc Frame buffer capturing from xserver plugin added
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.74-1
+
+ -- manojkumar.k <manojkumar.k@samsung.com>  Fri, 20 Jul 2012 11:45:26 +0900
+
+gst-plugins-extension0.10 (0.1.73-1) unstable; urgency=low
+
+  * [soundalive][dnse] stripping shared libraries
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.73-1
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 13 Jul 2012 20:35:26 +0900
+
+gst-plugins-extension0.10 (0.1.73-0) unstable; urgency=low
+
+  * [evaspixmapsink] fix [S1-5379], call XFreeGC() only when gc is not null
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.73-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 09 Jul 2012 17:59:59 +0900
+
+gst-plugins-extension0.10 (0.1.72-0) unstable; urgency=low
+
+  * [fimcconvert] always update src/dst width and height size in gst_fimcconvert_set_caps()
+  * [evaspixmapsink] 1. skip buffer if aligned size is smaller than size of caps(codes from xvimagesink) 2. only can finalize the event thread in gst_evaspixmapsink_reset()
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.72-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Sun, 08 Jul 2012 03:56:33 +0900
+
+gst-plugins-extension0.10 (0.1.71-0) unstable; urgency=low
+
+  * [soundalive] Remove user preset
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.71-0
+
+ -- Hyunseok Lee <hs7388.lee@samsung.com>  Thu, 05 Jul 2012 16:04:35 +0900
+
+gst-plugins-extension0.10 (0.1.70-0) unstable; urgency=low
+
+  * Add soundalive plugin
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.70-0
+
+ -- Hyunseok Lee <hs7388.lee@samsung.com>  Tue, 03 Jul 2012 11:21:56 +0900
+
+gst-plugins-extension0.10 (0.1.69-0) unstable; urgency=low
+
+  * [evaspixmapsink] move gst_evaspixmap_buffer_put() when the resize_event callback function called whether or not in case of origin-size
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.69-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 28 Jun 2012 11:45:37 +0900
+
+gst-plugins-extension0.10 (0.1.68-0) unstable; urgency=low
+
+  * [evaspixmapsink] move evas_object_event_callback_add() for EVAS_CALLBACK_RESIZE to PROP_EVAS_OBJECT in _set_property()
+  * [fimcconvert] do not push event if the src_pad is not valid
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.68-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 18 Jun 2012 14:40:56 +0900
+
+gst-plugins-extension0.10 (0.1.67-0) unstable; urgency=low
+
+  * [evaspixmapsink] 1.remove rotate property 2.re-create pixmap when width/height ratio is changed and origin-size property is set 3.move ecore pipe remove code 4.support cropped full-screen mode
+  * [fimcconvert] can change src-width and src-height regardless of GST STATE
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.67-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 23 May 2012 19:28:41 +0900
+
+gst-plugins-extension0.10 (0.1.66-0) unstable; urgency=low
+
+  * [dnse] modify to install conf. files into RO
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.66-0
+
+ -- Younghwan Ahn <younghwan_.an@samsung.com>  Mon, 14 May 2012 15:25:08 +0900
+
+gst-plugins-extension0.10 (0.1.65-0) unstable; urgency=low
+
+  * [evaspixmapsink] 1.remove unused property(display-mode,zoom) 2.add property(origin-size) 3.re-create pixmap when user set rotate property
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.65-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 30 Apr 2012 14:23:58 +0900
+
+gst-plugins-extension0.10 (0.1.64-1) unstable; urgency=low
+
+  * update version
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.64-1
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 27 Apr 2012 13:29:31 +0900
+
+gst-plugins-extension0.10 (0.1.64-0) unstable; urgency=low
+
+  * [fimcconvert] change V4L2 API header
+  * [avsysvideosrc] change V4L2_API header in avsys-cam-common.h
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.64-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 24 Apr 2012 12:13:02 +0900
+
+gst-plugins-extension0.10 (0.1.63-0) unstable; urgency=low
+
+  * [fimcconvert] apply MMTA for time analysis
+  * [evaspixmapsink] 1.remove unused code  2.apply MMTA for time analysis
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.63-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 19 Apr 2012 20:11:19 +0900
+
+gst-plugins-extension0.10 (0.1.62-0) unstable; urgency=low
+
+  * [evaspixmapsink] add evaspixmapsink plugin for evas image object rendering
+  * [evaspixmapsink] update gst-plugins-extension0.10.spec
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.62-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Fri, 13 Apr 2012 13:42:52 +0900
+
+gst-plugins-extension0.10 (0.1.61-0) unstable; urgency=low
+
+  * [wfdrtspsrc] disable due to dependeny problem on libmm-wfd which is unreleased library
+  * [httsrc] disable due to not used plugin
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.61-0
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Thu, 05 Apr 2012 11:19:26 +0900
+
+gst-plugins-extension0.10 (0.1.60-0) unstable; urgency=low
+
+  * [fimcconvert] 1. apply fimc overlay multi-buffer mode and use s3c-mem feature
+  * [fimcconvert] 2. support fimc multi-instance
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.60-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Wed, 22 Feb 2012 18:01:33 +0900
+
+gst-plugins-extension0.10 (0.1.59-0) unstable; urgency=low
+
+  * [fimcconvert] skip checking cap's capability if it has V4L2_CAP_VIDEO_OUTPUT, for using other fimc node
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.59-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 13 Feb 2012 15:38:35 +0900
+
+gst-plugins-extension0.10 (0.1.58-0) unstable; urgency=low
+
+  * [fimcconvert] remove a memcpy in gst_fimcconvert_transform()
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.58-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Mon, 30 Jan 2012 21:47:19 +0900
+
+gst-plugins-extension0.10 (0.1.57-1) unstable; urgency=low
+
+  * Add avsysvideosrc plugin
+  * [sechttpsrc] Use inet_ntoa() instead of inet_ntoa_r() that is an undefined symbol
+  * [imagereader] rate control should be as per framerate set by user
+  * Git: slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.57-1
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Thu, 29 Dec 2011 11:02:40 +0900
+
+gst-plugins-extension0.10 (0.1.56-0) unstable; urgency=low
+
+  * Fix bugs resulted from prevent test
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.56-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 18 Oct 2011 19:20:26 +0900
+
+gst-plugins-extension0.10 (0.1.55-1) unstable; urgency=low
+
+  * [secrtspsrc] update with new secrtp/secrtsp library
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.55-1
+
+ -- YeJin  <cho.yejin@samsung.com>  Mon, 17 Oct 2011 19:48:08 +0900
+
+gst-plugins-extension0.10 (0.1.55-0) unstable; urgency=low
+
+  * Remove wink plugin
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.55-0
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Fri, 30 Sep 2011 11:31:43 +0900
+
+gst-plugins-extension0.10 (0.1.54-0) unstable; urgency=low
+
+  * [audiosplitter] Enhance code - Correct abnormal recorded file of voicecall on U1
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.54-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Tue, 20 Sep 2011 21:12:27 +0900
+
+gst-plugins-extension0.10 (0.1.53-0) unstable; urgency=low
+
+  * Delete some elements which are moved to gst-plugins-ext0.10 (avsystem,evasimagesink,toggle,encodebin,drmsrc)
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.53-0
+
+ -- Sangchul Lee <sc11.lee@samsung.com>  Tue, 23 Aug 2011 14:45:16 +0900
+
+gst-plugins-extension0.10 (0.1.52-5) unstable; urgency=low
+
+  * fix i386 build error
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.52-5
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 27 Jul 2011 18:10:43 +0900
+
+gst-plugins-extension0.10 (0.1.52-4) unstable; urgency=low
+
+  * Enable midi plugins for i386 arch
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.52-4
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 27 Jul 2011 16:55:20 +0900
+
+gst-plugins-extension0.10 (0.1.52-3) unstable; urgency=low
+
+  * [secrtspsrc] Fix caps unref problem
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.52-3
+
+ -- YeJin <cho.yejin@samsung.com>  Fri, 15 Jul 2011 16:31:23 +0900
+
+gst-plugins-extension0.10 (0.1.52-2) unstable; urgency=low
+
+  * [secrtspsrc] Fix to stop when fail to gstbuffer
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.52-2
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Wed, 13 Jul 2011 20:06:05 +0900
+
+gst-plugins-extension0.10 (0.1.52-1) unstable; urgency=low
+
+  * [secrtspsrc] Fix not to push the gstbuffer when closing the rtsp session
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.52-1
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Wed, 13 Jul 2011 14:48:20 +0900
+
+gst-plugins-extension0.10 (0.1.52-0) unstable; urgency=low
+
+  * [evasimagesink] Add evasimagesink
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.52-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Sun, 10 Jul 2011 13:43:10 +0900
+
+gst-plugins-extension0.10 (0.1.51-5) unstable; urgency=low
+
+  * fix execstack for i386
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.51-5
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 23 Jun 2011 11:21:12 +0900
+
+gst-plugins-extension0.10 (0.1.51-4) unstable; urgency=low
+
+  * add execstack
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.51-4
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 22 Jun 2011 19:56:01 +0900
+
+gst-plugins-extension0.10 (0.1.51-3) unstable; urgency=low
+
+  * [camera] Remove unused code
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.51-3
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Tue, 21 Jun 2011 17:38:51 +0900
+
+gst-plugins-extension0.10 (0.1.51-2) unstable; urgency=low
+
+  * [fimcconvert] Solving fimc_fd synchronization issue
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.51-2
+
+ -- Younghwan Ahn <younghwan_.an@samsung.com>  Thu, 09 Jun 2011 14:26:56 +0900
+
+gst-plugins-extension0.10 (0.1.51-1) unstable; urgency=low
+
+  * [camera] Support SYVY fourcc for marvell
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.51-1 
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Thu, 09 Jun 2011 09:42:00 +0900
+
+gst-plugins-extension0.10 (0.1.51-0) unstable; urgency=low
+
+  * [camera] Fix prevent bug
+  * [camera] Add screennail get method
+  * [camera] Support SYVY fourcc for marvell
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.51-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 08 Jun 2011 18:34:14 +0900
+
+gst-plugins-extension0.10 (0.1.50-1) unstable; urgency=low
+
+  * Fix build break
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.50-1
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 08 Jun 2011 10:25:02 +0900
+
+gst-plugins-extension0.10 (0.1.50-0) unstable; urgency=low
+
+  * [avsysaudiosink] restore sound path after ALERT(dual) mode
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.50-0
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Tue, 07 Jun 2011 12:08:45 +0900
+
+gst-plugins-extension0.10 (0.1.49-1) unstable; urgency=low
+
+  * Fix vtaudiosrc,vtvideosrc plugin, they are not live src, remove sleep from imagereader
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.49-1
+
+ -- Abhijeet Rao  <abhijeet.rao@samsung.com>  Thu, 26 May 2011 14:54:41 +0530
+
+
+gst-plugins-extension0.10 (0.1.49-0) unstable; urgency=low
+
+  * Support MDM security, but disabled now
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.49-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Mon, 23 May 2011 14:54:41 +0900
+
+gst-plugins-extension0.10 (0.1.48-1) unstable; urgency=low
+
+  * Fix CFLAGE in debian/rules
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.48-1
+
+ -- YeJin Cho <cho.yejin@samsung.com>  Tue, 03 May 2011 13:56:20 +0900
+
+gst-plugins-extension0.10 (0.1.48-0) unstable; urgency=low
+
+  * [fimcconvert] Bug fix - can not restart(PLAYING -> READY -> PLAYING)
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.48-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Tue, 19 Apr 2011 16:29:50 +0900
+
+gst-plugins-extension0.10 (0.1.47-2) unstable; urgency=low
+
+  * fix bug to send stream size when video is resized using fimcconvert
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.47-2
+
+ -- Younghwan Ahn <younghwan_.an@samsung.com>  Fri, 08 Apr 2011 18:19:46 +0900
+
+gst-plugins-extension0.10 (0.1.47-1) unstable; urgency=low
+
+  * Remove camerasrc plugin package(moved to s5pc2xx)
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.47-1
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Fri, 08 Apr 2011 13:18:02 +0900
+
+gst-plugins-extension0.10 (0.1.47-0) unstable; urgency=low
+
+  * Remove libsavscodec dependency
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.47-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Tue, 05 Apr 2011 19:49:21 +0900
+
+gst-plugins-extension0.10 (0.1.46-1) unstable; urgency=low
+
+  * update "priority" property of gstavsysaudiosink
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.46-1
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Mon, 28 Mar 2011 17:37:50 +0900
+
+gst-plugins-extension0.10 (0.1.46-0) unstable; urgency=low
+
+  * [camera] Call AF init when stop preview and merge enhanced code
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.46-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Fri, 25 Mar 2011 14:18:18 +0900
+
+gst-plugins-extension0.10 (0.1.45-6) unstable; urgency=low
+
+  * gstavsysaudiosink code cleanup
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-6
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Fri, 18 Mar 2011 07:04:28 +0900
+
+gst-plugins-extension0.10 (0.1.45-5) unstable; urgency=low
+
+  * Enhance again
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-5
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 17 Mar 2011 20:02:42 +0900
+
+gst-plugins-extension0.10 (0.1.45-4) unstable; urgency=low
+
+  * Enhance calculation algorithm of duration
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-4
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 17 Mar 2011 19:23:49 +0900
+
+gst-plugins-extension0.10 (0.1.45-3) unstable; urgency=low
+
+  * Set duration information of video src
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-3
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 15 Mar 2011 17:55:19 +0900
+
+gst-plugins-extension0.10 (0.1.45-2) unstable; urgency=low
+
+  * Disable AMR build
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-2
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 10 Mar 2011 14:39:54 +0900
+
+gst-plugins-extension0.10 (0.1.45-1) unstable; urgency=low
+
+  * Modify interface of af functions
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Wed, 09 Mar 2011 18:52:05 +0900
+
+gst-plugins-extension0.10 (0.1.45-0) unstable; urgency=low
+
+  * [MIDI][H0100118090] Fix lockup when seeking continously
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.45-0
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 23 Feb 2011 12:03:52 +0900
+
+gst-plugins-extension0.10 (0.1.44-1) unstable; urgency=low
+
+  * Fix build error
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.44-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 22 Feb 2011 20:45:34 +0900
+
+gst-plugins-extension0.10 (0.1.44-0) unstable; urgency=low
+
+  * Make a policy to protect conflict dual camera open
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.44-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 22 Feb 2011 17:50:56 +0900
+
+gst-plugins-extension0.10 (0.1.43-0) unstable; urgency=low
+
+  * Fix for prevent
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.43-0
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 17 Feb 2011 21:28:34 +0900
+
+gst-plugins-extension0.10 (0.1.42-0) unstable; urgency=low
+
+  * [avsyssrc] Fix bug - failed to load plugin because of undefined symbol
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.42-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 16 Feb 2011 14:08:59 +0900
+
+gst-plugins-extension0.10 (0.1.41-1) unstable; urgency=low
+
+  * Fix for prevent
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.41-1
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Tue, 15 Feb 2011 16:39:39 +0900
+
+gst-plugins-extension0.10 (0.1.41-0) unstable; urgency=low
+
+  * Modify code to input phyCr ptr
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.41-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 14 Feb 2011 15:17:44 +0900
+
+gst-plugins-extension0.10 (0.1.40-0) unstable; urgency=low
+
+  * [camerasrc] Bug fix - init queued_buffer_count when start stream
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.40-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 09 Feb 2011 23:59:17 +0900
+
+gst-plugins-extension0.10 (0.1.39-0) unstable; urgency=low
+
+  * [camerasrc] Bug fix - do not set buffer index when DQBUF
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.39-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 09 Feb 2011 14:01:28 +0900
+
+gst-plugins-extension0.10 (0.1.38-0) unstable; urgency=low
+
+  * [camerasrc] Add queue count management
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.38-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 31 Jan 2011 08:58:20 +0900
+
+gst-plugins-extension0.10 (0.1.37-1) unstable; urgency=low
+
+  * [avsysaudiosink] remove volume,tunning-volume property
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.37-1
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Tue, 25 Jan 2011 10:47:42 +0900
+
+gst-plugins-extension0.10 (0.1.37-0) unstable; urgency=low
+
+  * [avsysvideosrc] Bug fix for ZSL - call normal capture routine when ZSL capture
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.37-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Fri, 14 Jan 2011 11:03:43 +0900
+
+gst-plugins-extension0.10 (0.1.36-7) unstable; urgency=low
+
+  * Disable DivX DRM type handling (demuxer and decoder handles it for JIT)
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.36-7
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 05 Jan 2011 12:12:59 +0900
+
+gst-plugins-extension0.10 (0.1.36-6) unstable; urgency=low
+
+  * reuploading 
+  * Git: slp-source.sec.samsung.net:slp/non-free/gst-plugins-extension0.10 
+  * Tag: gst-plugins-extension0.10_0.1.36-6	
+ -- Abhijeet Rao <abhijeet.rao@samsung.com>  Tue, 28 Dec 2010 15:15:38 +0530
+
+gst-plugins-extension0.10 (0.1.36-5) unstable; urgency=low
+
+  * [vtaudiosrc][vtvideosrc]return GST_FLOW_UNEXPECTED When stack return zero data
+  * Tag: gst-plugins-extension0.10_0.1.36-5
+
+ -- Abhijeet Rao <abhijeet.rao@samsung.com>  Tue, 28 Dec 2010 15:07:35 +0530
+
+gst-plugins-extension0.10 (0.1.36-4) unstable; urgency=low
+
+  * [camerasrc] Divide camerasrc plugin debian package
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.36-4
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Mon, 27 Dec 2010 14:38:45 +0900
+
+gst-plugins-extension0.10 (0.1.36-3) unstable; urgency=low
+
+  * [dnse] modify vb coefficient for amr logical volume 
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.36-3
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Fri, 24 Dec 2010 16:25:16 +0900
+
+gst-plugins-extension0.10 (0.1.36-2) unstable; urgency=low
+
+  * [camera] Add "camerasrc" plugin for C210
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.36-2
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Thu, 23 Dec 2010 12:05:38 +0900
+
+gst-plugins-extension0.10 (0.1.35-1) unstable; urgency=low
+
+  * [drmsrc] fix drmsrc get_size bug
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.35-1
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Fri, 17 Dec 2010 13:31:13 +0900
+
+gst-plugins-extension0.10 (0.1.35-0) unstable; urgency=low
+
+  * [camera] Remove AF init from AF stop function in camera control interface
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.35-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 15 Dec 2010 11:54:33 +0900
+
+gst-plugins-extension0.10 (0.1.34-4) unstable; urgency=low
+
+  * dnse postinst fix
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.34-4 
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 15 Dec 2010 08:49:24 +0900
+
+gst-plugins-extension0.10 (0.1.34-3) unstable; urgency=low
+
+  * Again
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.34-3 
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 14 Dec 2010 16:59:54 +0900
+
+gst-plugins-extension0.10 (0.1.34-2) unstable; urgency=low
+
+  * Again
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.34-2
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 14 Dec 2010 16:53:22 +0900
+
+gst-plugins-extension0.10 (0.1.34-1) unstable; urgency=low
+
+  * Again
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.34-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 13 Dec 2010 16:26:31 +0900
+
+gst-plugins-extension0.10 (0.1.34-0) unstable; urgency=low
+
+  * fix hanging problem of voice call recording
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.34-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 13 Dec 2010 14:41:28 +0900
+
+gst-plugins-extension0.10 (0.1.33-3) unstable; urgency=low
+
+  * Support PlayReady
+  * Git: 165.213.180.234:slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.33-3
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 08 Dec 2010 11:38:59 +0900
+
+gst-plugins-extension0.10 (0.1.33-2) unstable; urgency=low
+
+  * Add dbg package
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.33-2
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Fri, 03 Dec 2010 16:16:38 +0900
+
+gst-plugins-extension0.10 (0.1.33-1) unstable; urgency=low
+
+  * add latency property to avsysaudiosink
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.33-1
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 25 Nov 2010 16:26:28 +0900
+
+gst-plugins-extension0.10 (0.1.33-0) unstable; urgency=low
+
+  * add functio to get sink pad of mux in encodebin
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.33-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 25 Nov 2010 14:44:09 +0900
+
+gst-plugins-extension0.10 (0.1.32-1) unstable; urgency=low
+
+  * Fix for as-needed
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.32-1
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 24 Nov 2010 21:14:27 +0900
+
+gst-plugins-extension0.10 (0.1.32-0) unstable; urgency=low
+
+  * [avsysvideosrc] Bug fix - If "rotate" value is not existed in caps, negotiation is failed
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.32-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 24 Nov 2010 15:18:27 +0900
+
+gst-plugins-extension0.10 (0.1.31-3) unstable; urgency=low
+
+  * [DRM] Add drm_svc_divx_commit_playback()
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.31-3
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 24 Nov 2010 13:14:36 +0900
+
+gst-plugins-extension0.10 (0.1.31-2) unstable; urgency=low
+
+  * Enable DivX DRM
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.31-2
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Tue, 23 Nov 2010 21:53:38 +0900
+
+gst-plugins-extension0.10 (0.1.31-1) unstable; urgency=low
+
+  * remove log 
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.31-1 
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Tue, 23 Nov 2010 16:19:28 +0900
+
+gst-plugins-extension0.10 (0.1.31-0) unstable; urgency=low
+
+  * Update code for portrait mode recording - remove camera-rotate property, add rotate to caps info
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.31-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Mon, 22 Nov 2010 17:39:10 +0900
+
+gst-plugins-extension0.10 (0.1.30-0) unstable; urgency=low
+
+  * Fix the bug of getting size of frame
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.30-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 16 Nov 2010 20:21:35 +0900
+
+gst-plugins-extension0.10 (0.1.29-0) unstable; urgency=low
+
+  * [avsysvideosrc] Do not pass the NULL buffer when JPEG normal capture
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.29-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Tue, 16 Nov 2010 10:57:14 +0900
+
+gst-plugins-extension0.10 (0.1.28-0) unstable; urgency=low
+
+  * [avsysvideosrc] Bug fix - can not capture single JPEG image after ZSL mode was enabled once, sometimes lose capture stop command
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.28-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Fri, 12 Nov 2010 20:18:50 +0900
+
+gst-plugins-extension0.10 (0.1.27-0) unstable; urgency=low
+
+  * [avsysvideosrc] Update code for capture routine
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.27-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Tue, 09 Nov 2010 21:28:34 +0900
+
+gst-plugins-extension0.10 (0.1.26-0) unstable; urgency=low
+
+  * Seperate zsl routine
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.26-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 08 Nov 2010 21:40:29 +0900
+
+gst-plugins-extension0.10 (0.1.25-0) unstable; urgency=low
+
+  * 1. Add rotation funcion
+  * 2. Add capture fourcc 
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.25-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Sun, 07 Nov 2010 19:32:27 +0900
+
+gst-plugins-extension0.10 (0.1.24-1) unstable; urgency=low
+
+  * [audio] disable Caps in avsysaudiosrc
+  * Git: 165.213.180.234:/git/slp/non-free/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.24-1
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 03 Nov 2010 17:11:50 +0900
+
+gst-plugins-extension0.10 (0.1.24-0) unstable; urgency=low
+
+  * [audio] volume table enum update
+  * [midi] unsupported file handling added
+  * [audio] Fix Makefile.am 
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.24-0 
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 03 Nov 2010 08:42:15 +0900
+
+gst-plugins-extension0.10 (0.1.23-0) unstable; urgency=low
+
+  * [camera] Avoid mutex lock wait when capture
+  * [camera] Guarantee one capture at least when capture start
+  * [camera] Bug fix - sometimes lose capture start command
+  * [audio] Remove LVVE code, Code cleanup
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.23-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Mon, 01 Nov 2010 15:41:33 +0900
+
+gst-plugins-extension0.10 (0.1.22-3) unstable; urgency=low
+
+  * [avsysmemsink] support rgb and yuv 
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.22-3
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Tue, 26 Oct 2010 22:24:18 +0900
+
+gst-plugins-extension0.10 (0.1.22-2) unstable; urgency=low
+
+  * [fimcconvert] changed to support savs decoder changes
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.22-2
+
+ -- Naveen C <naveen.ch@samsung.com>  Tue, 26 Oct 2010 14:10:30 +0530
+
+gst-plugins-extension0.10 (0.1.22-1) unstable; urgency=low
+
+  * [audio] update "mute" property of gstavsysaudiosink 
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.22-1
+
+ -- Kwanghui Cho <kwanghui.cho@samsung.com>  Thu, 21 Oct 2010 11:32:23 +0900
+
+gst-plugins-extension0.10 (0.1.22-0) unstable; urgency=low
+
+  * [camera] Bug fix - S420 pixel format and size
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.22-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Mon, 18 Oct 2010 23:12:49 +0900
+
+gst-plugins-extension0.10 (0.1.21-3) unstable; urgency=low
+
+  * Adding support for dynamic roate and resize, support for SN12
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.21-3
+
+ -- Naveen Ch <naveen.ch@samsung.com>  Mon, 18 Oct 2010 17:59:40 +0530
+
+gst-plugins-extension0.10 (0.1.21-2) unstable; urgency=low
+
+  * REUPLOAD
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.21-2
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 18 Oct 2010 10:29:16 +0900
+
+gst-plugins-extension0.10 (0.1.21-1) unstable; urgency=low
+
+  * Reupload pkg, because of uploading fail
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.21-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 18 Oct 2010 10:02:06 +0900
+
+gst-plugins-extension0.10 (0.1.21-0) unstable; urgency=low
+
+  * [avsysaudiosink/src] remove dasf related code
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.21-0
+
+ -- Kwanghui Cho <kwanghui.cho@samsung.com>  Mon, 18 Oct 2010 09:02:37 +0900
+
+gst-plugins-extension0.10 (0.1.20-1) unstable; urgency=low
+
+  * Reupload pkg
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.20-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 15 Oct 2010 19:38:06 +0900
+
+gst-plugins-extension0.10 (0.1.20-0) unstable; urgency=low
+
+  * [cameracontrol] Modify AF Stop routine
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.20-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 13 Oct 2010 16:13:12 +0900
+
+gst-plugins-extension0.10 (0.1.19-2) unstable; urgency=low
+
+  * [avsysaudiosink] get buffer & period time from avsystem
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.19-2
+
+ -- Kwanghui Cho <kwanghui.cho@samsung.com>  Thu, 07 Oct 2010 12:17:03 +0900
+
+gst-plugins-extension0.10 (0.1.19-1) unstable; urgency=low
+
+  * [avsysmemsink] for fimcconvert temporarily
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.19-1
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Wed, 06 Oct 2010 21:05:28 +0900
+
+gst-plugins-extension0.10 (0.1.19-0) unstable; urgency=low
+
+  * [cameracontrol] Update code for touch AF and strobe control
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.19-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 06 Oct 2010 17:50:39 +0900
+
+gst-plugins-extension0.10 (0.1.18-2) unstable; urgency=low
+
+  * [fimcconvert] Creating seperate dpkg for fimc
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.18-2
+
+ -- Naveen Ch <naveen.ch@samsung.com>  Mon, 04 Oct 2010 15:44:29 +0530
+
+gst-plugins-extension0.10 (0.1.18-1) unstable; urgency=low
+
+  * [avsysaudiosink] Use reset mutex lock between reset & delay function.
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.18-1
+
+ -- Kwanghui.cho <kwanghui.cho@samsung.com>  Thu, 30 Sep 2010 17:59:29 +0900
+
+gst-plugins-extension0.10 (0.1.18-0) unstable; urgency=low
+
+  * [encodebin] Add new property : use-video-toggle
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.18-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Thu, 30 Sep 2010 14:50:10 +0900
+
+gst-plugins-extension0.10 (0.1.17-1) unstable; urgency=low
+
+  * Resolving gst-video lib issue in fimc convert
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.17-1
+
+ -- Naveen Ch <naveen.ch@samsung.com>  Mon, 27 Sep 2010 14:47:24 +0530
+
+gst-plugins-extension0.10 (0.1.17-0) unstable; urgency=low
+
+  * Support new volume
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.17-0
+
+ -- Kwanghui Cho <kwanghui.cho@samsung.com>  Sat, 25 Sep 2010 11:43:14 +0900
+
+gst-plugins-extension0.10 (0.1.16-9) unstable; urgency=low
+
+  * Adding gst fimc convert plugin
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-9
+
+ -- Naveen Ch <naveen.ch@samsung.com>  Fri, 24 Sep 2010 10:35:53 +0530
+
+gst-plugins-extension0.10 (0.1.16-8) unstable; urgency=low
+
+  * Support audio data callback for SplusA
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-8
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Mon, 20 Sep 2010 19:51:00 +0900
+
+gst-plugins-extension0.10 (0.1.16-7) unstable; urgency=low
+
+  * re-add __ALSA_DMIX__ flag in avsysaudiosink 
+  * this flag make to use close & open method on reset
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-7
+
+ -- Kwanghui Cho <kwanghui.cho@samsung.com>  Tue, 14 Sep 2010 13:29:06 +0900
+
+gst-plugins-extension0.10 (0.1.16-6) unstable; urgency=low
+
+  * Fix not to use device name when it't not set
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-6
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Mon, 13 Sep 2010 15:15:06 +0900
+
+gst-plugins-extension0.10 (0.1.16-5) unstable; urgency=low
+
+  * Fix build-error (by change of avsystem)
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-5
+
+ -- Kwanghui Cho <kwanghui.cho@samsung.com>  Fri, 10 Sep 2010 08:20:01 +0900
+gst-plugins-extension0.10 (0.1.16-4) unstable; urgency=low
+
+  * Remove dnet dependency for streaming 
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-4
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Thu, 09 Sep 2010 10:50:43 +0900
+
+gst-plugins-extension0.10 (0.1.16-3) unstable; urgency=low
+
+  * Bug fix - sometime call avsys_cam_read_frame without initialization when JPEG capture
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.16-3
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 08 Sep 2010 17:52:55 +0900
+
+gst-plugins-extension0.10 (0.1.15-3) unstable; urgency=low
+
+  * Modify capture procedure to reduce shot-to-shot time
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.15-3
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Mon, 06 Sep 2010 16:32:45 +0900
+
+gst-plugins-extension0.10 (0.1.14-3) unstable; urgency=low
+
+  * use AVSYS_AUDIO_MODE_OUTPUT_VIDEO in avsysaudiosink
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.14-3
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Mon, 06 Sep 2010 15:02:35 +0900
+
+gst-plugins-extension0.10 (0.1.14-2) unstable; urgency=low
+
+  * Fix build break
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.14-2
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 02 Sep 2010 20:53:55 +0900
+
+gst-plugins-extension0.10 (0.1.14-1) unstable; urgency=low
+
+  * Reupload pkg for assurance
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.14-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 02 Sep 2010 20:36:13 +0900
+
+gst-plugins-extension0.10 (0.1.14-0) unstable; urgency=low
+
+  * Add user route propery 
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.14-0
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 02 Sep 2010 20:13:28 +0900
+
+gst-plugins-extension0.10 (0.1.13-0) unstable; urgency=low
+
+  * Remove avsys videosink dependancy
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.13-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Wed, 01 Sep 2010 15:30:03 +0900
+
+gst-plugins-extension0.10 (0.1.12-5) unstable; urgency=low
+
+  * Reupload package for modifying of avsystem
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.12-5
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Wed, 01 Sep 2010 14:29:00 +0900
+
+gst-plugins-extension0.10 (0.1.12-4) unstable; urgency=low
+
+  * Socketsrc plugin - setsocktopt commenting
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.12-4
+
+ -- Harish Jenny K N <harish.jenny@samsung.com>  Thu, 26 Aug 2010 08:48:54 +0530
+
+gst-plugins-extension0.10 (0.1.12-3) unstable; urgency=low
+
+  * Re-packaging for basesink update
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.12-3 
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 25 Aug 2010 13:19:48 +0900
+
+gst-plugins-extension0.10 (0.1.12-2) unstable; urgency=low
+
+  * Re-packaging for basesink update
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.12-2
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 25 Aug 2010 12:14:08 +0900
+
+gst-plugins-extension0.10 (0.1.12-1) unstable; urgency=low
+
+  * Upload error
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.12-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 24 Aug 2010 21:12:05 +0900
+
+gst-plugins-extension0.10 (0.1.12-0) unstable; urgency=low
+
+  * Remove tempoarry code of waiting before capturing
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.12-0
+
+ -- Harish Jenny K N <harish.jenny@samsung.com>  Tue, 24 Aug 2010 17:08:45 +0900
+
+gst-plugins-extension0.10 (0.1.11-4) unstable; urgency=low
+
+  * Tag name change
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.11-4 
+
+ -- Harish Jenny K N <harish.jenny@samsung.com>  Thu, 19 Aug 2010 10:37:37 +0530
+
+gst-plugins-extension0.10 (0.1.11-3) unstable; urgency=low
+
+  * Modifications for i386 build-break and package for voicecall recording plugins for ARM
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.11-3
+
+ -- Harish Jenny K N <harish.jenny@samsung.com>  Thu, 19 Aug 2010 10:16:49 +0530
+
+gst-plugins-extension0.10 (0.1.11-2) unstable; urgency=low
+
+  * Add harish's account. Reupload the package.
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.11-2
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 19 Aug 2010 10:32:07 +0900
+
+gst-plugins-extension0.10 (0.1.11-1) unstable; urgency=low
+
+  * Add socketsrc , rename and modify dpramsrbin to voicedatasrcbin
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.11-1 
+
+ -- Harish Jenny K N <harish.jenny@samsung.com>  Wed, 18 Aug 2010 14:55:12 +0530
+
+gst-plugins-extension0.10 (0.1.11-0) unstable; urgency=low
+
+  * Add dpramsrcbin, splitter
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.11-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 02 Aug 2010 14:56:47 +0900
+
+gst-plugins-extension0.10 (0.1.10-1) unstable; urgency=low
+
+  * [drmsrc] add is-drm property
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.10-1
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Mon, 02 Aug 2010 10:46:42 +0900
+
+gst-plugins-extension0.10 (0.1.10-0) unstable; urgency=low
+
+  * [wink_png_decoder] Replace GstPngDec type by GstWinkPngDec
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.10-0
+
+ -- Jeongmo Yang <jm80.yang@samsung.com>  Wed, 28 Jul 2010 23:19:51 +0900
+
+gst-plugins-extension0.10 (0.1.9-2) unstable; urgency=low
+
+  * Tag failure
+  * Git: 165.213.180.234:/git/slp/pkgs/gst-plugins-extension0.10
+  * Tag: gst-plugins-extension0.10_0.1.9-2
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 23 Jul 2010 14:07:07 +0900
+
+gst-plugins-extension0.10 (0.1.9-1) unstable; urgency=low
+
+  * Tag failure
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.9-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 23 Jul 2010 12:00:42 +0900
+
+gst-plugins-extension0.10 (0.1.9-0) unstable; urgency=low
+
+  * Applying continuous shot to ZSL routine
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.9-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 22 Jul 2010 11:43:28 +0900
+
+gst-plugins-extension0.10 (0.1.8-9) unstable; urgency=low
+
+  * Turn off arkamys 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-9
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Thu, 08 Jul 2010 19:31:18 +0900
+
+gst-plugins-extension0.10 (0.1.8-8) unstable; urgency=low
+
+  * Reupload because of build break of avsystem
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-8
+
+ -- Kum Jun Seung <junseung.kum@samsung.com>  Mon, 28 Jun 2010 09:58:26 +0900
+
+gst-plugins-extension0.10 (0.1.8-7) unstable; urgency=low
+
+  * Reupload because of build break of avsystem
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-7
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 25 Jun 2010 20:54:03 +0900
+
+gst-plugins-extension0.10 (0.1.8-6) unstable; urgency=low
+
+  * Interface of extra query added
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-6
+
+ -- Kum Jun Seung <junseung.kum@samsung.com>  Fri, 25 Jun 2010 17:47:10 +0900
+
+gst-plugins-extension0.10 (0.1.8-5) unstable; urgency=low
+
+  * Remove a log
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-5
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 22 Jun 2010 20:57:24 +0900
+
+gst-plugins-extension0.10 (0.1.8-4) unstable; urgency=low
+
+  * remove file format property in avsysaudiosink
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-4
+
+ -- Kwang Hui Cho <kwanghui.cho@samsung.com>  Tue, 22 Jun 2010 14:09:55 +0900
+
+gst-plugins-extension0.10 (0.1.8-3) unstable; urgency=low
+
+  * FCC added to avsysvideosrc, debian control added
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-3
+
+ -- Kum Jun Seung <junseung.kum@samsung.com>  Wed, 16 Jun 2010 17:45:25 +0900
+
+gst-plugins-extension0.10 (0.1.8-2) unstable; urgency=low
+
+  * Preview format will enabled as SUYV and SUY2 or S420, ZSL enabled
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-2
+
+ -- Kum Jun Seung <junseung.kum@samsung.com>  Sun, 13 Jun 2010 19:30:18 +0900
+
+gst-plugins-extension0.10 (0.1.8-1) unstable; urgency=low
+
+  * Update avsysaudiosink & avsysaudiosrc (NXP code) 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-1
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 10 Jun 2010 16:16:08 +0900
+
+gst-plugins-extension0.10 (0.1.8-0) unstable; urgency=low
+
+  * Set 0 to _DEFAULT_KEEPING_BUFFER
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.8-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Wed, 09 Jun 2010 21:47:52 +0900
+
+gst-plugins-extension0.10 (0.1.7-3) unstable; urgency=low
+
+  * Update avsysaudiosin & avsysaudiosrc (NXP code)
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.7-3
+  
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 09 Jun 2010 09:30:14 +0900
+
+gst-plugins-extension0.10 (0.1.7-2) unstable; urgency=low
+
+  * Fix error for streaming plugins
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.7-2
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Tue, 08 Jun 2010 15:32:29 +0900
+
+gst-plugins-extension0.10 (0.1.7-1) unstable; urgency=low
+
+  * Change DNet api from  net_gethostbyname to gethostbyname
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.7-1
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Mon, 07 Jun 2010 14:48:59 +0900
+
+gst-plugins-extension0.10 (0.1.7-0) unstable; urgency=low
+
+  * Fix slow recording start problem
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.7-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 01 Jun 2010 20:22:25 +0900
+
+gst-plugins-extension0.10 (0.1.6-8) unstable; urgency=low
+
+  * Update secrtspsrc/sechttpsrc plugin for using new dnet api
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-8 
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Sat, 29 May 2010 16:20:01 +0900
+
+gst-plugins-extension0.10 (0.1.6-7) unstable; urgency=low
+
+  * fix undefined symbol error in secrtspsrc
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-7
+
+ -- Heungsoon Rim <hs06.rim@samsung.com>  Fri, 28 May 2010 13:48:11 +0900
+
+gst-plugins-extension0.10 (0.1.6-6) unstable; urgency=low
+
+  * fix build erros of sechttpsrc and secrtspsec 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-6
+
+ -- Heungsoon Rim <hs06.rim@samsung.com>  Fri, 28 May 2010 12:23:23 +0900
+
+gst-plugins-extension0.10 (0.1.6-5) unstable; urgency=low
+
+  * Reupload because of tag varification
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-5
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 27 May 2010 17:03:31 +0900
+
+gst-plugins-extension0.10 (0.1.6-4) unstable; urgency=low
+
+  * Fix linking error of avsysvideosrc
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-4
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 27 May 2010 14:31:01 +0900
+
+gst-plugins-extension0.10 (0.1.6-3) unstable; urgency=low
+
+  * Fix i386 install error
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-3
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Wed, 26 May 2010 13:03:21 +0900
+
+gst-plugins-extension0.10 (0.1.6-2) unstable; urgency=low
+
+  * Update sechttpsrc plugin    
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-2 
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Wed, 26 May 2010 10:24:46 +0900
+
+gst-plugins-extension0.10 (0.1.6-1) unstable; urgency=low
+
+  * LVVIL integration in avsysaudiosink/avsysaudiosrc
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-1
+  
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Tue, 18 May 2010 10:48:20 +0900
+
+gst-plugins-extension0.10 (0.1.6-0) unstable; urgency=low
+
+  * Feature GST_EXT_USE_EXT_SAVSIMGP code
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.6-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 17 May 2010 14:09:34 +0900
+
+gst-plugins-extension0.10 (0.1.5-3) unstable; urgency=low
+
+  * Change DNet register API for using user_data
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.5-3
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Fri, 14 May 2010 16:01:17 +0900
+
+gst-plugins-extension0.10 (0.1.5-2) unstable; urgency=low
+
+  * Fix build error on the code
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.5-2
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 14 May 2010 12:43:41 +0900
+
+gst-plugins-extension0.10 (0.1.5-1) unstable; urgency=low
+
+  * Fix build error on i386
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.5-1
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 14 May 2010 11:17:49 +0900
+
+gst-plugins-extension0.10 (0.1.5-0) unstable; urgency=low
+
+  * Remove unused code
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.5-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 14 May 2010 10:26:41 +0900
+
+gst-plugins-extension0.10 (0.1.4-5) unstable; urgency=low
+
+  * Drmsrc support Large File System.
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.4-5
+
+ -- Heungsoon Rim <hs06.rim@samsung.com>  Thu, 13 May 2010 15:34:40 +0900
+
+gst-plugins-extension0.10 (0.1.4-4) unstable; urgency=low
+
+  * Remove unnecessary postinst files
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.4-4
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Tue, 11 May 2010 21:05:17 +0900
+
+gst-plugins-extension0.10 (0.1.4-3) unstable; urgency=low
+
+  * Update Changelog
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.4-3
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Mon, 03 May 2010 23:21:10 +0900
+
+gst-plugins-extension0.10 (0.1.4-2) unstable; urgency=low
+
+  * Fix to DNet connection for using g_main_loop 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.4-2
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Mon, 03 May 2010 19:13:21 +0900
+
+gst-plugins-extension0.10 (0.1.4-1) unstable; urgency=low
+
+  * Repackage for DNet update 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.4-1
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Wed, 28 Apr 2010 11:02:35 +0900
+
+gst-plugins-extension0.10 (0.1.4-0) unstable; urgency=low
+
+  * Fix mosaic shot hanging with temp code
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.4-0
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 27 Apr 2010 21:17:01 +0900
+
+gst-plugins-extension0.10 (0.1.3-6) unstable; urgency=low
+
+  * build error fix (structure member has missed)
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-6
+
+ -- Kum Jun Seung <junseung.kum@samsung.com>  Fri, 23 Apr 2010 18:49:37 +0900
+
+gst-plugins-extension0.10 (0.1.3-5) unstable; urgency=low
+
+  * Wink decoder change - Removal of extra comments
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-5
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Thu, 22 Apr 2010 18:50:48 +0530
+
+gst-plugins-extension0.10 (0.1.3-4) unstable; urgency=low
+
+  * remove avsys-audio-echo-canceller dependency - which will be replace with LVVEIL
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-4
+  
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 22 Apr 2010 16:34:31 +0900
+
+gst-plugins-extension0.10 (0.1.3-3) unstable; urgency=low
+
+  * Wink decoder change - checkin of Makefile.in
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-2
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Wed, 21 Apr 2010 13:30:19 +0530
+
+gst-plugins-extension0.10 (0.1.3-2) unstable; urgency=low
+
+  * Wink decoder change - Linked with gstreamer base libraries for compilation 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-2
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Wed, 21 Apr 2010 13:22:03 +0530
+
+gst-plugins-extension0.10 (0.1.3-1) unstable; urgency=low
+
+  * Fix midi issue
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-1
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Tue, 20 Apr 2010 20:57:25 +0900
+
+gst-plugins-extension0.10 (0.1.3-0) unstable; urgency=low
+
+  * Update postinst files for security
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.3-0
+  
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Tue, 20 Apr 2010 17:13:07 +0900
+
+gst-plugins-extension0.10 (0.1.2-5) unstable; urgency=low
+
+  * Update DNet library for streaming source plugins 
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Fri, 16 Apr 2010 14:22:08 +0900
+
+gst-plugins-extension0.10 (0.1.2-4) unstable; urgency=low
+
+  * Add cookie property to support HTML5 http streaming
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Tue, 13 Apr 2010 20:47:54 +0900
+
+gst-plugins-extension0.10 (0.1.2-3) unstable; urgency=low
+
+  * Add OPEN_READ error when camera open fail
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.2-3
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 13 Apr 2010 17:45:13 +0900
+
+gst-plugins-extension0.10 (0.1.2-2) unstable; urgency=low
+
+  * add avsysmemsink
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.2-2
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Thu, 08 Apr 2010 22:26:40 +0900
+
+gst-plugins-extension0.10 (0.1.2-1) unstable; urgency=low
+
+  * savsimgp disabled from Others folder, it moved to gst-plugins-s5pc1xx
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.2-1
+
+ -- Heungsoon <hs06.rim@samsung.com>  Thu, 08 Apr 2010 16:59:35 +0900
+
+gst-plugins-extension0.10 (0.1.2-0) unstable; urgency=low
+
+  * avsyssink debug update 
+  * make gst plugins extension wink package
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.10
+  * Tag: gst-plugins-extension0.10_0.1.2-0
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 07 Apr 2010 20:30:46 +0900
+
+gst-plugins-extension0.10 (0.1.1-6) unstable; urgency=low
+
+  * wink plugins update
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.1.0/
+  * Tag: gst-plugins-extension0.10_0.1.1-6
+  
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Wed, 07 Apr 2010 15:43:42 +0530
+
+gst-plugins-extension0.10 (0.1.1-5) unstable; urgency=low
+
+  * Fix wink i386 build error
+  * update avsysaudiosink/src code 
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.1.0/
+  * Tag: gst-plugins-extension0.10_0.1.1-5
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Mon, 05 Apr 2010 19:26:35 +0900
+
+gst-plugins-extension0.10 (0.1.1-4) unstable; urgency=low
+
+  * update avsysaudiosink/src to support AEC solution
+  * Git: 165.213.180.234:/git/slp2.0/slp2.0-pkgs/gst-plugins-extension-0.1.0/
+  * Tag: gst-plugins-extension0.10_0.1.1-4
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Mon, 05 Apr 2010 14:51:15 +0900
+
+gst-plugins-extension0.10 (0.1.1-3) unstable; urgency=low
+
+  * Enable GST_EXT_USE_DATANETWORK cflag
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Thu, 01 Apr 2010 15:14:02 +0900
+
+gst-plugins-extension0.10 (0.1.1-2) unstable; urgency=low
+
+  * Increase maximum number of buffer available to allocate to 100
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 01 Apr 2010 11:37:41 +0900
+
+gst-plugins-extension0.10 (0.1.1-1) unstable; urgency=low
+
+  * Repackage for DRM module update 
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 01 Apr 2010 11:07:04 +0900
+
+gst-plugins-extension0.10 (0.1.1-0) unstable; urgency=low
+
+  * Bug Fix : avsysaudiosrc path release
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 01 Apr 2010 09:53:11 +0900
+
+gst-plugins-extension0.10 (0.1-62) unstable; urgency=low
+
+  * Fix streaming source plugin to use DNet API
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Wed, 31 Mar 2010 19:43:47 +0900
+
+gst-plugins-extension0.10 (0.1-61) unstable; urgency=low
+
+  * Problem: DRM src didn't post error message to MSL when the file is not OMA DRM.
+    Fix: DRM src posts error message in that case.
+
+ -- Heungsoon Rim <hs06.rim@samsung.com>  Wed, 31 Mar 2010 16:44:49 +0900
+
+gst-plugins-extension0.10 (0.1-60) unstable; urgency=low
+
+  * Fix bug - Drm service can give lesser size block than requested thing
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Wed, 31 Mar 2010 15:26:27 +0900
+
+gst-plugins-extension0.10 (0.1-59) unstable; urgency=low
+
+  * ToolchainUpgrade
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Thu, 25 Mar 2010 15:22:49 +0900
+
+gst-plugins-extension0.10 (0.1-58) unstable; urgency=low
+
+  * Repackaged
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Wed, 24 Mar 2010 19:01:37 +0900
+
+gst-plugins-extension0.10 (0.1-57) unstable; urgency=low
+
+  * Add audio/x-smaf mime type for midi
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Wed, 24 Mar 2010 17:22:51 +0900
+
+gst-plugins-extension0.10 (0.1-56) unstable; urgency=low
+
+  * Fix debian/control dependancy
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 24 Mar 2010 11:43:26 +0900
+
+gst-plugins-extension0.10 (0.1-55) unstable; urgency=low
+
+  * Add savsimgp plugin (Others/savsimgp, ARM only)
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Tue, 23 Mar 2010 13:52:05 +0900
+
+gst-plugins-extension0.10 (0.1-54) unstable; urgency=low
+
+  *  vtmodeselector plugin added
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Mon, 22 Mar 2010 14:15:23 +0530
+
+gst-plugins-extension0.10 (0.1-53) unstable; urgency=low
+
+  * last dupload failed
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Mon, 22 Mar 2010 13:53:15 +0530
+
+gst-plugins-extension0.10 (0.1-52) unstable; urgency=low
+
+  * vtmodeselector plugin added
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Mon, 22 Mar 2010 17:12:35 +0530
+
+gst-plugins-extension0.10 (0.1-51) unstable; urgency=low
+
+  * Remove avsys_audio_start in avsysaudiosrc state change (this is unncessary in alsa version)
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Mon, 22 Mar 2010 10:22:50 +0900
+
+gst-plugins-extension0.10 (0.1-50) unstable; urgency=low
+
+  * Update secrtspsrc plugin
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Mon, 22 Mar 2010 10:22:50 +0900
+
+
+gst-plugins-extension0.10 (0.1-49) unstable; urgency=low
+
+  * Imagereader plugin changes 
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Mon, 15 Mar 2010 10:08:54 +0530
+
+gst-plugins-extension0.10 (0.1-48) unstable; urgency=low
+
+  * Rebuild package because of heads uploading of libmm-common
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 11 Mar 2010 11:38:33 +0900
+
+gst-plugins-extension0.10 (0.1-47) unstable; urgency=low
+
+  * end call issue fix
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Tue, 09 Mar 2010 14:11:52 +0530
+
+gst-plugins-extension0.10 (0.1-46) unstable; urgency=low
+
+  * change from non-free to main section
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Fri, 05 Mar 2010 16:08:06 +0900
+
+gst-plugins-extension0.10 (0.1-45) unstable; urgency=low
+
+  * Add sound path clear at end of avsysaudiosrc work
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Fri, 05 Mar 2010 14:15:52 +0900
+
+gst-plugins-extension0.10 (0.1-44) unstable; urgency=low
+
+  * Change face detection function of gstavsyscameracontrol
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 05 Mar 2010 10:40:52 +0900
+
+gst-plugins-extension0.10 (0.1-43) unstable; urgency=low
+
+  * Support audio route policy in avsysaudiosink/avsysaudiosrc (internal sound path).
+  * But default value is use external sound path (for some while)
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 04 Mar 2010 11:55:39 +0900
+
+gst-plugins-extension0.10 (0.1-42) unstable; urgency=low
+
+  * Update secrtspsrc and sechttpsrc plugins
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Tue, 02 Mar 2010 19:28:25 +0900
+
+gst-plugins-extension0.10 (0.1-41) unstable; urgency=low
+
+  * Modify section to non-free
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Mon, 22 Feb 2010 15:18:48 +0900
+
+gst-plugins-extension0.10 (0.1-40) unstable; urgency=low
+
+  * Integrate WOW HD and Sound Externalization
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Wed, 10 Feb 2010 18:29:18 +0900
+
+gst-plugins-extension0.10 (0.1-39) unstable; urgency=low
+
+  * Set range of "capture-widht", "capture-height" property to 0 ~ G_MAXINT
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Wed, 10 Feb 2010 15:25:09 +0900
+
+gst-plugins-extension0.10 (0.1-38) unstable; urgency=low
+
+  * Update sechttpsrc plugin 
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Fri, 05 Feb 2010 21:13:01 +0900
+
+gst-plugins-extension0.10 (0.1-37) unstable; urgency=low
+
+  * Modify logic of equalizer custom mode and move ini file path
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Thu, 04 Feb 2010 20:35:22 +0900
+
+gst-plugins-extension0.10 (0.1-36) unstable; urgency=low
+
+  * Enable Sound Booster
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Wed, 03 Feb 2010 17:34:24 +0900
+
+gst-plugins-extension0.10 (0.1-35) unstable; urgency=low
+
+  * Fix debian installation file (install error)
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Mon, 01 Feb 2010 19:39:38 +0900
+
+gst-plugins-extension0.10 (0.1-34) unstable; urgency=low
+
+  * Integrate Arkamys 5.1ch solution
+
+ -- YoungHwan ahn <younghwan_.an@samsung.com>  Mon, 01 Feb 2010 18:08:47 +0900
+
+gst-plugins-extension0.10 (0.1-33) unstable; urgency=low
+
+  * fix to set sechttpsrc properties : profile_id, device_name
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Fri, 29 Jan 2010 19:19:03 +0900
+
+gst-plugins-extension0.10 (0.1-32) unstable; urgency=low
+
+  * Use AVSYS_AUDIO_MOD_OUTPUT_CLOCK mode for normal playback
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 28 Jan 2010 19:14:23 +0900
+
+gst-plugins-extension0.10 (0.1-31) unstable; urgency=low
+
+  * Rebuild for telephony change
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 28 Jan 2010 15:39:06 +0900
+
+gst-plugins-extension0.10 (0.1-30) unstable; urgency=low
+
+  * disable sechttpsrc on i686
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 27 Jan 2010 16:35:39 +0900
+
+gst-plugins-extension0.10 (0.1-29) unstable; urgency=low
+
+  * Update for  dnet .pc changes
+
+ -- Seungbae Shin <seungbae.shin@samsung.com>  Wed, 27 Jan 2010 15:27:13 +0900
+
+gst-plugins-extension0.10 (0.1-28) unstable; urgency=low
+
+  * Move set_input() to _cam_create()
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 25 Jan 2010 18:15:14 +0900
+
+gst-plugins-extension0.10 (0.1-27) unstable; urgency=low
+
+  * Add SRS CSHeadPhone filter
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Fri, 22 Jan 2010 17:00:21 +0900
+
+gst-plugins-extension0.10 (0.1-26) unstable; urgency=low
+
+  * Fix thumnail getting
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Fri, 22 Jan 2010 15:38:59 +0900
+
+gst-plugins-extension0.10 (0.1-25) unstable; urgency=low
+
+  *  repacking
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Wed, 20 Jan 2010 12:24:34 +0900
+
+gst-plugins-extension0.10 (0.1-24) unstable; urgency=low
+
+  * fix secrtspsrc AAC caps framed field : TRUE->FALSE 
+
+ -- Cho Ye Jin <cho.yejin@samsung.com>  Wed, 20 Jan 2010 11:53:49 +0900
+
+gst-plugins-extension0.10 (0.1-23) unstable; urgency=low
+
+  * Add APCALL property to avsysaudiosink/src for VT call
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 20 Jan 2010 10:05:58 +0900
+
+gst-plugins-extension0.10 (0.1-22) unstable; urgency=low
+
+  * Post error when audio playback open fail
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Sat, 16 Jan 2010 14:21:57 +0900
+
+gst-plugins-extension0.10 (0.1-21) unstable; urgency=low
+
+  * Repackaging
+
+ -- Shin Seung Bae <seungbae.shin@samsung.com>  Fri, 15 Jan 2010 20:06:57 +0900
+
+gst-plugins-extension0.10 (0.1-20) unstable; urgency=low
+
+  * Modify MIDI src structure to enable fullbuild 
+
+ -- Shin Seung Bae <seungbae.shin@samsung.com>  Fri, 15 Jan 2010 19:42:06 +0900
+
+gst-plugins-extension0.10 (0.1-19) unstable; urgency=low
+
+  * Update changelog
+
+ -- Shin Seung Bae <seungbae.shin@samsung.com>  Thu, 14 Jan 2010 20:31:55 +0900
+
+gst-plugins-extension0.10 (0.1-18) unstable; urgency=low
+
+  * VT plugins added 
+
+ -- Rahul Mittal <mittal.rahul@samsung.com>  Thu, 14 Jan 2010 01:28:36 +0530
+
+gst-plugins-extension0.10 (0.1-17) unstable; urgency=low
+
+  * Seperate arm dependancy modules
+
+ -- Shin Seung Bae <seungbae.shin@samsung.com>  Wed, 13 Jan 2010 19:30:48 +0900
+
+gst-plugins-extension0.10 (0.1-16) unstable; urgency=low
+
+  * Fix midiparse (mobilebae) plugin works
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Tue, 12 Jan 2010 15:35:22 +0900
+
+gst-plugins-extension0.10 (0.1-15) unstable; urgency=low
+
+  * Add a function to check camera driver provides exif
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 12 Jan 2010 14:20:00 +0900
+
+gst-plugins-extension0.10 (0.1-14) unstable; urgency=low
+
+  * Change avsysaudiosink priority property to support allow mix bit
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 30 Dec 2009 16:44:09 +0900
+
+gst-plugins-extension0.10 (0.1-13) unstable; urgency=low
+
+  * To fix video input shaking
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Tue, 29 Dec 2009 22:39:48 +0900
+
+gst-plugins-extension0.10 (0.1-12) unstable; urgency=low
+
+  * porting m-theater movie
+
+ -- Ahn young Hwan <younghwan_.an@samsung.com>  Mon, 28 Dec 2009 16:50:09 +0900
+
+st-plugins-extension0.10 (0.1-11) unstable; urgency=low
+
+  * Remove unnecessary usleep 
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Mon, 28 Dec 2009 16:50:09 +0900
+
+gst-plugins-extension0.10 (0.1-10) unstable; urgency=low
+
+  * Fix sw volume table bug
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 24 Dec 2009 17:34:05 +0900
+
+gst-plugins-extension0.10 (0.1-9) unstable; urgency=low
+
+  * move amp on / off & add dummy delay
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 24 Dec 2009 11:37:19 +0900
+
+gst-plugins-extension0.10 (0.1-8) unstable; urgency=low
+
+  * add support for volume table & priority
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 23 Dec 2009 20:17:29 +0900
+
+gst-plugins-extension0.10 (0.1-7) unstable; urgency=low
+
+  * Update avsysaudiosink
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Wed, 23 Dec 2009 09:42:19 +0900
+
+gst-plugins-extension0.10 (0.1-6) unstable; urgency=low
+
+  * Add support sound priority
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Tue, 22 Dec 2009 16:44:39 +0900
+
+gst-plugins-extension0.10 (0.1-5) unstable; urgency=low
+
+  * Modify gstavsysvideosrc to use SN12, ST12
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Thu, 17 Dec 2009 10:56:23 +0900
+
+gst-plugins-extension0.10 (0.1-4) unstable; urgency=low
+
+  * Apply structure for SN12, ST12 to pass a pointer of real structure
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Wed, 16 Dec 2009 10:33:54 +0900
+
+gst-plugins-extension0.10 (0.1-3) unstable; urgency=low
+
+  * Add gstavsysvideosrc series
+
+ -- Wonhyung Cho <wh01.cho@samsung.com>  Mon, 14 Dec 2009 20:52:05 +0900
+
+gst-plugins-extension0.10 (0.1-2) unstable; urgency=low
+
+  * Increase package version 
+
+ -- jongmin lee <jm105.lee@samsung.com>  Wed, 09 Dec 2009 17:51:13 +0900
+
+gst-plugins-extension0.10 (0.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- jongmin lee <jm105.lee@samsung.com>  Fri, 13 Nov 2009 19:51:05 +0900

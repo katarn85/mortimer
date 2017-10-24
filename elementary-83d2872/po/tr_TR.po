@@ -1,0 +1,568 @@
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-09-20 13:50+0900\n"
+"PO-Revision-Date: 2013-09-26 09:09-0800\n"
+"Last-Translator: Jaeun Choi <jaeun12.choi@samsung.com>\n"
+"Language-Team: General\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Simge"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Devre dışı."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Bağlamsal pencere"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Bağlamsal bir pencere açık. Bunu kapamak için çift dokunun."
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menü açılır penceresi"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Menüyü kapamak için çift dokunun."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr ""
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "İptal"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr ""
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "ve %d fazla"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Alıcıları düzenlemek için çift dokunun."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Düzenlemek için çift dokunun."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Başlık"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Açılır pencere başlığı"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Açılır pencere yerindeki metin"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Ortada bir pencere açık. Bunu kapatmak için çift dokunun."
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr ""
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Düğme"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr ""
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr ""
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr ""
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr ""
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Seçildi"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Seçili değil"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "İşaret kutusu"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "İşaretle"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "İşareti kaldır"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Açma/kapama düğmesi"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Açık"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Kapalı"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr ""
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d yüzdesi"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Uygulamak için dokunun."
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Renk kontrol kaydırıcı"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Doygunluk kontrol kaydırıcı"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Parlaklık kontrol kaydırıcı"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Renk seçici"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Beyaz"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Sarı"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Mercan"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Domates"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Kırmızı"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Canlı pembe"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Açık mor"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Mavi menekşe"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Limon yeşili"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Orman yeşili"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Gök mavi"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Kraliyet mavisi"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Koyu mavi"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Koyu gri"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Siyah"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Özel renk paleti"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr ""
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr ""
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Kes"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Seç"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Alanı düzenle"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "Hızlı kaydırma çubuğu"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "İçeriğe taşımak için çift dokunun."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Bir çekmece açık. Kapatmak için üzerine çift dokunun."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Radyo tuşu"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "nın"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Konumu ayarlamak için aşağı ve yukarı hafifçe vurun."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Kaydırıcı"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr ""
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr ""
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Seç"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Seçildi"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Seçildi"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr ""
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Sekme"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Ayarla"
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Çevir"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "%s ayarlamak için yukarı ve aşağı döndürün veya klavyeyi açmak için çift dokunun."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Değiştirmek için çift dokun."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Tarihi ayarla"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Saati ayarla"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Dikey mod"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Yatay mod"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Hızlı kaydırmayı etkinleştirmek için çift dokunun."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Düzenleniyor."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Konumu ayarlamak için aşağı ve yukarı hafifçe vurun."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d karakter."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Bağlamsal açılır pencere"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Açılır pencereyi kapatmak için çift dokunun."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Ortada açılır pencere"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Bunu kapamak için çift dokunun."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Bir çekmece açık."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Açılır menüyü kapatmak için çift dokunun."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Metnin başındaki imleç"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Metnin sonundaki imleç"
+
+msgid "tap to change"
+msgstr "Modu değiştirmek için dokunun."
+
+msgid "date"
+msgstr "Tarih"
+
+msgid "hour"
+msgstr "Saat"
+
+msgid "minute"
+msgstr "Dakika"
+
+msgid "month"
+msgstr "Ay"
+
+msgid "year"
+msgstr "Yıl"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "Saat %1$d / %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Günü azalt"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Saati azalt"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Dakikayı azalt"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Ayı azalt"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Yılı azaltır"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Günü arttır"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Saati arttır"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Dakikayı arttır"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Ayı arttır"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Yılı arttır"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Değiştirmek için dokun."
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Hepsini seç"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Kopyala"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Seç"
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Kes"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Yapıştır"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Pano"
+

@@ -1,0 +1,116 @@
+--- ath6kl.orig/usb.c	2012-05-17 02:43:30.941447000 -0700
++++ ath6kl/usb.c	2012-05-17 19:30:59.008048000 -0700
+@@ -28,6 +28,8 @@
+ #define ATH6KL_USB_RX_BUNDLE_BUFFER_SIZE  16896
+ #define ATH6KL_USB_TX_BUNDLE_BUFFER_SIZE  16384
+ 
++//#define USE_WORK
++
+ /* tx/rx pipes for usb */
+ enum ATH6KL_USB_PIPE_ID {
+ 	ATH6KL_USB_PIPE_TX_CTRL = 0,
+@@ -86,6 +88,7 @@
+ 	struct ath6kl_usb *ar_usb;
+ 	u16 max_packet_size;
+ 	struct work_struct io_complete_work;
++	struct tasklet_struct io_complete_task;
+ 	struct sk_buff_head io_comp_queue;
+ 	struct usb_endpoint_descriptor *ep_desc;
+ 	struct ath6kl_usb_pipe_stat usb_pipe_stat;
+@@ -621,7 +624,11 @@
+ 	for (i = 0; i < ATH6KL_USB_PIPE_MAX; i++) {
+ 		/* flush only USB scheduled work, instead of flushing all */
+ 		pipe = &device->pipes[i].ar_usb->pipes[i];
++#ifdef USE_WORK
+ 		flush_work(&pipe->io_complete_work);
++#else
++             tasklet_kill(&pipe->io_complete_task);
++#endif
+ 		if (device->pipes[i].ar_usb != NULL)
+ 			usb_kill_anchored_urbs(&device->pipes[i].urb_submitted);
+ 	}
+@@ -715,7 +722,11 @@
+ 	/* note: queue implements a lock */
+ 	skb_queue_tail(&pipe->io_comp_queue, buf);
+ 	pipe_st->num_rx_comp++;
++#ifdef USE_WORK
+ 	schedule_work(&pipe->io_complete_work);
++#else
++	tasklet_schedule(&pipe->io_complete_task);
++#endif
+ 
+ cleanup_recv_urb:
+ 	ath6kl_usb_cleanup_recv_urb(urb_context);
+@@ -871,7 +882,11 @@
+         } while (netlen);
+ 
+ 		pipe_st->num_rx_bundle_comp++;
++#ifdef USE_WORK
+         schedule_work(&pipe->io_complete_work);  
++#else
++	tasklet_schedule(&pipe->io_complete_task);
++#endif
+ 
+     } while (0);
+         
+@@ -920,13 +935,23 @@
+ 	/* note: queue implements a lock */
+ 	skb_queue_tail(&pipe->io_comp_queue, buf);
+ 	pipe_st->num_tx_comp++;
++#ifdef USE_WORK
+ 	schedule_work(&pipe->io_complete_work);
++#else
++	tasklet_schedule(&pipe->io_complete_task);
++#endif
+ }
+ 
++#ifdef USE_WORK
+ static void ath6kl_usb_io_comp_work(struct work_struct *work)
++#else
++static void ath6kl_usb_io_comp_task(struct ath6kl_usb_pipe *pipe)
++#endif
+ {
++#ifdef USE_WORK
+ 	struct ath6kl_usb_pipe *pipe =
+ 	    container_of(work, struct ath6kl_usb_pipe, io_complete_work);
++#endif
+ 	struct sk_buff *buf;
+ 	struct ath6kl_usb *device;
+ 	struct ath6kl_usb_pipe_stat *pipe_st = &pipe->usb_pipe_stat;
+@@ -972,7 +997,11 @@
+ 	/* Re-schedule it to avoid one direction to starve another direction. */
+ 	ath6kl_dbg(ATH6KL_DBG_USB_BULK,
+ 				   "ath6kl usb re-schedule work.\n");
++#ifdef USE_WORK
+ 	schedule_work(&pipe->io_complete_work);
++#else
++	tasklet_schedule(&pipe->io_complete_task);
++#endif
+ 
+ 	return;
+ }
+@@ -1038,8 +1067,12 @@
+ 
+ 	for (i = 0; i < ATH6KL_USB_PIPE_MAX; i++) {
+ 		pipe = &ar_usb->pipes[i];
++#ifdef USE_WORK
+ 		INIT_WORK(&pipe->io_complete_work,
+ 			  ath6kl_usb_io_comp_work);
++#else
++		tasklet_init(&pipe->io_complete_task, ath6kl_usb_io_comp_task, pipe);
++#endif
+ 		skb_queue_head_init(&pipe->io_comp_queue);
+ 	}
+ 
+@@ -1130,7 +1163,11 @@
+         skb_queue_tail(&pipe->io_comp_queue, tmp_buf);
+     }
+ 	pipe_st->num_tx_bundle_comp++;
++#ifdef USE_WORK
+     schedule_work(&pipe->io_complete_work);
++#else
++	tasklet_schedule(&pipe->io_complete_task);
++#endif
+ }
+ 
+ static int ath6kl_usb_send_bundle(struct ath6kl *ar, u8 pid, 

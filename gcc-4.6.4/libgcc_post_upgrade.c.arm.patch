@@ -1,0 +1,15 @@
+--- libgcc_post_upgrade.c.orig	2007-11-30 06:35:49.000000000 -0500
++++ libgcc_post_upgrade.c	2007-11-30 06:35:31.000000000 -0500
+@@ -439,6 +439,12 @@
+ pid_t __fork (void) { return -1; }
+ char thr_buf[65536];
+ 
++#if defined __arm__
++/* Prevent pulling in libc-start.o (which also defines
++ * __libc_start_main.)  */
++unsigned int __stack_chk_guard = ~0U;
++#endif
++
+ #ifndef __powerpc__
+ int __libc_start_main (int (*main) (int argc, char **argv),
+                        int argc, char **argv,

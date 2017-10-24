@@ -1,0 +1,22 @@
+commit 4cf29be58cac62806833c3cc94b761d1718b9ccd
+Author: Karol Lewandowski <k.lewandowsk@samsung.com>
+Date:   Wed Apr 28 18:27:14 2010 +0200
+
+    Add dummy rule for /usr/include/limits.h - compilation should never try to replace this file
+
+diff --git a/Makerules b/Makerules
+index afceb06..fead8fc 100644
+--- a/Makerules
++++ b/Makerules
+@@ -1473,6 +1473,11 @@ endif
+ endif
+ endif
+ 
++
++# slp: Hack to avoid trying to replace /usr/include/limits.h during build
++/usr/include/limits.h:
++	echo "slp: Hit limits.h target."
++
+ # Local Variables:
+ # mode: makefile
+ # End:

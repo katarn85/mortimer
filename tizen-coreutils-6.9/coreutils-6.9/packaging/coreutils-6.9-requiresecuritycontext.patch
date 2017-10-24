@@ -1,0 +1,160 @@
+diff -ur coreutils-6.9-orig/src/install.c coreutils-6.9/src/install.c
+--- a/src/install.c 2007-10-30 12:34:07.000000000 +0100
++++ b/src/install.c 2007-10-30 15:41:15.000000000 +0100
+@@ -174,6 +174,7 @@
+   x->preserve_mode = false;
+   x->preserve_timestamps = false;
+   x->require_preserve = false;
++  x->require_preserve_context = false;
+   x->recursive = false;
+   x->sparse_mode = SPARSE_AUTO;
+   x->symbolic_link = false;
+diff -ur coreutils-6.9-orig/src/mv.c coreutils-6.9/src/mv.c
+--- a/src/mv.c 2007-10-30 12:34:07.000000000 +0100
++++ b/src/mv.c 2007-10-30 15:34:37.000000000 +0100
+@@ -131,6 +131,7 @@
+   x->preserve_timestamps = true;
+   x->preserve_security_context = selinux_enabled;
+   x->require_preserve = false;  /* FIXME: maybe make this an option */
++  x->require_preserve_context = false;
+   x->recursive = true;
+   x->sparse_mode = SPARSE_AUTO;  /* FIXME: maybe make this an option */
+   x->symbolic_link = false;
+diff -ur coreutils-6.9-orig/src/copy.c coreutils-6.9/src/copy.c
+--- coreutils-6.9-orig/src/copy.c	2007-10-30 12:34:07.000000000 +0100
++++ coreutils-6.9/src/copy.c	2007-10-30 16:01:22.000000000 +0100
+@@ -306,25 +307,33 @@
+   if (! *new_dst)
+     {
+       dest_desc = open (dst_name, O_WRONLY | O_TRUNC | O_BINARY);
+ 
+ #ifdef WITH_SELINUX
+-      if (dest_desc >= 0 && selinux_enabled &&
+-	  (x->preserve_security_context || x->set_security_context))
++      if (x->preserve_security_context && 0 <= dest_desc)
+ 	{
+-	  security_context_t con;
+-	  if(getfscreatecon(&con) == -1)
++	  security_context_t con = NULL;
++	  if(getfscreatecon(&con) < 0)
+ 	    {
+-	      return_val = false;
+-	      goto close_src_desc;
++        if (x->require_preserve_context)
++        {
++         error(0, errno, _("failed to get file system create context"));
++	        return_val = false;
++	        goto close_src_desc;
++        }
+ 	    }
+ 
+ 	  if (con)
+ 	    {
+-	      if(fsetfilecon(dest_desc, con) == -1)
++	      if(fsetfilecon(dest_desc, con) < 0)
+ 		{
+-		  return_val = false;
+-		  freecon(con);
+-		  goto close_src_desc;
++      if (x->require_preserve_context)
++      {
++        error(0, errno, _("failed to set security context of %s to %s"), 
++              quote_n (0, dst_name), quote_n(1, con));
++        return_val = false;
++		    freecon(con);
++		    goto close_src_desc;
++      }
+ 		}
+ 	      freecon(con);
+ 	    }
+@@ -1577,10 +1587,10 @@
+ 	{
+ 	  if (setfscreatecon(con) < 0) 
+ 	    {
+-	      error (0, errno, _("cannot set setfscreatecon %s"), quote (con));
+-	      if (x->require_preserve) {
+-		freecon(con);
+-		return 1;
++	      error (0, errno, _("cannot set default file creation context to %s"), quote (con));
++	      if (x->require_preserve_context) {
++            freecon(con);
++            return false;
+ 	      }
+ 	    }
+ 	  freecon(con);
+@@ -1588,7 +1598,8 @@
+       else {
+ 	if (( errno != ENOTSUP ) && ( errno != ENODATA )) {
+ 	  error (0, errno, _("cannot lgetfilecon %s"), quote (src_name));
+-	  return 1;
++	  if (x->require_preserve_context)
++	    return false;
+ 	}
+       }
+   }
+diff -ur coreutils-6.9-orig/src/copy.h coreutils-6.9/src/copy.h
+--- coreutils-6.9-orig/src/copy.h	2007-10-30 12:34:07.000000000 +0100
++++ coreutils-6.9/src/copy.h	2007-10-30 15:52:59.000000000 +0100
+@@ -150,6 +150,18 @@
+      it be zero.  */
+   bool require_preserve;
+ 
++  /* Useful only when preserve_security_context is true.
++     If true, a failed attempt to preserve a file's security context
++     propagates failure "out" to the caller.  If false, a failure to
++     preserve a file's security context does not change the invoking
++     application's exit status.  Give diagnostics for failed syscalls
++     regardless of this setting.  For example, with "cp --preserve=context"
++     this flag is "true", while with "cp -a", it is false.  That means
++     "cp -a" attempts to preserve any security context, but does not
++     fail if it is unable to do so.  */
++  bool require_preserve_context;
++
++
+   /* If true, copy directories recursively and copy special files
+      as themselves rather than copying their contents. */
+   bool recursive;
+diff -ur coreutils-6.9-orig/src/cp.c coreutils-6.9/src/cp.c
+--- coreutils-6.9-orig/src/cp.c	2007-10-30 12:42:13.000000000 +0100
++++ coreutils-6.9/src/cp.c	2007-10-30 16:00:33.000000000 +0100
+@@ -766,7 +766,7 @@
+   x->preserve_security_context = false;
+   x->set_security_context = false;
+ #endif
+-
++  x->require_preserve_context  = false;
+   x->require_preserve = false;
+   x->recursive = false;
+   x->sparse_mode = SPARSE_AUTO;
+@@ -844,6 +844,7 @@
+ 
+ 	case PRESERVE_CONTEXT:
+ 	  x->preserve_security_context = on_off;
++    x->require_preserve_context = on_off;
+ 	  break;
+ 
+ 	case PRESERVE_ALL:
+@@ -851,7 +834,10 @@
+ 	  x->preserve_timestamps = on_off;
+ 	  x->preserve_ownership = on_off;
+ 	  x->preserve_links = on_off;
+-	  x->preserve_security_context = on_off;
++	  if (selinux_enabled) {
++	    x->preserve_security_context = on_off;
++     x->require_preserve_context = on_off;
++   }
+ 	  break;
+ 
+ 	default:
+@@ -915,8 +916,9 @@
+ 	  x.preserve_ownership = true;
+ 	  x.preserve_mode = true;
+ 	  x.preserve_timestamps = true;
+-	  x.preserve_security_context = true;
+-	  x.require_preserve = true;
++		if (selinux_enabled)
++	  	x.preserve_security_context = true;
++    x.require_preserve = true;
+ 	  x.recursive = true;
+ 	  break;
+ 

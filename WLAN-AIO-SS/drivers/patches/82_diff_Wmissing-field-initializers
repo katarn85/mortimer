@@ -1,0 +1,85 @@
+diff -U 5 -p -r WLAN-AIO/drivers_old/cfg80211/nl80211.c WLAN-AIO/drivers_new//cfg80211/nl80211.c
+--- WLAN-AIO/drivers_old/cfg80211/nl80211.c	2012-11-28 18:47:45.000000000 +0800
++++ WLAN-AIO/drivers_new//cfg80211/nl80211.c	2012-11-27 15:42:24.000000000 +0800
+@@ -5682,12 +5682,12 @@ nla_put_failure:
+ 
+ static int nl80211_set_wowlan(struct sk_buff *skb, struct genl_info *info)
+ {
+ 	struct cfg80211_registered_device *rdev = info->user_ptr[0];
+ 	struct nlattr *tb[NUM_NL80211_WOWLAN_TRIG];
+-	struct cfg80211_wowlan no_triggers = {};
+-	struct cfg80211_wowlan new_triggers = {};
++	struct cfg80211_wowlan no_triggers;
++	struct cfg80211_wowlan new_triggers;
+ 	struct wiphy_wowlan_support *wowlan = &rdev->wiphy.wowlan;
+ 	int err, i;
+ 
+ 	if (!rdev->wiphy.wowlan.flags && !rdev->wiphy.wowlan.n_patterns)
+ 		return -EOPNOTSUPP;
+diff -U 5 -p -r WLAN-AIO/drivers_old/cfg80211/reg.c WLAN-AIO/drivers_new//cfg80211/reg.c
+--- WLAN-AIO/drivers_old/cfg80211/reg.c	2012-11-28 18:47:45.000000000 +0800
++++ WLAN-AIO/drivers_new//cfg80211/reg.c	2012-11-27 15:36:20.000000000 +0800
+@@ -114,33 +114,33 @@ static DECLARE_DELAYED_WORK(reg_timeout,
+ static const struct ieee80211_regdomain world_regdom = {
+ 	.n_reg_rules = 5,
+ 	.alpha2 =  "00",
+ 	.reg_rules = {
+ 		/* IEEE 802.11b/g, channels 1..11 */
+-		REG_RULE(2412-10, 2462+10, 40, 6, 20, 0),
++		{{((2412-10)*1000), ((2462+10)*1000), (40*1000)}, {(6*100), (20*100)}, (0)},
+ 		/* IEEE 802.11b/g, channels 12..13. No HT40
+ 		 * channel fits here. */
+-		REG_RULE(2467-10, 2472+10, 20, 6, 20,
+-			NL80211_RRF_PASSIVE_SCAN |
+-			NL80211_RRF_NO_IBSS),
++		{{((2467-10)*1000),((2472+10)*1000), (20*1000)}, {(6*100), (20*100)},
++                        (NL80211_RRF_PASSIVE_SCAN |
++                        NL80211_RRF_NO_IBSS)},
+ 		/* IEEE 802.11 channel 14 - Only JP enables
+ 		 * this and for 802.11b only */
+-		REG_RULE(2484-10, 2484+10, 20, 6, 20,
+-			NL80211_RRF_PASSIVE_SCAN |
+-			NL80211_RRF_NO_IBSS |
+-			NL80211_RRF_NO_OFDM),
++		{{((2484-10)*1000), ((2484+10)*1000), (20*1000)}, {(6*100), (20*100)},
++                        (NL80211_RRF_PASSIVE_SCAN |
++                        NL80211_RRF_NO_IBSS |
++                        NL80211_RRF_NO_OFDM)},
+ 		/* IEEE 802.11a, channel 36..48 */
+-		REG_RULE(5180-10, 5240+10, 40, 6, 20,
+-                        NL80211_RRF_PASSIVE_SCAN |
+-                        NL80211_RRF_NO_IBSS),
++		{{((5180-10)*1000), ((5240+10)*1000), (40*1000)}, {(6*100), (20*100)},
++			(NL80211_RRF_PASSIVE_SCAN |
++                        NL80211_RRF_NO_IBSS)},
+ 
+ 		/* NB: 5260 MHz - 5700 MHz requies DFS */
+ 
+ 		/* IEEE 802.11a, channel 149..165 */
+-		REG_RULE(5745-10, 5825+10, 40, 6, 20,
+-			NL80211_RRF_PASSIVE_SCAN |
+-			NL80211_RRF_NO_IBSS),
++		{{((5745-10)*1000), ((5825+10)*1000), (40*1000)}, {(6*100), (20*100)},
++                        (NL80211_RRF_PASSIVE_SCAN |
++                        NL80211_RRF_NO_IBSS)},
+ 	}
+ };
+ 
+ static const struct ieee80211_regdomain *cfg80211_world_regdom =
+ 	&world_regdom;
+diff -U 5 -p -r WLAN-AIO/drivers_old/cfg80211/genregdb.awk WLAN-AIO/drivers//cfg80211/genregdb.awk
+--- WLAN-AIO/drivers_old/cfg80211/genregdb.awk	2012-12-13 17:37:36.000000000 +0800
++++ WLAN-AIO/drivers//cfg80211/genregdb.awk	2012-12-20 12:58:51.000000000 +0800
+@@ -98,11 +98,11 @@ active && /^[ \t]*\(/ {
+ 		} else if (flagarray[arg] == "NO-IBSS") {
+ 			flags = flags "\n\t\t\tNL80211_RRF_NO_IBSS | "
+ 		}
+ 	}
+ 	flags = flags "0"
+-	printf "\t\tREG_RULE(%d, %d, %d, %d, %d, %s),\n", start, end, bw, gain, power, flags
++	printf "\t\t{{%d, %d, %d}, {%d, %d}, %s},\n", start*1000, end*1000, bw*1000, gain*100, power*100, flags
+ 	rules++
+ }
+ 
+ active && /^[ \t]*$/ {
+ 	active = 0

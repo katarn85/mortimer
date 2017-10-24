@@ -1,0 +1,571 @@
+# Galician translation of Elementary
+# This file is put in the public domain.
+# Aníbal Garrido <khany@member.trisquel.info>, 2012.
+#
+#: src/lib/elm_config.c:2101
+msgid ""
+msgstr ""
+"Project-Id-Version: elementary\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-10-02 20:47+0200\n"
+"PO-Revision-Date: 2012-10-02 20:51+0200\n"
+"Last-Translator: Shilpa Singh <shilpa.singh@samsung.com>\n"
+"Language-Team: http://trasno.net/ <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/lib/elc_ctxpopup.c:222
+msgid "icon"
+msgstr "Icona"
+
+#: src/lib/elc_ctxpopup.c:233 src/lib/elm_button.c:285 src/lib/elm_check.c:194
+#: src/lib/elm_gengrid.c:799 src/lib/elm_genlist.c:1564
+#: src/lib/elm_list.c:1670 src/lib/elm_radio.c:237 src/lib/elm_spinner.c:509
+#: src/lib/elm_toolbar.c:2029
+msgid "Disabled"
+msgstr "Desactivado."
+
+#: src/lib/elc_ctxpopup.c:241
+msgid "Contextual Popup"
+msgstr "Ventá emerxente contextual"
+
+#: src/lib/elc_ctxpopup.c:1023
+msgid "A contextual popup is open, double tap to close it"
+msgstr "Hai unha ventá emerxente contextual aberta. Tócaa dúas veces para pechala."
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1129
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Ventá emerxente do menú"
+
+#: TIZEN_ONLY: src/lib/elc_ctxpopup.c:1130
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Toca dúas veces para pechar o menú."
+
+#: src/lib/elc_fileselector.c:749
+msgid "Up"
+msgstr "Arriba"
+
+#: src/lib/elc_fileselector.c:764
+msgid "Home"
+msgstr "Cartafol persoal"
+
+#: src/lib/elc_fileselector.c:992 src/lib/elm_entry.c:1982
+#: src/lib/elm_entry.c:2007
+#: src/modules/datetime_input_popup/datetime_input_popup.c:792
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/lib/elc_fileselector.c:1001
+msgid "OK"
+msgstr "Aceptar"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "And %d more"
+msgstr "e %d máis"
+
+#: src/lib/elc_multibuttonentry.c
+msgid "Double tap to edit the recipients"
+msgstr "Toca dúas veces para editar os destinatarios."
+
+#: src/lib/elc_multibuttonentry.c:1281
+msgid "double tap to edit"
+msgstr "Toca dúas veces para editar."
+
+#: src/lib/elc_naviframe.c:418
+msgid "title"
+msgstr "Título"
+
+#: src/lib/elc_popup.c:343
+msgid "Popup Title"
+msgstr "Cabeceira emerxente"
+
+#: src/lib/elc_popup.c:353
+msgid "Popup Body Text"
+msgstr "Texto do corpo da ventá emerxente"
+
+#: src/lib/elc_popup.c:986
+msgid "Popup_list"
+msgstr " "
+
+#: src/lib/elc_popup.c:365
+msgid "A central popup is open, double tap to close it"
+msgstr "Hai unha ventá emerxente central aberta. Tócaa dúas veces para pechala."
+
+#: src/lib/elm_bubble.c:196
+msgid "Bubble"
+msgstr "Burbulla"
+
+#: src/lib/elm_button.c:55
+msgid "Clicked"
+msgstr " "
+
+#: src/lib/elm_button.c:290
+msgid "Button"
+msgstr "Botón"
+
+#: src/lib/elm_calendar.c:132
+msgid "%B %Y"
+msgstr "%B %Y"
+
+#: src/lib/elm_calendar.c:234
+msgid "calendar item"
+msgstr "calendario"
+
+#: src/lib/elm_calendar.c:261
+msgid "calendar decrement button"
+msgstr "Botón de diminución do calendario"
+
+#: src/lib/elm_calendar.c:267
+msgid "calendar increment button"
+msgstr "Botón de aumento do calendario"
+
+#: src/lib/elm_calendar.c:273
+msgid "calendar month"
+msgstr "mes do calendario"
+
+#: src/lib/elm_check.c:47 src/lib/elm_check.c:50 src/lib/elm_check.c:213
+#: src/lib/elm_radio.c:83 src/lib/elm_radio.c:242
+msgid "State: On"
+msgstr "Seleccionado"
+
+#: src/lib/elm_check.c:60 src/lib/elm_check.c:63 src/lib/elm_check.c:225
+#: src/lib/elm_radio.c:244
+msgid "State: Off"
+msgstr "Non seleccionado"
+
+#: src/lib/elm_check.c:209 src/lib/elm_check.c:222
+msgid "State"
+msgstr " "
+
+#: src/lib/elm_check.c:289
+msgid "Check"
+msgstr "Casa"
+
+#: src/lib/elm_check.c:46
+msgid "Tick"
+msgstr "Marcar"
+
+#: src/lib/elm_check.c:52
+msgid "Untick"
+msgstr "Desmarcar"
+
+#: src/lib/elm_check.c:169
+msgid "On/Off button"
+msgstr "Botón de activación/desactivación"
+
+#: src/lib/elm_check.c:47
+msgid "On"
+msgstr "Activado"
+
+#: src/lib/elm_check.c:56
+msgid "Off"
+msgstr "Desactivado"
+
+#: src/lib/elm_clock.c:298
+msgid "clock increment button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:306
+msgid "clock decrement button for am,pm"
+msgstr ""
+
+#: src/lib/elm_clock.c:641
+msgid "State: Editable"
+msgstr " "
+
+#: src/lib/elm_clock.c:676
+msgid "Clock"
+msgstr ""
+
+#: src/lib/elm_colorselector.c:895
+msgid "color selector palette item"
+msgstr "Paleta de selección de cor"
+
+#: src/lib/elm_colorselector.c
+msgid "%d percent"
+msgstr "%d restante"
+
+#: src/lib/elm_colorselector.c
+msgid " Tap to apply"
+msgstr "Toca para aplicar"
+
+#: src/lib/elm_colorselector.c
+msgid "Colour control slider"
+msgstr "Control esvaradío da cor"
+
+#: src/lib/elm_colorselector.c
+msgid "Saturation control slider"
+msgstr "Control esvaradío de saturación"
+
+#: src/lib/elm_colorselector.c
+msgid "Brightness control slider"
+msgstr "Control esvaradío de brillo"
+
+#: src/lib/elm_colorselector.c
+msgid "Alpha control slider"
+msgstr " "
+
+#: src/lib/elm_colorselector.c
+msgid "Color Picker"
+msgstr "Selector de cor"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "White"
+msgstr "Branco"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Yellow"
+msgstr "Amarelo"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Coral"
+msgstr "Coral"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Tomato"
+msgstr "Tomate"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Red"
+msgstr "Vermello"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Hot Pink"
+msgstr "Rosa forte"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Plum"
+msgstr "Cirola"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Blue Violet"
+msgstr "Violeta azulada"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Lime Green"
+msgstr "Verde lima"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Forest Green"
+msgstr "Verde fraga"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Sky Blue"
+msgstr "Azul ceo"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Royal Blue"
+msgstr "Azul real"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Blue"
+msgstr "Azul escuro"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Dark Grey"
+msgstr "Gris escuro"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Black"
+msgstr "Negro"
+
+#: src/lib/elm_colorselector.c config/mobile/base.src
+msgid "Custom Color palette"
+msgstr "Paleta de cores personalizada"
+
+#: src/lib/elm_config.c:2117
+msgid "default:LTR"
+msgstr "Predeterminado: LTR"
+
+#: src/lib/elm_diskselector.c:630
+msgid "diskselector item"
+msgstr "Selector de disco"
+
+#: src/lib/elm_entry.c:1246
+msgid "Copy"
+msgstr "Copiar"
+
+#: src/lib/elm_entry.c:1250
+msgid "Cut"
+msgstr "Cortar"
+
+#: src/lib/elm_entry.c:1266
+msgid "Select"
+msgstr "Seleccionar"
+
+#: src/lib/elm_entry.c:1273
+msgid "Paste"
+msgstr "Pegar"
+
+#: src/lib/elm_entry.c:3887
+msgid "Edit Field"
+msgstr "Editar campo"
+
+#: src/lib/elm_entry.c
+msgid "State: Not Editable"
+msgstr " "
+
+#: src/lib/elm_entry.c
+msgid ", Not Editable"
+msgstr " "
+
+#: src/lib/elm_index.c:672
+msgid "Index"
+msgstr "A barra de desprazamento rápido"
+
+#: src/lib/elm_label.c:348
+msgid "Label"
+msgstr " "
+
+#: src/lib/elm_toolbar.c:2157
+msgid "Double tap to move to content"
+msgstr "Toca dúas veces para mover ao contido."
+
+#: src/lib/elm_panel.c:226
+msgid "A drawer is open, double tap to close it"
+msgstr "Hai un caixón aberto. Tócao dúas veces para pechalo."
+
+#: src/lib/elm_progressbar.c:260
+msgid "progressbar"
+msgstr " "
+
+#: src/lib/elm_radio.c:271
+msgid "Radio"
+msgstr "Botón de radio"
+
+#: src/lib/elm_slider.c:60 src/lib/elm_slider.c:69 src/lib/elm_slider.c:77
+msgid " of "
+msgstr "de"
+
+#: src/lib/elm_slider.c:767
+msgid " flick up and down to adjust the position"
+msgstr "Xira cara arriba e abaixo para axustar a posición."
+
+#: src/lib/elm_slider.c:802
+msgid "slider"
+msgstr "Control esvaradío"
+
+#: src/lib/elm_spinner.c:534
+msgid "spinner increment button"
+msgstr "botón de aumento"
+
+#: src/lib/elm_spinner.c:542
+msgid "spinner decrement button"
+msgstr "botón de disminución"
+
+#: src/lib/elm_spinner.c
+msgid "incremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c
+msgid "decremented"
+msgstr " "
+
+#: src/lib/elm_spinner.c:549
+msgid "spinner"
+msgstr "Seleccionar"
+
+#: src/lib/elm_toolbar.c:1149
+msgid "Selected"
+msgstr "Seleccionado"
+
+#: src/lib/elm_toolbar.c:1511
+msgid "Separator"
+msgstr "Separador"
+
+#: src/lib/elm_toolbar.c:1515
+msgid "State: Selected"
+msgstr "Seleccionado"
+
+#: src/lib/elm_toolbar.c:1517
+msgid "Has menu"
+msgstr "Ten menú"
+
+#: src/lib/elm_toolbar.c:1596
+msgid "Toolbar Item"
+msgstr "Pestana"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:749
+#: src/modules/datetime_input_popup/datetime_input_popup.c:992
+msgid "AM"
+msgstr "AM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:754
+#: src/modules/datetime_input_popup/datetime_input_popup.c:993
+msgid "PM"
+msgstr "PM"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:786
+msgid "Set"
+msgstr "Establ."
+
+#: src/modules/ctxpopup_copypasteUI/copypaste.c
+msgid "Translate"
+msgstr "Traducir"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "flick up and down to adjust %s or double tap to open keyboard"
+msgstr "Xira cara arriba e abaixo para axustar %s ou toca dúas veces para abrir o teclado."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "Double tap to change"
+msgstr "Toca dúas veces para cambiar."
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:375
+msgid "Set date"
+msgstr "Establecer data"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c:384
+msgid "Set time"
+msgstr "Establecer hora"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_DAY"
+msgstr "%d"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_YEAR"
+msgstr "%Y"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_24HOUR"
+msgstr "%H"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_12HOUR"
+msgstr "%I"
+
+#: src/modules/datetime_input_popup/datetime_input_popup.c
+msgid "IDS_ACCS_BODY_PD_M_MINUTES"
+msgstr "%M"
+
+#: src/lib/elm_win.c
+msgid "Portrait Mode"
+msgstr "Modo vertical"
+
+#: src/lib/elm_win.c
+msgid "Landscape Mode"
+msgstr "Modo horizontal"
+
+#: src/lib/elm_index.c
+msgid "Double tap to enable fast scrolling"
+msgstr "Toca dúas veces para activar o desprazamento rápido."
+
+#: src/lib/elm_entry.c
+msgid "Editing"
+msgstr "Editando."
+
+#: src/lib/elm_entry.c
+msgid "Flick up and down to adjust the position"
+msgstr "Xira cara arriba e abaixo para axustar a posición."
+
+#: src/lib/elm_entry.c
+msgid "%d characters"
+msgstr "%d carácteres."
+
+#: src/lib/elc_ctxpopup.c
+msgid "Contextual popup"
+msgstr "Ventá emerxente contextual"
+
+#: src/lib/elc_ctxpopup.c
+msgid "Double tap to close popup"
+msgstr "Toca dúas veces para pechar a ventá emerxente."
+
+#: src/lib/elc_popup.c
+msgid "Central popup"
+msgstr "Ventá emerxente central"
+
+#: src/lib/elc_popup.c
+msgid "Double tap to close it"
+msgstr "Tócao dúas veces para pechalo."
+
+#: src/lib/elm_panel.c
+msgid "A drawer is open"
+msgstr "Hai un caixón aberto."
+
+#: src/lib/elm_panel.c
+msgid "Double tap to close drawer menu"
+msgstr "Toca dúas veces para pechar o menú do caixón."
+
+#: src/lib/elm_entry.c
+msgid "Cursor at beginning of text"
+msgstr "Cursor ao inicio do texto"
+
+#: src/lib/elm_entry.c
+msgid "Cursor at end of text"
+msgstr "Cursor ao final do texto"
+
+msgid "tap to change"
+msgstr "Toca aquí para cambiar o modo"
+
+msgid "date"
+msgstr "Data"
+
+msgid "hour"
+msgstr "hora"
+
+msgid "minute"
+msgstr "minuto"
+
+msgid "month"
+msgstr "mes"
+
+msgid "year"
+msgstr "ano"
+
+msgid "IDS_ST_BODY_P1SD_OF_P2SD_TTS"
+msgstr "%1$d de %2$d."
+
+msgid "IDS_COM_BODY_DECREASE_DAY"
+msgstr "Diminúe o día"
+
+msgid "IDS_COM_BODY_DECREASE_HOUR"
+msgstr "Diminúe a hora"
+
+msgid "IDS_COM_BODY_DECREASE_MINUTE"
+msgstr "Diminúe os minutos"
+
+msgid "IDS_COM_BODY_DECREASE_MONTH"
+msgstr "Diminúe o mes"
+
+msgid "IDS_COM_BODY_DECREASE_YEAR"
+msgstr "Diminúe o ano"
+
+msgid "IDS_COM_BODY_INCREASE_DAY"
+msgstr "Aumenta o día"
+
+msgid "IDS_COM_BODY_INCREASE_HOUR"
+msgstr "Aumenta a hora"
+
+msgid "IDS_COM_BODY_INCREASE_MINUTE"
+msgstr "Aumenta os minutos"
+
+msgid "IDS_COM_BODY_INCREASE_MONTH"
+msgstr "Aumenta o mes"
+
+msgid "IDS_COM_BODY_INCREASE_YEAR"
+msgstr "Aumenta o ano"
+
+msgid "IDS_IDLE_BODY_TAP_TO_CHANGE"
+msgstr "Tocar para cambiar"
+
+msgid "IDS_COM_BODY_SELECT_ALL"
+msgstr "Seleccionar todo"
+
+msgid "IDS_COM_BODY_COPY"
+msgstr "Copiar"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Selecc."
+
+msgid "IDS_COM_BODY_CUT"
+msgstr "Cortar"
+
+msgid "IDS_COM_BODY_PASTE"
+msgstr "Pegar"
+
+msgid "IDS_COM_BODY_CLIPBOARD"
+msgstr "Portapapeis"
+

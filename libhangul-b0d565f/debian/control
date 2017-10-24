@@ -1,0 +1,56 @@
+Source: libhangul
+Section: libs
+Priority: optional
+Maintainer: Wei Ye <wei.ye@samsung.com>, Jihoon Kim <jihoon48.kim>
+Original-Maintainer: Changwoo Ryu <cwryu@debian.org>
+Homepage: http://kldp.net/projects/hangul
+Vcs-Browser: http://git.debian.org/?p=l10n-korean/libhangul.git
+Vcs-Git: git://git.debian.org/git/l10n-korean/libhangul.git
+Standards-Version: 3.8.3
+Build-Depends: cdbs (>= 0.4.48), autotools-dev, debhelper (>= 5)
+
+Package: libhangul0
+Section: libs
+Architecture: any
+Depends: libhangul0-data (= ${source:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Hangul keyboard input library - runtime
+ This library implements Hangul keyboard input with various types of
+ Korean keyboards.  It is intended to be a base library of Korean
+ input methods on multiple platforms.
+ .
+ This package contains the shared library and the runtime data.
+
+Package: libhangul0-data
+Section: libs
+Architecture: all
+Depends: ${misc:Depends}
+Description: Hangul keyboard input library - data
+ This library implements Hangul keyboard input with various types of
+ Korean keyboards.  It is intended to be a base library of Korean
+ input methods on multiple platforms.
+ .
+ This package contains the architecture independent data.
+
+Package: libhangul0-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: libhangul0 (= ${binary:Version}), ${misc:Depends}
+Description: Hangul keyboard input library - debugging symbols
+ This library implements Hangul keyboard input with various types of
+ Korean keyboards.  It is intended to be a base library of Korean
+ input methods on multiple platforms.
+ .
+ This package contains the debugging symbols. Most people will not need this
+ package.
+
+Package: libhangul-dev
+Section: libdevel
+Architecture: any
+Depends: libhangul0 (= ${binary:Version}), ${misc:Depends}
+Description: Hangul keyboard input library - development files
+ This library implements Hangul keyboard input with various types of
+ Korean keyboards.  It is intended to be a base library of Korean
+ input methods on multiple platforms.
+ .
+ This package contains the header files and the static library.

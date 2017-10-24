@@ -1,0 +1,14 @@
+diff -Naur ath6kl.orig/usb.c ath6kl/usb.c
+--- ath6kl.orig/usb.c	2012-10-02 14:53:42.000000000 +0800
++++ ath6kl/usb.c	2012-10-03 00:07:35.000000000 +0800
+@@ -25,8 +25,8 @@
+ #define TX_URB_COUNT            32
+ #define RX_URB_COUNT            32
+ 
+-#define ATH6KL_USB_RX_BUFFER_SIZE  2048
+-#define ATH6KL_USB_RX_BUNDLE_BUFFER_SIZE  16896
++#define ATH6KL_USB_RX_BUFFER_SIZE  (2048+512)
++#define ATH6KL_USB_RX_BUNDLE_BUFFER_SIZE  16384
+ #define ATH6KL_USB_TX_BUNDLE_BUFFER_SIZE  16384
+ #define WORKER_LOCK_BIT	0
+ 

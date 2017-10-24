@@ -1,0 +1,20 @@
+--- ath6kl.orig/txrx.c	2012-05-17 02:43:30.839810000 -0700
++++ ath6kl/txrx.c	2012-05-17 19:43:16.675679814 -0700
+@@ -692,7 +692,7 @@
+ 	ar->total_tx_data_pend++;
+ 
+ 	spin_unlock_bh(&ar->lock);
+-
++#if 0
+ 	if (!IS_ALIGNED((unsigned long) skb->data - HTC_HDR_LENGTH, 4) &&
+ 	    skb_cloned(skb)) {
+ 		/*
+@@ -710,7 +710,7 @@
+ 		kfree_skb(skb);
+ 		skb = nskb;
+ 	}
+-
++#endif
+ 	cookie->skb = skb;
+ 	cookie->map_no = map_no;
+ 	set_htc_pkt_info(&cookie->htc_pkt, cookie, skb->data, skb->len,

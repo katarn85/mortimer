@@ -1,0 +1,154 @@
+diff -Naur hostap_orig/wpa_supplicant/.config hostap/wpa_supplicant/.config
+--- hostap_orig/wpa_supplicant/.config	2012-12-24 23:00:54.000000000 +0800
++++ hostap/wpa_supplicant/.config	2013-01-04 11:38:50.000000000 +0800
+@@ -416,3 +416,4 @@
+ #CONFIG_WIFI_DISC=y
+ 
+ CONFIG_WPA_CLI_EDIT=y
++SAMSUNG_P2P_REJECT_FASTREASSOC=y
+diff -Naur hostap_orig/wpa_supplicant/ctrl_iface.c hostap/wpa_supplicant/ctrl_iface.c
+--- hostap_orig/wpa_supplicant/ctrl_iface.c	2013-01-03 17:51:10.000000000 +0800
++++ hostap/wpa_supplicant/ctrl_iface.c	2013-01-04 11:38:50.000000000 +0800
+@@ -1823,6 +1823,21 @@
+ 	return 0;
+ }	
+ 
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++/* Remove the fast reassociation entry \ 
++*/
++static int wpa_supplicant_ctrl_iface_widi_remove_fastreassoc_entry(
++	struct wpa_supplicant *wpa_s, char *buf, size_t buflen)
++{
++	struct wpa_ssid *ssid = NULL;
++
++	wpa_s->g_LastSelected = NULL;
++	os_memcpy(buf, "OK\n", 3);
++	
++	return 3;
++}	
++#endif /* SAMSUNG_P2P_REJECT_FASTREASSOC */
++
+ /* Set Vendor ID to filter VENDOR OUI
+ */
+ static int wpa_supplicant_ctrl_iface_widi_set_vendor_id(
+@@ -4904,6 +4919,11 @@
+ 	} else if (os_strcmp(buf, "WIDI_REMOVE_NONPERSIST_NETWORK") == 0) {
+ 		reply_len = wpa_supplicant_ctrl_iface_widi_remove_nonpersist_network(
+ 			wpa_s, reply, reply_size); 
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++	} else if (os_strcmp(buf, "WIDI_REMOVE_FAST_REASSOC_ENTRY") == 0) {
++		reply_len = wpa_supplicant_ctrl_iface_widi_remove_fastreassoc_entry(
++			wpa_s, reply, reply_size);
++#endif
+ 	} else if (os_strncmp(buf, "WIDI_SET_VENDOR_ID ", 19) == 0) {
+ 		wpa_supplicant_ctrl_iface_widi_set_vendor_id(wpa_s, buf + 19); 				
+ #endif /* CONFIG_CUSTOM_WFD */			
+diff -Naur hostap_orig/wpa_supplicant/events.c hostap/wpa_supplicant/events.c
+--- hostap_orig/wpa_supplicant/events.c	2013-01-03 17:51:10.000000000 +0800
++++ hostap/wpa_supplicant/events.c	2013-01-04 11:38:50.000000000 +0800
+@@ -43,9 +43,7 @@
+ #ifdef CONFIG_WIFI_DISC
+ #include <time.h>
+ #endif
+-#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+-static struct wpa_bss *g_LastSelected = NULL;
+-#endif
++
+ #ifdef CONFIG_CUSTOM_WFD
+ #include "ctrl_iface.h"
+ #endif /* CONFIG_CUSTOM_WFD */
+@@ -1126,7 +1124,7 @@
+ 			return 0;
+ 		}
+ #ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+-		g_LastSelected = selected;
++		wpa_s->g_LastSelected = selected;
+ #endif
+ 		if (wpa_supplicant_connect(wpa_s, selected, ssid) < 0) {
+ 			wpa_dbg(wpa_s, MSG_DEBUG, "Connect failed");
+@@ -1434,7 +1432,7 @@
+ 	struct wpa_driver_capa capa;
+ 	
+ #ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+-	g_LastSelected = NULL;
++	wpa_s->g_LastSelected = NULL;
+ #endif
+ 
+ #ifdef CONFIG_AP
+@@ -2089,7 +2087,8 @@
+ #ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+ void wpa_supplicant_event_reject_fast_reassoc(struct wpa_supplicant *wpa_s)
+ {
+-	wpa_supplicant_req_fast_reauth(wpa_s , g_LastSelected);
++	eloop_cancel_timeout(wpa_supplicant_req_fast_reauth, wpa_s, NULL);
++	eloop_register_timeout(1, 0, wpa_supplicant_req_fast_reauth, wpa_s, NULL);	
+ }
+ #endif
+ 
+@@ -2283,10 +2282,12 @@
+ 		        wpas_connection_failed(wpa_s, data->assoc_reject.bssid);
+ 		}
+ #ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+-		if(wpa_s->ifname && (os_strcmp(wpa_s->ifname , "p2p-wlan0-0") == 0))
+-			wpa_supplicant_event_reject_fast_reassoc(wpa_s);
+-		else if(wpa_s->ifname && (os_strcmp(wpa_s->ifname , "p2p0") == 0))
+-			wpa_supplicant_event_reject_fast_reassoc(wpa_s);
++		if(data->assoc_reject.status_code == WLAN_REASON_UNSPECIFIED) {
++			if(wpa_s->ifname && (os_strcmp(wpa_s->ifname , "p2p-wlan0-0") == 0))
++				wpa_supplicant_event_reject_fast_reassoc(wpa_s);
++			else if(wpa_s->ifname && (os_strcmp(wpa_s->ifname , "p2p0") == 0))
++				wpa_supplicant_event_reject_fast_reassoc(wpa_s);
++		}
+ #endif
+ 		break;
+ 	case EVENT_AUTH_TIMED_OUT:
+diff -Naur hostap_orig/wpa_supplicant/Makefile hostap/wpa_supplicant/Makefile
+--- hostap_orig/wpa_supplicant/Makefile	2012-12-24 23:00:54.000000000 +0800
++++ hostap/wpa_supplicant/Makefile	2013-01-04 11:38:50.000000000 +0800
+@@ -113,6 +113,9 @@
+ CFLAGS += -DCONFIG_ELOOP_POLL
+ endif
+ 
++ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++CFLAGS += -DSAMSUNG_P2P_REJECT_FASTREASSOC
++endif
+ 
+ ifdef CONFIG_EAPOL_TEST
+ CFLAGS += -Werror -DEAPOL_TEST
+diff -Naur hostap_orig/wpa_supplicant/wpa_supplicant.c hostap/wpa_supplicant/wpa_supplicant.c
+--- hostap_orig/wpa_supplicant/wpa_supplicant.c	2013-01-03 17:51:10.000000000 +0800
++++ hostap/wpa_supplicant/wpa_supplicant.c	2013-01-04 11:38:50.000000000 +0800
+@@ -198,8 +198,10 @@
+ }
+ 
+ #ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+-void wpa_supplicant_req_fast_reauth(struct wpa_supplicant *wpa_s, struct wpa_bss *selected)
++void wpa_supplicant_req_fast_reauth(void *eloop_ctx, void *timeout_ctx)
+ {
++	struct wpa_supplicant *wpa_s = eloop_ctx;
++	struct wpa_bss *selected = wpa_s->g_LastSelected;
+ 	eloop_cancel_timeout(wpa_supplicant_timeout, wpa_s, NULL);
+ 	wpa_sm_notify_disassoc(wpa_s->wpa);
+ 	wpa_supplicant_disassociate(wpa_s, WLAN_REASON_DEAUTH_LEAVING);
+diff -Naur hostap_orig/wpa_supplicant/wpa_supplicant_i.h hostap/wpa_supplicant/wpa_supplicant_i.h
+--- hostap_orig/wpa_supplicant/wpa_supplicant_i.h	2013-01-03 17:51:10.000000000 +0800
++++ hostap/wpa_supplicant/wpa_supplicant_i.h	2013-01-04 11:38:50.000000000 +0800
+@@ -576,6 +576,9 @@
+ 	int en_roaming_current;
+ #endif
+ #endif
++#ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
++	struct wpa_ssid *g_LastSelected;
++#endif
+ };
+ 
+ 
+@@ -690,7 +693,7 @@
+ int wpas_network_disabled(struct wpa_supplicant *wpa_s, struct wpa_ssid *ssid);
+ 
+ #ifdef SAMSUNG_P2P_REJECT_FASTREASSOC
+-void wpa_supplicant_req_fast_reauth(struct wpa_supplicant *wpa_s, struct wpa_bss *selected);
++void wpa_supplicant_req_fast_reauth(void *eloop_ctx, void *timeout_ctx);
+ #endif
+ 
+ #endif /* WPA_SUPPLICANT_I_H */

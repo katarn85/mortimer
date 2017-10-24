@@ -1,0 +1,11 @@
+diff -ruN gmp-4.2.1-old/gmp-h.in gmp-4.2.1/gmp-h.in
+--- gmp-4.2.1-old/gmp-h.in	2006-04-12 03:10:15.000000000 +0900
++++ gmp-4.2.1/gmp-h.in	2014-03-06 16:59:32.784983804 +0900
+@@ -24,6 +24,7 @@
+ 
+ #if defined (__cplusplus)
+ #include <iosfwd>   /* for std::istream, std::ostream, std::string */
++#include <cstdio>   /* for std::FILE */
+ #endif
+ 
+ 
